@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>博客GET</title>
+      <link href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/"/>
+      <url>/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
+      
+        <content type="html"><![CDATA[<p>新开的蒟蒻博客，可能会陆续上传些水文。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 划水 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<p>大家好，我是144026。欢迎来到我的蒟蒻技术博客。</p>]]></content>
+      
+    </entry>
+    
+    
+  
+</search>

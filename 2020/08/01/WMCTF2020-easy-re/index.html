@@ -7,13 +7,18 @@
 
     
 
-    <title>144026的博客</title>
+    <title>一道Perl逆向入门题 | 144026的博客</title>
     <meta name="author" content="144026">
+    
+    <meta name="description" content="1 Perl与反编译Perl是解释型语言，要保护其源码，常用的方法有：
+
+先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。
+将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Arch">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="一道Perl逆向入门题"/>
     <meta property="og:site_name" content="144026的博客"/>
 
     
@@ -214,25 +219,42 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/信息安全/">信息安全</a><a class="breadcrumb" href="/categories/信息安全/CTF/">CTF</a><a class="breadcrumb" href="/categories/信息安全/CTF/Re/">Re</a>
+
+
         
 
+        
+    </div>
+</nav>
 
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
+<article>
     <div class="card">
         <div class="card-content">
+            
+
             <div class="article-title">
                 
     
-        <h1 class="indigo-link-context"><a href="/2020/08/01/WMCTF2020-easy-re/">一道Perl逆向入门题</a></h1>
+        <h1>一道Perl逆向入门题</h1>
     
 
 
             </div>
-
             <time class="pink-link-context" datetime="2020-08-01T04:57:33.000Z"><a href="/2020/08/01/WMCTF2020-easy-re/">2020-08-01</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -246,60 +268,51 @@
     </div>
 
 
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#1-Perl%E4%B8%8E%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="section table-of-contents-text">1 Perl与反编译</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#2-%E9%A2%98%E7%9B%AE"><span class="section table-of-contents-text">2 题目</span></a></li></ol>
+</div>
 
-            
-        </div>
 
-        
-    </div>
-</article>
+            <div class="entry pink-link-context">
+                <h1 id="1-Perl与反编译"><a href="#1-Perl与反编译" class="headerlink" title="1 Perl与反编译"></a>1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
+<ul>
+<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
+<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
+</ul>
+<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2 题目"></a>2 题目</h1><p>题目取自WMCTF2020，提示内容如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png"> </p>
+<p>下载程序，运行如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p>
+<p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p>
+<ol>
+<li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li>
+<li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li>
+<li>重复步骤1和2，找到下一层的断点。</li>
+</ol>
+<p>很快注意到如下代码段<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png"></p>
+<p>内存中跟随rax的值<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p>
+<p>随后的代码段直接通过rax返回了Perl脚本<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png"></p>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png"></p>
+<p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
                 
-    
-        <h1 class="indigo-link-context"><a href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/">博客GET</a></h1>
-    
+
+
+<p class="pink-link-context">
+    <a href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/" rel="next" title="博客GET">
+    下一篇：博客GET
+  </a>
+</p>
 
 
             </div>
-
-            <time class="pink-link-context" datetime="2020-07-31T19:28:57.000Z"><a href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/">2020-08-01</a></time>
-
-            
-    <div class="tags-row">
-        
-            <a href="/tags/划水/" class="chip pink lighten-1">划水</a>
-        
-    </div>
-
-
-
-            
+			
         </div>
-
-        
     </div>
 </article>
 
-    
 
-    <ul class="pagination center-align">
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="active pink"><a href="/">1</a></li>
-    
-    
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
+
+
+
 
 </div>
 

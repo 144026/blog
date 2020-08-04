@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>144026的博客</title>
   
-  <subtitle>144026的博客</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-03T05:45:21.226Z</updated>
+  <updated>2020-08-04T16:17:26.783Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,17 @@
     <link href="http://yoursite.com/2020/08/01/WMCTF2020-easy-re/"/>
     <id>http://yoursite.com/2020/08/01/WMCTF2020-easy-re/</id>
     <published>2020-08-01T04:57:33.000Z</published>
-    <updated>2020-08-03T05:45:21.226Z</updated>
+    <updated>2020-08-04T16:17:26.783Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-Perl与反编译"><a href="#1-Perl与反编译" class="headerlink" title="1 Perl与反编译"></a>1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p><ul><li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li><li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li></ul><h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2 题目"></a>2 题目</h1><p>题目取自WMCTF2020，提示内容如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png"> </p><p>下载程序，运行如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p><p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p><ol><li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li><li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li><li>重复步骤1和2，找到下一层的断点。</li></ol><p>很快注意到如下代码段<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png"></p><p>内存中跟随rax的值<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p><p>随后的代码段直接通过rax返回了Perl脚本<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png"></p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png"></p><p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="1-Perl与反编译"><a href="#1-Perl与反编译" class="headerlink" title="1 Perl与反编译"></a>1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p><ul><li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li><li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li></ul><a id="more"></a><h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2 题目"></a>2 题目</h1><p>题目取自WMCTF2020，提示内容如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png"> </p><p>下载程序，运行如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p><p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p><ol><li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li><li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li><li>重复步骤1和2，找到下一层的断点。</li></ol><p>很快注意到如下代码段<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png"></p><p>内存中跟随rax的值<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p><p>随后的代码段直接通过rax返回了Perl脚本<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png"></p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png"></p><p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;1-Perl与反编译&quot;&gt;&lt;a href=&quot;#1-Perl与反编译&quot; class=&quot;headerlink&quot; title=&quot;1 Perl与反编译&quot;&gt;&lt;/a&gt;1 Perl与反编译&lt;/h1&gt;&lt;p&gt;Perl是解释型语言，要保护其源码，常用的方法有：&lt;/p&gt;
+      &lt;h1 id=&quot;1-Perl与反编译&quot;&gt;&lt;a href=&quot;#1-Perl与反编译&quot; class=&quot;headerlink&quot; title=&quot;1 Perl与反编译&quot;&gt;&lt;/a&gt;1 Perl与反编译&lt;/h1&gt;&lt;p&gt;Perl是解释型语言，要保护其源码，常用的方法有：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li
-      
+&lt;li&gt;先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。&lt;/li&gt;
+&lt;li&gt;将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

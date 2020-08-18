@@ -19,30 +19,35 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一只蒟蒻">
-<meta property="og:type" content="website">
-<meta property="og:title" content="144026的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="0 前言十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微机原理课程总结">
+<meta property="og:url" content="http://yoursite.com/2020/08/19/MCU-and-Embedded-System/index.html">
 <meta property="og:site_name" content="144026的博客">
-<meta property="og:description" content="一只蒟蒻">
+<meta property="og:description" content="0 前言十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-18T18:18:42.000Z">
+<meta property="article:modified_time" content="2020-08-18T19:11:23.704Z">
 <meta property="article:author" content="144026">
+<meta property="article:tag" content="微机原理">
+<meta property="article:tag" content="嵌入式">
+<meta property="article:tag" content="PIC单片机">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/08/19/MCU-and-Embedded-System/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>144026的博客</title>
+  <title>微机原理课程总结 | 144026的博客</title>
   
 
 
@@ -179,9 +184,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -197,10 +203,9 @@
       <meta itemprop="name" content="144026的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/19/MCU-and-Embedded-System/" class="post-title-link" itemprop="url">微机原理课程总结</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          微机原理课程总结
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -227,6 +232,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -237,197 +249,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><p>十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/19/MCU-and-Embedded-System/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+        <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><p>十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。</p>
+<a id="more"></a>
+
+
+
+
+<h1 id="1-实验梳理"><a href="#1-实验梳理" class="headerlink" title="1 实验梳理"></a>1 实验梳理</h1><h2 id="1-1-闪灯"><a href="#1-1-闪灯" class="headerlink" title="1.1 闪灯"></a>1.1 闪灯</h2><h2 id="1-2-数码管显示"><a href="#1-2-数码管显示" class="headerlink" title="1.2 数码管显示"></a>1.2 数码管显示</h2><h2 id="1-3-按键检测"><a href="#1-3-按键检测" class="headerlink" title="1.3 按键检测"></a>1.3 按键检测</h2><h2 id="1-4-AD转换"><a href="#1-4-AD转换" class="headerlink" title="1.4 AD转换"></a>1.4 AD转换</h2><h2 id="1-5-串口通信"><a href="#1-5-串口通信" class="headerlink" title="1.5 串口通信"></a>1.5 串口通信</h2><h3 id="1-5-1-I2C"><a href="#1-5-1-I2C" class="headerlink" title="1.5.1 I2C"></a>1.5.1 I2C</h3><h3 id="1-5-1-EUSART"><a href="#1-5-1-EUSART" class="headerlink" title="1.5.1 EUSART"></a>1.5.1 EUSART</h3><h1 id="2-知识归纳"><a href="#2-知识归纳" class="headerlink" title="2 知识归纳"></a>2 知识归纳</h1><h1 id="3-方法论和思维模式"><a href="#3-方法论和思维模式" class="headerlink" title="3 方法论和思维模式"></a>3 方法论和思维模式</h1><h1 id="4-收获与心得"><a href="#4-收获与心得" class="headerlink" title="4 收获与心得"></a>4 收获与心得</h1><h1 id="5-疑难问题与解决"><a href="#5-疑难问题与解决" class="headerlink" title="5 疑难问题与解决"></a>5 疑难问题与解决</h1><h1 id="6-对课程的意见和建议"><a href="#6-对课程的意见和建议" class="headerlink" title="6 对课程的意见和建议"></a>6 对课程的意见和建议</h1><p>我常常认为，无法提出条理清晰的意见和建议，等同于欠缺理解。坦白的说，我目前还远不够理解这门课程：课程的目的，学生为此需要掌握什么，如何据此设计课程内容，如何教学，如何把握课程进度，如何控制教学质量等等。这些环节的设计、评价、改进都涉及到大量的经验和知识，与其轻率地评价，我还是决定暂且保持沉默，等水平足够时再正式执笔这一小节。</p>
+<h1 id="7-后记"><a href="#7-后记" class="headerlink" title="7 后记"></a>7 后记</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 微机原理</a>
+              <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> 嵌入式</a>
+              <a href="/tags/PIC%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fa fa-tag"></i> PIC单片机</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/01/WMCTF2020-easy-re/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://144026.github.io/img/avatar.jpg">
-      <meta itemprop="name" content="144026">
-      <meta itemprop="description" content="一只蒟蒻">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="144026的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/01/WMCTF2020-easy-re/" class="post-title-link" itemprop="url">一道Perl逆向入门题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-01 12:57:33" itemprop="dateCreated datePublished" datetime="2020-08-01T12:57:33+08:00">2020-08-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-19 02:17:19" itemprop="dateModified" datetime="2020-08-19T02:17:19+08:00">2020-08-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">知识</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Perl与反编译"><a href="#1-Perl与反编译" class="headerlink" title="1 Perl与反编译"></a>1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
-<ul>
-<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
-<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/01/WMCTF2020-easy-re/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/01/WMCTF2020-easy-re/" rel="prev" title="一道Perl逆向入门题">
+      <i class="fa fa-chevron-left"></i> 一道Perl逆向入门题
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/01/%E5%8D%9A%E5%AE%A2get/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://144026.github.io/img/avatar.jpg">
-      <meta itemprop="name" content="144026">
-      <meta itemprop="description" content="一只蒟蒻">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="144026的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/" class="post-title-link" itemprop="url">博客GET</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-01 03:28:57" itemprop="dateCreated datePublished" datetime="2020-08-01T03:28:57+08:00">2020-08-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-19 02:14:56" itemprop="dateModified" datetime="2020-08-19T02:14:56+08:00">2020-08-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%85%B6%E4%BB%96/%E6%9D%82%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">杂文</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>新开的蒟蒻博客，可能会陆续上传些水文。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -480,6 +339,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">0 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%AE%9E%E9%AA%8C%E6%A2%B3%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">1 实验梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%97%AA%E7%81%AF"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 闪灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 数码管显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%8C%89%E9%94%AE%E6%A3%80%E6%B5%8B"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 按键检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-AD%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 AD转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="nav-number">2.5.</span> <span class="nav-text">1.5 串口通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-I2C"><span class="nav-number">2.5.1.</span> <span class="nav-text">1.5.1 I2C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-EUSART"><span class="nav-number">2.5.2.</span> <span class="nav-text">1.5.1 EUSART</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%9F%A5%E8%AF%86%E5%BD%92%E7%BA%B3"><span class="nav-number">3.</span> <span class="nav-text">2 知识归纳</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%96%B9%E6%B3%95%E8%AE%BA%E5%92%8C%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">3 方法论和思维模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%94%B6%E8%8E%B7%E4%B8%8E%E5%BF%83%E5%BE%97"><span class="nav-number">5.</span> <span class="nav-text">4 收获与心得</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3"><span class="nav-number">6.</span> <span class="nav-text">5 疑难问题与解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%AF%B9%E8%AF%BE%E7%A8%8B%E7%9A%84%E6%84%8F%E8%A7%81%E5%92%8C%E5%BB%BA%E8%AE%AE"><span class="nav-number">7.</span> <span class="nav-text">6 对课程的意见和建议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%90%8E%E8%AE%B0"><span class="nav-number">8.</span> <span class="nav-text">7 后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

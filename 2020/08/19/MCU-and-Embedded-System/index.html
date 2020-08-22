@@ -21,20 +21,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="0 前言十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
+  <meta name="description" content="0 前言 十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微机原理课程总结">
 <meta property="og:url" content="http://yoursite.com/2020/08/19/MCU-and-Embedded-System/index.html">
 <meta property="og:site_name" content="144026的博客">
-<meta property="og:description" content="0 前言十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
+<meta property="og:description" content="0 前言 十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200823012617.png">
 <meta property="article:published_time" content="2020-08-18T18:18:42.000Z">
-<meta property="article:modified_time" content="2020-08-18T19:11:23.704Z">
+<meta property="article:modified_time" content="2020-08-22T17:58:54.120Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="微机原理">
 <meta property="article:tag" content="嵌入式">
 <meta property="article:tag" content="PIC单片机">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200823012617.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/08/19/MCU-and-Embedded-System/">
 
@@ -215,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-19 02:18:42 / 修改时间：03:11:23" itemprop="dateCreated datePublished" datetime="2020-08-19T02:18:42+08:00">2020-08-19</time>
+              <time title="创建时间：2020-08-19 02:18:42" itemprop="dateCreated datePublished" datetime="2020-08-19T02:18:42+08:00">2020-08-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-23 01:58:54" itemprop="dateModified" datetime="2020-08-23T01:58:54+08:00">2020-08-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,14 +259,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><p>十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。</p>
+        <h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 前言</h1>
+<p>十余天的微机原理暑期课程已告一段落，但期间读手册、写代码、做汇报的记忆，仍然无比清晰。实验开始短短数天，我已明显察觉自己的落后。我深刻地感受到，不论知识、方法还是能力，都还远远不够。此外我也希望能系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式，所以就有了这篇博客。</p>
 <a id="more"></a>
+<h1 id="1-实验梳理"><a class="markdownIt-Anchor" href="#1-实验梳理"></a> 1 实验梳理</h1>
+<h2 id="11-闪灯"><a class="markdownIt-Anchor" href="#11-闪灯"></a> 1.1 闪灯</h2>
+<h3 id="111-软件延时"><a class="markdownIt-Anchor" href="#111-软件延时"></a> 1.1.1 软件延时</h3>
+<p>发光二极管的阳极 D1 接 RB0， TRISB 设置为输出，ANSELB 设置为数字模式。通过 defsz和 goto语句构成循环，每隔一段时间翻转 PORTB(或LATB)。</p>
+<p><strong>注意</strong>：写PORTB和LATB是等效的，但是读PORTB是端口实际电平，读LATB是输出锁存。例如仿真翻转LATB时，PORTB窗口监视值不改变。</p>
+<h3 id="112-定时器查询"><a class="markdownIt-Anchor" href="#112-定时器查询"></a> 1.1.2 定时器查询</h3>
+<p>选择 Timer0 的 16 位模式，时钟源 Fosc/4=1MHz，预分频 1:4，后分频 1:1，根据500ms的计数周期计算置数值。</p>
+<p>流程图如下，采用了查询T0OUT的方式，每个500ms周期取反LED电平一次。(实际上可以将计数周期设置为1s，把T0OUT同步到PORTB)</p>
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200823012617.png" style="zoom: 150%;" />
+<p>为了方便修改置数值，可以使用如下宏定义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TMRCNT	EQU 50000</span><br><span class="line">TMRVAL  EQU (.65536−TMRCNT)</span><br><span class="line">TMRHVAL EQU HIGH(TMRVAL)</span><br><span class="line">TMRLVAL EQU LOW(TMRVAL)</span><br></pre></td></tr></table></figure>
+<p>直接置数会造成漏计，导致实际计数周期大于<code>TMRCNT</code>个指令周期。先停止Timer，用置数值加上溢出后的计数，加上Timer停止的时间，再启动Timer就可以消除漏计。程序如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">banksel T0CON0</span><br><span class="line">label1</span><br><span class="line">    bcf     T0CON0, T0EN</span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0H, f</span><br><span class="line">    movlw   TMRLVAL</span><br><span class="line">    addwf   TMR0L, f</span><br><span class="line">    btfsc   STATUS, C</span><br><span class="line">    incf    TMR0H</span><br><span class="line">    movlw   (label2−label1)</span><br><span class="line">    addwf   TMR0L, f</span><br><span class="line">    movlw   TMRHVAL</span><br><span class="line">    addfc  TMR0H, f</span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0L, f</span><br><span class="line">label2 :</span><br><span class="line">    bsf     T0CON0, T0EN</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：TMR0H实际上是Timer0高8位的一个缓冲寄存器，这是为了能同步读写16位的计数值。读TMR0L时，Timer0的高8位才会被缓冲进TMR0H；写TMR0L时，才会把TMR0H的值更新到Timer高8位。(但在仿真中，出现了读TMR0L后，TMR0H并未更新的情况，必须先读一次TMR0H才会更新。)</p>
+<h3 id="113-定时器中断查询"><a class="markdownIt-Anchor" href="#113-定时器中断查询"></a> 1.1.3 定时器中断查询</h3>
+<h2 id="12-数码管显示"><a class="markdownIt-Anchor" href="#12-数码管显示"></a> 1.2 数码管显示</h2>
+<h2 id="13-按键检测"><a class="markdownIt-Anchor" href="#13-按键检测"></a> 1.3 按键检测</h2>
+<h2 id="14-ad转换"><a class="markdownIt-Anchor" href="#14-ad转换"></a> 1.4 AD转换</h2>
+<h2 id="15-串口通信"><a class="markdownIt-Anchor" href="#15-串口通信"></a> 1.5 串口通信</h2>
+<h3 id="151-i2c"><a class="markdownIt-Anchor" href="#151-i2c"></a> 1.5.1 I2C</h3>
+<h3 id="151-eusart"><a class="markdownIt-Anchor" href="#151-eusart"></a> 1.5.1 EUSART</h3>
+<h1 id="2-知识归纳"><a class="markdownIt-Anchor" href="#2-知识归纳"></a> 2 知识归纳</h1>
+<h1 id="3-方法论和思维模式"><a class="markdownIt-Anchor" href="#3-方法论和思维模式"></a> 3 方法论和思维模式</h1>
+<h1 id="4-收获与心得"><a class="markdownIt-Anchor" href="#4-收获与心得"></a> 4 收获与心得</h1>
+<h1 id="5-疑难问题与解决"><a class="markdownIt-Anchor" href="#5-疑难问题与解决"></a> 5 疑难问题与解决</h1>
+<h1 id="6-对课程的意见和建议"><a class="markdownIt-Anchor" href="#6-对课程的意见和建议"></a> 6 对课程的意见和建议</h1>
+<p>我常常认为，无法提出条理清晰的意见和建议，等同于欠缺理解。坦白的说，我目前还远不够理解这门课程：课程的目的，学生为此需要掌握什么，如何据此设计课程内容，如何教学，如何把握课程进度，如何控制教学质量等等。这些环节的设计、评价、改进都涉及到大量的经验和知识，与其轻率地评价，我还是决定暂且保持沉默，等水平足够时再正式执笔这一小节。</p>
+<h1 id="7-后记"><a class="markdownIt-Anchor" href="#7-后记"></a> 7 后记</h1>
 
-
-
-
-<h1 id="1-实验梳理"><a href="#1-实验梳理" class="headerlink" title="1 实验梳理"></a>1 实验梳理</h1><h2 id="1-1-闪灯"><a href="#1-1-闪灯" class="headerlink" title="1.1 闪灯"></a>1.1 闪灯</h2><h2 id="1-2-数码管显示"><a href="#1-2-数码管显示" class="headerlink" title="1.2 数码管显示"></a>1.2 数码管显示</h2><h2 id="1-3-按键检测"><a href="#1-3-按键检测" class="headerlink" title="1.3 按键检测"></a>1.3 按键检测</h2><h2 id="1-4-AD转换"><a href="#1-4-AD转换" class="headerlink" title="1.4 AD转换"></a>1.4 AD转换</h2><h2 id="1-5-串口通信"><a href="#1-5-串口通信" class="headerlink" title="1.5 串口通信"></a>1.5 串口通信</h2><h3 id="1-5-1-I2C"><a href="#1-5-1-I2C" class="headerlink" title="1.5.1 I2C"></a>1.5.1 I2C</h3><h3 id="1-5-1-EUSART"><a href="#1-5-1-EUSART" class="headerlink" title="1.5.1 EUSART"></a>1.5.1 EUSART</h3><h1 id="2-知识归纳"><a href="#2-知识归纳" class="headerlink" title="2 知识归纳"></a>2 知识归纳</h1><h1 id="3-方法论和思维模式"><a href="#3-方法论和思维模式" class="headerlink" title="3 方法论和思维模式"></a>3 方法论和思维模式</h1><h1 id="4-收获与心得"><a href="#4-收获与心得" class="headerlink" title="4 收获与心得"></a>4 收获与心得</h1><h1 id="5-疑难问题与解决"><a href="#5-疑难问题与解决" class="headerlink" title="5 疑难问题与解决"></a>5 疑难问题与解决</h1><h1 id="6-对课程的意见和建议"><a href="#6-对课程的意见和建议" class="headerlink" title="6 对课程的意见和建议"></a>6 对课程的意见和建议</h1><p>我常常认为，无法提出条理清晰的意见和建议，等同于欠缺理解。坦白的说，我目前还远不够理解这门课程：课程的目的，学生为此需要掌握什么，如何据此设计课程内容，如何教学，如何把握课程进度，如何控制教学质量等等。这些环节的设计、评价、改进都涉及到大量的经验和知识，与其轻率地评价，我还是决定暂且保持沉默，等水平足够时再正式执笔这一小节。</p>
-<h1 id="7-后记"><a href="#7-后记" class="headerlink" title="7 后记"></a>7 后记</h1>
     </div>
 
     
@@ -341,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80"><span class="nav-text">0 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%AE%9E%E9%AA%8C%E6%A2%B3%E7%90%86"><span class="nav-text">1 实验梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%97%AA%E7%81%AF"><span class="nav-text">1.1 闪灯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA"><span class="nav-text">1.2 数码管显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%8C%89%E9%94%AE%E6%A3%80%E6%B5%8B"><span class="nav-text">1.3 按键检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-AD%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.4 AD转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="nav-text">1.5 串口通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-I2C"><span class="nav-text">1.5.1 I2C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-EUSART"><span class="nav-text">1.5.1 EUSART</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%9F%A5%E8%AF%86%E5%BD%92%E7%BA%B3"><span class="nav-text">2 知识归纳</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%96%B9%E6%B3%95%E8%AE%BA%E5%92%8C%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F"><span class="nav-text">3 方法论和思维模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%94%B6%E8%8E%B7%E4%B8%8E%E5%BF%83%E5%BE%97"><span class="nav-text">4 收获与心得</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3"><span class="nav-text">5 疑难问题与解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%AF%B9%E8%AF%BE%E7%A8%8B%E7%9A%84%E6%84%8F%E8%A7%81%E5%92%8C%E5%BB%BA%E8%AE%AE"><span class="nav-text">6 对课程的意见和建议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%90%8E%E8%AE%B0"><span class="nav-text">7 后记</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E5%89%8D%E8%A8%80"><span class="nav-text"> 0 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%AE%9E%E9%AA%8C%E6%A2%B3%E7%90%86"><span class="nav-text"> 1 实验梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E9%97%AA%E7%81%AF"><span class="nav-text"> 1.1 闪灯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#111-%E8%BD%AF%E4%BB%B6%E5%BB%B6%E6%97%B6"><span class="nav-text"> 1.1.1 软件延时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-%E5%AE%9A%E6%97%B6%E5%99%A8%E6%9F%A5%E8%AF%A2"><span class="nav-text"> 1.1.2 定时器查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%AD%E6%96%AD%E6%9F%A5%E8%AF%A2"><span class="nav-text"> 1.1.3 定时器中断查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E6%95%B0%E7%A0%81%E7%AE%A1%E6%98%BE%E7%A4%BA"><span class="nav-text"> 1.2 数码管显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E6%8C%89%E9%94%AE%E6%A3%80%E6%B5%8B"><span class="nav-text"> 1.3 按键检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-ad%E8%BD%AC%E6%8D%A2"><span class="nav-text"> 1.4 AD转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="nav-text"> 1.5 串口通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#151-i2c"><span class="nav-text"> 1.5.1 I2C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#151-eusart"><span class="nav-text"> 1.5.1 EUSART</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E7%9F%A5%E8%AF%86%E5%BD%92%E7%BA%B3"><span class="nav-text"> 2 知识归纳</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%96%B9%E6%B3%95%E8%AE%BA%E5%92%8C%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F"><span class="nav-text"> 3 方法论和思维模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%94%B6%E8%8E%B7%E4%B8%8E%E5%BF%83%E5%BE%97"><span class="nav-text"> 4 收获与心得</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3"><span class="nav-text"> 5 疑难问题与解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%AF%B9%E8%AF%BE%E7%A8%8B%E7%9A%84%E6%84%8F%E8%A7%81%E5%92%8C%E5%BB%BA%E8%AE%AE"><span class="nav-text"> 6 对课程的意见和建议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E5%90%8E%E8%AE%B0"><span class="nav-text"> 7 后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -499,6 +531,9 @@
   
 
   
+      
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+
 
   
 

@@ -21,29 +21,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1 Perl与反编译Perl是解释型语言，要保护其源码，常用的方法有：  先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。 将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。">
+  <meta name="description" content="0 简介">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一道Perl逆向入门题">
-<meta property="og:url" content="http://yoursite.com/2020/08/01/WMCTF2020-easy-re/index.html">
+<meta property="og:title" content="blasphemous 宗教和信仰的暗黑童话">
+<meta property="og:url" content="http://yoursite.com/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/index.html">
 <meta property="og:site_name" content="144026的博客">
-<meta property="og:description" content="1 Perl与反编译Perl是解释型语言，要保护其源码，常用的方法有：  先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。 将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。">
+<meta property="og:description" content="0 简介">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png">
-<meta property="article:published_time" content="2020-08-01T04:57:33.000Z">
-<meta property="article:modified_time" content="2020-08-18T18:17:19.402Z">
+<meta property="article:published_time" content="2020-08-26T03:13:22.000Z">
+<meta property="article:modified_time" content="2020-08-26T04:07:58.310Z">
 <meta property="article:author" content="144026">
-<meta property="article:tag" content="CTF">
-<meta property="article:tag" content="Reverse">
-<meta property="article:tag" content="Perl">
+<meta property="article:tag" content="gaming">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/01/WMCTF2020-easy-re/">
+<link rel="canonical" href="http://yoursite.com/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/">
 
 
 <script id="page-configurations">
@@ -56,7 +47,7 @@
   };
 </script>
 
-  <title>一道Perl逆向入门题 | 144026的博客</title>
+  <title>blasphemous 宗教和信仰的暗黑童话 | 144026的博客</title>
   
 
 
@@ -88,6 +79,8 @@
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="144026的博客" type="application/atom+xml">
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -200,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/01/WMCTF2020-easy-re/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://144026.github.io/img/avatar.jpg">
@@ -213,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一道Perl逆向入门题
+          blasphemous 宗教和信仰的暗黑童话
         </h1>
 
         <div class="post-meta">
@@ -222,27 +215,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-08-01 12:57:33" itemprop="dateCreated datePublished" datetime="2020-08-01T12:57:33+08:00">2020-08-01</time>
+              <time title="创建时间：2020-08-26 11:13:22 / 修改时间：12:07:58" itemprop="dateCreated datePublished" datetime="2020-08-26T11:13:22+08:00">2020-08-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-19 02:17:19" itemprop="dateModified" datetime="2020-08-19T02:17:19+08:00">2020-08-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">知识</span></a>
+                  <a href="/categories/%E5%A8%B1%E4%B9%90/" itemprop="url" rel="index"><span itemprop="name">娱乐</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+                  <a href="/categories/%E5%A8%B1%E4%B9%90/%E6%B8%B8%E6%88%8F/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a>
                 </span>
             </span>
 
@@ -264,28 +251,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="1-Perl与反编译"><a href="#1-Perl与反编译" class="headerlink" title="1 Perl与反编译"></a>1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
-<ul>
-<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
-<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
-</ul>
+        <h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
 <a id="more"></a>
 
-
-
-<h1 id="2-题目"><a href="#2-题目" class="headerlink" title="2 题目"></a>2 题目</h1><p>题目取自WMCTF2020，提示内容如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png"> </p>
-<p>下载程序，运行如下<br> <img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p>
-<p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p>
-<ol>
-<li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li>
-<li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li>
-<li>重复步骤1和2，找到下一层的断点。</li>
-</ol>
-<p>很快注意到如下代码段<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png"></p>
-<p>内存中跟随rax的值<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p>
-<p>随后的代码段直接通过rax返回了Perl脚本<br><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png"></p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png"></p>
-<p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>
+        <div id="aplayer-aHmZSOAq" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-aHmZSOAq"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "Cinco Miradas Tiene La Aurora",
+              author: "The Game Kitchen",
+              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",
+              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+<h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1>
+<h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1>
+<h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1>
+<h1 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h1>
+<p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p>
+<h1 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h1>
+<h1 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h1>
+<p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p>
+<h1 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h1>
+<p>同上。</p>
+<h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>
 
     </div>
 
@@ -296,9 +295,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/CTF/" rel="tag"><i class="fa fa-tag"></i> CTF</a>
-              <a href="/tags/Reverse/" rel="tag"><i class="fa fa-tag"></i> Reverse</a>
-              <a href="/tags/Perl/" rel="tag"><i class="fa fa-tag"></i> Perl</a>
+              <a href="/tags/gaming/" rel="tag"><i class="fa fa-tag"></i> gaming</a>
           </div>
 
         
@@ -307,12 +304,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/" rel="prev" title="博客GET">
-      <i class="fa fa-chevron-left"></i> 博客GET
+    <a href="/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/" rel="prev" title="IDA学习笔记">
+      <i class="fa fa-chevron-left"></i> IDA学习笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/19/MCU-and-Embedded-System/" rel="next" title="微机原理课程总结">
-      微机原理课程总结 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/" rel="next" title="博客搭建笔记">
+      博客搭建笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -372,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Perl%E4%B8%8E%E5%8F%8D%E7%BC%96%E8%AF%91"><span class="nav-text">1 Perl与反编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E9%A2%98%E7%9B%AE"><span class="nav-text">2 题目</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-%E7%AE%80%E4%BB%8B"><span class="nav-text"> 0 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%B8%B8%E6%88%8F%E6%80%A7"><span class="nav-text"> 1 游戏性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%89%A7%E6%83%85"><span class="nav-text"> 2 剧情</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="nav-text"> 3 相关知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B3"><span class="nav-text"> 3.1 语言相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-%E5%AE%97%E6%95%99-%E7%A5%9E%E5%AD%A6%E7%9B%B8%E5%85%B3"><span class="nav-text"> 3.2 宗教、神学相关?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33-%E7%BB%98%E7%94%BB%E7%9B%B8%E5%85%B3"><span class="nav-text"> 3.3 绘画相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%85%B3"><span class="nav-text"> 3.4 音乐相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%84%9F%E6%83%B3"><span class="nav-text"> 4 感想</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -388,20 +385,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

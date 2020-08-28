@@ -45,13 +45,13 @@
   </entry>
   
   <entry>
-    <title>blasphemous 宗教和信仰的暗黑童话</title>
+    <title>blasphemous</title>
     <link href="http://yoursite.com/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/"/>
     <id>http://yoursite.com/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</id>
     <published>2020-08-26T03:13:22.000Z</published>
-    <updated>2020-08-26T05:59:00.403Z</updated>
+    <updated>2020-08-28T02:53:37.088Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><a id="more"></a>        <div id="aplayer-YPdyfkUE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-YPdyfkUE"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "Cinco Miradas Tiene La Aurora",              author: "The Game Kitchen",              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1><h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1><h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1><h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2><p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p><h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2><h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2><p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p><h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2><p>同上。</p><h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><a id="more"></a>        <div id="aplayer-tHkapPRT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-tHkapPRT"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "Cinco Miradas Tiene La Aurora",              author: "The Game Kitchen",              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1><h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1><h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1><h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2><p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p><h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2><h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2><p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p><h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2><p>同上。</p><h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>]]></content>
     
     <summary type="html">
     
@@ -74,7 +74,7 @@
     <link href="http://yoursite.com/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/"/>
     <id>http://yoursite.com/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</id>
     <published>2020-08-26T03:05:25.000Z</published>
-    <updated>2020-08-26T03:12:48.913Z</updated>
+    <updated>2020-08-28T02:53:16.563Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p><a id="more"></a><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1><h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1><h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>]]></content>
     
@@ -87,12 +87,12 @@
     
       <category term="技能" scheme="http://yoursite.com/categories/%E6%8A%80%E8%83%BD/"/>
     
+      <category term="工具" scheme="http://yoursite.com/categories/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/"/>
+    
     
       <category term="逆向" scheme="http://yoursite.com/tags/%E9%80%86%E5%90%91/"/>
     
-      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="技能" scheme="http://yoursite.com/tags/%E6%8A%80%E8%83%BD/"/>
+      <category term="静态分析" scheme="http://yoursite.com/tags/%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90/"/>
     
   </entry>
   

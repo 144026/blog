@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-26T04:12:12.890Z</updated>
+  <updated>2020-09-20T15:35:14.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://yoursite.com/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
+    <published>2020-09-20T15:35:14.000Z</published>
+    <updated>2020-09-20T15:35:14.211Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="http://yoursite.com/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</id>
+    <published>2020-09-20T15:35:14.000Z</published>
+    <updated>2020-09-20T15:35:14.211Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工作日志</title>
+    <link href="http://yoursite.com/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+    <id>http://yoursite.com/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</id>
+    <published>2020-09-20T15:30:37.000Z</published>
+    <updated>2020-09-20T15:52:54.663Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>9.20, 2020 - ?</p><a id="more"></a><h1 id="2020"><a class="markdownIt-Anchor" href="#2020"></a> 2020</h1><h3 id="2020-9-20"><a class="markdownIt-Anchor" href="#2020-9-20"></a> 2020-9-20</h3><p>内容:</p><ol><li>记录romance前75个包的关键字段。确定romance如何发包实现heap spray，和spray之后transaction缓冲区在靶机内存的排布。</li><li>spray之后直到第一次越界读，存在多次越界修改相邻transaction的操作。但是不清楚transaction结构体的定义，不知道改了哪些字段。陷入困难。</li></ol><p>计划:</p><ol><li>记录后续流量的关键字段，尝试猜测字段，进行分析。无果则放弃详细的字段和机理，根据更直接和普遍的特征给出规则。</li><li>考虑一下champion失败要怎么处理。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;9.20, 2020 - ?&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="http://yoursite.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="时间管理" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="计划" scheme="http://yoursite.com/tags/%E8%AE%A1%E5%88%92/"/>
+    
+      <category term="反思" scheme="http://yoursite.com/tags/%E5%8F%8D%E6%80%9D/"/>
+    
+  </entry>
   
   <entry>
     <title>博客搭建笔记</title>
@@ -51,7 +122,7 @@
     <published>2020-08-26T03:13:22.000Z</published>
     <updated>2020-08-28T02:53:37.088Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><a id="more"></a>        <div id="aplayer-tHkapPRT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-tHkapPRT"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "Cinco Miradas Tiene La Aurora",              author: "The Game Kitchen",              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1><h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1><h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1><h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2><p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p><h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2><h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2><p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p><h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2><p>同上。</p><h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><a id="more"></a>        <div id="aplayer-CCnfTJqI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-CCnfTJqI"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "Cinco Miradas Tiene La Aurora",              author: "The Game Kitchen",              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1><h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1><h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1><h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2><p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p><h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2><h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2><p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p><h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2><p>同上。</p><h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>]]></content>
     
     <summary type="html">
     
@@ -74,7 +145,7 @@
     <link href="http://yoursite.com/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/"/>
     <id>http://yoursite.com/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</id>
     <published>2020-08-26T03:05:25.000Z</published>
-    <updated>2020-08-28T02:53:16.563Z</updated>
+    <updated>2020-09-05T14:12:47.211Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p><a id="more"></a><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1><h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1><h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>]]></content>
     

@@ -16,17 +16,49 @@
       </tags>
   </entry>
   <entry>
+    <title>工作日志</title>
+    <url>/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>9.20, 2020 - ?</p>
+<a id="more"></a>
+<h1 id="2020"><a class="markdownIt-Anchor" href="#2020"></a> 2020</h1>
+<h3 id="2020-9-20"><a class="markdownIt-Anchor" href="#2020-9-20"></a> 2020-9-20</h3>
+<p>内容:</p>
+<ol>
+<li>记录romance前75个包的关键字段。确定romance如何发包实现heap spray，和spray之后transaction缓冲区在靶机内存的排布。</li>
+<li>spray之后直到第一次越界读，存在多次越界修改相邻transaction的操作。但是不清楚transaction结构体的定义，不知道改了哪些字段。陷入困难。</li>
+</ol>
+<p>计划:</p>
+<ol>
+<li>记录后续流量的关键字段，尝试猜测字段，进行分析。无果则放弃详细的字段和机理，根据更直接和普遍的特征给出规则。</li>
+<li>考虑一下champion失败要怎么处理。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>时间管理</tag>
+        <tag>计划</tag>
+        <tag>反思</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
     <title>blasphemous</title>
     <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
 <a id="more"></a>
 
-        <div id="aplayer-tHkapPRT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-CCnfTJqI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-tHkapPRT"),
+            element: document.getElementById("aplayer-CCnfTJqI"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -62,18 +94,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客搭建笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>技能</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDA学习笔记</title>
     <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
@@ -93,44 +113,21 @@
       </tags>
   </entry>
   <entry>
-    <title>一道Perl逆向入门题</title>
-    <url>/2020/08/01/%E7%9F%A5%E8%AF%86/WMCTF2020-easy-re/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
-<p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
-<ul>
-<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
-<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
-</ul>
-<a id="more"></a>
-<h1 id="2-题目"><a class="markdownIt-Anchor" href="#2-题目"></a> 2 题目</h1>
-<p>题目取自WMCTF2020，提示内容如下<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png" alt="" /></p>
-<p>下载程序，运行如下<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p>
-<p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p>
-<ol>
-<li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li>
-<li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li>
-<li>重复步骤1和2，找到下一层的断点。</li>
-</ol>
-<p>很快注意到如下代码段<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png" alt="" /></p>
-<p>内存中跟随rax的值<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p>
-<p>随后的代码段直接通过rax返回了Perl脚本<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png" alt="" /></p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png" alt="" /></p>
-<p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>
-]]></content>
+    <title>博客搭建笔记</title>
+    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <categories>
-        <category>知识</category>
-        <category>计算机</category>
+        <category>技能</category>
       </categories>
       <tags>
-        <tag>CTF</tag>
-        <tag>Reverse</tag>
-        <tag>Perl</tag>
+        <tag>hexo</tag>
+        <tag>前端</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>微机原理课程总结</title>
@@ -223,13 +220,53 @@
       </tags>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <title>一道Perl逆向入门题</title>
+    <url>/2020/08/01/%E7%9F%A5%E8%AF%86/WMCTF2020-easy-re/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
+<p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
+<ul>
+<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
+<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
+</ul>
+<a id="more"></a>
+<h1 id="2-题目"><a class="markdownIt-Anchor" href="#2-题目"></a> 2 题目</h1>
+<p>题目取自WMCTF2020，提示内容如下<br />
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png" alt="" /></p>
+<p>下载程序，运行如下<br />
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p>
+<p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p>
+<ol>
+<li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li>
+<li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li>
+<li>重复步骤1和2，找到下一层的断点。</li>
+</ol>
+<p>很快注意到如下代码段<br />
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png" alt="" /></p>
+<p>内存中跟随rax的值<br />
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p>
+<p>随后的代码段直接通过rax返回了Perl脚本<br />
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png" alt="" /></p>
+<p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>
+]]></content>
+      <categories>
+        <category>知识</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Reverse</tag>
+        <tag>Perl</tag>
+      </tags>
   </entry>
   <entry>
     <title>categories</title>
     <url>/categories/index.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
 </search>

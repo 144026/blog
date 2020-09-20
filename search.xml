@@ -43,11 +43,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络</title>
-    <url>/2020/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
     <title>blasphemous</title>
     <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
@@ -127,7 +122,15 @@
   <entry>
     <title>计算机网络</title>
     <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p>
+<a id="more"></a>]]></content>
+      <categories>
+        <category>知识</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计网</tag>
+      </tags>
   </entry>
   <entry>
     <title>微机原理课程总结</title>

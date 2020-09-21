@@ -1,318 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>博客GET</title>
-    <url>/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新开的蒟蒻博客，可能会陆续上传些水文。<br />
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>测试:<br />
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mi>sin</mi><mo>⁡</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">e^{i \theta} = \cos{\theta} + i\sin{\theta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span></span></span></span></p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>计算机网络</title>
+      <link href="/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p><a id="more"></a><h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1><p><strong>教学内容</strong></p><ul><li>knowledge/工作原理：协议、架构、应用</li><li>skills/网络编程：wireshark、socket、ns3网络仿真、设计和实现协议</li><li>insights/关键概念：协议、分层、资源分配、命令(?)</li></ul><p><strong>教学目标</strong></p><ul><li>计网核心概念和原理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 协议设计</li><li>网络及主要通信协议的性能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 性能评估</li><li>网络通信的研究方法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 系统方法：目标、需求、设计、实现、测试、评估</li></ul><p><strong>教学方式</strong></p><ul><li>平台：微助教等</li><li>教材：计网-系统方法、计网-自顶向下、计网-分层方法</li></ul><p><strong>教学计划</strong></p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200921193139.png" style="zoom:50%;" /><p><strong>课程考核</strong></p><ul><li>基本<ul><li>平时 .3<ul><li>作业 .2</li><li>笔记 .1</li></ul></li><li>考试 .4</li><li>课程设计 .3</li></ul></li><li>奖励分 up to .5<ul><li>赛课结合</li><li>小讲师志愿者</li></ul></li></ul><h1 id="1-ch1"><a class="markdownIt-Anchor" href="#1-ch1"></a> 1 ch1</h1>]]></content>
+      
+      
       <categories>
-        <category>其他</category>
-        <category>杂文</category>
+          
+          <category> 知识 </category>
+          
+          <category> 计算机 </category>
+          
       </categories>
-      <tags>
-        <tag>划水</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDA学习笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
-<a id="more"></a>
-<h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
-<h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1>
-<h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1>
-<h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 计网 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>工作日志</title>
+      <link href="/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
+      <url>/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>9.20, 2020 - ?</p><a id="more"></a><h1 id="2020"><a class="markdownIt-Anchor" href="#2020"></a> 2020</h1><h3 id="2020-9-20"><a class="markdownIt-Anchor" href="#2020-9-20"></a> 2020-9-20</h3><p>内容:</p><ol><li>记录romance前75个包的关键字段。确定romance如何发包实现heap spray，和spray之后transaction缓冲区在靶机内存的排布。</li><li>spray之后直到第一次越界读，存在多次越界修改相邻transaction的操作。但是不清楚transaction结构体的定义，不知道改了哪些字段。陷入困难。</li></ol><p>计划:</p><ol><li>记录后续流量的关键字段，尝试猜测字段，进行分析。无果则放弃详细的字段和机理，根据更直接和普遍的特征给出规则。</li><li>考虑一下champion失败要怎么处理。</li></ol>]]></content>
+      
+      
       <categories>
-        <category>技能</category>
-        <category>工具</category>
+          
+          <category> 其他 </category>
+          
       </categories>
-      <tags>
-        <tag>逆向</tag>
-        <tag>静态分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作日志</title>
-    <url>/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>9.20, 2020 - ?</p>
-<a id="more"></a>
-<h1 id="2020"><a class="markdownIt-Anchor" href="#2020"></a> 2020</h1>
-<h3 id="2020-9-20"><a class="markdownIt-Anchor" href="#2020-9-20"></a> 2020-9-20</h3>
-<p>内容:</p>
-<ol>
-<li>记录romance前75个包的关键字段。确定romance如何发包实现heap spray，和spray之后transaction缓冲区在靶机内存的排布。</li>
-<li>spray之后直到第一次越界读，存在多次越界修改相邻transaction的操作。但是不清楚transaction结构体的定义，不知道改了哪些字段。陷入困难。</li>
-</ol>
-<p>计划:</p>
-<ol>
-<li>记录后续流量的关键字段，尝试猜测字段，进行分析。无果则放弃详细的字段和机理，根据更直接和普遍的特征给出规则。</li>
-<li>考虑一下champion失败要怎么处理。</li>
-</ol>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 时间管理 </tag>
+            
+            <tag> 计划 </tag>
+            
+            <tag> 反思 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客搭建笔记</title>
+      <link href="/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/"/>
+      <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
       <categories>
-        <category>其他</category>
+          
+          <category> 技能 </category>
+          
       </categories>
-      <tags>
-        <tag>时间管理</tag>
-        <tag>计划</tag>
-        <tag>反思</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>blasphemous</title>
+      <link href="/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/"/>
+      <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><a id="more"></a>        <div id="aplayer-SvVcGsAm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-SvVcGsAm"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "Cinco Miradas Tiene La Aurora",              author: "The Game Kitchen",              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1><h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1><h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1><h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2><p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p><h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2><h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2><p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p><h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2><p>同上。</p><h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>]]></content>
+      
+      
       <categories>
-        <category>技能</category>
+          
+          <category> 娱乐 </category>
+          
+          <category> 游戏 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>blasphemous</title>
-    <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
-<a id="more"></a>
-
-        <div id="aplayer-SvVcGsAm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-SvVcGsAm"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "Cinco Miradas Tiene La Aurora",
-              author: "The Game Kitchen",
-              url: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/The%20Game%20Kitchen%20-%20Blasphemous-%20The%20Stir%20of%20Dawn%20-%2005%20Cinco%20Miradas%20Tiene%20La%20Aurora.mp3",
-              pic: "https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-<h1 id="1-游戏性"><a class="markdownIt-Anchor" href="#1-游戏性"></a> 1 游戏性</h1>
-<h1 id="2-剧情"><a class="markdownIt-Anchor" href="#2-剧情"></a> 2 剧情</h1>
-<h1 id="3-相关知识"><a class="markdownIt-Anchor" href="#3-相关知识"></a> 3 相关知识</h1>
-<h2 id="31-语言相关"><a class="markdownIt-Anchor" href="#31-语言相关"></a> 3.1 语言相关</h2>
-<p>一些英语词汇，几个古英语词汇，几个西班牙、拉丁语词汇。以及记录一些官方汉化中的优秀翻译。</p>
-<h2 id="32-宗教-神学相关"><a class="markdownIt-Anchor" href="#32-宗教-神学相关"></a> 3.2 宗教、神学相关?</h2>
-<h2 id="33-绘画相关"><a class="markdownIt-Anchor" href="#33-绘画相关"></a> 3.3 绘画相关</h2>
-<p>很多玩家认为本作美术十分精良，但是我看不出来。更准确地说，我搞不清何为优秀的美术，需要略作了解。</p>
-<h2 id="34-音乐相关"><a class="markdownIt-Anchor" href="#34-音乐相关"></a> 3.4 音乐相关</h2>
-<p>同上。</p>
-<h1 id="4-感想"><a class="markdownIt-Anchor" href="#4-感想"></a> 4 感想</h1>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> gaming </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IDA学习笔记</title>
+      <link href="/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/"/>
+      <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p><a id="more"></a><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1><h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1><h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1><h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>]]></content>
+      
+      
       <categories>
-        <category>娱乐</category>
-        <category>游戏</category>
+          
+          <category> 技能 </category>
+          
+          <category> 工具 </category>
+          
       </categories>
-      <tags>
-        <tag>gaming</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微机原理课程总结</title>
-    <url>/2020/08/19/%E7%9F%A5%E8%AF%86/MCU-and-Embedded-System/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 前言</h1>
-<p>尽量系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式。</p>
-<a id="more"></a>
-<h1 id="1-实验梳理"><a class="markdownIt-Anchor" href="#1-实验梳理"></a> 1 实验梳理</h1>
-<p>本课程的实验需要用到：</p>
-<ul>
-<li>hardware: 开发板，包括PIC16F18854芯片x1，LEDx1，4位共阴极数码管，机械按键x11(包括复位键)，触摸按键x3，TMP75芯片x1，micro-USB接口x1，杜邦线若干</li>
-<li>software: MPLAB-ver5.20，mplab-data-visualizer，xc8-ver2.20，putty/org-dian.nbm</li>
-<li>document: 开箱测试、插件安装文档，微机原理课件，PIC16F18854、TMP75AIDGKR数据手册</li>
-<li>management: word，ppt，tx会议，git</li>
-</ul>
-<h2 id="11-闪灯"><a class="markdownIt-Anchor" href="#11-闪灯"></a> 1.1 闪灯</h2>
-<h3 id="111-软件延时"><a class="markdownIt-Anchor" href="#111-软件延时"></a> 1.1.1 软件延时</h3>
-<p>发光二极管的阳极 D1 接 RB0， TRISB 设置为输出，ANSELB 设置为数字模式。通过 defsz和 goto语句构成循环，每隔一段时间翻转 PORTB(或LATB)。</p>
-<p><strong>注意</strong>：写PORTB和LATB是等效的，但是读PORTB是端口实际电平，读LATB是输出锁存。例如仿真翻转LATB时，PORTB窗口监视值不改变。</p>
-<h3 id="112-定时器查询"><a class="markdownIt-Anchor" href="#112-定时器查询"></a> 1.1.2 定时器查询</h3>
-<p><strong>参数计算</strong></p>
-<p>时钟源<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>o</mi><mi>s</mi><mi>c</mi></mrow></msub><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>1</mn><mtext> </mtext><mi>M</mi><mi>H</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">F_{osc}/4=1\ MHz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>1</mn><mtext> </mtext><mi>u</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">T_{cy}=1\ us</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span></span></span></span>，Timer0(配置参考datasheet 27.0节)选择8位模式，可精确计数499.712ms；选择16 位模式，可精确计数500ms。计算公式为</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi>p</mi><mi>r</mi><mi>e</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>N</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>N</mi><mrow><mi>p</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cnt}=N_{pre} \cdot\ N_{cnt} \cdot\ N_{post} \cdot\ T_{cy}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.28055599999999997em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p>
-<p>为了方便由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{cnt}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>计算出Timer的置数值，可以使用如下宏定义</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">TMRCNT	EQU 50000</span><br><span class="line">TMRVAL  EQU (.65536−TMRCNT)	;&#39;.&#39;表示十进制</span><br><span class="line">TMRHVAL EQU HIGH(TMRVAL)</span><br><span class="line">TMRLVAL EQU LOW(TMRVAL)</span><br></pre></td></tr></table></figure>
-<p><strong>可重定位的汇编代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RST code        BLOFFSET	;Bootloader Offset</span><br><span class="line">    pagesel     main</span><br><span class="line">    goto        main</span><br><span class="line"></span><br><span class="line">    code</span><br><span class="line">main</span><br><span class="line">	goto main</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p><strong>程序流程</strong></p>
-<p>计数完成时TMR0IF自动置位，循环查询即可实现定时，如下图</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200824195720.png" alt="" /></p>
-<p>由于PIC16F18854的Timer0具有T0OUT位，可以选择查询T0OUT，或者直接把T0OUT同步到PORTB。采用查询T0OUT方式的流程如下</p>
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200823012617.png" style="zoom: 150%;" />
-<p>直接同步T0OUT的流程如下</p>
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825092318.jpg" style="zoom:80%;" />
-<p><strong>误差控制</strong></p>
-<p>直接置数会造成<strong>漏计</strong>，导致实际计数周期<strong>大于</strong><code>TMRCNT</code>个指令周期，这可以通过调整置数值进行补偿，但并没有从根本上解决问题。</p>
-<p>先停止Timer，用置数值加上溢出后的计数，加上Timer停止的时间，再启动Timer就可以<strong>消除</strong>漏计。程序如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">banksel T0CON0</span><br><span class="line">label1</span><br><span class="line">    bcf     T0CON0, T0EN	;先停止Timer</span><br><span class="line">    </span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0H, f		;必须先读一次TMR0H来更新它的值?</span><br><span class="line">    </span><br><span class="line">    movlw   TMRLVAL</span><br><span class="line">    addwf   TMR0L, f		;低位预置值+溢出的计数</span><br><span class="line">    btfsc   STATUS, C</span><br><span class="line">    incf    TMR0H			;处理进位</span><br><span class="line">    </span><br><span class="line">    movlw   (label2−label1)</span><br><span class="line">    addwf   TMR0L, f		;再加上Timer停止的时间</span><br><span class="line">    movlw   TMRHVAL</span><br><span class="line">    addfc  TMR0H, f			;高位预置值+溢出的计数+进位</span><br><span class="line">    </span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0L, f		;写TMR0L使TMR0H的更新生效</span><br><span class="line">label2 :</span><br><span class="line">    bsf     T0CON0, T0EN	</span><br></pre></td></tr></table></figure>
-<p><strong>注意</strong>：TMR0H实际上是Timer0高8位的一个<strong>缓冲</strong>寄存器，这是为了能同步读写16位的计数值。读TMR0L时，Timer0的高8位才会被缓冲进TMR0H；写TMR0L时，才会把TMR0H的值更新到Timer高8位。(但在仿真中，出现了读TMR0L后，TMR0H并未更新的情况，必须先读一次TMR0H才会更新)</p>
-<p>消除漏计后，发现仿真跑表结果在500.000ms左右<strong>周期性抖动</strong>。这是由于计数每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>溢出一次，而主程序每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>只进行一次查询，这导致检测的溢出会落后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mtext>  </mtext><mo stretchy="false">(</mo><mn>0</mn><mo>≤</mo><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>&lt;</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_{cy}\ \ (0\leq N_{lag}\lt m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mspace"> </span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>。显然，只有当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>能被<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>整除时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>才保持不变，跑表结果不发生抖动。进一步考虑到检测到溢出后，从跳出循环执行动作，到跳回到检测语句需要<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，则当且仅当</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>k</mi><mo>⋅</mo><mtext> </mtext><mi>m</mi><mo>+</mo><mo stretchy="false">(</mo><mi>c</mi><mi>n</mi><mi>t</mi><mspace></mspace><mspace width="1em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n=k \cdot\ m +(cnt\mod m)
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:1em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></span></p>
-<p>时，跑表结果不变。其中k为非负整数。</p>
-<h3 id="113-定时器中断查询"><a class="markdownIt-Anchor" href="#113-定时器中断查询"></a> 1.1.3 定时器中断查询</h3>
-<p>用中断方式控制闪灯，同时使用电平变化中断IOC(Interrupt On Change)改变闪灯速率。</p>
-<p><strong>实验配置</strong></p>
-<p>开启TMR0IE，将控制LED电平和Timer0置位的的部分移入ISR(Interrupt Service Routine)，在主程序循环等待中断，就可以实现中断闪灯。</p>
-<p>实现IOC的电路如下，按键K按下后，输入I/O端口的电平出现下降沿。</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825093032.png" alt="" /></p>
-<p>IOC配置直接参考数据手册即可。</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825093605.png" alt="" /></p>
-<p><strong>程序流程</strong></p>
-<p>主程序流程如下，其中RB0用于驱动LED发光，PORTC用于检测按下AN8/AN10产生的IOC。</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825094745.png" alt="" /></p>
-<p>ISR流程如下，采用软件辅助计数的方式，计数器每溢出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>次(初始值为10)改变一次LED电平；发生IOC时，改变<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>的值来改变闪烁速率。</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825095124.png" alt="" /></p>
-<p>然而上述ISR程序存在如下问题：</p>
-<ul>
-<li>当两个或多个中断同时到来时，只能处理一种中断，并且ISR退出时没有清理其他中断的IF标志位。</li>
-<li>中断程序没有立刻清理IF标志位。若在ISR执行时发生其他中断，进入中断嵌套(尽管PIC16F18854不支持，但仍应该考虑)，会再次处理没有清理标志位的中断。</li>
-</ul>
-<p>更合理的的ISR结构如下</p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825101348.jpg" alt="" /></p>
-<p><strong>误差控制</strong></p>
-<p>消除漏计后，同样存在跑表结果周期性抖动的问题。这是由于计数每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>溢出一次，而中断并不能随意打断多周期指令，即计数中断也会落后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mtext>  </mtext><mo stretchy="false">(</mo><mn>0</mn><mo>≤</mo><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>&lt;</mo><mn>2</mn><mo>∼</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_{cy}\ \ (0\leq N_{lag}\lt 2\sim 4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mspace"> </span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span></span></span></span>。只有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>保持不变时，才不会产生抖动。通过添加nop指令，Timer的中断在单周期指令处发生就可以避免问题。</p>
-<p>按键按下一次时往往有几个ms的抖动，多次触发IOC，因此需要<strong>消抖</strong>。可以在每次触发IOC时关闭使能，隔一段时间(例如Timer0中断2次)再打开使能。</p>
-<h2 id="12-数码管显示"><a class="markdownIt-Anchor" href="#12-数码管显示"></a> 1.2 数码管显示</h2>
-<h2 id="13-按键检测"><a class="markdownIt-Anchor" href="#13-按键检测"></a> 1.3 按键检测</h2>
-<h2 id="14-ad转换"><a class="markdownIt-Anchor" href="#14-ad转换"></a> 1.4 AD转换</h2>
-<h2 id="15-串口通信"><a class="markdownIt-Anchor" href="#15-串口通信"></a> 1.5 串口通信</h2>
-<h3 id="151-i2c"><a class="markdownIt-Anchor" href="#151-i2c"></a> 1.5.1 I2C</h3>
-<h3 id="151-eusart"><a class="markdownIt-Anchor" href="#151-eusart"></a> 1.5.1 EUSART</h3>
-<h1 id="2-知识归纳"><a class="markdownIt-Anchor" href="#2-知识归纳"></a> 2 知识归纳</h1>
-<h1 id="3-方法论和思维模式"><a class="markdownIt-Anchor" href="#3-方法论和思维模式"></a> 3 方法论和思维模式</h1>
-<h1 id="4-收获与心得"><a class="markdownIt-Anchor" href="#4-收获与心得"></a> 4 收获与心得</h1>
-<h1 id="5-疑难问题与解决"><a class="markdownIt-Anchor" href="#5-疑难问题与解决"></a> 5 疑难问题与解决</h1>
-<h1 id="6-对课程的意见和建议"><a class="markdownIt-Anchor" href="#6-对课程的意见和建议"></a> 6 对课程的意见和建议</h1>
-<p>我常常认为，无法提出条理清晰的意见和建议，等同于欠缺理解。我还不够理解这门课程：课程的目的，学生为此需要掌握什么，如何据此设计课程内容，如何教学，如何把握课程进度，如何控制教学质量等等，因此暂不作评价。</p>
-<h1 id="7-后记"><a class="markdownIt-Anchor" href="#7-后记"></a> 7 后记</h1>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 逆向 </tag>
+            
+            <tag> 静态分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微机原理课程总结</title>
+      <link href="/2020/08/19/%E7%9F%A5%E8%AF%86/MCU-and-Embedded-System/"/>
+      <url>/2020/08/19/%E7%9F%A5%E8%AF%86/MCU-and-Embedded-System/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 前言</h1><p>尽量系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式。</p><a id="more"></a><h1 id="1-实验梳理"><a class="markdownIt-Anchor" href="#1-实验梳理"></a> 1 实验梳理</h1><p>本课程的实验需要用到：</p><ul><li>hardware: 开发板，包括PIC16F18854芯片x1，LEDx1，4位共阴极数码管，机械按键x11(包括复位键)，触摸按键x3，TMP75芯片x1，micro-USB接口x1，杜邦线若干</li><li>software: MPLAB-ver5.20，mplab-data-visualizer，xc8-ver2.20，putty/org-dian.nbm</li><li>document: 开箱测试、插件安装文档，微机原理课件，PIC16F18854、TMP75AIDGKR数据手册</li><li>management: word，ppt，tx会议，git</li></ul><h2 id="11-闪灯"><a class="markdownIt-Anchor" href="#11-闪灯"></a> 1.1 闪灯</h2><h3 id="111-软件延时"><a class="markdownIt-Anchor" href="#111-软件延时"></a> 1.1.1 软件延时</h3><p>发光二极管的阳极 D1 接 RB0， TRISB 设置为输出，ANSELB 设置为数字模式。通过 defsz和 goto语句构成循环，每隔一段时间翻转 PORTB(或LATB)。</p><p><strong>注意</strong>：写PORTB和LATB是等效的，但是读PORTB是端口实际电平，读LATB是输出锁存。例如仿真翻转LATB时，PORTB窗口监视值不改变。</p><h3 id="112-定时器查询"><a class="markdownIt-Anchor" href="#112-定时器查询"></a> 1.1.2 定时器查询</h3><p><strong>参数计算</strong></p><p>时钟源<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>o</mi><mi>s</mi><mi>c</mi></mrow></msub><mi mathvariant="normal">/</mi><mn>4</mn><mo>=</mo><mn>1</mn><mtext> </mtext><mi>M</mi><mi>H</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">F_{osc}/4=1\ MHz</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mo>=</mo><mn>1</mn><mtext> </mtext><mi>u</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">T_{cy}=1\ us</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span></span></span></span>，Timer0(配置参考datasheet 27.0节)选择8位模式，可精确计数499.712ms；选择16 位模式，可精确计数500ms。计算公式为</p><p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>N</mi><mrow><mi>p</mi><mi>r</mi><mi>e</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>N</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>N</mi><mrow><mi>p</mi><mi>o</mi><mi>s</mi><mi>t</mi></mrow></msub><mo>⋅</mo><mtext> </mtext><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cnt}=N_{pre} \cdot\ N_{cnt} \cdot\ N_{post} \cdot\ T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.28055599999999997em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p><p>为了方便由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{cnt}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>计算出Timer的置数值，可以使用如下宏定义</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TMRCNTEQU 50000</span><br><span class="line">TMRVAL  EQU (.65536−TMRCNT);&#39;.&#39;表示十进制</span><br><span class="line">TMRHVAL EQU HIGH(TMRVAL)</span><br><span class="line">TMRLVAL EQU LOW(TMRVAL)</span><br></pre></td></tr></table></figure><p><strong>可重定位的汇编代码</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RST code        BLOFFSET;Bootloader Offset</span><br><span class="line">    pagesel     main</span><br><span class="line">    goto        main</span><br><span class="line"></span><br><span class="line">    code</span><br><span class="line">main</span><br><span class="line">goto main</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p><strong>程序流程</strong></p><p>计数完成时TMR0IF自动置位，循环查询即可实现定时，如下图</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200824195720.png" alt="" /></p><p>由于PIC16F18854的Timer0具有T0OUT位，可以选择查询T0OUT，或者直接把T0OUT同步到PORTB。采用查询T0OUT方式的流程如下</p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200823012617.png" style="zoom: 150%;" /><p>直接同步T0OUT的流程如下</p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825092318.jpg" style="zoom:80%;" /><p><strong>误差控制</strong></p><p>直接置数会造成<strong>漏计</strong>，导致实际计数周期<strong>大于</strong><code>TMRCNT</code>个指令周期，这可以通过调整置数值进行补偿，但并没有从根本上解决问题。</p><p>先停止Timer，用置数值加上溢出后的计数，加上Timer停止的时间，再启动Timer就可以<strong>消除</strong>漏计。程序如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">banksel T0CON0</span><br><span class="line">label1</span><br><span class="line">    bcf     T0CON0, T0EN;先停止Timer</span><br><span class="line">    </span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0H, f;必须先读一次TMR0H来更新它的值?</span><br><span class="line">    </span><br><span class="line">    movlw   TMRLVAL</span><br><span class="line">    addwf   TMR0L, f;低位预置值+溢出的计数</span><br><span class="line">    btfsc   STATUS, C</span><br><span class="line">    incf    TMR0H;处理进位</span><br><span class="line">    </span><br><span class="line">    movlw   (label2−label1)</span><br><span class="line">    addwf   TMR0L, f;再加上Timer停止的时间</span><br><span class="line">    movlw   TMRHVAL</span><br><span class="line">    addfc  TMR0H, f;高位预置值+溢出的计数+进位</span><br><span class="line">    </span><br><span class="line">    movlw   0x0</span><br><span class="line">    addwf   TMR0L, f;写TMR0L使TMR0H的更新生效</span><br><span class="line">label2 :</span><br><span class="line">    bsf     T0CON0, T0EN</span><br></pre></td></tr></table></figure><p><strong>注意</strong>：TMR0H实际上是Timer0高8位的一个<strong>缓冲</strong>寄存器，这是为了能同步读写16位的计数值。读TMR0L时，Timer0的高8位才会被缓冲进TMR0H；写TMR0L时，才会把TMR0H的值更新到Timer高8位。(但在仿真中，出现了读TMR0L后，TMR0H并未更新的情况，必须先读一次TMR0H才会更新)</p><p>消除漏计后，发现仿真跑表结果在500.000ms左右<strong>周期性抖动</strong>。这是由于计数每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>溢出一次，而主程序每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>只进行一次查询，这导致检测的溢出会落后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mtext>  </mtext><mo stretchy="false">(</mo><mn>0</mn><mo>≤</mo><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>&lt;</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_{cy}\ \ (0\leq N_{lag}\lt m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mspace"> </span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>。显然，只有当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>能被<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>整除时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>才保持不变，跑表结果不发生抖动。进一步考虑到检测到溢出后，从跳出循环执行动作，到跳回到检测语句需要<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，则当且仅当</p><p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>k</mi><mo>⋅</mo><mtext> </mtext><mi>m</mi><mo>+</mo><mo stretchy="false">(</mo><mi>c</mi><mi>n</mi><mi>t</mi><mspace></mspace><mspace width="1em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n=k \cdot\ m +(cnt\mod m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:1em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></span></p><p>时，跑表结果不变。其中k为非负整数。</p><h3 id="113-定时器中断查询"><a class="markdownIt-Anchor" href="#113-定时器中断查询"></a> 1.1.3 定时器中断查询</h3><p>用中断方式控制闪灯，同时使用电平变化中断IOC(Interrupt On Change)改变闪灯速率。</p><p><strong>实验配置</strong></p><p>开启TMR0IE，将控制LED电平和Timer0置位的的部分移入ISR(Interrupt Service Routine)，在主程序循环等待中断，就可以实现中断闪灯。</p><p>实现IOC的电路如下，按键K按下后，输入I/O端口的电平出现下降沿。</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825093032.png" alt="" /></p><p>IOC配置直接参考数据手册即可。</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825093605.png" alt="" /></p><p><strong>程序流程</strong></p><p>主程序流程如下，其中RB0用于驱动LED发光，PORTC用于检测按下AN8/AN10产生的IOC。</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825094745.png" alt="" /></p><p>ISR流程如下，采用软件辅助计数的方式，计数器每溢出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>次(初始值为10)改变一次LED电平；发生IOC时，改变<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span>的值来改变闪烁速率。</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825095124.png" alt="" /></p><p>然而上述ISR程序存在如下问题：</p><ul><li>当两个或多个中断同时到来时，只能处理一种中断，并且ISR退出时没有清理其他中断的IF标志位。</li><li>中断程序没有立刻清理IF标志位。若在ISR执行时发生其他中断，进入中断嵌套(尽管PIC16F18854不支持，但仍应该考虑)，会再次处理没有清理标志位的中断。</li></ul><p>更合理的的ISR结构如下</p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200825101348.jpg" alt="" /></p><p><strong>误差控制</strong></p><p>消除漏计后，同样存在跑表结果周期性抖动的问题。这是由于计数每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{cy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>溢出一次，而中断并不能随意打断多周期指令，即计数中断也会落后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>c</mi><mi>y</mi></mrow></msub><mtext>  </mtext><mo stretchy="false">(</mo><mn>0</mn><mo>≤</mo><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>&lt;</mo><mn>2</mn><mo>∼</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T_{cy}\ \ (0\leq N_{lag}\lt 2\sim 4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mspace"> </span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mclose">)</span></span></span></span>。只有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>a</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lag}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>保持不变时，才不会产生抖动。通过添加nop指令，Timer的中断在单周期指令处发生就可以避免问题。</p><p>按键按下一次时往往有几个ms的抖动，多次触发IOC，因此需要<strong>消抖</strong>。可以在每次触发IOC时关闭使能，隔一段时间(例如Timer0中断2次)再打开使能。</p><h2 id="12-数码管显示"><a class="markdownIt-Anchor" href="#12-数码管显示"></a> 1.2 数码管显示</h2><h2 id="13-按键检测"><a class="markdownIt-Anchor" href="#13-按键检测"></a> 1.3 按键检测</h2><h2 id="14-ad转换"><a class="markdownIt-Anchor" href="#14-ad转换"></a> 1.4 AD转换</h2><h2 id="15-串口通信"><a class="markdownIt-Anchor" href="#15-串口通信"></a> 1.5 串口通信</h2><h3 id="151-i2c"><a class="markdownIt-Anchor" href="#151-i2c"></a> 1.5.1 I2C</h3><h3 id="151-eusart"><a class="markdownIt-Anchor" href="#151-eusart"></a> 1.5.1 EUSART</h3><h1 id="2-知识归纳"><a class="markdownIt-Anchor" href="#2-知识归纳"></a> 2 知识归纳</h1><h1 id="3-方法论和思维模式"><a class="markdownIt-Anchor" href="#3-方法论和思维模式"></a> 3 方法论和思维模式</h1><h1 id="4-收获与心得"><a class="markdownIt-Anchor" href="#4-收获与心得"></a> 4 收获与心得</h1><h1 id="5-疑难问题与解决"><a class="markdownIt-Anchor" href="#5-疑难问题与解决"></a> 5 疑难问题与解决</h1><h1 id="6-对课程的意见和建议"><a class="markdownIt-Anchor" href="#6-对课程的意见和建议"></a> 6 对课程的意见和建议</h1><p>我常常认为，无法提出条理清晰的意见和建议，等同于欠缺理解。我还不够理解这门课程：课程的目的，学生为此需要掌握什么，如何据此设计课程内容，如何教学，如何把握课程进度，如何控制教学质量等等，因此暂不作评价。</p><h1 id="7-后记"><a class="markdownIt-Anchor" href="#7-后记"></a> 7 后记</h1>]]></content>
+      
+      
       <categories>
-        <category>知识</category>
-        <category>计算机</category>
+          
+          <category> 知识 </category>
+          
+          <category> 计算机 </category>
+          
       </categories>
-      <tags>
-        <tag>微机原理</tag>
-        <tag>嵌入式</tag>
-        <tag>PIC单片机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络</title>
-    <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p>
-<a id="more"></a>
-<h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1>
-<p><strong>教学内容</strong></p>
-<ul>
-<li>knowledge/工作原理：协议、架构、应用</li>
-<li>skills/网络编程：wireshark、socket、ns3网络仿真、设计和实现协议</li>
-<li>insights/关键概念：协议、分层、资源分配、命令(?)</li>
-</ul>
-<p><strong>教学目标</strong></p>
-<ul>
-<li>计网核心概念和原理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 协议设计</li>
-<li>网络及主要通信协议的性能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 性能评估</li>
-<li>网络通信的研究方法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 系统方法：目标、需求、设计、实现、测试、评估</li>
-</ul>
-<p><strong>教学方式</strong></p>
-<ul>
-<li>平台：微助教等</li>
-<li>教材：计网-系统方法、计网-自顶向下、计网-分层方法</li>
-</ul>
-<p><strong>教学计划</strong></p>
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200921193139.png" style="zoom:50%;" />
-<p><strong>课程考核</strong></p>
-<ul>
-<li>基本
-<ul>
-<li>平时 .3
-<ul>
-<li>作业 .2</li>
-<li>笔记 .1</li>
-</ul>
-</li>
-<li>考试 .4</li>
-<li>课程设计 .3</li>
-</ul>
-</li>
-<li>奖励分 up to .5
-<ul>
-<li>赛课结合</li>
-<li>小讲师志愿者</li>
-</ul>
-</li>
-</ul>
-<h1 id="1-ch1"><a class="markdownIt-Anchor" href="#1-ch1"></a> 1 ch1</h1>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 微机原理 </tag>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> PIC单片机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一道Perl逆向入门题</title>
+      <link href="/2020/08/01/%E7%9F%A5%E8%AF%86/WMCTF2020-easy-re/"/>
+      <url>/2020/08/01/%E7%9F%A5%E8%AF%86/WMCTF2020-easy-re/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1><p>Perl是解释型语言，要保护其源码，常用的方法有：</p><ul><li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li><li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li></ul><a id="more"></a><h1 id="2-题目"><a class="markdownIt-Anchor" href="#2-题目"></a> 2 题目</h1><p>题目取自WMCTF2020，提示内容如下<br /><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png" alt="" /></p><p>下载程序，运行如下<br /><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p><p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p><ol><li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li><li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li><li>重复步骤1和2，找到下一层的断点。</li></ol><p>很快注意到如下代码段<br /><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png" alt="" /></p><p>内存中跟随rax的值<br /><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p><p>随后的代码段直接通过rax返回了Perl脚本<br /><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png" alt="" /></p><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png" alt="" /></p><p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>]]></content>
+      
+      
       <categories>
-        <category>知识</category>
-        <category>计算机</category>
+          
+          <category> 知识 </category>
+          
+          <category> 计算机 </category>
+          
       </categories>
-      <tags>
-        <tag>计网</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道Perl逆向入门题</title>
-    <url>/2020/08/01/%E7%9F%A5%E8%AF%86/WMCTF2020-easy-re/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
-<p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
-<ul>
-<li>先将Perl代码转换成C代码，再由C代码得到可执行程序，例如perlcc。反编译的得到的源码不容易看懂。</li>
-<li>将Perl代码和解释器打包成可执行文件，实际执行时将Perl代码提取出来，交给解释器执行，例如PAR(Perl Archive Toolkit)。可以动态调试得到Perl代码。</li>
-</ul>
-<a id="more"></a>
-<h1 id="2-题目"><a class="markdownIt-Anchor" href="#2-题目"></a> 2 题目</h1>
-<p>题目取自WMCTF2020，提示内容如下<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160053.png" alt="" /></p>
-<p>下载程序，运行如下<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160317.png" style="zoom:150%;" /></p>
-<p>查看PE信息为64位程序，ida64反编译的C源码效果不佳。使用x64dbg进行断点调试。</p>
-<ol>
-<li><code>F9</code>执行到出现上述输入提示，<code>F2</code>下断点。</li>
-<li><code>Ctrl</code>+<code>F2</code>重新载入，<code>F9</code>执行到断点处，<code>F7</code>进入。</li>
-<li>重复步骤1和2，找到下一层的断点。</li>
-</ol>
-<p>很快注意到如下代码段<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160402.png" alt="" /></p>
-<p>内存中跟随rax的值<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160418.png" style="zoom:200%;" /></p>
-<p>随后的代码段直接通过rax返回了Perl脚本<br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160448.png" alt="" /></p>
-<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200801160508.png" alt="" /></p>
-<p>得到flag为<code>WMCTF&#123;I_WAnt_dynam1c_F1ag&#125;</code></p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> Reverse </tag>
+            
+            <tag> Perl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客GET</title>
+      <link href="/2020/08/01/%E5%8D%9A%E5%AE%A2get/"/>
+      <url>/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新开的蒟蒻博客，可能会陆续上传些水文。<br /><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>测试:<br /><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mi>cos</mi><mo>⁡</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mi>sin</mi><mo>⁡</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">e^{i \theta} = \cos{\theta} + i\sin{\theta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">θ</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span></span></span></span></p>]]></content>
+      
+      
       <categories>
-        <category>知识</category>
-        <category>计算机</category>
+          
+          <category> 其他 </category>
+          
+          <category> 杂文 </category>
+          
       </categories>
-      <tags>
-        <tag>CTF</tag>
-        <tag>Reverse</tag>
-        <tag>Perl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 划水 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+    </entry>
+    
+    
+  
 </search>

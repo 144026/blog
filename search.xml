@@ -16,6 +16,25 @@
       </tags>
   </entry>
   <entry>
+    <title>IDA学习笔记</title>
+    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
+<a id="more"></a>
+<h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
+<h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1>
+<h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1>
+<h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>
+]]></content>
+      <categories>
+        <category>技能</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>逆向</tag>
+        <tag>静态分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工作日志</title>
     <url>/2020/09/20/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>9.20, 2020 - ?</p>
@@ -43,17 +62,29 @@
       </tags>
   </entry>
   <entry>
+    <title>博客搭建笔记</title>
+    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>技能</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>blasphemous</title>
     <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
 <a id="more"></a>
 
-        <div id="aplayer-CCnfTJqI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-SvVcGsAm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-CCnfTJqI"),
+            element: document.getElementById("aplayer-SvVcGsAm"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -86,50 +117,6 @@
       </categories>
       <tags>
         <tag>gaming</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDA学习笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-IDA/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
-<a id="more"></a>
-<h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
-<h1 id="1-基本功能"><a class="markdownIt-Anchor" href="#1-基本功能"></a> 1 基本功能</h1>
-<h1 id="2-拓展功能"><a class="markdownIt-Anchor" href="#2-拓展功能"></a> 2 拓展功能</h1>
-<h1 id="3-使用技巧"><a class="markdownIt-Anchor" href="#3-使用技巧"></a> 3 使用技巧</h1>
-]]></content>
-      <categories>
-        <category>技能</category>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>逆向</tag>
-        <tag>静态分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/learn-blog/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>技能</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络</title>
-    <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p>
-<a id="more"></a>]]></content>
-      <categories>
-        <category>知识</category>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>计网</tag>
       </tags>
   </entry>
   <entry>
@@ -220,6 +207,62 @@
         <tag>微机原理</tag>
         <tag>嵌入式</tag>
         <tag>PIC单片机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p>
+<a id="more"></a>
+<h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1>
+<p><strong>教学内容</strong></p>
+<ul>
+<li>knowledge/工作原理：协议、架构、应用</li>
+<li>skills/网络编程：wireshark、socket、ns3网络仿真、设计和实现协议</li>
+<li>insights/关键概念：协议、分层、资源分配、命令(?)</li>
+</ul>
+<p><strong>教学目标</strong></p>
+<ul>
+<li>计网核心概念和原理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 协议设计</li>
+<li>网络及主要通信协议的性能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 性能评估</li>
+<li>网络通信的研究方法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟶</mo></mrow><annotation encoding="application/x-tex">\longrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟶</span></span></span></span> 系统方法：目标、需求、设计、实现、测试、评估</li>
+</ul>
+<p><strong>教学方式</strong></p>
+<ul>
+<li>平台：微助教等</li>
+<li>教材：计网-系统方法、计网-自顶向下、计网-分层方法</li>
+</ul>
+<p><strong>教学计划</strong></p>
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200921193139.png" style="zoom:50%;" />
+<p><strong>课程考核</strong></p>
+<ul>
+<li>基本
+<ul>
+<li>平时 .3
+<ul>
+<li>作业 .2</li>
+<li>笔记 .1</li>
+</ul>
+</li>
+<li>考试 .4</li>
+<li>课程设计 .3</li>
+</ul>
+</li>
+<li>奖励分 up to .5
+<ul>
+<li>赛课结合</li>
+<li>小讲师志愿者</li>
+</ul>
+</li>
+</ul>
+<h1 id="1-ch1"><a class="markdownIt-Anchor" href="#1-ch1"></a> 1 ch1</h1>
+]]></content>
+      <categories>
+        <category>知识</category>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计网</tag>
       </tags>
   </entry>
   <entry>

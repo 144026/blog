@@ -143,13 +143,47 @@
     <url>/2020/09/22/%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数字信号处理课程笔记。</p>
 <a id="more"></a>
-<h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1>
-<p><strong>教学内容</strong></p>
+<h1 id="0-概述"><a class="markdownIt-Anchor" href="#0-概述"></a> 0 概述</h1>
+<ul>
+<li>专业基础课</li>
+<li>prequisites：高数、复变函数、概率论、信号系统</li>
+</ul>
+<p><strong>教学内容</strong><br />
+重点3，4，5</p>
 <p><strong>教学目标</strong></p>
+<ul>
+<li>DSP基本概念、理论、方法</li>
+<li>打DSP设计、数字通信、现代数字信号处理</li>
+</ul>
 <p><strong>教学方式</strong></p>
-<p><strong>教学计划</strong></p>
+<ul>
+<li>教材
+<ul>
+<li>数字信号处理-姚天任，ed3</li>
+<li>DSP, 奥本海姆</li>
+</ul>
+</li>
+<li>工具：matlab 2009b/R2017a+</li>
+</ul>
+<p><strong>教学计划</strong><br />
+40+8/3, 4/w, 12w</p>
 <p><strong>课程考核</strong></p>
-<h1 id="1-xxx"><a class="markdownIt-Anchor" href="#1-xxx"></a> 1 xxx</h1>
+<ul>
+<li>作业+实验 .3：2，3，4滞后一章交，5章讲</li>
+<li>考试 .7：开卷</li>
+</ul>
+<h1 id="1-intro"><a class="markdownIt-Anchor" href="#1-intro"></a> 1 Intro</h1>
+<ul>
+<li>基本概念</li>
+<li>DSP系统基本组成</li>
+<li>学科背景</li>
+</ul>
+<h1 id="2-discrete-time-signals-and-systems"><a class="markdownIt-Anchor" href="#2-discrete-time-signals-and-systems"></a> 2 Discrete-Time Signals and Systems</h1>
+<h1 id="3-dftfft"><a class="markdownIt-Anchor" href="#3-dftfft"></a> 3 DFT&amp;FFT</h1>
+<h1 id="4-df"><a class="markdownIt-Anchor" href="#4-df"></a> 4 DF</h1>
+<h1 id="5-discrete-time-random-signal"><a class="markdownIt-Anchor" href="#5-discrete-time-random-signal"></a> 5 Discrete-Time Random Signal</h1>
+<h1 id="6-fwl-effect"><a class="markdownIt-Anchor" href="#6-fwl-effect"></a> 6 FWL Effect*</h1>
+<h1 id="7-power-spectrum-estimationclassical-methods"><a class="markdownIt-Anchor" href="#7-power-spectrum-estimationclassical-methods"></a> 7 Power Spectrum Estimation(Classical Methods)*</h1>
 ]]></content>
       <categories>
         <category>知识</category>

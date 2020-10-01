@@ -775,4 +775,12 @@ ppt</li>
     <url>/tags/index.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
+  <entry>
+    <title></title>
+    <url>/README.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="readme"><a class="markdownIt-Anchor" href="#readme"></a> README</h1>
+<p>Just a personal website, nothing but some backup of notes (and some creepy stuff).<br />
+Sorry but NO issue or pull request would be accepted, please understand.</p>
+]]></content>
+  </entry>
 </search>

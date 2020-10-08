@@ -24,18 +24,18 @@
   <meta name="description" content="A blog learning both kali and general linux usage and skills.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kali">
-<meta property="og:url" content="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/kali/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/kali/index.html">
 <meta property="og:site_name" content="144026的博客">
 <meta property="og:description" content="A blog learning both kali and general linux usage and skills.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-28T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-02T23:05:32.061Z">
+<meta property="article:modified_time" content="2020-10-08T00:18:55.489Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="kali">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/kali/">
+<link rel="canonical" href="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/kali/">
 
 
 <script id="page-configurations">
@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/kali/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/28/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/kali/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://144026.github.io/img/avatar.jpg">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-02 16:05:32" itemprop="dateModified" datetime="2020-10-02T16:05:32-07:00">2020-10-02</time>
+                <time title="修改时间：2020-10-07 17:18:55" itemprop="dateModified" datetime="2020-10-07T17:18:55-07:00">2020-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,20 +265,20 @@
 <ol>
 <li>install</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get install $&#123;PackageName&#125; &amp;&amp; sudo apt clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get install <span class="variable">$&#123;PackageName&#125;</span> &amp;&amp; sudo apt clean</span><br></pre></td></tr></table></figure>
 <p>Add <code>--fix-missing</code> parameter and execute install again if interrupted by network failures. Use <code>sudo apt-get clean</code> to caches for install in /var/cache/apt/archives/ ahd /var/cache/apt/archives/partial/.</p>
 <p>Software will be installed into <code>/usr</code> dir (being left for apt tools’ management recommended).</p>
 <ol start="2">
 <li>uninstall</li>
 </ol>
 <p>to remove a package but retain the config files (in <code>/etc</code>, <code>~</code>, <code>$PATH</code> or somewhere else), use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove $&#123;PackageName&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
 <p>to remove a package and the config files, use</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge $&#123;PackageName&#125;</span><br></pre></td></tr></table></figure>
 <p>to remove the dependencies, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
 <p>to sum up, to completely remove a software, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge $&#123;PackageName&#125; &amp;&amp; sudo apt auto remove</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge <span class="variable">$&#123;PackageName&#125;</span> &amp;&amp; sudo apt auto remove</span><br></pre></td></tr></table></figure>
 <h3 id="112-dpkg"><a class="markdownIt-Anchor" href="#112-dpkg"></a> 1.1.2 dpkg</h3>
 <ol>
 <li>install</li>
@@ -286,14 +286,14 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i $&#123;PackageName&#125;.deb</span><br></pre></td></tr></table></figure>
 <p>Normally the package is installed in <code>/usr/local</code> (<code>--relocate</code> may be used to specify a different folder).</p>
 <p>to list installed packages, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -l</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -l</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>uninstall</li>
 </ol>
 <p>to remove a package but retain the config files, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r $&#123;PackageName&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
 <p>to remove a package and the config files, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --purge $&#123;PackageName&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --purge <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="113-make-install"><a class="markdownIt-Anchor" href="#113-make-install"></a> 1.1.3 make install</h3>
 <p>Software installed in this way is hard to remove. Better setting a <code>$PREFIX</code> by <code>./config --prefix /path/to/install</code> and deleting the whole <code>$PREFIX</code> folder to uninstall.</p>
 <h2 id="12-document-software"><a class="markdownIt-Anchor" href="#12-document-software"></a> 1.2 Document software</h2>
@@ -302,11 +302,11 @@
 post-install: fcitx config -&gt; add googlepinyin</p>
 <h3 id="122-the-fonts"><a class="markdownIt-Anchor" href="#122-the-fonts"></a> 1.2.2 the Fonts</h3>
 <p>Copy fonts to a dir, and change font in Appearance.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir $&#123;FontDir&#125;; sudo cp $&#123;FontName&#125;.[ttf|TTF] /usr/share/fonts/$&#123;FontDir&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir <span class="variable">$&#123;FontDir&#125;</span>; sudo cp <span class="variable">$&#123;FontName&#125;</span>.[ttf|TTF] /usr/share/fonts/<span class="variable">$&#123;FontDir&#125;</span></span><br></pre></td></tr></table></figure>
 <p>install fonts</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su &amp;&amp; cd /usr/share/fonts/$&#123;FontDir&#125; &amp;&amp; mkfontscale &amp;&amp; mkfontdir &amp;&amp; fc-cache -fv &amp;&amp; source /etc/profile &amp;&amp; fc-list |wc -l</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su &amp;&amp; <span class="built_in">cd</span> /usr/share/fonts/<span class="variable">$&#123;FontDir&#125;</span> &amp;&amp; mkfontscale &amp;&amp; mkfontdir &amp;&amp; <span class="built_in">fc</span>-cache -fv &amp;&amp; <span class="built_in">source</span> /etc/profile &amp;&amp; <span class="built_in">fc</span>-list |wc -l</span><br></pre></td></tr></table></figure>
 <p>or use apt tools, e.g. wenquanyi fonts</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ttf-wqy-micro-hei ttf-wqy-zenhei xfonts-wqy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ttf-wqy-micro-hei ttf-wqy-zenhei xfonts-wqy</span><br></pre></td></tr></table></figure>
 <h3 id="123-office"><a class="markdownIt-Anchor" href="#123-office"></a> 1.2.3 Office</h3>
 <p>wps office: Download linux version and use dpkg to install. Remember to copy and install fonts from  windows.</p>
 <p>libreoffice:bad performance, ver 7.1</p>
@@ -315,19 +315,19 @@ post-install: fcitx config -&gt; add googlepinyin</p>
 <p>From here, editing a document is more similiar to coding, which is why vim comes in. Generally, filetype-recongnition, syntax-highlight, autocompletion, tags, snippets, compile-preview, etc. will be needed.</p>
 <h2 id="13-aux-software"><a class="markdownIt-Anchor" href="#13-aux-software"></a> 1.3 Aux Software</h2>
 <h3 id="131-xfce-touchpad-config"><a class="markdownIt-Anchor" href="#131-xfce-touchpad-config"></a> 1.3.1 xfce touchpad config</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xserver-xorg-input-synaptics &amp;&amp; cp -r /usr/share/X11/xorg.conf.d/ /etc/X11/ &amp;&amp; sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xserver-xorg-input-synaptics &amp;&amp; cp -r /usr/share/X11/xorg.conf.d/ /etc/X11/ &amp;&amp; sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf</span><br></pre></td></tr></table></figure>
 <p>now add the following options to the first inputclass</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Option &quot;TapButton1&quot; &quot;1&quot;</span><br><span class="line">Option &quot;TapButton2&quot; &quot;3&quot;</span><br><span class="line">Option &quot;TapButton3&quot; &quot;2&quot;</span><br><span class="line">Option &quot;VertEdgeScroll&quot; &quot;off&quot;</span><br><span class="line">Option &quot;VertTwoFingerScroll&quot; &quot;on&quot;</span><br><span class="line">Option &quot;HorizEdgeScroll&quot; &quot;off&quot;</span><br><span class="line">Option &quot;HorizTwoFingerScroll&quot; &quot;on&quot;</span><br><span class="line">Option &quot;CornerCoasting&quot; &quot;on&quot;</span><br><span class="line">Option &quot;CircularScrolling&quot; &quot;on&quot;</span><br><span class="line">Option &quot;CircScrollTrigger&quot; &quot;2&quot;</span><br><span class="line">Option &quot;EmulateTwoFingerMinZ&quot; &quot;40&quot;</span><br><span class="line">Option &quot;EmulateTwoFingerMinW&quot; &quot;8&quot;</span><br><span class="line">Option &quot;CoastingSpeed&quot; &quot;0&quot;</span><br><span class="line">Option &quot;FingerLow&quot; &quot;30&quot;</span><br><span class="line">Option &quot;FingerHigh&quot; &quot;70&quot;</span><br><span class="line">Option &quot;MaxTapTime&quot; &quot;125&quot;</span><br><span class="line">Option &quot;VertScrollDelta&quot; &quot;-111&quot;</span><br><span class="line">Option &quot;HorizScrollDelta&quot; &quot;-111&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Option &quot;TapButton1&quot; &quot;1&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton2&quot;</span> <span class="string">&quot;3&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton3&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CornerCoasting&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircularScrolling&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircScrollTrigger&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinZ&quot;</span> <span class="string">&quot;40&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinW&quot;</span> <span class="string">&quot;8&quot;</span></span><br><span class="line">Option <span class="string">&quot;CoastingSpeed&quot;</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerLow&quot;</span> <span class="string">&quot;30&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerHigh&quot;</span> <span class="string">&quot;70&quot;</span></span><br><span class="line">Option <span class="string">&quot;MaxTapTime&quot;</span> <span class="string">&quot;125&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br></pre></td></tr></table></figure>
 <h3 id="132-web-browser"><a class="markdownIt-Anchor" href="#132-web-browser"></a> 1.3.2 Web Browser</h3>
 <ol>
 <li>chrome: just download the official package.</li>
 <li>firefox esr, kali original.</li>
 </ol>
 <h3 id="133-socks-proxy-client"><a class="markdownIt-Anchor" href="#133-socks-proxy-client"></a> 1.3.3 socks proxy client</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install shadowsocks-libev simple-obfs </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install shadowsocks-libev simple-obfs </span><br></pre></td></tr></table></figure>
 <p>Server config template in  <code>/etc/shadowsocks-libev/</code>.</p>
 <p>Client config with obfs-local (no space between <code>plugin_opts</code> recommended):</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;server&quot;:&quot;&lt;ip&gt;&quot;,</span><br><span class="line">&quot;server_port&quot;:&lt;&quot;port&gt;&quot;,</span><br><span class="line">&quot;local_address&quot;:&quot;&lt;localhost&gt;&quot;,</span><br><span class="line">&quot;local_port&quot;:&quot;&lt;port2&gt;&quot;,</span><br><span class="line">&quot;password&quot;:&quot;&lt;pass&gt;&quot;,</span><br><span class="line">&quot;timeout&quot;:&quot;&lt;sec&gt;&quot;,</span><br><span class="line">&quot;method&quot;:&quot;&lt;encry&gt;&quot;,</span><br><span class="line">&quot;fast_open&quot;:true,</span><br><span class="line">&quot;plugin&quot;:&quot;obfs-local&quot;,</span><br><span class="line">&quot;plugin_opts&quot;:&quot;obfs=http;obfs-host=www.baidu.com;fast-open=true&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">&quot;server&quot;</span>:<span class="string">&quot;&lt;ip&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;server_port&quot;</span>:&lt;<span class="string">&quot;port&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_address&quot;</span>:<span class="string">&quot;&lt;localhost&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_port&quot;</span>:<span class="string">&quot;&lt;port2&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;password&quot;</span>:<span class="string">&quot;&lt;pass&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;timeout&quot;</span>:<span class="string">&quot;&lt;sec&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;method&quot;</span>:<span class="string">&quot;&lt;encry&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;fast_open&quot;</span>:<span class="literal">true</span>,</span><br><span class="line"><span class="string">&quot;plugin&quot;</span>:<span class="string">&quot;obfs-local&quot;</span>,</span><br><span class="line"><span class="string">&quot;plugin_opts&quot;</span>:<span class="string">&quot;obfs=http;obfs-host=www.baidu.com;fast-open=true&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Use proxy <code>socks5h://$&#123;ip&#125;:$&#123;port&#125;</code> to hide DNS. (<code>socks5://</code> DOES NOT proxy DNS traffic)</p>
 <p>In firefox, set the SOCKS Host v5 proxy in preferences -&gt; general -&gt; network settings. ALWAYS check “Proxy DNS when using Socks v5”.</p>
 <h3 id="134-social"><a class="markdownIt-Anchor" href="#134-social"></a> 1.3.4 Social</h3>
@@ -349,29 +349,29 @@ Userspace Management tool --&gt; API --&gt; Hypervisor --&gt; Host OS --&gt; Har
 <h4 id="143-qemu-qcowqcow2"><a class="markdownIt-Anchor" href="#143-qemu-qcowqcow2"></a> 1.4.3 Qemu .qcow,.qcow2</h4>
 <h5 id="1431-basic-install"><a class="markdownIt-Anchor" href="#1431-basic-install"></a> 1.4.3.1 basic install</h5>
 <p>Install qemu and qemu-system</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list|grep qemu &amp;&amp; sudo apt-get install qemu [qemu-system qemu-utils]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list|grep qemu &amp;&amp; sudo apt-get install qemu [qemu-system qemu-utils]</span><br></pre></td></tr></table></figure>
 <p>Create vitual disk by <code>qemu-img [-f FMT] &lt;filename&gt; [SIZE]</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-img -f qcow2 ubuntu-1804-server-x86_64.qcow2 4G</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-img -f qcow2 ubuntu-1804-server-x86_64.qcow2 4G</span><br></pre></td></tr></table></figure>
 <p>Check hardware support for KVM</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E &#x27;vmx|svm&#x27; /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
 <p>Check if kvm module is loaded</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
 <p>Start system from <code>.iso</code> by <code>qemu-system-xxx [options] [disk_img]</code>, use <code>-enable-kvm</code> to accelerate.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo qemu-system-x86_86 -enable-kvm -m 512 ./your-virtual-disk.qcow2 -cdrom ./your-boot-img.iso</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo qemu-system-x86_86 -<span class="built_in">enable</span>-kvm -m 512 ./your-virtual-disk.qcow2 -cdrom ./your-boot-img.iso</span><br></pre></td></tr></table></figure>
 <h5 id="1432-network-config"><a class="markdownIt-Anchor" href="#1432-network-config"></a> 1.4.3.2  Network Config</h5>
 <p>Config first a host-only virtual network, then change into NAT mode using iptables. See Network options in <code>man qemu-system-x86_64</code>.</p>
 <p><strong>Host Config</strong></p>
 <p>Use <code>-netdev tap,id=&lt;id&gt;,ifname=&lt;name&gt;,script=&lt;file&gt;[,downscript=&lt;dfile&gt;]</code> to config a host TAP network backend (bring up an interface <strong>virtually connected to the Guest NIC</strong>).</p>
 <p>Or just use <code>-nic tap</code> to bring up the default tap0 interface, and manually config it using <code>ifconfig</code>.</p>
-<p>NOTE: DO check kernel support for tap/tun: <code>modprobe tun &amp;&amp; lsmod|grep tun</code>. Kernel module recompile needed if no support.</p>
+<p>NOTE: DO check kernel support for tap/tun: <code>modprobe tun &amp;&amp; lsmod|grep tun</code>. Kernel module recompile needed if unsupported.</p>
 <p><strong>Guest Config</strong></p>
-<p>Set guest interface(eth0, ens33 or whatever) to fit in the Host TAP network (). Host-only finished.</p>
+<p>Set guest interface(eth0, ens33 or whatever) to fit in the Host TAP network. Host-only finished.</p>
 <p><strong>NAT Config</strong><br />
 Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br><span class="line">echo 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s $&#123;Host_Tap_Ip&#125;/$&#123;Mask_Width&#125; -j SNAT --to-source $&#123;Host_eth0_ip&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s <span class="variable">$&#123;Host_Tap_Ip&#125;</span>/<span class="variable">$&#123;Mask_Width&#125;</span> -j SNAT --to-source <span class="variable">$&#123;Host_eth0_ip&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="1433-gui-managementvirt-manager-series"><a class="markdownIt-Anchor" href="#1433-gui-managementvirt-manager-series"></a> 1.4.3.3 GUI Management(Virt-Manager Series)</h4>
 <p>install the <strong>virt-manager</strong> tool series (virsh, virt-viewer, virt-install, …)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install virt-manager</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install virt-manager</span><br></pre></td></tr></table></figure>
 <p>Now with command <code>virt-manager</code>, geust OS devices can be easily configured, including the NAT virtual network manaully set up above.</p>
 <h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
 <p>Xen,…</p>
@@ -399,7 +399,7 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
       <i class="fa fa-chevron-left"></i> 数字信号处理
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/10/03/%E6%8A%80%E8%83%BD/learn-Vim/" rel="next" title="learn-Vim">
+    <a href="/2020/10/03/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-Vim/" rel="next" title="learn-Vim">
       learn-Vim <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>

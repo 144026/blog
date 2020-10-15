@@ -29,7 +29,7 @@
 <meta property="og:description" content="A blog learning both kali and general linux usage and skills.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-28T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-08T01:32:36.193Z">
+<meta property="article:modified_time" content="2020-10-15T01:47:46.255Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="kali">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-07 18:32:36" itemprop="dateModified" datetime="2020-10-07T18:32:36-07:00">2020-10-07</time>
+                <time title="修改时间：2020-10-14 18:47:46" itemprop="dateModified" datetime="2020-10-14T18:47:46-07:00">2020-10-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,14 +259,14 @@
 <li>Need network.</li>
 <li>Missing  wireless firmware. Better have a cable network, allowing post-installation firmware download and install, with <code>apt list|grep firmware</code>. If not, prepare a 2nd disk containing those firmware, and insert it after the warning pop up.</li>
 </ol>
-<h1 id="1-software-config"><a class="markdownIt-Anchor" href="#1-software-config"></a> 1 Software Config</h1>
+<h1 id="1-software-config-outer-layers"><a class="markdownIt-Anchor" href="#1-software-config-outer-layers"></a> 1 Software Config — outer layers</h1>
 <h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>
 <h3 id="111-apt-tools"><a class="markdownIt-Anchor" href="#111-apt-tools"></a> 1.1.1 apt tools</h3>
 <ol>
 <li>install</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get install <span class="variable">$&#123;PackageName&#125;</span> &amp;&amp; sudo apt clean</span><br></pre></td></tr></table></figure>
-<p>Add <code>--fix-missing</code> parameter and execute install again if interrupted by network failures. Use <code>sudo apt-get clean</code> to caches for install in /var/cache/apt/archives/ ahd /var/cache/apt/archives/partial/.</p>
+<p>Add <code>--fix-missing</code> parameter and execute install again if interrupted by network failures. Use <code>sudo apt-get clean</code> to caches for install in <code>/var/cache/apt/archives/</code> and <code>/var/cache/apt/archives/partial/</code>.</p>
 <p>Software will be installed into <code>/usr</code> dir (being left for apt tools’ management recommended).</p>
 <ol start="2">
 <li>uninstall</li>
@@ -296,10 +296,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --purge <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="113-make-install"><a class="markdownIt-Anchor" href="#113-make-install"></a> 1.1.3 make install</h3>
 <p>Software installed in this way is hard to remove. Better setting a <code>PREFIX=&quot;/path/to/install</code> and deleting the whole <code>$PREFIX</code> folder to uninstall.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -xzf <span class="variable">$&#123;PackageName&#125;</span>.tar.gz</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;PackageName&#125;</span></span><br><span class="line">less README</span><br><span class="line">./configure --prefix /path/to/install </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h2 id="12-document-software"><a class="markdownIt-Anchor" href="#12-document-software"></a> 1.2 Document software</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -tvf $&#123;PackageName&#125;.tar.gz</span></span><br><span class="line">tar -xzf <span class="variable">$&#123;PackageName&#125;</span>.tar.gz</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;PackageName&#125;</span></span><br><span class="line">less README</span><br><span class="line">./configure --prefix /path/to/install </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h2 id="12-documentation-software"><a class="markdownIt-Anchor" href="#12-documentation-software"></a> 1.2 Documentation software</h2>
 <h3 id="121-input-method"><a class="markdownIt-Anchor" href="#121-input-method"></a> 1.2.1 Input Method</h3>
-<p>fcitx, fcitx-googlepinyin</p>
+<p>fcitx, fcitx-googlepinyin (apt)</p>
 <ul>
 <li>post-install: fcitx config -&gt; add googlepinyin</li>
 </ul>
@@ -314,29 +314,43 @@
 <p>wps office: Download linux version and use dpkg to install. Remember to copy and install fonts from  windows.</p>
 <p>libreoffice:bad performance, ver 7.1</p>
 <h3 id="124-markdown-and-tex"><a class="markdownIt-Anchor" href="#124-markdown-and-tex"></a> 1.2.4 markdown and tex</h3>
-<p>install: texlive, download dvd-image from mirror sites and run <code>install-pl</code>(need to add to <code>$PATH</code>).</p>
-<p>From here, editing a document is more similiar to coding, which is why vim comes in. Generally, filetype-recongnition, syntax-highlight, autocompletion, tags, snippets, compile-preview, etc. will be needed.</p>
+<p><strong>install</strong>: texlive, download dvd-image from mirror sites and run <code>install-pl</code>(need to add to <code>$PATH</code>).</p>
+<p>From here, editing a document is more similiar to coding, which is why vim comes in (see <a target="_blank" rel="noopener" href="https://leoharry.com/2020/10/03/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-Vim/">learn-Vim</a>).</p>
+<p>Generally, filetype-recongnition, syntax-highlight, autocompletion, tags, snippets, compile-preview, etc. will be needed.</p>
+<h3 id="125-hexo-blog"><a class="markdownIt-Anchor" href="#125-hexo-blog"></a> 1.2.5 hexo blog</h3>
+<p>(see <a target="_blank" rel="noopener" href="https://leoharry.com/2020/08/26/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/">learn-blog</a>)</p>
+<p><strong>install</strong>:</p>
+<ul>
+<li>apt: nodejs, npm, git</li>
+<li>npm: hexo-cli, and other plugins</li>
+<li>manual: picgo.appimg</li>
+</ul>
+<p><strong>config</strong></p>
+<ul>
+<li>hexo: <code>_config.yaml</code></li>
+<li>theme: <code>_config.yaml</code></li>
+</ul>
 <h2 id="13-aux-software"><a class="markdownIt-Anchor" href="#13-aux-software"></a> 1.3 Aux Software</h2>
-<h3 id="131-xfce-touchpad-config"><a class="markdownIt-Anchor" href="#131-xfce-touchpad-config"></a> 1.3.1 xfce touchpad config</h3>
+<h3 id="131-social"><a class="markdownIt-Anchor" href="#131-social"></a> 1.3.1 Social</h3>
+<p>linuxqq: dpkg install.</p>
+<h3 id="132-xfce-touchpad-config"><a class="markdownIt-Anchor" href="#132-xfce-touchpad-config"></a> 1.3.2 xfce touchpad config</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xserver-xorg-input-synaptics &amp;&amp; cp -r /usr/share/X11/xorg.conf.d/ /etc/X11/ &amp;&amp; sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf</span><br></pre></td></tr></table></figure>
 <p>now add the following options to the first inputclass</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Option &quot;TapButton1&quot; &quot;1&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton2&quot;</span> <span class="string">&quot;3&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton3&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CornerCoasting&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircularScrolling&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircScrollTrigger&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinZ&quot;</span> <span class="string">&quot;40&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinW&quot;</span> <span class="string">&quot;8&quot;</span></span><br><span class="line">Option <span class="string">&quot;CoastingSpeed&quot;</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerLow&quot;</span> <span class="string">&quot;30&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerHigh&quot;</span> <span class="string">&quot;70&quot;</span></span><br><span class="line">Option <span class="string">&quot;MaxTapTime&quot;</span> <span class="string">&quot;125&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="132-web-browser"><a class="markdownIt-Anchor" href="#132-web-browser"></a> 1.3.2 Web Browser</h3>
+<h3 id="133-web-browser"><a class="markdownIt-Anchor" href="#133-web-browser"></a> 1.3.3 Web Browser</h3>
 <ol>
 <li>chrome: just download the official package.</li>
 <li>firefox esr, kali original.</li>
 </ol>
-<h3 id="133-socks-proxy-client"><a class="markdownIt-Anchor" href="#133-socks-proxy-client"></a> 1.3.3 socks proxy client</h3>
+<h3 id="134-socks-proxy-client"><a class="markdownIt-Anchor" href="#134-socks-proxy-client"></a> 1.3.4 socks proxy client</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install shadowsocks-libev simple-obfs </span><br></pre></td></tr></table></figure>
 <p>Server config template in  <code>/etc/shadowsocks-libev/</code>.</p>
 <p>Client config with obfs-local (no space between <code>plugin_opts</code> recommended):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">&quot;server&quot;</span>:<span class="string">&quot;&lt;ip&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;server_port&quot;</span>:&lt;<span class="string">&quot;port&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_address&quot;</span>:<span class="string">&quot;&lt;localhost&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_port&quot;</span>:<span class="string">&quot;&lt;port2&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;password&quot;</span>:<span class="string">&quot;&lt;pass&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;timeout&quot;</span>:<span class="string">&quot;&lt;sec&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;method&quot;</span>:<span class="string">&quot;&lt;encry&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;fast_open&quot;</span>:<span class="literal">true</span>,</span><br><span class="line"><span class="string">&quot;plugin&quot;</span>:<span class="string">&quot;obfs-local&quot;</span>,</span><br><span class="line"><span class="string">&quot;plugin_opts&quot;</span>:<span class="string">&quot;obfs=http;obfs-host=www.baidu.com;fast-open=true&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Use proxy <code>socks5h://$&#123;ip&#125;:$&#123;port&#125;</code> to hide DNS. (<code>socks5://</code> DOES NOT proxy DNS traffic)</p>
 <p>In firefox, set the SOCKS Host v5 proxy in preferences -&gt; general -&gt; network settings. ALWAYS check “Proxy DNS when using Socks v5”.</p>
-<h3 id="134-social"><a class="markdownIt-Anchor" href="#134-social"></a> 1.3.4 Social</h3>
-<p>linuxqq: dpkg install.</p>
-<h3 id="14-virtualize"><a class="markdownIt-Anchor" href="#14-virtualize"></a> 1.4 Virtualize</h3>
-<h4 id="140-architecture"><a class="markdownIt-Anchor" href="#140-architecture"></a> 1.4.0 Architecture</h4>
+<h2 id="14-virtualize"><a class="markdownIt-Anchor" href="#14-virtualize"></a> 1.4 Virtualize</h2>
+<h3 id="140-architecture"><a class="markdownIt-Anchor" href="#140-architecture"></a> 1.4.0 Architecture</h3>
 <ol>
 <li>
 <p>Bare-metal<br />
@@ -347,10 +361,10 @@ Userspace Management tool --&gt; Management API --&gt; Hypervisor software --&gt
 Userspace Management tool --&gt; API --&gt; Hypervisor --&gt; Host OS --&gt; Hardware (CPU/Memory/NIC/Disk)</p>
 </li>
 </ol>
-<h4 id="141-vmware-vmdk"><a class="markdownIt-Anchor" href="#141-vmware-vmdk"></a> 1.4.1 VMware .vmdk</h4>
-<h4 id="142-virtualbox-vdi"><a class="markdownIt-Anchor" href="#142-virtualbox-vdi"></a> 1.4.2  VirtualBox .vdi</h4>
-<h4 id="143-qemu-qcowqcow2"><a class="markdownIt-Anchor" href="#143-qemu-qcowqcow2"></a> 1.4.3 Qemu .qcow,.qcow2</h4>
-<h5 id="1431-basic-install"><a class="markdownIt-Anchor" href="#1431-basic-install"></a> 1.4.3.1 basic install</h5>
+<h3 id="141-vmware-vmdk"><a class="markdownIt-Anchor" href="#141-vmware-vmdk"></a> 1.4.1 VMware .vmdk</h3>
+<h3 id="142-virtualbox-vdi"><a class="markdownIt-Anchor" href="#142-virtualbox-vdi"></a> 1.4.2  VirtualBox .vdi</h3>
+<h3 id="143-qemu-qcowqcow2"><a class="markdownIt-Anchor" href="#143-qemu-qcowqcow2"></a> 1.4.3 Qemu .qcow,.qcow2</h3>
+<h4 id="1431-basic-install"><a class="markdownIt-Anchor" href="#1431-basic-install"></a> 1.4.3.1 basic install</h4>
 <p>Install qemu and qemu-system</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list|grep qemu &amp;&amp; sudo apt-get install qemu [qemu-system qemu-utils]</span><br></pre></td></tr></table></figure>
 <p>Create vitual disk by <code>qemu-img [-f FMT] &lt;filename&gt; [SIZE]</code>.</p>
@@ -360,8 +374,8 @@ Userspace Management tool --&gt; API --&gt; Hypervisor --&gt; Host OS --&gt; Har
 <p>Check if kvm module is loaded</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
 <p>Start system from <code>.iso</code> by <code>qemu-system-xxx [options] [disk_img]</code>, use <code>-enable-kvm</code> to accelerate.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo qemu-system-x86_86 -<span class="built_in">enable</span>-kvm -m 512 ./your-virtual-disk.qcow2 -cdrom ./your-boot-img.iso</span><br></pre></td></tr></table></figure>
-<h5 id="1432-network-config"><a class="markdownIt-Anchor" href="#1432-network-config"></a> 1.4.3.2  Network Config</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_86 -<span class="built_in">enable</span>-kvm -m 512 ./your-virtual-disk.qcow2 -cdrom ./your-boot-img.iso</span><br></pre></td></tr></table></figure>
+<h4 id="1432-network-config"><a class="markdownIt-Anchor" href="#1432-network-config"></a> 1.4.3.2  Network Config</h4>
 <p>Config first a host-only virtual network, then change into NAT mode using iptables. See Network options in <code>man qemu-system-x86_64</code>.</p>
 <p><strong>Host Config</strong></p>
 <p>Use <code>-netdev tap,id=&lt;id&gt;,ifname=&lt;name&gt;,script=&lt;file&gt;[,downscript=&lt;dfile&gt;]</code> to config a host TAP network backend (bring up an interface <strong>virtually connected to the Guest NIC</strong>).</p>
@@ -371,7 +385,7 @@ Userspace Management tool --&gt; API --&gt; Hypervisor --&gt; Host OS --&gt; Har
 <p>Set guest interface(eth0, ens33 or whatever) to fit in the Host TAP network. Host-only finished.</p>
 <p><strong>NAT Config</strong><br />
 Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s <span class="variable">$&#123;Host_Tap_Ip&#125;</span>/<span class="variable">$&#123;Mask_Width&#125;</span> -j SNAT --to-source <span class="variable">$&#123;Host_eth0_ip&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -F <span class="comment"># this brings risks</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s <span class="variable">$&#123;Host_Tap_Ip&#125;</span>/<span class="variable">$&#123;Mask_Width&#125;</span> -j SNAT --to-source <span class="variable">$&#123;Host_eth0_ip&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="1433-gui-managementvirt-manager-series"><a class="markdownIt-Anchor" href="#1433-gui-managementvirt-manager-series"></a> 1.4.3.3 GUI Management(Virt-Manager Series)</h4>
 <p>install the <strong>virt-manager</strong> tool series (virsh, virt-viewer, virt-install, …)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install virt-manager</span><br></pre></td></tr></table></figure>
@@ -379,6 +393,59 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 <p>Support for tap/tun still needed, though. Run <code>modprobe tun &amp;&amp; lsmod|grep tun</code> again if the network option in vir-manager turns grey.</p>
 <h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
 <p>Xen,…</p>
+<h1 id="2-shells-grounds"><a class="markdownIt-Anchor" href="#2-shells-grounds"></a> 2 Shells — grounds</h1>
+<h2 id="20-shell-basic"><a class="markdownIt-Anchor" href="#20-shell-basic"></a> 2.0 shell basic</h2>
+<p>what is a shell ?</p>
+<ul>
+<li>program parsing user input, and do corresponding things: run binary as usr:group, etc.</li>
+</ul>
+<p>install a shell</p>
+<ul>
+<li>apt tools</li>
+</ul>
+<p>choose a shell</p>
+<ul>
+<li>current shell: <code>echo $SHELL</code></li>
+<li>supported shell: <code>cat /etc/shells</code></li>
+<li>run a shell: <code>$shell_name</code></li>
+<li>change login shell: <code>chsh</code> or <code>chsh -s $shell_path</code></li>
+</ul>
+<p>config a shell</p>
+<ul>
+<li><code>~/.$&#123;shell_name&#125;rc</code></li>
+<li><code>man $&#123;shell_name&#125;</code></li>
+</ul>
+<h2 id="21-command-line-cli"><a class="markdownIt-Anchor" href="#21-command-line-cli"></a> 2.1 Command line (CLI)</h2>
+<h3 id="211-general-commands"><a class="markdownIt-Anchor" href="#211-general-commands"></a> 2.1.1 general commands</h3>
+<p>(need a big picture)</p>
+<h3 id="212-specs"><a class="markdownIt-Anchor" href="#212-specs"></a> 2.1.2 specs</h3>
+<p>pipe, redirection, etc…</p>
+<h2 id="22-shell-script"><a class="markdownIt-Anchor" href="#22-shell-script"></a> 2.2 Shell Script</h2>
+<p>pros:</p>
+<ul>
+<li>batch commands</li>
+<li>string processing</li>
+</ul>
+<p>cons</p>
+<ul>
+<li>arithmetic</li>
+</ul>
+<h3 id="221-variable"><a class="markdownIt-Anchor" href="#221-variable"></a> 2.2.1 variable</h3>
+<p>strings ?</p>
+<h3 id="222-operaters"><a class="markdownIt-Anchor" href="#222-operaters"></a> 2.2.2 operaters</h3>
+<p>()<br />
+(())<br />
+[]<br />
+[[]]<br />
+{}<br />
+’<br />
+&quot;<br />
+$<br />
+&lt;</p>
+<blockquote></blockquote>
+<p>…</p>
+<h3 id="223-keywords"><a class="markdownIt-Anchor" href="#223-keywords"></a> 2.2.3 keywords</h3>
+<p>if, case, for, while, repeat</p>
 
     </div>
 
@@ -464,7 +531,7 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-install"><span class="nav-text"> 0 Install</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-software-config"><span class="nav-text"> 1 Software Config</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-debian-software-general-management"><span class="nav-text"> 1.1 Debian Software General Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#111-apt-tools"><span class="nav-text"> 1.1.1 apt tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-dpkg"><span class="nav-text"> 1.1.2 dpkg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-make-install"><span class="nav-text"> 1.1.3 make install</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-document-software"><span class="nav-text"> 1.2 Document software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#121-input-method"><span class="nav-text"> 1.2.1 Input Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122-the-fonts"><span class="nav-text"> 1.2.2 the Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-office"><span class="nav-text"> 1.2.3 Office</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-markdown-and-tex"><span class="nav-text"> 1.2.4 markdown and tex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-aux-software"><span class="nav-text"> 1.3 Aux Software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#131-xfce-touchpad-config"><span class="nav-text"> 1.3.1 xfce touchpad config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132-web-browser"><span class="nav-text"> 1.3.2 Web Browser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#133-socks-proxy-client"><span class="nav-text"> 1.3.3 socks proxy client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-social"><span class="nav-text"> 1.3.4 Social</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-virtualize"><span class="nav-text"> 1.4 Virtualize</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#140-architecture"><span class="nav-text"> 1.4.0 Architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#141-vmware-vmdk"><span class="nav-text"> 1.4.1 VMware .vmdk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#142-virtualbox-vdi"><span class="nav-text"> 1.4.2  VirtualBox .vdi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#143-qemu-qcowqcow2"><span class="nav-text"> 1.4.3 Qemu .qcow,.qcow2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1431-basic-install"><span class="nav-text"> 1.4.3.1 basic install</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1432-network-config"><span class="nav-text"> 1.4.3.2  Network Config</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1433-gui-managementvirt-manager-series"><span class="nav-text"> 1.4.3.3 GUI Management(Virt-Manager Series)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-text"> Others</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-install"><span class="nav-text"> 0 Install</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-software-config-outer-layers"><span class="nav-text"> 1 Software Config — outer layers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-debian-software-general-management"><span class="nav-text"> 1.1 Debian Software General Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#111-apt-tools"><span class="nav-text"> 1.1.1 apt tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-dpkg"><span class="nav-text"> 1.1.2 dpkg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-make-install"><span class="nav-text"> 1.1.3 make install</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-documentation-software"><span class="nav-text"> 1.2 Documentation software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#121-input-method"><span class="nav-text"> 1.2.1 Input Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122-the-fonts"><span class="nav-text"> 1.2.2 the Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-office"><span class="nav-text"> 1.2.3 Office</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-markdown-and-tex"><span class="nav-text"> 1.2.4 markdown and tex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125-hexo-blog"><span class="nav-text"> 1.2.5 hexo blog</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-aux-software"><span class="nav-text"> 1.3 Aux Software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#131-social"><span class="nav-text"> 1.3.1 Social</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132-xfce-touchpad-config"><span class="nav-text"> 1.3.2 xfce touchpad config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#133-web-browser"><span class="nav-text"> 1.3.3 Web Browser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-socks-proxy-client"><span class="nav-text"> 1.3.4 socks proxy client</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-virtualize"><span class="nav-text"> 1.4 Virtualize</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#140-architecture"><span class="nav-text"> 1.4.0 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#141-vmware-vmdk"><span class="nav-text"> 1.4.1 VMware .vmdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#142-virtualbox-vdi"><span class="nav-text"> 1.4.2  VirtualBox .vdi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#143-qemu-qcowqcow2"><span class="nav-text"> 1.4.3 Qemu .qcow,.qcow2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1431-basic-install"><span class="nav-text"> 1.4.3.1 basic install</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1432-network-config"><span class="nav-text"> 1.4.3.2  Network Config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1433-gui-managementvirt-manager-series"><span class="nav-text"> 1.4.3.3 GUI Management(Virt-Manager Series)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-text"> Others</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-shells-grounds"><span class="nav-text"> 2 Shells — grounds</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#20-shell-basic"><span class="nav-text"> 2.0 shell basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-command-line-cli"><span class="nav-text"> 2.1 Command line (CLI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#211-general-commands"><span class="nav-text"> 2.1.1 general commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#212-specs"><span class="nav-text"> 2.1.2 specs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-shell-script"><span class="nav-text"> 2.2 Shell Script</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#221-variable"><span class="nav-text"> 2.2.1 variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#222-operaters"><span class="nav-text"> 2.2.2 operaters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#223-keywords"><span class="nav-text"> 2.2.3 keywords</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

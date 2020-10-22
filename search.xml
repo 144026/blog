@@ -330,8 +330,8 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
 <li>教材：计网-系统方法、计网-自顶向下、计网-分层方法</li>
 <li>工具：wireshark, ns3, etc.</li>
 </ul>
-<p><strong>教学计划</strong><br />
-<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200921193139.png" style="zoom:50%;" /></p>
+<p><strong>教学计划</strong></p>
+<img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200921193139.png" style="zoom:50%;" />
 <p><strong>课程考核</strong></p>
 <ul>
 <li>基本
@@ -493,23 +493,24 @@ ppt</li>
 <li>实体、协议、P2P</li>
 </ul>
 <h1 id="2-osi模型"><a class="markdownIt-Anchor" href="#2-osi模型"></a> 2 OSI模型</h1>
-<h1 id="3-应用"><a class="markdownIt-Anchor" href="#3-应用"></a> 3 应用</h1>
-<p>CS/P2P</p>
-<p>需求：可靠/带宽/时延</p>
-<p>基础DNS</p>
-<p>应用：SMTP、POP、IMAP<br />
-HTTP<br />
-DNS<br />
-P2P</p>
-<p>典型请求/应答<br />
-消息格式</p>
-<p>SMTP &amp; HTTP</p>
-<p>DNS</p>
-<p>DNS解析</p>
-<p>迭代查询<br />
+<h1 id="开始连接"><a class="markdownIt-Anchor" href="#开始连接"></a> 开始连接</h1>
+<h1 id="应用"><a class="markdownIt-Anchor" href="#应用"></a> 应用</h1>
+<h2 id="传统应用"><a class="markdownIt-Anchor" href="#传统应用"></a> 传统应用</h2>
+<h3 id="电子邮件"><a class="markdownIt-Anchor" href="#电子邮件"></a> 电子邮件</h3>
+<p>SMTP、POP、IMAP</p>
+<h3 id="万维网"><a class="markdownIt-Anchor" href="#万维网"></a> 万维网</h3>
+<p>HTTP</p>
+<h3 id="web服务"><a class="markdownIt-Anchor" href="#web服务"></a> Web服务</h3>
+<h2 id="多媒体应用"><a class="markdownIt-Anchor" href="#多媒体应用"></a> 多媒体应用</h2>
+<h2 id="基础服务"><a class="markdownIt-Anchor" href="#基础服务"></a> 基础服务</h2>
+<h3 id="dns"><a class="markdownIt-Anchor" href="#dns"></a> DNS</h3>
+<p>DNS解析<br />
+迭代查询<br />
 递归查询</p>
 <p>DNS：缓存和更新记录</p>
-<p>覆盖网络应用</p>
+<h2 id="覆盖网络"><a class="markdownIt-Anchor" href="#覆盖网络"></a> 覆盖网络</h2>
+<p>CS/P2P<br />
+需求：可靠/带宽/时延</p>
 <p>CS/P2P数学模型<br />
 BitTorrent<br />
 skype<br />
@@ -749,7 +750,7 @@ CDN</p>
 <li>DSP：DFT .1</li>
 <li>整理文件/笔记 .1</li>
 </ol>
-<h3 id="2020-10-20"><a class="markdownIt-Anchor" href="#2020-10-20"></a> 2020-10-20</h3>
+<h3 id="2020-10-29"><a class="markdownIt-Anchor" href="#2020-10-29"></a> 2020-10-29</h3>
 <ol>
 <li>linux小系统v0.7</li>
 <li>问题流量</li>
@@ -759,6 +760,12 @@ CDN</p>
 <li>通电 知识地图</li>
 <li>v0.9</li>
 <li>ADI杯</li>
+</ol>
+<h3 id="2020-10-20"><a class="markdownIt-Anchor" href="#2020-10-20"></a> 2020-10-20</h3>
+<ol>
+<li>FFT（不太行）</li>
+<li>体育课</li>
+<li>champion, not loser !</li>
 </ol>
 ]]></content>
       <categories>

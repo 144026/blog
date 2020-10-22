@@ -1607,6 +1607,24 @@ cat initrd/etc/issue xxx /r /m
       </tags>
   </entry>
   <entry>
+    <title>通信电子线路</title>
+    <url>/2020/10/22/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通信电子线路笔记</p>
+<a id="more"></a>
+<h3 id="ch2"><a class="markdownIt-Anchor" href="#ch2"></a> ch2</h3>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201022070657.png" alt="20201022070657" /></p>
+]]></content>
+      <categories>
+        <category>知识</category>
+        <category>电路</category>
+      </categories>
+      <tags>
+        <tag>电路理论</tag>
+        <tag>模拟电路</tag>
+        <tag>高频</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>categories</title>
     <url>/categories/index.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>

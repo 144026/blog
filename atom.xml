@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-20T13:24:32.223Z</updated>
+  <updated>2020-10-22T14:08:10.591Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通信电子线路</title>
+    <link href="http://yoursite.com/2020/10/22/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/"/>
+    <id>http://yoursite.com/2020/10/22/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</id>
+    <published>2020-10-22T14:00:43.000Z</published>
+    <updated>2020-10-22T14:08:10.591Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通信电子线路笔记</p><a id="more"></a><h3 id="ch2"><a class="markdownIt-Anchor" href="#ch2"></a> ch2</h3><p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201022070657.png" alt="20201022070657" /></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通信电子线路笔记&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="知识" scheme="http://yoursite.com/categories/%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="电路" scheme="http://yoursite.com/categories/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/"/>
+    
+    
+      <category term="电路理论" scheme="http://yoursite.com/tags/%E7%94%B5%E8%B7%AF%E7%90%86%E8%AE%BA/"/>
+    
+      <category term="模拟电路" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF/"/>
+    
+      <category term="高频" scheme="http://yoursite.com/tags/%E9%AB%98%E9%A2%91/"/>
+    
+  </entry>
   
   <entry>
     <title>linux初步</title>

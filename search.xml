@@ -19,7 +19,7 @@
   </entry>
   <entry>
     <title>blasphemous</title>
-    <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
+    <url>/2020/08/27/%E5%A8%B1%E4%B9%90/blasphemous/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
 <a id="more"></a>
 
@@ -65,7 +65,7 @@
   </entry>
   <entry>
     <title>数字信号处理</title>
-    <url>/2020/09/22/%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
+    <url>/2020/09/23/%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数字信号处理课程笔记。</p>
 <a id="more"></a>
 <h1 id="0-概述"><a class="markdownIt-Anchor" href="#0-概述"></a> 0 概述</h1>
@@ -268,7 +268,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>一道Perl逆向入门题</title>
-    <url>/2020/08/01/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/WMCTF2020-easy-re/</url>
+    <url>/2020/08/02/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/WMCTF2020-easy-re/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
 <p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
 <ul>
@@ -308,7 +308,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>计算机网络</title>
-    <url>/2020/09/20/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <url>/2020/09/21/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>计算机网络课程学习笔记。</p>
 <a id="more"></a>
 <h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1>
@@ -838,7 +838,7 @@ CDN</p>
 <ul>
 <li>新人水文</li>
 <li>dx: ldd、tikz、图床</li>
-<li>qy: linux简介、几个RE</li>
+<li>qy: linux简介、几个RE:</li>
 <li>lu: 学习方法论x3、逆向工具表、dos启动简介、shellcode简介</li>
 </ul>
 </li>
@@ -863,6 +863,74 @@ CDN</p>
 <p>recall</p>
 </li>
 </ol>
+<h3 id="2020-10-23"><a class="markdownIt-Anchor" href="#2020-10-23"></a> 2020-10-23</h3>
+<ol>
+<li>
+<p>编译内核</p>
+<ul>
+<li><code>make localmodconfig</code>, <code>make tinyconfig</code>, <code>make menuconfig</code>,<code>make -j8</code></li>
+<li>host编译-&gt; guest, make版本问题？(did you mean TAB instead of 8 spaces)</li>
+<li>scl.gcc9直接<code>make menuconfig</code>出错</li>
+<li><code>tar -z|j|J</code> :  <code>gz|bzip2|xz</code></li>
+</ul>
+</li>
+<li>
+<p>操作系统</p>
+<ul>
+<li>PV原语：两种模型
+<ul>
+<li>互斥：资源有限</li>
+<li>同步：资源不断产生?</li>
+</ul>
+</li>
+<li>其他同步/互斥机制
+<ul>
+<li>mutex、flock</li>
+<li>spinlock(seen in kernel)</li>
+</ul>
+</li>
+<li>存储器管理
+<ul>
+<li>内存模型
+<ul>
+<li>分段(data share) + 分页(内存碎片) = 段页式（现代os）</li>
+</ul>
+</li>
+<li>运行管理
+<ul>
+<li>内存/磁盘置换、缺页中断</li>
+</ul>
+</li>
+<li>存储共享
+<ul>
+<li>IPC</li>
+<li>代码段重用，数据段Copy-on-Write</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>earlyshovel github py脚本</p>
+<ul>
+<li><code>t(arget)[ip|port], c(allback)[ip|port|l(ocal)port]</code></li>
+<li>文件包含关系复杂，vscode尚需grep，vim怎么搞定？</li>
+</ul>
+</li>
+<li>
+<p>种子讲坛black story</p>
+<ul>
+<li>事件1 -&gt; 事件2，如何2分找到逻辑通路？</li>
+</ul>
+</li>
+<li>
+<p>champion</p>
+<ul>
+<li>复现总结 + 原理简述</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -875,7 +943,7 @@ CDN</p>
   </entry>
   <entry>
     <title>IDA学习笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
+    <url>/2020/08/27/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
 <a id="more"></a>
 <h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
@@ -894,7 +962,7 @@ CDN</p>
   </entry>
   <entry>
     <title>learn-Vim</title>
-    <url>/2020/10/03/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-Vim/</url>
+    <url>/2020/10/04/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-Vim/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>some usage tips.</p>
 <a id="more"></a>
 <h1 id="1-install-and-basics"><a class="markdownIt-Anchor" href="#1-install-and-basics"></a> 1 Install and Basics</h1>
@@ -1143,7 +1211,7 @@ $<br />
   </entry>
   <entry>
     <title>博客搭建笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
+    <url>/2020/08/27/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在写了，在写了（新建文件夹）</p>
 <a id="more"></a>
 <h1 id="0-build-the-enviroment"><a class="markdownIt-Anchor" href="#0-build-the-enviroment"></a> 0 Build the Enviroment</h1>
@@ -1203,7 +1271,7 @@ $<br />
   </entry>
   <entry>
     <title>软件工程 敏捷mini培训</title>
-    <url>/2020/10/10/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%95%8F%E6%8D%B7mini%E5%9F%B9%E8%AE%AD/</url>
+    <url>/2020/10/11/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%95%8F%E6%8D%B7mini%E5%9F%B9%E8%AE%AD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>国庆4+1天软件工程培训(简要)笔记。</p>
 <a id="more"></a>
 <h1 id="软件工程"><a class="markdownIt-Anchor" href="#软件工程"></a> 软件工程</h1>
@@ -1366,7 +1434,7 @@ $<br />
   </entry>
   <entry>
     <title>linux初步</title>
-    <url>/2020/10/15/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/linux/</url>
+    <url>/2020/10/16/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/linux/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>linux初步课程笔记（草稿）</p>
 <a id="more"></a>
 <h1 id="linux初步"><a class="markdownIt-Anchor" href="#linux初步"></a> linux初步</h1>

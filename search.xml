@@ -1695,6 +1695,41 @@ cat initrd/etc/issue xxx /r /m
 <p>dlopen() &amp; libnss</p>
 <h2 id="3-linux-kernel"><a class="markdownIt-Anchor" href="#3-linux-kernel"></a> 3 linux kernel</h2>
 <p>kernel+modules(内核级功能)</p>
+<ol>
+<li>
+<p>下载5.9.1源码<a href="https://kernel.org">tarball(xz)</a>，解压<code>tar -xJf $&#123;file&#125;.tar.xzi $ksrc</code></p>
+</li>
+<li>
+<p>载入<code>/boot/config-$(uname -r)</code>作为内核配置：<code>make localmodconfig</code>, 出现输入提示后<code>^C</code></p>
+<ul>
+<li><code>$ksrc</code> 下存在<code>.config</code>时，默认载入<code>.config</code>而不是<code>/boot/config</code>?</li>
+</ul>
+</li>
+<li>
+<p><code>make memuconfig</code>，genereal -&gt; <code>kernel compress mode: XZ</code>（better than gz），save（应用缺省值）</p>
+<ul>
+<li>缺少依赖: <code>ncurses-devel</code>, <code>open-ssl</code></li>
+</ul>
+</li>
+<li>
+<p><code>make -j8</code>, ksize: 4.9M</p>
+<ul>
+<li>gcc版本过低  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y centos-release-scl</span><br><span class="line">yum install -y devtoolset-9-gcc devtoolset-9-gcc-c++ devtoolset-9-binutils</span><br><span class="line">. /opt/rh/devtoolset-9/<span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>缺少依赖: <code>bc</code>, <code>elfutils-libelf-devel</code></li>
+</ul>
+</li>
+<li>
+<p>general -&gt; <code>[ ] include all symbols in kallsyms</code>, <code>make -j8</code>, ksize: 4.7M</p>
+<ul>
+<li>gcc9 <code>make menuconfig</code>出错？换回gcc4.4执行</li>
+<li>取消多种initramfs的支持，ksize仍然4.7M</li>
+</ul>
+</li>
+<li>
+<p>fs -&gt; <code>[ ] network fs; [ ] ext2/4 security labels</code> ; sec opts -&gt; <code>[ ] en diff sec mods; [ ] en sec fs; [ ] rm kmap in u mod</code>  ksize: 4.0M</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>知识</category>

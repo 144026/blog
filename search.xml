@@ -934,7 +934,7 @@ CDN</p>
 <h3 id="2020-10-24"><a class="markdownIt-Anchor" href="#2020-10-24"></a> 2020-10-24</h3>
 <ol>
 <li>开会</li>
-<li>bili-ctf ($\times <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">)</mo><mn>679</mn><mo stretchy="false">(</mo></mrow><annotation encoding="application/x-tex">) 679(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span><span class="mord">6</span><span class="mord">7</span><span class="mord">9</span><span class="mopen">(</span></span></span></span>\surd$)
+<li>bili-ctf (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span>) 679(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">√</mi></mrow><annotation encoding="application/x-tex">\surd</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.2em;"></span><span class="mord">√</span></span></span></span>)
 <ul>
 <li><code>&lt;script&gt; $ajax</code>: url + method + function(data) ?</li>
 </ul>

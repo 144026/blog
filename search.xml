@@ -931,6 +931,51 @@ CDN</p>
 </ul>
 </li>
 </ol>
+<h3 id="2020-10-24"><a class="markdownIt-Anchor" href="#2020-10-24"></a> 2020-10-24</h3>
+<ol>
+<li>开会</li>
+<li>bili-ctf ($\times <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">)</mo><mn>679</mn><mo stretchy="false">(</mo></mrow><annotation encoding="application/x-tex">) 679(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span><span class="mord">6</span><span class="mord">7</span><span class="mord">9</span><span class="mopen">(</span></span></span></span>\surd$)
+<ul>
+<li><code>&lt;script&gt; $ajax</code>: url + method + function(data) ?</li>
+</ul>
+</li>
+<li>linux命令
+<ul>
+<li><code>echo</code>
+<ul>
+<li><code>echo $str</code>将去除换行、tab、多个空格，<code>echo &quot;$str&quot;</code>保留</li>
+</ul>
+</li>
+<li><code>sed</code>
+<ul>
+<li><code>&amp;</code>表示已匹配的串</li>
+<li><code>sed '/^\s*$/d'</code>删除空白字符行, <code>sed '/^$/d'</code>删除空行(一行只含一个<code>\n</code>)</li>
+</ul>
+</li>
+<li><code>curl</code>
+<ul>
+<li><code>-H</code> (header，<code>-L</code>重定向时不变)
+<ul>
+<li>add: <code>-H &quot;a: aa&quot; -H &quot;b: bb&quot; ...</code></li>
+<li>rm: <code>-H &quot;a:&quot;</code></li>
+<li>empty: <code>-H &quot;a;&quot;</code></li>
+</ul>
+</li>
+<li><code>-A $agent</code> (User-Agent)</li>
+<li><code>-b|--cookie &quot;name1=value1; name2=value2&quot;</code></li>
+<li><code>-c|--cookie-jar $file</code></li>
+<li><code>-o $file</code> (<code>file=-</code> for stdout)
+<ul>
+<li><code>-O</code></li>
+</ul>
+</li>
+<li><code>-i</code>(inlude header); <code>-I</code>(header only)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>champion 检测策略</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

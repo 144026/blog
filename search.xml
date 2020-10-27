@@ -563,24 +563,8 @@
 </ul>
 </li>
 </ol>
-<p>TODO:</p>
-<ol>
-<li>通电
-<ul>
-<li>ch3知识地图</li>
-<li>ch2习题</li>
-</ul>
-</li>
-<li>计网
-<ul>
-<li>ADI</li>
-<li>ch2,ch9习题</li>
-</ul>
-</li>
-<li>champion文档</li>
-<li>企业调研</li>
-<li>体测…</li>
-</ol>
+<h3 id="2020-10-27"><a class="markdownIt-Anchor" href="#2020-10-27"></a> 2020-10-27</h3>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201028012621.png" alt="20201028012621" /></p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -684,7 +668,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo dpkg --purge <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="113-make-install"><a class="markdownIt-Anchor" href="#113-make-install"></a> 1.1.3 make install</h3>
 <p>Software installed in this way is hard to remove. Better setting a <code>PREFIX=&quot;/path/to/install</code> and deleting the whole <code>$PREFIX</code> folder to uninstall.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tar -tvf $&#123;PackageName&#125;.tar.gz</span></span><br><span class="line">tar -xzf <span class="variable">$&#123;PackageName&#125;</span>.tar.gz</span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;PackageName&#125;</span></span><br><span class="line">less README</span><br><span class="line">./configure --prefix /path/to/install </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># tar -tvf $&#123;PackageName&#125;.tar.gz</span></span><br><span class="line">tar -xzf <span class="variable">$&#123;PackageName&#125;</span>.tar.gz</span><br><span class="line"><span class="comment"># tar -xJf $&#123;PackageName&#125;.tar.xz</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;PackageName&#125;</span></span><br><span class="line">less README</span><br><span class="line">./configure --prefix /path/to/install </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 <h2 id="12-documentation-software"><a class="markdownIt-Anchor" href="#12-documentation-software"></a> 1.2 Documentation software</h2>
 <h3 id="121-input-method"><a class="markdownIt-Anchor" href="#121-input-method"></a> 1.2.1 Input Method</h3>
 <p>fcitx, fcitx-googlepinyin (apt)</p>
@@ -724,7 +708,7 @@
 <h3 id="132-xfce-touchpad-config"><a class="markdownIt-Anchor" href="#132-xfce-touchpad-config"></a> 1.3.2 xfce touchpad config</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install xserver-xorg-input-synaptics &amp;&amp; cp -r /usr/share/X11/xorg.conf.d/ /etc/X11/ &amp;&amp; sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf</span><br></pre></td></tr></table></figure>
 <p>now add the following options to the first inputclass</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Option &quot;TapButton1&quot; &quot;1&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton2&quot;</span> <span class="string">&quot;3&quot;</span></span><br><span class="line">Option <span class="string">&quot;TapButton3&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CornerCoasting&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircularScrolling&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircScrollTrigger&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinZ&quot;</span> <span class="string">&quot;40&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinW&quot;</span> <span class="string">&quot;8&quot;</span></span><br><span class="line">Option <span class="string">&quot;CoastingSpeed&quot;</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerLow&quot;</span> <span class="string">&quot;30&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerHigh&quot;</span> <span class="string">&quot;70&quot;</span></span><br><span class="line">Option <span class="string">&quot;MaxTapTime&quot;</span> <span class="string">&quot;125&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Option &quot;TapButton1&quot; &quot;1&quot; # left mouse</span></span><br><span class="line">Option <span class="string">&quot;TapButton2&quot;</span> <span class="string">&quot;3&quot;</span> <span class="comment"># middle mouse</span></span><br><span class="line">Option <span class="string">&quot;TapButton3&quot;</span> <span class="string">&quot;2&quot;</span> <span class="comment"># right mouse</span></span><br><span class="line">Option <span class="string">&quot;VertEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CornerCoasting&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircularScrolling&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircScrollTrigger&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinZ&quot;</span> <span class="string">&quot;40&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinW&quot;</span> <span class="string">&quot;8&quot;</span></span><br><span class="line">Option <span class="string">&quot;CoastingSpeed&quot;</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerLow&quot;</span> <span class="string">&quot;30&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerHigh&quot;</span> <span class="string">&quot;70&quot;</span></span><br><span class="line">Option <span class="string">&quot;MaxTapTime&quot;</span> <span class="string">&quot;125&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br></pre></td></tr></table></figure>
 <h3 id="133-web-browser"><a class="markdownIt-Anchor" href="#133-web-browser"></a> 1.3.3 Web Browser</h3>
 <ol>
 <li>chrome: just download the official package.</li>
@@ -742,46 +726,54 @@
 <ol>
 <li>
 <p>Bare-metal<br />
-Userspace Management tool --&gt; Management API --&gt; Hypervisor software --&gt; Hardware resource(CPU/Memory/NIC/Disk)</p>
+Userspace Management tool <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Management API <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hypervisor software <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hardware resource(CPU/Memory/NIC/Disk)</p>
 </li>
 <li>
 <p>Host OS<br />
-Userspace Management tool --&gt; API --&gt; Hypervisor --&gt; Host OS --&gt; Hardware (CPU/Memory/NIC/Disk)</p>
+Userspace Management tool <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> API <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hypervisor <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Host OS <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hardware (CPU/Memory/NIC/Disk)</p>
 </li>
 </ol>
 <h3 id="141-vmware-vmdk"><a class="markdownIt-Anchor" href="#141-vmware-vmdk"></a> 1.4.1 VMware .vmdk</h3>
 <h3 id="142-virtualbox-vdi"><a class="markdownIt-Anchor" href="#142-virtualbox-vdi"></a> 1.4.2  VirtualBox .vdi</h3>
 <h3 id="143-qemu-qcowqcow2"><a class="markdownIt-Anchor" href="#143-qemu-qcowqcow2"></a> 1.4.3 Qemu .qcow,.qcow2</h3>
-<h4 id="1431-basic-install"><a class="markdownIt-Anchor" href="#1431-basic-install"></a> 1.4.3.1 basic install</h4>
+<h4 id="1430-install-check-suppport"><a class="markdownIt-Anchor" href="#1430-install-check-suppport"></a> 1.4.3.0 install &amp; check suppport</h4>
 <p>Install qemu and qemu-system</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt list|grep qemu &amp;&amp; sudo apt-get install qemu [qemu-system qemu-utils]</span><br></pre></td></tr></table></figure>
+<p>Check host hardware support for KVM</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grep -E <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<p>Check if kvm module is loaded on host</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
+<h4 id="1431-basic-usage"><a class="markdownIt-Anchor" href="#1431-basic-usage"></a> 1.4.3.1 Basic Usage</h4>
 <p>Create vitual disk by <code>qemu-img [-f FMT] &lt;filename&gt; [SIZE]</code>.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qemu-img -f qcow2 ubuntu-1804-server-x86_64.qcow2 4G</span><br></pre></td></tr></table></figure>
-<p>Check hardware support for KVM</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grep -E <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-<p>Check if kvm module is loaded</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
-<p>Start system from <code>.iso</code> by <code>qemu-system-xxx [options] [disk_img]</code>, use <code>-enable-kvm</code> to accelerate.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qemu-system-x86_86 -<span class="built_in">enable</span>-kvm -m 512 ./your-virtual-disk.qcow2 -cdrom ./your-boot-img.iso</span><br></pre></td></tr></table></figure>
+<p>OS install from <code>.iso</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qemu-system-x86_86 -<span class="built_in">enable</span>-kvm \ <span class="comment">#  use `-enable-kvm` to accelerate.</span></span><br><span class="line">-m 512 \</span><br><span class="line">-cdrom ./your-boot-img.iso \</span><br><span class="line">./your-virtual-disk.qcow2 </span><br></pre></td></tr></table></figure>
+<p>Start from <code>qcow2</code> disk image:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qemu-system-x86_64 -<span class="built_in">enable</span>-kvm \</span><br><span class="line">-m 1024 \</span><br><span class="line">-hda <span class="built_in">test</span>-img.qcow2</span><br></pre></td></tr></table></figure>
 <h4 id="1432-network-config"><a class="markdownIt-Anchor" href="#1432-network-config"></a> 1.4.3.2  Network Config</h4>
 <p>Config first a host-only virtual network, then change into NAT mode using iptables. See Network options in <code>man qemu-system-x86_64</code>.</p>
 <p><strong>Host Config</strong></p>
+<p>NOTE: DO check kernel support for tap/tun: <code>modprobe tun &amp;&amp; lsmod|grep tun</code>. Kernel module recompile needed if unsupported.</p>
 <p>Use <code>-netdev tap,id=&lt;id&gt;,ifname=&lt;name&gt;,script=&lt;file&gt;[,downscript=&lt;dfile&gt;]</code> to config a host TAP network backend (bring up an interface <strong>virtually connected to the Guest NIC</strong>).</p>
 <p>Or just use <code>-nic tap</code> to bring up the default tap0 interface, and manually config it using <code>ifconfig</code>.</p>
-<p>NOTE: DO check kernel support for tap/tun: <code>modprobe tun &amp;&amp; lsmod|grep tun</code>. Kernel module recompile needed if unsupported.</p>
 <p><strong>Guest Config</strong></p>
-<p>Set guest interface(eth0, ens33 or whatever) to fit in the Host TAP network. Host-only finished.</p>
+<p>Set guest interface(check with <code>ifconfig -a</code>) to fit in the Host TAP network. Host-only finished.</p>
 <p><strong>NAT Config</strong><br />
 Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iptables -F <span class="comment"># this brings risks</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s <span class="variable">$&#123;Host_Tap_Ip&#125;</span>/<span class="variable">$&#123;Mask_Width&#125;</span> -j SNAT --to-source <span class="variable">$&#123;Host_eth0_ip&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="1433-gui-managementvirt-manager-series"><a class="markdownIt-Anchor" href="#1433-gui-managementvirt-manager-series"></a> 1.4.3.3 GUI Management(Virt-Manager Series)</h4>
+<h4 id="1433-9p-filesystem-passthrough"><a class="markdownIt-Anchor" href="#1433-9p-filesystem-passthrough"></a> 1.4.3.3 9P Filesystem Passthrough</h4>
+<p>Check guest kernel support:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">modprobe -l | grep 9p</span><br><span class="line">lsmod | grep 9p</span><br><span class="line">grep 9P /boot/config-$(uname -r)</span><br><span class="line">grep CONFIG_9P_FS /boot/config-$(uname -r)</span><br></pre></td></tr></table></figure>
+<p>setup guide on <a href="http://www.linux-kvm.org/page/9p_virtio">linux-kvm.org/page/9p_virtio</a></p>
+<h4 id="145-gui-managementvirt-manager-series"><a class="markdownIt-Anchor" href="#145-gui-managementvirt-manager-series"></a> 1.4.5 GUI Management(Virt-Manager Series)</h4>
 <p>install the <strong>virt-manager</strong> tool series (virsh, virt-viewer, virt-install, …)</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install virt-manager</span><br></pre></td></tr></table></figure>
 <p>Now with command <code>virt-manager</code>, geust OS devices can be easily configured, including the NAT virtual network manaully set up above.</p>
-<p>Support for tap/tun still needed, though. Run <code>modprobe tun &amp;&amp; lsmod|grep tun</code> again if the network option in vir-manager turns grey.</p>
+<p>Host support for tap/tun still needed, though. Run <code>modprobe tun &amp;&amp; lsmod|grep tun</code> again if the network option in vir-manager turns grey.</p>
 <h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
 <p>Xen,…</p>
 <h2 id="15-wine"><a class="markdownIt-Anchor" href="#15-wine"></a> 1.5 wine</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install winetricks</span><br></pre></td></tr></table></figure>
 <h1 id="2-shells-grounds"><a class="markdownIt-Anchor" href="#2-shells-grounds"></a> 2 Shells — grounds</h1>
 <h2 id="20-shell-basic"><a class="markdownIt-Anchor" href="#20-shell-basic"></a> 2.0 shell basic</h2>
 <p>what is a shell ?</p>

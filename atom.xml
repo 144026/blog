@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-22T14:23:11.499Z</updated>
+  <updated>2020-10-30T16:13:21.145Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Quotes</title>
+    <link href="http://yoursite.com/2020/10/30/%E6%8A%80%E8%83%BD/Ideology/quotes/"/>
+    <id>http://yoursite.com/2020/10/30/%E6%8A%80%E8%83%BD/Ideology/quotes/</id>
+    <published>2020-10-30T15:43:25.000Z</published>
+    <updated>2020-10-30T16:13:21.145Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>just some quotes.</p><a id="more"></a><h4 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h4><blockquote><p>Fundamental objects are not necessarily simple. The universe doesn’t really care if its final answers look clean; they are what they are by logical necessity, with no concern over how easily we’ll be able to understand them.</p><blockquote><p>3Blue1Brown, <a href="https://youtu.be/mH0oCDa74tE">Group theory and why I love 808017424794512875886459904961710757005754368000000000</a></p></blockquote></blockquote><br><blockquote><p>Ironically the ideas that most profoundly shape the ways that a future generation thinks will end up looking, to that future generation, simpler than they really are.</p><blockquote><p>3Blue1Brown, <a href="https://youtu.be/b3NxrZOu_CE">Hamming codes part 2, the elegance of it all</a></p></blockquote></blockquote><br>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;just some quotes.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技能" scheme="http://yoursite.com/categories/%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="Ideology" scheme="http://yoursite.com/categories/%E6%8A%80%E8%83%BD/Ideology/"/>
+    
+    
+      <category term="qoutes" scheme="http://yoursite.com/tags/qoutes/"/>
+    
+  </entry>
   
   <entry>
     <title>通信电子线路</title>

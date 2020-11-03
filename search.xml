@@ -469,6 +469,8 @@
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201102021309.png" alt="20201102021309" /></p>
 <h3 id="2020-11-2"><a class="markdownIt-Anchor" href="#2020-11-2"></a> 2020-11-2</h3>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201103023343.png" alt="20201103023343" /></p>
+<h3 id="2020-11-3"><a class="markdownIt-Anchor" href="#2020-11-3"></a> 2020-11-3</h3>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201104010611.png" alt="20201104010611" /></p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -879,7 +881,7 @@ $<br />
 <h2 id="20-plugin-manager"><a class="markdownIt-Anchor" href="#20-plugin-manager"></a> 2.0 Plugin Manager</h2>
 <h3 id="vim-plug"><a class="markdownIt-Anchor" href="#vim-plug"></a> Vim-plug</h3>
 <p>Download <code>plug.vim</code> and put it in <code>~/.vim/autoload/</code>, for example</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fLo <span class="string">&quot;~/.vim/autoload/plug.vim&quot;</span> --create-dirs \</span><br><span class="line">	<span class="string">&quot;https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fLo ~/.vim/<span class="built_in">autoload</span>/plug.vim --create-dirs \</span><br><span class="line">	<span class="string">&quot;https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&quot;</span></span><br></pre></td></tr></table></figure>
 <p>See comments in <code>vim ~/.vim/autoload/plug.vim</code> (or Github readme) for tutorial. A typical usage:</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">&#x27;~/.vim/plugged&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot; make sure to use single quotes &quot;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br></pre></td></tr></table></figure>
 <h2 id="21-visual-plugins"><a class="markdownIt-Anchor" href="#21-visual-plugins"></a> 2.1 Visual plugins</h2>

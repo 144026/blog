@@ -535,6 +535,10 @@
 <li>Need network.</li>
 <li>Missing  wireless firmware. Better have a cable network, allowing post-installation firmware download and install, with <code>apt list|grep firmware</code>. If not, prepare a 2nd disk containing those firmware, and insert it after the warning pop up.</li>
 </ol>
+<h2 id="01-basic-system-config"><a class="markdownIt-Anchor" href="#01-basic-system-config"></a> 0.1 Basic System Config</h2>
+<h5 id="trusted-sudoers"><a class="markdownIt-Anchor" href="#trusted-sudoers"></a> trusted sudoers</h5>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd trusted-sudoers</span><br><span class="line">sudo usermod -a -G trusted-sudoers $(whoami)</span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;%trusted-sudoers ALL=(ALL:ALL) NOPASSWD: ALL&quot;</span> &gt;&gt; /etc/sudoers.d/trusted-grant-root</span><br><span class="line">sudo chmod 0440 /etc/sudoers.d/trusted-grant-root</span><br></pre></td></tr></table></figure>
+<p>On kali there is a group named <code>kali-trusted</code> and file <code>/etc/sudoers.d/kali-grant-root</code>, so <code>usermod</code> is enough.</p>
 <h1 id="1-software-config-outer-layers"><a class="markdownIt-Anchor" href="#1-software-config-outer-layers"></a> 1 Software Config — outer layers</h1>
 <h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>
 <h3 id="111-apt-tools"><a class="markdownIt-Anchor" href="#111-apt-tools"></a> 1.1.1 apt tools</h3>
@@ -880,6 +884,7 @@ $<br />
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">&#x27;~/.vim/plugged&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot; make sure to use single quotes &quot;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br></pre></td></tr></table></figure>
 <h2 id="21-visual-plugins"><a class="markdownIt-Anchor" href="#21-visual-plugins"></a> 2.1 Visual plugins</h2>
 <h3 id="colorscheme"><a class="markdownIt-Anchor" href="#colorscheme"></a> colorscheme</h3>
+<p>Note: run <code>cp ~/.vim/plugged/vim-colors-solarized/colors -r ~/.vim/</code> after <code>:PlugInstall</code></p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;: let g:solarized_termtrans = 1 &quot;</span> adapt the terminal transparency</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_visibility</span> = <span class="string">&quot;high&quot;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_termcolors</span>=<span class="number">256</span> <span class="comment">&quot;for terminal usage, must degrade 16bit gui color to 8bit terminal color</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> solarized</span><br></pre></td></tr></table></figure>
 <h2 id="22-markdown-plugins"><a class="markdownIt-Anchor" href="#22-markdown-plugins"></a> 2.2 Markdown plugins</h2>
 <p>Add plugin via Vim-plug (which is called in <code>vimrc</code>)</p>

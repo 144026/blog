@@ -471,6 +471,8 @@
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201103023343.png" alt="20201103023343" /></p>
 <h3 id="2020-11-3"><a class="markdownIt-Anchor" href="#2020-11-3"></a> 2020-11-3</h3>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201104010611.png" alt="20201104010611" /></p>
+<h3 id="2020-11-4"><a class="markdownIt-Anchor" href="#2020-11-4"></a> 2020-11-4</h3>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201105002213.png" alt="20201105002213" /></p>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -745,6 +747,77 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 <p>(need a big picture)</p>
 <h3 id="212-specs"><a class="markdownIt-Anchor" href="#212-specs"></a> 2.1.2 specs</h3>
 <p>pipe, redirection, etc…</p>
+<h4 id="2123-qouting"><a class="markdownIt-Anchor" href="#2123-qouting"></a> 2.1.2.3 Qouting</h4>
+<p>man-pages discription:</p>
+<blockquote>
+<p><strong>Qouting</strong> is used to remove the special meaning of certain characters or words to the shell. Qouting can be used to disable special treatment for special characters, to prevent reserved words from being recognized as such, and to prevent parameter expansion.</p>
+</blockquote>
+<blockquote>
+<p>Each of the <strong>metacharacters</strong> listed under <strong>DEFINITIONS</strong>, Manual page bash(1) has special meaning to the shell and must be quoted if it is to represent itself.</p>
+</blockquote>
+<blockquote>
+<p>When the command history expansion facilities are being used (see <strong>HISTORY EXPANSION</strong>), the <strong>history expansion</strong> character, usually <code>!</code>, must be quoted to prevent history expansion.</p>
+</blockquote>
+<blockquote>
+<p>There are three quoting machanisms: escaped character, single quotes, double quotes.</p>
+</blockquote>
+<blockquote>
+<h5 id="escape-character"><a class="markdownIt-Anchor" href="#escape-character"></a> escape character</h5>
+</blockquote>
+<blockquote>
+<p>A <strong>non-quoted</strong> backslash <code>\</code> is the escape character. It preserves the literal value of the next character that follows, with the exception of <code>&lt;newline&gt;</code>. (which is treated as line continuation)</p>
+</blockquote>
+<blockquote>
+<h5 id="single-quotes"><a class="markdownIt-Anchor" href="#single-quotes"></a> single quotes</h5>
+</blockquote>
+<blockquote>
+<p>Enclosing characters in single quotes <code>'</code> preserves the literal value of each character (even it’s <code>\</code>)within the quotes. <strong>A single quote may not occur between single quotes, even when proceeded by a backslash</strong>.</p>
+</blockquote>
+<blockquote>
+<h5 id="double-quotes"><a class="markdownIt-Anchor" href="#double-quotes"></a> double quotes</h5>
+</blockquote>
+<blockquote>
+<p>Enclosing characters in double quotes preserves the literal value of all characters with the quotes, with the exception of <code>$</code>, `, <code>\</code>, and, when history expansion is enabled, <code>!</code>. When the shell is in <strong>posix mode</strong>, the <code>!</code> has no special meaning within double quotes, even when history expansion is enabled. The characters <code>$</code> and ` retain their special meaning within double quotes. The backslash retains its special meaning only when followed by one of the following characters: <code>$</code>, `, <code>&quot;</code>, <code>\</code> or<code>&lt;newline&gt;</code>. A double quote may be quoted within double quotes by preceding it with a backslash. If enabled, history expansion will be performed unless an <code>!</code> apppearing in double quotes  is escaped using a backslash. The backslash preceding the ! is not removed.</p>
+<p>The special parameters <code>*</code> and <code>@</code> have special meaning when in double quotes.</p>
+<h5 id="string"><a class="markdownIt-Anchor" href="#string"></a> $‘<strong>string</strong>’</h5>
+<p>Words of the form <code>$'string'</code> are treated specially. The word expands to <code>string</code>, with backslash-escaped characters replaced as specified by the ANSI C standard. Backslash escape sequences, if present, are decoded.</p>
+<p>The expanded result is single-quoted, as if the dollar sign had not been present.</p>
+<p>A double-quoted string preceded by a dollar sign (<code>$&quot;string&quot;</code>) will cause the string to be translated according to the current locale. If the current locale is C or POSIX, the dollar sign is ignored. If the string is translated and replaced, the replacement is double-quoted.</p>
+</blockquote>
+<p>To sum up, without using histoty expansion, there’s four mechanisms:</p>
+<ol>
+<li><code>\</code>
+<ol>
+<li>plain: preserve the next char</li>
+<li>in s-quotes: just literal <code>\</code></li>
+<li>in d-quotes:
+<ul>
+<li>preserve next: <code>$</code>, `,<code>&quot;</code> , <code>\</code></li>
+<li>line-continuation: <code>&lt;newline&gt;</code></li>
+</ul>
+</li>
+<li>in <code>$'string'</code>: by ANSI C std</li>
+</ol>
+</li>
+<li>single quotes <code>'</code>
+<ol>
+<li>pairs: anything inside it, except itself</li>
+</ol>
+</li>
+<li>double quotes <code>&quot;</code>
+<ol>
+<li>pairs: <code>\</code> can still escape <code>$</code>, `, <code>&quot;</code> and <code>\</code>. (<code>'</code> doesn’t need to be quoted within double quotes)</li>
+</ol>
+</li>
+<li><code>$'string'</code>
+<ol>
+<li>used to contain characters like <code>\n</code> in bash strings. e.g. <code>'f\ile.txt'$'\n'</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="212x-the-ls-problem"><a class="markdownIt-Anchor" href="#212x-the-ls-problem"></a> 2.1.2.x the <code>ls</code> problem</h4>
+<p>Use <code>mkdir test &amp;&amp; touch 'f\ile.txt'</code> to create a file containing <code>\</code>, now its <em>interesting</em>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ ls</span><br><span class="line"><span class="string">&#x27;f\ile.txt&#x27;</span></span><br><span class="line"></span><br><span class="line">└─$ ls | cat </span><br><span class="line">file.txt</span><br><span class="line"></span><br><span class="line">└─$ strace ls</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;&#x27;f\\ile.txt&#x27;   log\n&quot;</span>, 18<span class="string">&#x27;f\ile.txt&#x27;</span>   <span class="built_in">log</span></span><br><span class="line">)    = 18</span><br><span class="line"></span><br><span class="line">└─$ strace ls 1&gt;/dev/null</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;f\\ile.txt\nlog\n&quot;</span>, 14)       = 14</span><br></pre></td></tr></table></figure>
 <h2 id="22-shell-script"><a class="markdownIt-Anchor" href="#22-shell-script"></a> 2.2 Shell Script</h2>
 <p>pros:</p>
 <ul>

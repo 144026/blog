@@ -1087,7 +1087,48 @@ $<br />
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">Plug <span class="string">&#x27;plasticboy/vim-markdown&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;iamcco/markdown-preview.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;iamcco/mathjax-support-for-mkdp&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot;vim-markdown config</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_math</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_strike_through</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_new_list_item_indent</span> = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; markdown-preview.vim config</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview        <span class="comment">&quot;for normal mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview        <span class="comment">&quot;for insert mode</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview    <span class="comment">&quot;for normal mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview    <span class="comment">&quot;for insert mode</span></span><br></pre></td></tr></table></figure>
 <h2 id="23-latex-plugins"><a class="markdownIt-Anchor" href="#23-latex-plugins"></a> 2.3 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> plugins</h2>
 <p>Use ‘vimtex’ plugin, <code>:help vimtex</code> for help.</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="comment">&quot;Tex Support&#123;&#123;&#123;</span></span><br><span class="line">Plug <span class="string">&#x27;lervag/vimtex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:tex_flavor</span>=<span class="string">&#x27;lualatex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vimtex_view_method</span>=<span class="string">&#x27;zathura&#x27;</span></span><br><span class="line"><span class="comment">&quot; let g:vimtex_quickfix_mode=0</span></span><br><span class="line"><span class="comment">&quot; set conceallevel=1</span></span><br><span class="line"><span class="comment">&quot; let g:tex_conceal=&#x27;abdmg&#x27;</span></span><br><span class="line"><span class="comment">&quot;&#125;&#125;&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="comment">&quot;Tex Support&#123;&#123;&#123;</span></span><br><span class="line">Plug <span class="string">&#x27;lervag/vimtex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:tex_flavor</span>=<span class="string">&#x27;lualatex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vimtex_view_method</span>=<span class="string">&#x27;zathura&#x27;</span></span><br><span class="line"><span class="comment">&quot; let g:vimtex_quickfix_mode=0</span></span><br><span class="line"><span class="comment">&quot; set conceallevel=1</span></span><br><span class="line"><span class="comment">&quot; let g:tex_conceal=&#x27;abdmg&#x27;</span></span><br><span class="line"><span class="comment">&quot;&#125;&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="231-highlighting-problems"><a class="markdownIt-Anchor" href="#231-highlighting-problems"></a> 2.3.1 Highlighting problems</h3>
+<p><strong>Problem</strong> : If <code>$</code>, <code>_</code>, … appear in <code>lstlisting</code> environment, the following highlighting would be terribly missformed.</p>
+<p><strong>Solve</strong> : add these vim commands to <code>~/.vim/after/syntax/tex.vim</code>(vim post-processing feature, see <code>:h after-directory</code>)</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">syn region texZone start=+\\begin&#123;lstlisting&#125;+ end=+\\end&#123;lstlisting&#125;\|%stopzone+</span><br><span class="line"><span class="comment">&quot; other syn groups like texMathZoneA can be used, though.</span></span><br><span class="line"><span class="comment">&quot; %stopzone is a zone-closing keyword for vimtex </span></span><br></pre></td></tr></table></figure>
+<p><strong>Steps</strong> :</p>
+<ol>
+<li><code>:h syntax</code>, read <code>syntax.txt:syn-define</code></li>
+</ol>
+<p><strong>Further</strong> :</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">syn region texZone  start=<span class="string">&quot;\\lstinputlisting&quot;</span> end=<span class="string">&quot;&#123;\s*[a-zA-Z/.0-9_^]\+\s*&#125;&quot;</span></span><br><span class="line">syn <span class="keyword">match</span> texInputFile <span class="string">&quot;\\lstinline\s*\(\[.*\]\)\=&#123;.\&#123;-&#125;&#125;&quot;</span> contains=texStatement,texInputCurlies,texInputFileOpt</span><br><span class="line"><span class="comment">&quot; \&#123;-&#125; repeat as few as possible</span></span><br></pre></td></tr></table></figure>
+<h1 id="4"><a class="markdownIt-Anchor" href="#4"></a> 4</h1>
+<h2 id="44-syntax-hilite"><a class="markdownIt-Anchor" href="#44-syntax-hilite"></a> 4.4 syntax hilite</h2>
+<hr />
+<p>basics:</p>
+<p>syntax alias: <code>:syntax</code>, <code>:syn</code>, <code>:sy</code></p>
+<p>Toggle syntax:</p>
+<ul>
+<li>current file: <code>:sy enable</code>,<code>:sy clear</code></li>
+<li>all buffers: <code>:sy on</code>,<code>:sy off</code></li>
+</ul>
+<p>Set filetype: <code>:set filetype=C</code></p>
+<p>syntax rules location: <code>$VIMRUNTIME/syntax/$&#123;language&#125;.vim</code></p>
+<hr />
+<p>define syntax:</p>
+<ul>
+<li>keyword: <code>:sy keyword key1 key2</code> (untested)</li>
+<li>match: <code>:sy match $grp +regex+ [contains=grp1,grp2,...]</code></li>
+<li>region: <code>:sy region $grp start=+regex+ end=+regex+ [contains=grp1,grp2,...]</code></li>
+<li>cluster: <code>:sy cluster $cluster contains=grp1,grp2</code></li>
+</ul>
+<hr />
+<p>define hilite</p>
+<p><code>hi grp cterm=cyan guifg=#144026</code>, <code>hi def link grp</code></p>
+<hr />
+<p><strong>further customize</strong></p>
+<p>post processing</p>
+<p><code>:h after-directory</code></p>
+<p><code>~/.vim/after/syntax/$&#123;language&#125;.vim</code></p>
+<p>new filetype</p>
+<p><code>:h filetype</code></p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">augroup</span> filetypedetect</span><br><span class="line"><span class="keyword">autocmd</span> BufNewFile,BufRead *.my <span class="keyword">setfiletype</span> my</span><br><span class="line"><span class="keyword">augroup</span> END</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>技能</category>

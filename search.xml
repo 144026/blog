@@ -465,6 +465,7 @@
 </li>
 </ul>
 <h2 id="2020-11"><a class="markdownIt-Anchor" href="#2020-11"></a> 2020-11</h2>
+<p>Elastic Stack.</p>
 <h3 id="2020-11-1"><a class="markdownIt-Anchor" href="#2020-11-1"></a> 2020-11-1</h3>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201102021309.png" alt="20201102021309" /></p>
 <h3 id="2020-11-2"><a class="markdownIt-Anchor" href="#2020-11-2"></a> 2020-11-2</h3>
@@ -473,6 +474,46 @@
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201104010611.png" alt="20201104010611" /></p>
 <h3 id="2020-11-4"><a class="markdownIt-Anchor" href="#2020-11-4"></a> 2020-11-4</h3>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201105002213.png" alt="20201105002213" /></p>
+<h3 id="2020-11-7"><a class="markdownIt-Anchor" href="#2020-11-7"></a> 2020-11-7</h3>
+<p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20201110014653.png" alt="20201110014653" /></p>
+<h3 id="2020-11-9"><a class="markdownIt-Anchor" href="#2020-11-9"></a> 2020-11-9</h3>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></p>
+<ul>
+<li><code>titlesec</code>
+<ul>
+<li><code>\titleformat*&#123;\section&#125;&#123;&#125;</code></li>
+</ul>
+</li>
+<li><code>zhnum</code>
+<ul>
+<li><code>\renewcommand</code></li>
+<li><code>\thesection</code>?</li>
+</ul>
+</li>
+<li><code>\setlength&#123;\baselineskip&#125;&#123;22pt&#125;</code></li>
+<li><code>\fontsize&#123;12pt&#125;&#123;\baselineskip&#125;</code></li>
+</ul>
+</li>
+<li>
+<p>本机DNS被污染，修复时浪费大量时间，其中有两个问题。</p>
+<ol>
+<li>改<code>hosts</code>不起效：域名打错字了
+<ul>
+<li>根据<code>nsswitch.conf</code>，<code>hosts</code>名称解析是<code>files</code>最优先，修改不起效应该立刻怀疑打错字。</li>
+</ul>
+</li>
+<li>尝试网络上的各种dns刷新方法，wireshark抓包都没显示刷新成功。
+<ul>
+<li>到底怎么刷新？？？</li>
+</ul>
+</li>
+<li>尝试其中一种方式时???</li>
+</ol>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ sudo systemd-resolve --flush-caches</span><br><span class="line">Failed to flush caches: Unit dbus-org.freedesktop.resolve1.service not found.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

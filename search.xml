@@ -506,12 +506,15 @@
 </li>
 <li>尝试网络上的各种dns刷新方法，wireshark抓包都没显示刷新成功。
 <ul>
-<li>到底怎么刷新？？？</li>
+<li>本机使用的哪种DNS服务？
+<ul>
+<li>查看<code>nsswitch.conf</code>, <code>locate mdns4_mininal</code>, <code>dpkg -S</code>, <code>dpkg -L</code></li>
+<li><code>mdns4_minimal</code>怎样刷新缓存?</li>
 </ul>
 </li>
-<li>尝试其中一种方式时???</li>
+</ul>
+</li>
 </ol>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ sudo systemd-resolve --flush-caches</span><br><span class="line">Failed to flush caches: Unit dbus-org.freedesktop.resolve1.service not found.</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 ]]></content>

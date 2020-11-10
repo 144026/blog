@@ -486,7 +486,7 @@
 <li><code>\titleformat*&#123;\section&#125;&#123;&#125;</code></li>
 </ul>
 </li>
-<li><code>zhnum</code>
+<li><code>zhnum</code>/<code>\chinese</code>
 <ul>
 <li><code>\renewcommand</code></li>
 <li><code>\thesection</code>?</li>
@@ -515,6 +515,40 @@
 </ul>
 </li>
 </ol>
+</li>
+</ol>
+<h3 id="2020-11-9-2"><a class="markdownIt-Anchor" href="#2020-11-9-2"></a> 2020-11-9</h3>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span></p>
+<ul>
+<li><strong><code>ctexart</code>类型数字、字母比中文小</strong>，宏包手册也搞不定，我××。
+<ul>
+<li>用<code>article</code>什么事没有，鬼知道</li>
+</ul>
+</li>
+<li><code>\renewcommand + thesection</code>的问题：<code>subsection</code>显示不正常</li>
+<li><code>ctexart</code>设置标题格式：<code>\ctexset</code>
+<ul>
+<li><code>ctexart</code>不修复，我××宁愿用Word</li>
+</ul>
+</li>
+<li><code>\pagestyle</code></li>
+<li><code>\algorithm</code>, <code>\algorithmicx</code>, <code>\algpseudocode</code>
+<ul>
+<li><code>\Require</code>, <code>\Ensure</code></li>
+<li><code>\If</code>/<code>\EndIf</code>, <code>\For</code>/<code>\EndFor</code>, …</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>grafana搭建</p>
+<ul>
+<li><code>wget .tar.gz</code> + <code>tar -xzf</code></li>
+<li><code>bin/grafana-server</code></li>
+<li><code>supervisorctl</code>管理</li>
+</ul>
 </li>
 </ol>
 ]]></content>

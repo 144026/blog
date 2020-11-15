@@ -588,17 +588,31 @@
 </ul>
 </li>
 </ol>
-<p>ToDo:</p>
+<h3 id="2020-11-16"><a class="markdownIt-Anchor" href="#2020-11-16"></a> 2020-11-16</h3>
 <ol>
 <li>DSP
 <ul>
-<li>ch4 作业</li>
-<li>DSP实验环境准备：安装matlab</li>
+<li>ch4作业30%</li>
+<li>安装Octave</li>
 </ul>
 </li>
 <li>通电
 <ul>
 <li>ch4知识地图</li>
+<li>ch5xmind笔记(部分)</li>
+</ul>
+</li>
+</ol>
+<p>ToDo:</p>
+<ol>
+<li>DSP
+<ul>
+<li>ch4 作业</li>
+<li>DSP实验环境准备: Octave可用性测试</li>
+</ul>
+</li>
+<li>通电
+<ul>
 <li>实验环境准备：安装multisim</li>
 </ul>
 </li>

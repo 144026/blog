@@ -629,7 +629,10 @@
   <entry>
     <title>blasphemous</title>
     <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>“I curse you forever in your name. I bless you forever in your death.”, Escribar.</p>
+</blockquote>
+<a id="more"></a>
 <h1 id="0-intro"><a class="markdownIt-Anchor" href="#0-intro"></a> 0 Intro</h1>
 <p>Blasphemous is a Metroidvania video game developed by Spanish studio The Game Kitchen and published by Team17. The game, began as a Kickstarter campaign in 2017, was released for Nintendo Switch, PC, PlayStation 4 and Xbox One on 10 September 2019.</p>
 <h1 id="1-gameplay"><a class="markdownIt-Anchor" href="#1-gameplay"></a> 1 GamePlay</h1>
@@ -650,12 +653,12 @@
 </blockquote>
 <img src="https://raw.githubusercontent.com/144026/rsrc/master/music/blasphemous/cover.jpg" style="zoom:50%" />
 
-        <div id="aplayer-qKoDocoW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-OwydPIWs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-qKoDocoW"),
+            element: document.getElementById("aplayer-OwydPIWs"),
             narrow: false,
             autoplay: false,
             showlrc: false,

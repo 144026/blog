@@ -2046,6 +2046,9 @@ CDN</p>
 <h3 id="010-trusted-sudoers"><a class="markdownIt-Anchor" href="#010-trusted-sudoers"></a> 0.1.0 trusted sudoers</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo groupadd trusted-sudoers</span><br><span class="line">sudo usermod -a -G trusted-sudoers $(whoami)</span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;%trusted-sudoers ALL=(ALL:ALL) NOPASSWD: ALL&quot;</span> &gt;&gt; /etc/sudoers.d/trusted-grant-root</span><br><span class="line">sudo chmod 0440 /etc/sudoers.d/trusted-grant-root</span><br></pre></td></tr></table></figure>
 <p>On kali there is a group named <code>kali-trusted</code> and file <code>/etc/sudoers.d/kali-grant-root</code>, so <code>usermod</code> is enough.</p>
+<h2 id="011-dns"><a class="markdownIt-Anchor" href="#011-dns"></a> 0.1.1 DNS</h2>
+<p>Networkmanager(and some applications) will overwrite <code>/etc/resolv.conf</code>, set immutable file attribute to prevent this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 114.114.114.114&quot;</span> &gt; /etc/resolv.conf</span><br><span class="line">sudo chattr +i /etc/resolv.conf</span><br></pre></td></tr></table></figure>
 <h3 id="012-shortcuts"><a class="markdownIt-Anchor" href="#012-shortcuts"></a> 0.1.2 shortcuts</h3>
 <p>I’m using xfce4 desktop, there’s several sets of shortcuts to use:</p>
 <h5 id="1-xfce-seetings-hardwarekeyboard"><a class="markdownIt-Anchor" href="#1-xfce-seetings-hardwarekeyboard"></a> 1 xfce seetings: hardware.keyboard</h5>
@@ -2169,7 +2172,7 @@ CDN</p>
 <ul>
 <li>change desktop wallpaper in xfce4-settings.desktop</li>
 <li>change login background in xfce4-settings.lightdm-gtk±greeter</li>
-<li>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16</code></li>
+<li>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></li>
 </ul>
 <h1 id="1-software-config"><a class="markdownIt-Anchor" href="#1-software-config"></a> 1 Software Config</h1>
 <h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>

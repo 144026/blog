@@ -630,6 +630,49 @@
 </ul>
 </li>
 </ol>
+<h3 id="2020-11-20"><a class="markdownIt-Anchor" href="#2020-11-20"></a> 2020-11-20</h3>
+<ol>
+<li>
+<p>形势与政策</p>
+</li>
+<li>
+<p>git</p>
+<ul>
+<li>switch<code>[-c] &lt;branch&gt; [&lt;start-point&gt;]</code></li>
+<li>checkout<code>[-b] &lt;branch&gt;</code></li>
+<li>branch
+<ul>
+<li><code>-vva</code></li>
+<li><code>&lt;newbranch&gt; [&lt;start-point&gt;]</code></li>
+<li><code>-cCmMdD &lt;branch&gt;</code></li>
+<li><code>-u &lt;upstream_branch&gt; [&lt;branch&gt;]</code></li>
+</ul>
+</li>
+<li>remote
+<ul>
+<li><code>add|rm|rename &lt;remote&gt; [&lt;url&gt;]</code></li>
+<li><code>prune &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>fetch
+<ul>
+<li><code>&lt;remote&gt; [-t &lt;branch&gt;] [-m &lt;master&gt; (set up default branch refs/remote/HEAD)]</code></li>
+</ul>
+</li>
+<li>push
+<ul>
+<li><code>[&lt;remote&gt;] [&lt;localbranch&gt;]</code></li>
+<li><code>--all</code></li>
+<li><code>-u &lt;upstream_remote&gt; [&lt;localbranch&gt;]</code></li>
+<li><code>-d &lt;upstream_remote&gt; &lt;remote_branch&gt;]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>MLX90614 ?</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -2377,10 +2420,32 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 <h2 id="21-command-line-cli"><a class="markdownIt-Anchor" href="#21-command-line-cli"></a> 2.1 Command line (CLI)</h2>
 <h3 id="211-general-commands"><a class="markdownIt-Anchor" href="#211-general-commands"></a> 2.1.1 general commands</h3>
 <p>(need a big picture)</p>
+<p><code>sort</code></p>
+<ul>
+<li><code>-t</code> field seperator</li>
+<li><code>-k</code> key to sort</li>
+<li><code>-n</code> numerical sort</li>
+</ul>
+<p>e.g. scan a subnet and sort output: <code>nmap x.x.x.0/24 |&amp; grep 'scan report' | awk '&#123;print $5&#125;' | sort -t'.' -k4n</code></p>
 <h3 id="212-specs"><a class="markdownIt-Anchor" href="#212-specs"></a> 2.1.2 specs</h3>
 <p>pipe, redirection, etc…</p>
+<h4 id="2121-piplines"><a class="markdownIt-Anchor" href="#2121-piplines"></a> 2.1.2.1 piplines</h4>
+<p><code>&lt;command&gt; |</code> and <code>&lt;command&gt; |&amp;</code>(short for <code>2&gt;&amp;1 |</code>) are performed after any redirections specified by <code>&lt;command&gt;</code>.</p>
+<h4 id="2122-expansion"><a class="markdownIt-Anchor" href="#2122-expansion"></a> 2.1.2.2 EXPANSION</h4>
+<p>man-pages description:</p>
+<blockquote>
+<p><strong>EXPANSION</strong></p>
+<p>Expansion is performed on the command line after it has been  split  into  words. There are seven  kinds  of expansion performed: <strong>brace expansion, tilde expansion, parameter and variable expansion, command substitution, arithmetic expansion, word splitting, and pathname expansion.</strong></p>
+<p>The <em>order of expansions</em> is: <em><strong>brace expansion; tilde expansion, parameter  and  variable  expansion,  arithmetic  expansion, and command substitution (done in a left-to-right fashion); word splitting; and pathname expansion.</strong></em></p>
+<p>On systems that can support it, there is an additional expansion available: process  substitution.  This is performed at the same time as tilde, parameter, variable, and arithmetic expansion and command substitution.</p>
+<p><strong>After</strong> these expansions are performed, quote characters present in the original  word are removed unless they have been quoted themselves (<strong>quote removal</strong>).</p>
+<p>Only brace expansion, word splitting, and pathname expansion can increase the number of words of the expansion; other expansions expand a single word to a single word. The only exceptions to this are the expansions of <code>$@</code> and <code>$&#123;name[@]&#125;</code>, and, in most cases, <code>$*</code> and <code>$&#123;name[*]&#125;</code> as explained above (see <strong>PARAMETERS</strong>).</p>
+</blockquote>
+<p>According to the expansion order:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ <span class="built_in">echo</span> $((<span class="number">1</span>+<span class="number">2</span>)) <span class="comment"># arithmic expansion</span></span><br><span class="line">3</span><br><span class="line"></span><br><span class="line">└─$ cat file</span><br><span class="line">$((<span class="number">1</span>+<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> $(cat file) <span class="comment"># command expansion (after arithmic)</span></span><br><span class="line">$((<span class="number">1</span>+<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ var=1</span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> <span class="variable">$var</span> <span class="comment"># variable expansion</span></span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">└─$ cat file</span><br><span class="line"><span class="variable">$var</span></span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> $(cat file) <span class="comment"># command expansion (after variable)</span></span><br><span class="line"><span class="variable">$var</span></span><br></pre></td></tr></table></figure>
 <h4 id="2123-qouting"><a class="markdownIt-Anchor" href="#2123-qouting"></a> 2.1.2.3 Qouting</h4>
-<p>man-pages discription:</p>
+<p>man-pages description:</p>
 <blockquote>
 <p><strong>Qouting</strong> is used to remove the special meaning of certain characters or words to the shell. Qouting can be used to disable special treatment for special characters, to prevent reserved words from being recognized as such, and to prevent parameter expansion.</p>
 </blockquote>
@@ -2447,7 +2512,7 @@ Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
 </ol>
 </li>
 </ol>
-<h4 id="212x-the-ls-problem"><a class="markdownIt-Anchor" href="#212x-the-ls-problem"></a> 2.1.2.x the <code>ls</code> problem</h4>
+<h5 id="the-ls-problem"><a class="markdownIt-Anchor" href="#the-ls-problem"></a> the <code>ls</code> problem</h5>
 <p>Use <code>mkdir test &amp;&amp; touch 'f\ile.txt'</code> to create a file containing <code>\</code>, now its <em>interesting</em>:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">└─$ ls</span><br><span class="line"><span class="string">&#x27;f\ile.txt&#x27;</span></span><br><span class="line"></span><br><span class="line">└─$ ls | cat </span><br><span class="line">f\ile.txt</span><br><span class="line"></span><br><span class="line">└─$ strace ls</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;&#x27;f\\ile.txt&#x27;   log\n&quot;</span>, 18<span class="string">&#x27;f\ile.txt&#x27;</span>   <span class="built_in">log</span></span><br><span class="line">)    = 18</span><br><span class="line"></span><br><span class="line">└─$ strace ls 1&gt;/dev/null</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;f\\ile.txt\nlog\n&quot;</span>, 14)       = 14</span><br></pre></td></tr></table></figure>
 <p>Seems <code>ls</code> alters its output depending if the dst is a tty/console or not.</p>
@@ -2485,6 +2550,52 @@ $<br />
       <tags>
         <tag>linux</tag>
         <tag>kali</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>learn-git</title>
+    <url>/2020/11/20/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-git/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>git notes.</p>
+<a id="more"></a>
+<h1 id="1-commands"><a class="markdownIt-Anchor" href="#1-commands"></a> 1 commands</h1>
+<h2 id="11-start"><a class="markdownIt-Anchor" href="#11-start"></a> 1.1 start</h2>
+<p><code>git init</code></p>
+<p><code>git clone $url [$dir]</code></p>
+<p>similar to:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir <span class="variable">$dir</span> &amp;&amp; <span class="built_in">cd</span> <span class="variable">$dir</span></span><br><span class="line">git init</span><br><span class="line">git remote add origin <span class="variable">$url</span></span><br><span class="line">git fetch origin</span><br><span class="line">git switch -c master origin/master <span class="comment"># create local branch from remote tracking branch</span></span><br><span class="line"><span class="comment"># git branch -u origin/master master # set upstream</span></span><br></pre></td></tr></table></figure>
+<h2 id="12-current-change"><a class="markdownIt-Anchor" href="#12-current-change"></a> 1.2 current change</h2>
+<p><code>git add</code></p>
+<ul>
+<li><code>add -u</code></li>
+<li><code>add .</code></li>
+<li><code>add -A</code></li>
+</ul>
+<p><code>git commit</code></p>
+<p><code>git rm|mv</code></p>
+<h2 id="13-state-and-history"><a class="markdownIt-Anchor" href="#13-state-and-history"></a> 1.3 state and history</h2>
+<p><code>git status|logi|show</code></p>
+<p><code>git diff|grep</code></p>
+<h2 id="14-grow-mark-and-tweak"><a class="markdownIt-Anchor" href="#14-grow-mark-and-tweak"></a> 1.4 grow, mark and tweak</h2>
+<p><code>git switch</code></p>
+<p><code>git branch</code></p>
+<p><code>git merge|rebase</code></p>
+<p><code>git reset|restore</code></p>
+<p><code>git tag</code></p>
+<h2 id="15-collaborate"><a class="markdownIt-Anchor" href="#15-collaborate"></a> 1.5 collaborate</h2>
+<p><code>git fetch</code></p>
+<p><code>git pull</code></p>
+<ul>
+<li><code>git fetch origin &amp;&amp; git merge $upstream</code>?</li>
+</ul>
+<p><code>git push</code></p>
+<h1 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h1>
+<h1 id="3"><a class="markdownIt-Anchor" href="#3"></a> 3</h1>
+]]></content>
+      <categories>
+        <category>技能</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>

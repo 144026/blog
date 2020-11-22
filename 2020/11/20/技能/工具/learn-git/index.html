@@ -29,7 +29,7 @@
 <meta property="og:description" content="git notes.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-20T08:17:15.000Z">
-<meta property="article:modified_time" content="2020-11-20T12:43:12.385Z">
+<meta property="article:modified_time" content="2020-11-22T08:27:51.314Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -213,10 +213,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-20 16:17:15 / 修改时间：20:43:12" itemprop="dateCreated datePublished" datetime="2020-11-20T16:17:15+08:00">2020-11-20</time>
+              <time title="创建时间：2020-11-20 16:17:15" itemprop="dateCreated datePublished" datetime="2020-11-20T16:17:15+08:00">2020-11-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-22 16:27:51" itemprop="dateModified" datetime="2020-11-22T16:27:51+08:00">2020-11-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -263,21 +269,44 @@
 <p><code>git commit</code></p>
 <p><code>git rm|mv</code></p>
 <h2 id="13-state-and-history"><a class="markdownIt-Anchor" href="#13-state-and-history"></a> 1.3 state and history</h2>
-<p><code>git status|logi|show</code></p>
+<p><code>git status|log|show</code></p>
+<ul>
+<li><code>git log --graph --prettey=formate:'' --abbrev-commit</code></li>
+</ul>
 <p><code>git diff|grep</code></p>
 <h2 id="14-grow-mark-and-tweak"><a class="markdownIt-Anchor" href="#14-grow-mark-and-tweak"></a> 1.4 grow, mark and tweak</h2>
 <p><code>git switch</code></p>
+<ul>
+<li><code>git switch &lt;branch&gt;</code></li>
+<li><code>git switch -c &lt;newbranch&gt; [&lt;start_point&gt;]</code></li>
+</ul>
 <p><code>git branch</code></p>
+<ul>
+<li><code>git branch -vva</code></li>
+<li><code>git branch &lt;newbranch&gt; [&lt;start_point&gt;]</code></li>
+<li><code>git branch [-cCmMdD &lt;branch&gt;]</code></li>
+<li><code>git branch -u &lt;remote_ref&gt; &lt;branch&gt;</code> (<code>git config --global push.default upstream</code>)</li>
+</ul>
 <p><code>git merge|rebase</code></p>
+<ul>
+<li><code>git merge &lt;branch&gt;</code>: merge <code>&lt;branch&gt;</code> into current branch</li>
+</ul>
 <p><code>git reset|restore</code></p>
 <p><code>git tag</code></p>
 <h2 id="15-collaborate"><a class="markdownIt-Anchor" href="#15-collaborate"></a> 1.5 collaborate</h2>
 <p><code>git fetch</code></p>
+<ul>
+<li><code>git fetch [&lt;remote&gt;] [&lt;remote_branch&gt;]</code></li>
+</ul>
 <p><code>git pull</code></p>
 <ul>
 <li><code>git fetch origin &amp;&amp; git merge $upstream</code>?</li>
 </ul>
 <p><code>git push</code></p>
+<ul>
+<li>`git push [<remote>]</li>
+<li><code>git push -u &lt;remote&gt; &lt;localbranch&gt;</code></li>
+</ul>
 <h1 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h1>
 <h1 id="3"><a class="markdownIt-Anchor" href="#3"></a> 3</h1>
 

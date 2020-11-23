@@ -737,6 +737,46 @@
 </ul>
 </li>
 </ol>
+<h3 id="2020-11-23"><a class="markdownIt-Anchor" href="#2020-11-23"></a> 2020-11-23</h3>
+<ol>
+<li>计网
+<ul>
+<li>ch3作业</li>
+<li>可靠传输：重传
+<ul>
+<li>单分组：等待重传，效率低下</li>
+<li>多分组同时发送。**注意：**此时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>C</mi><msub><mi>K</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">ACK_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>表示已连续成功接收了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>帧数据。
+<ul>
+<li>后退N帧(Go-Back-N)重传。</li>
+<li>选择重传。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pluto
+<ul>
+<li>等待重传demo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通电实验
+<ul>
+<li>R、L、C对Q的影响：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi>x</mi><mi>x</mi><mi>x</mi></mrow><msub><mi>g</mi><mi mathvariant="normal">Σ</mi></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">A = \dfrac{xxx}{g_\Sigma}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.9880000000000002em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Σ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mord mathdefault">x</span><span class="mord mathdefault">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>
+<ul>
+<li>R越大，增益越大，通频带越窄</li>
+<li>L越小，C越大，通频带越窄</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>TODO:</p>
+<ul>
+<li>电磁场视频</li>
+<li>计网作业$\times$3</li>
+<li>通电实验报告</li>
+</ul>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -1613,10 +1653,20 @@ cat initrd/etc/issue xxx /r /m
 <p>Use <code>:help vim-markdown</code> or <code>markdown-preview</code>.</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">Plug <span class="string">&#x27;plasticboy/vim-markdown&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;iamcco/markdown-preview.vim&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;iamcco/mathjax-support-for-mkdp&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot;vim-markdown config</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_math</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_strike_through</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_new_list_item_indent</span> = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; markdown-preview.vim config</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview        <span class="comment">&quot;for normal mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview        <span class="comment">&quot;for insert mode</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview    <span class="comment">&quot;for normal mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview    <span class="comment">&quot;for insert mode</span></span><br></pre></td></tr></table></figure>
 <h2 id="23-latex-plugins"><a class="markdownIt-Anchor" href="#23-latex-plugins"></a> 2.3 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> plugins</h2>
-<p>Use ‘vimtex’ plugin, <code>:help vimtex</code> for help.</p>
+<h3 id="231-vimtex"><a class="markdownIt-Anchor" href="#231-vimtex"></a> 2.3.1 vimtex</h3>
+<h4 id="2311-install-config"><a class="markdownIt-Anchor" href="#2311-install-config"></a> 2.3.1.1 install &amp; config</h4>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="comment">&quot;Tex Support&#123;&#123;&#123;</span></span><br><span class="line">Plug <span class="string">&#x27;lervag/vimtex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:tex_flavor</span>=<span class="string">&#x27;lualatex&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vimtex_view_method</span>=<span class="string">&#x27;zathura&#x27;</span></span><br><span class="line"><span class="comment">&quot; let g:vimtex_quickfix_mode=0</span></span><br><span class="line"><span class="comment">&quot; set conceallevel=1</span></span><br><span class="line"><span class="comment">&quot; let g:tex_conceal=&#x27;abdmg&#x27;</span></span><br><span class="line"><span class="comment">&quot;&#125;&#125;&#125;</span></span><br></pre></td></tr></table></figure>
 <p>To specify <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>TeX</mtext></mrow><annotation encoding="application/x-tex">\TeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span> verison, add <code>% ! TEX program = &lt;xxx_tex&gt;</code> as the first line.</p>
-<h3 id="231-highlighting-problems"><a class="markdownIt-Anchor" href="#231-highlighting-problems"></a> 2.3.1 Highlighting problems</h3>
+<p><code>man zathurarc</code> to learn to specify zathura behavior.</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"># .config/zathura/zathurarc</span><br><span class="line"># zathurarc</span><br><span class="line"><span class="keyword">set</span> render-loading false</span><br><span class="line"></span><br><span class="line"># colors</span><br><span class="line"><span class="keyword">set</span> statusbar-bg <span class="string">&quot;#000000&quot;</span></span><br><span class="line"><span class="keyword">set</span> statusbar-fg white</span><br><span class="line"></span><br><span class="line"># settings</span><br><span class="line"><span class="keyword">set</span> window-height <span class="number">1024</span></span><br><span class="line"><span class="keyword">set</span> window-width <span class="number">768</span></span><br><span class="line"><span class="keyword">set</span> adjust-<span class="keyword">open</span> width</span><br><span class="line"></span><br><span class="line"># use sqlite <span class="keyword">as</span> bookmarks database backend</span><br><span class="line"># <span class="keyword">set</span> database sqlite</span><br><span class="line"></span><br><span class="line"># key bindings</span><br><span class="line"><span class="keyword">map</span> <span class="symbol">&lt;PageUp&gt;</span> navigate <span class="keyword">previous</span></span><br><span class="line"><span class="keyword">map</span> <span class="symbol">&lt;PageDown&gt;</span> navigate <span class="keyword">next</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">map</span> + zoom in</span><br><span class="line"><span class="keyword">map</span> - zoom out</span><br><span class="line"></span><br><span class="line"><span class="keyword">map</span> <span class="symbol">&lt;C-q&gt;</span> <span class="keyword">quit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2312-basic-usage"><a class="markdownIt-Anchor" href="#2312-basic-usage"></a> 2.3.1.2 basic usage</h4>
+<ul>
+<li><code>:h vimtex</code> help</li>
+<li><code>\ll</code> complie</li>
+<li><code>\lk</code> stop</li>
+<li><code>\lc</code>,<code>\lC</code> clean</li>
+</ul>
+<h4 id="2313-highlighting-problems"><a class="markdownIt-Anchor" href="#2313-highlighting-problems"></a> 2.3.1.3 Highlighting problems</h4>
 <p><strong>Problem</strong> : If <code>$</code>, <code>_</code>, … appear in <code>lstlisting</code> environment, the following highlighting would be terribly missformed.</p>
 <p><strong>Solve</strong> : add these vim commands to <code>~/.vim/after/syntax/tex.vim</code>(vim post-processing feature, see <code>:h after-directory</code>)</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">syn region texZone start=+\\begin&#123;lstlisting&#125;+ end=+\\end&#123;lstlisting&#125;\|%stopzone+</span><br><span class="line"><span class="comment">&quot; other syn groups like texMathZoneA can be used, though.</span></span><br><span class="line"><span class="comment">&quot; %stopzone is a zone-closing keyword for vimtex </span></span><br></pre></td></tr></table></figure>
@@ -1626,6 +1676,18 @@ cat initrd/etc/issue xxx /r /m
 </ol>
 <p><strong>Further</strong> :</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">syn region texZone  start=<span class="string">&quot;\\lstinputlisting&quot;</span> end=<span class="string">&quot;&#123;\s*[a-zA-Z/.0-9_^]\+\s*&#125;&quot;</span></span><br><span class="line">syn <span class="keyword">match</span> texInputFile <span class="string">&quot;\\lstinline\s*\(\[.*\]\)\=&#123;.\&#123;-&#125;&#125;&quot;</span> contains=texStatement,texInputCurlies,texInputFileOpt</span><br><span class="line"><span class="comment">&quot; \&#123;-&#125; repeat as few as possible</span></span><br></pre></td></tr></table></figure>
+<h4 id="2314-live-preview"><a class="markdownIt-Anchor" href="#2314-live-preview"></a> 2.3.1.4 live preview</h4>
+<p>It <strong>seems</strong> that <code>vimtex</code> only compiles when file is written to disk, so there’s never a ‘live’ preview.</p>
+<p>Still, auto saving by <code>autocmd TextChanged,TextChangedI &lt;buffer&gt; silent write</code> will make vimtex ‘live’. BUT, multiple compilations triggered by frequent changes really mess things up.</p>
+<p><strong>NOTE</strong>: This command automatically WRITES file, be cautious!</p>
+<h3 id="232-latex-live-preview"><a class="markdownIt-Anchor" href="#232-latex-live-preview"></a> 2.3.2 latex-live-preview</h3>
+<p>No auto write, controllable update frequency. BAD quickfix support.</p>
+<h4 id="2321-install-config"><a class="markdownIt-Anchor" href="#2321-install-config"></a> 2.3.2.1 install &amp; config</h4>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">Plug <span class="string">&#x27;xuhdev/vim-latex-live-preview&#x27;</span>, &#123; <span class="string">&#x27;for&#x27;</span>: <span class="string">&#x27;tex&#x27;</span> &#125;</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_previewer</span> = <span class="string">&#x27;zathura -c ~/.config/zathura/&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_engine</span> = <span class="string">&#x27;xelatex&#x27;</span> <span class="comment">&quot; . &#x27; [options]&#x27;</span></span><br><span class="line"><span class="comment">&quot; &lt;cr&gt; for carriage-return</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> :LLPStartPreview<span class="symbol">&lt;cr&gt;</span> </span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> <span class="symbol">&lt;Esc&gt;</span>:LLPStartPreview<span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="keyword">autocmd</span> Filetype tex <span class="keyword">setl</span> updatetime=<span class="number">500</span></span><br></pre></td></tr></table></figure>
+<h4 id="2322-basic-usage"><a class="markdownIt-Anchor" href="#2322-basic-usage"></a> 2.3.2.2 basic usage</h4>
+<ul>
+<li><code>:LLPreview</code> preview</li>
+</ul>
 <h1 id="4"><a class="markdownIt-Anchor" href="#4"></a> 4</h1>
 <h2 id="44-syntax-hilite"><a class="markdownIt-Anchor" href="#44-syntax-hilite"></a> 4.4 syntax hilite</h2>
 <hr />

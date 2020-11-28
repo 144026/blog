@@ -29,7 +29,7 @@
 <meta property="og:description" content="some usage tips.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-03T08:47:04.000Z">
-<meta property="article:modified_time" content="2020-11-23T18:11:57.935Z">
+<meta property="article:modified_time" content="2020-11-23T18:36:03.127Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="Vim">
 <meta property="article:tag" content="Editor">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-24 02:11:57" itemprop="dateModified" datetime="2020-11-24T02:11:57+08:00">2020-11-24</time>
+                <time title="修改时间：2020-11-24 02:36:03" itemprop="dateModified" datetime="2020-11-24T02:36:03+08:00">2020-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +316,7 @@
 <h3 id="232-latex-live-preview"><a class="markdownIt-Anchor" href="#232-latex-live-preview"></a> 2.3.2 latex-live-preview</h3>
 <p>No auto write, controllable update frequency. BAD quickfix support.</p>
 <h4 id="2321-install-config"><a class="markdownIt-Anchor" href="#2321-install-config"></a> 2.3.2.1 install &amp; config</h4>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">&#x27;xuhdev/vim-latex-live-preview&#x27;</span>, &#123; <span class="string">&#x27;for&#x27;</span>: <span class="string">&#x27;tex&#x27;</span> &#125;</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_previewer</span> = <span class="string">&#x27;zathura -c ~/.config/zathura/&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_engine</span> = <span class="string">&#x27;xelatex&#x27;</span> <span class="comment">&quot; . &#x27; [options]&#x27;</span></span><br><span class="line"><span class="comment">&quot; &lt;cr&gt; for carriage-return</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> :LLPStartPreview<span class="symbol">&lt;cr&gt;</span> </span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> <span class="symbol">&lt;Esc&gt;</span>:LLPStartPreview<span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="keyword">autocmd</span> Filetype tex <span class="keyword">setl</span> updatetime=<span class="number">500</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">&#x27;xuhdev/vim-latex-live-preview&#x27;</span>, &#123; <span class="string">&#x27;for&#x27;</span>: <span class="string">&#x27;tex&#x27;</span> &#125;</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_previewer</span> = <span class="string">&#x27;zathura -c ~/.config/zathura/&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:livepreview_engine</span> = <span class="string">&#x27;xelatex&#x27;</span> <span class="comment">&quot; . &#x27; [options]&#x27;</span></span><br><span class="line"><span class="comment">&quot; &lt;cr&gt; for carriage-return</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> :LLPStartPreview<span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F10&gt;</span> <span class="symbol">&lt;Esc&gt;</span>:LLPStartPreview<span class="symbol">&lt;cr&gt;</span></span><br><span class="line"><span class="keyword">autocmd</span> Filetype tex <span class="keyword">setl</span> updatetime=<span class="number">500</span></span><br></pre></td></tr></table></figure>
 <h4 id="2322-basic-usage"><a class="markdownIt-Anchor" href="#2322-basic-usage"></a> 2.3.2.2 basic usage</h4>
 <ul>
 <li><code>:LLPreview</code> preview</li>

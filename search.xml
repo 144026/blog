@@ -2473,9 +2473,15 @@ CDN</p>
 <h3 id="013-desktop-theme"><a class="markdownIt-Anchor" href="#013-desktop-theme"></a> 0.1.3 desktop-theme</h3>
 <p><code>sudo update-alternatives --config desktop-theme &amp;&amp; sudo update-grub2</code> will ONLY update “post-grub” images. To actually modify the theme:</p>
 <ul>
-<li>change desktop wallpaper in xfce4-settings.desktop</li>
-<li>change login background in xfce4-settings.lightdm-gtk±greeter</li>
-<li>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></li>
+<li>
+<p>change desktop wallpaper in xfce4-settings.desktop</p>
+</li>
+<li>
+<p>change login background in xfce4-settings.lightdm-gtk±greeter</p>
+</li>
+<li>
+<p>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></p>
+</li>
 </ul>
 <h1 id="1-software-config"><a class="markdownIt-Anchor" href="#1-software-config"></a> 1 Software Config</h1>
 <h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>
@@ -2900,6 +2906,98 @@ $<br />
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>my software list</title>
+    <url>/2020/12/01/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/usr-software-list/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>My temporary software list on debian.</p>
+<a id="more"></a>
+<h1 id="1-document"><a class="markdownIt-Anchor" href="#1-document"></a> 1 document</h1>
+<h2 id="input"><a class="markdownIt-Anchor" href="#input"></a> input</h2>
+<ol>
+<li>fcitx4 + libpinyin (apt)</li>
+<li>baidu(dpkg)</li>
+</ol>
+<h2 id="11-text-sourced"><a class="markdownIt-Anchor" href="#11-text-sourced"></a> 1.1 Text Sourced</h2>
+<ol>
+<li>vim + vim-plug</li>
+<li>texlive <code>latex</code>, <code>xelatex</code>, etc. (perl install-pl. how to remove: official website)</li>
+<li>textlive (apt list | grep texlive |xargs apt install -y)</li>
+</ol>
+<h2 id="12-office"><a class="markdownIt-Anchor" href="#12-office"></a> 1.2 office</h2>
+<ol>
+<li>zathura(apt install) (atril)</li>
+<li>wps-office (<code>dpkg -i .deb</code>. remove: dpkg --purge &lt;name&gt;)</li>
+</ol>
+<h2 id="notes"><a class="markdownIt-Anchor" href="#notes"></a> notes</h2>
+<ol>
+<li>xmind(.deb + crack)</li>
+<li>inkscape (apt)</li>
+</ol>
+<h1 id="2-co-op"><a class="markdownIt-Anchor" href="#2-co-op"></a> 2 Co-Op</h1>
+<h2 id="21-version-control"><a class="markdownIt-Anchor" href="#21-version-control"></a> 2.1 version control</h2>
+<ol>
+<li>subversion <code>svn</code> (apt)</li>
+<li>git</li>
+</ol>
+<h1 id="blog"><a class="markdownIt-Anchor" href="#blog"></a> blog</h1>
+<ol>
+<li>nodjs, npm (apt)</li>
+<li>hexo(hexo-cli -g) (npm remove)</li>
+<li>picgo (appimg)</li>
+</ol>
+<h1 id="social"><a class="markdownIt-Anchor" href="#social"></a> social</h1>
+<ol>
+<li>wine(wine32, wine64, wine, winetricks)</li>
+</ol>
+<h1 id="aux"><a class="markdownIt-Anchor" href="#aux"></a> aux</h1>
+<ol>
+<li>
+<p>???-synaptics(apt) for xfce touchpad</p>
+<ul>
+<li><code>cp /usr/share/X11/xorg.conf.d</code> -r /etc/X11/<code>, add some config to /etc/X11/xorg.conf.d/70-synaptics.conf</code></li>
+</ul>
+</li>
+<li>
+<p>wenquanyi font (apt)</p>
+<ul>
+<li><code>sudo apt install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy</code></li>
+</ul>
+</li>
+<li>
+<p>time correction: ntpdate(manaully), ntpd(auto), <code>sudo ntpdate-debian</code></p>
+</li>
+</ol>
+<h1 id="web"><a class="markdownIt-Anchor" href="#web"></a> web</h1>
+<ol>
+<li>google chrome(dpkg)</li>
+<li>vivaldi(dpkg)</li>
+<li>shadowsocks-libev, simple-obfs(apt).</li>
+<li>postfix(apt). used for crontab MTA error report.</li>
+</ol>
+<h1 id="virtualize"><a class="markdownIt-Anchor" href="#virtualize"></a> virtualize</h1>
+<h2 id="user-space-management-tools-important"><a class="markdownIt-Anchor" href="#user-space-management-tools-important"></a> user space management tools (IMPORTANT)</h2>
+<ol>
+<li>virt-manager series(apt)</li>
+<li>virtual box(apt) : with enhanced addons to easily passthrough filesystem</li>
+</ol>
+<h2 id="management-api"><a class="markdownIt-Anchor" href="#management-api"></a> management API</h2>
+<ol>
+<li>libvirt(apt), with daemon <code>libvirtd</code>. Installed by apt upon getting virt-manager (also with a bunch of drivers for different virtualize software).</li>
+</ol>
+<h2 id="virtualize-software"><a class="markdownIt-Anchor" href="#virtualize-software"></a> Virtualize Software</h2>
+<ol>
+<li>qemu qemu-system <strong>qemu-utils</strong> with kvm (apt-get)</li>
+<li>Others uninstalled (Xen, VMware, VirtualBox, Hyper-V, …)</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技能</category>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>software</tag>
       </tags>
   </entry>
   <entry>

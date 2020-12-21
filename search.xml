@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>博客GET</title>
-    <url>/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
+    <url>/2020/07/31/%E5%8D%9A%E5%AE%A2get/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>新开的蒟蒻博客，可能会陆续上传些水文。</p>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200922111506.gif" alt="" /></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>测试:<br />
@@ -1059,7 +1059,7 @@
 </li>
 </ol>
 <h3 id="2020-12-20"><a class="markdownIt-Anchor" href="#2020-12-20"></a> 2020-12-20</h3>
-<p><strong>big problem</strong></p>
+<p><strong>操作过程回忆</strong>(大概)</p>
 <ol>
 <li>add a i386 arch, install the deepin<em>wine</em>.debs, got deps error</li>
 <li>apt-get install xxx:i386, still got 1 dep can’t installed(libjpeg-turbo8?)</li>
@@ -1068,11 +1068,59 @@
 <li>(perhaps 3?) install another deepin<em>wine</em> debs, got warning, packing old packges</li>
 <li>reboot, lightdm failed.</li>
 </ol>
-<p><strong>whatever</strong></p>
+<p><strong>尝试解决</strong></p>
 <ol>
-<li>apt-get upgrade, over 180 packages too old and got upgrade???</li>
-<li>see <code>/var/log/lightdm/&#123;lightdm.log,x-0.log&#125;</code>,  <code>/var/log/Xorg/xxx.log</code></li>
-<li>gstreamer-vaahi package problem? no.</li>
+<li>apt-get upgrade, over 180 packages too old and got upgraded???</li>
+<li>see <code>/var/log/lightdm/&#123;lightdm.log,x-0.log&#125;</code>，error is <code>The name org.freedesktop.Accounts was not provided by any .service</code>
+<ul>
+<li><code>sudo apt-get install accountsservice</code></li>
+</ul>
+</li>
+<li>still failure, see <code>/var/log/Xorg/xxx.log</code>, find <code>key-&gt;initialized</code> assertion failure)</li>
+<li>google, gstreamer-vaahi package problem? no such package installed.</li>
+</ol>
+<h3 id="2020-12-21"><a class="markdownIt-Anchor" href="#2020-12-21"></a> 2020-12-21</h3>
+<p><strong>重装系统</strong></p>
+<ol>
+<li>tar包备份<code>home</code>，<code>dd if=xxx.iso of=/dev/sdb</code>制作启动盘，重装系统</li>
+<li>参照<code>kali</code>和<code>usr-soft-list</code>重新配置基本功能</li>
+</ol>
+<p><strong>Usb2Vga驱动</strong>(DisplayLink)</p>
+<ol>
+<li>安装DL ubuntu驱动(5.3.1)失败，查看<code>/var/lib/dkms/evdi/1.7.0/build/make.log</code>，提示<code>include/generated/autoconf.h</code>, <code>include/config/auto.conf</code>缺失，需在内核源码位置执行<code>make oldconfig &amp;&amp; make prepare</code>
+<ul>
+<li>进入<code>/usr/src/linux-headers-5.9.0-kali-amd64</code>执行，报错<code>Can't open scripts/mkmakefile</code>。进一步查看，发现文件已存在，且内容有效。</li>
+<li>解压内核源码到新目录，<code>make oldconfig &amp;&amp; make prepare</code>成功，替换为headers目录，驱动仍然安装失败</li>
+<li>恢复headers目录，仅替换’缺失’的文件，仍然失败</li>
+</ul>
+</li>
+<li>使用<code>AdnanHodzic/displaylink-debian</code>安装(支持kali-rolling)
+<ul>
+<li>安装时必须<code>cd</code>进入目录，必须<code>sudo ./displaylink-debian.sh</code></li>
+<li>安装时无法解析<code>www.displaylink.com</code>
+<ul>
+<li><code>vim /etc/proxychains4.conf &amp;&amp; proxychains4 sudo ./xxx</code></li>
+</ul>
+</li>
+<li>驱动安装成功，<strong>使用了同样的官方驱动，这个脚本如何做到成功安装?</strong>（待研究）</li>
+</ul>
+</li>
+<li>post-install
+<ul>
+<li><code>sudo ./displaylink-debian.sh --debug</code>，up and running</li>
+<li><code>xrandr --listproviders</code>只有一个输出
+<ul>
+<li>根据文档(脚本github)修改<code>/etc/X11/xorg.conf.d/20-displaylink.conf</code>，重启出现多个输出</li>
+</ul>
+</li>
+<li><code>xrandr --setprovideroutputsource</code>修改1-4，仍然没有输出可用</li>
+</ul>
+</li>
+</ol>
+<p><strong>主控文档</strong></p>
+<ol>
+<li>wps没有主控文档，ms-office2007没有主控文档</li>
+<li>分工：避免分配不熟悉的部分</li>
 </ol>
 ]]></content>
       <categories>
@@ -1086,7 +1134,7 @@
   </entry>
   <entry>
     <title>blasphemous</title>
-    <url>/2020/08/26/%E5%A8%B1%E4%B9%90/blasphemous/</url>
+    <url>/2020/08/25/%E5%A8%B1%E4%B9%90/blasphemous/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>“I curse you forever in your name. I bless you forever in your death.”, Escribar.</p>
 </blockquote>
@@ -1211,7 +1259,7 @@
   </entry>
   <entry>
     <title>博客搭建笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
+    <url>/2020/08/25/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在写了，在写了（新建文件夹）</p>
 <a id="more"></a>
 <h1 id="0-build-the-enviroment"><a class="markdownIt-Anchor" href="#0-build-the-enviroment"></a> 0 Build the Enviroment</h1>
@@ -1274,7 +1322,7 @@
   </entry>
   <entry>
     <title>通信电子线路</title>
-    <url>/2020/10/22/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</url>
+    <url>/2020/10/21/%E7%9F%A5%E8%AF%86/%E7%94%B5%E8%B7%AF/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通信电子线路笔记</p>
 <a id="more"></a>
 <h3 id="ch2"><a class="markdownIt-Anchor" href="#ch2"></a> ch2</h3>
@@ -1292,7 +1340,7 @@
   </entry>
   <entry>
     <title>IDA学习笔记</title>
-    <url>/2020/08/26/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
+    <url>/2020/08/25/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有待补充。</p>
 <a id="more"></a>
 <h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
@@ -1311,7 +1359,7 @@
   </entry>
   <entry>
     <title>数字信号处理</title>
-    <url>/2020/09/22/%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
+    <url>/2020/09/21/%E7%9F%A5%E8%AF%86/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>数字信号处理课程笔记。</p>
 <a id="more"></a>
 <h1 id="0-概述"><a class="markdownIt-Anchor" href="#0-概述"></a> 0 概述</h1>
@@ -1424,7 +1472,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>微机原理课程总结</title>
-    <url>/2020/08/19/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/MCU-and-Embedded-System/</url>
+    <url>/2020/08/18/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/MCU-and-Embedded-System/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 前言</h1>
 <p>尽量系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式。</p>
 <a id="more"></a>
@@ -1514,7 +1562,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>一道Perl逆向入门题</title>
-    <url>/2020/08/01/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/WMCTF2020-easy-re/</url>
+    <url>/2020/07/31/%E7%9F%A5%E8%AF%86/%E8%AE%A1%E7%AE%97%E6%9C%BA/WMCTF2020-easy-re/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
 <p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
 <ul>
@@ -2760,7 +2808,7 @@ directory that do NOT <strong>end</strong> in ‘~’ or <strong>contain</strong
 <p>Manually install fonts for all apps.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su &amp;&amp; <span class="built_in">cd</span> /usr/share/fonts/<span class="variable">$&#123;FontDir&#125;</span></span><br><span class="line">mkfontscale &amp;&amp; mkfontdir &amp;&amp; <span class="built_in">fc</span>-cache -fv</span><br><span class="line"><span class="built_in">source</span> /etc/profile &amp;&amp; <span class="built_in">fc</span>-list |wc -l</span><br></pre></td></tr></table></figure>
 <p>or use apt tools, e.g. wenquanyi fonts (fira code fonts)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install ttf-wqy-micro-hei ttf-wqy-zenhei xfonts-wqy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install fonts-wqy-microhei ttf-wqy-zenhei xfonts-wqy</span><br></pre></td></tr></table></figure>
 <h3 id="123-office"><a class="markdownIt-Anchor" href="#123-office"></a> 1.2.3 Office</h3>
 <p>wps office: Download linux version and use dpkg to install. Remember to copy and install fonts from  windows.</p>
 <p>libreoffice:bad performance, ver 7.1</p>

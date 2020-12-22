@@ -1113,7 +1113,12 @@
 <li>根据文档(脚本github)修改<code>/etc/X11/xorg.conf.d/20-displaylink.conf</code>，重启出现多个输出</li>
 </ul>
 </li>
-<li><code>xrandr --setprovideroutputsource</code>修改1-4，仍然没有输出可用</li>
+<li><code>xrandr --setprovideroutputsource</code>修改1-4，仍然没有输出可用
+<ul>
+<li>重启，<code>xrandr --setprovideroutputsource 4 0</code>，出现显示画面</li>
+</ul>
+</li>
+<li>画面撕裂问题</li>
 </ul>
 </li>
 </ol>

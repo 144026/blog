@@ -2769,12 +2769,18 @@ directory that do NOT <strong>end</strong> in ‘~’ or <strong>contain</strong
 <p>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></p>
 </li>
 </ul>
-<h3 id="014-route-config"><a class="markdownIt-Anchor" href="#014-route-config"></a> 0.1.4 route config</h3>
+<h3 id="014-network-config"><a class="markdownIt-Anchor" href="#014-network-config"></a> 0.1.4 network config</h3>
 <p>When a userspace app, like<code>ssh</code>, needs to access a <code>ip</code>, it usaully passes the <code>ip</code> to kernel and let the kernel decide which <code>interface</code> and <code>route</code> will be used according to the <em>route table</em>. (This means <code>ssh [ -B &lt;interface&gt;] [ -b &lt;ipaddr&gt; ]</code> won’t change route, thus can’t solve ‘unreachable’ problem on a dual-interface machine)</p>
 <p>use <code>route -n</code> or <code>ip route &#123; list | show &#125;</code> to display the route table.</p>
 <p>use <code>ip route del $route</code> and <code>ip route add $route</code> to change existing routes.</p>
 <p><strong>NOTE</strong>: <code>ip route &#123; change | replace &#125;</code> is documented capable to change routes atomically, <strong>BUT</strong> <code>metrics</code> can NOT be changed in this way (get ENOENT, Error NO such ENTry), since the <code>rtnetlink</code> protocol uses <code>metrics</code> as separate fieleds to select routes and does not support this operation. When used, <code>ip route change $route</code> requires <code>$route</code> existing, and one or more fields (except <code>metrics</code>) may be specified differently to cause a change, the first matched record (match <code>metrics</code>?) will be changed.</p>
 <p><strong>SYNOPSIS:</strong> DO NOT use <code>ip route change</code>, use <code>del</code>&amp;<code>add</code> instead.</p>
+<h3 id="015-sound-config"><a class="markdownIt-Anchor" href="#015-sound-config"></a> 0.1.5 sound config</h3>
+<h4 id="0151-default-sound-card"><a class="markdownIt-Anchor" href="#0151-default-sound-card"></a> 0.1.5.1 default sound card</h4>
+<p>List sound devices: <code>cat /proc/asound/cards</code>, or <code>aplay -l</code> with <code>alsa-utils</code> installed.</p>
+<p>NOTE that (alsa or pulseaudio ?) always point <code>default</code> sound device to the one that has smallest card-device number.</p>
+<p>Change by point <code>default</code> to some other <code>card.device</code>: <code>vim /etc/asound</code> or <code>vim ~/.asoundrc</code> (system-wide or user-specific)</p>
+<p>Change by assign a different <code>card.device</code> to actual hardwares: change modprobe configs, <strong>todo</strong>.</p>
 <h1 id="1-software-config"><a class="markdownIt-Anchor" href="#1-software-config"></a> 1 Software Config</h1>
 <h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>
 <h3 id="111-apt-tools"><a class="markdownIt-Anchor" href="#111-apt-tools"></a> 1.1.1 apt tools</h3>

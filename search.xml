@@ -1115,7 +1115,7 @@
 </li>
 <li><code>xrandr --setprovideroutputsource</code>修改1-4，仍然没有输出可用
 <ul>
-<li>重启，<code>xrandr --setprovideroutputsource 4 0</code>，出现显示画面</li>
+<li><strong>重启，<code>xrandr --setprovideroutputsource 4 0</code>，出现显示画面</strong></li>
 </ul>
 </li>
 <li>画面撕裂问题</li>
@@ -1126,6 +1126,42 @@
 <ol>
 <li>wps没有主控文档，ms-office2007没有主控文档</li>
 <li>分工：避免分配不熟悉的部分</li>
+</ol>
+<h3 id="2020-12-22"><a class="markdownIt-Anchor" href="#2020-12-22"></a> 2020-12-22</h3>
+<ol>
+<li>自动答题脚本
+<ul>
+<li>从html提取文字+题库搜索+根据返回答案触发网页操作?</li>
+<li>脚本(只剩下壳子和付费题库)、网课小工具(chrome插件)无法正常使用
+<ul>
+<li>需要使用特殊浏览器，反制检测：原理？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2020-12-24"><a class="markdownIt-Anchor" href="#2020-12-24"></a> 2020-12-24</h3>
+<ol>
+<li>linux声卡配置(Advanced Linux Sound Architecture)
+<ul>
+<li>查看声卡信息
+<ul>
+<li><code>cat /proc/asound/card</code></li>
+<li><code>aplay -l</code>(needs <code>alsa-utils</code>)</li>
+</ul>
+</li>
+<li>修改默认声卡
+<ul>
+<li>alsa( or pulseaudio?) 默认使用card/device number最小的设备作为默认声卡</li>
+<li>修改默认声卡对应的设备：<code>vim /etc/asound</code>(system-wide) or <code>vim ~/.asoundrc</code>(user-specific)</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults.pcm.card <span class="variable">$card_num</span></span><br><span class="line">defaults.pcm.device <span class="variable">$device_num</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改声卡设备的设备号？(需要修改modprobe相关配置)</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 ]]></content>
       <categories>

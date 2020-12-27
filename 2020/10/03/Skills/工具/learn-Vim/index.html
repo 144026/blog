@@ -29,7 +29,7 @@
 <meta property="og:description" content="some usage tips.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-03T23:47:04.000Z">
-<meta property="article:modified_time" content="2020-12-27T15:55:21.330Z">
+<meta property="article:modified_time" content="2020-12-27T20:37:55.851Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="Vim">
 <meta property="article:tag" content="Editor">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-27 07:55:21" itemprop="dateModified" datetime="2020-12-27T07:55:21-08:00">2020-12-27</time>
+                <time title="修改时间：2020-12-27 12:37:55" itemprop="dateModified" datetime="2020-12-27T12:37:55-08:00">2020-12-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +280,14 @@
 <h2 id="21-visual-plugins"><a class="markdownIt-Anchor" href="#21-visual-plugins"></a> 2.1 Visual plugins</h2>
 <h3 id="211-colorscheme"><a class="markdownIt-Anchor" href="#211-colorscheme"></a> 2.1.1 colorscheme</h3>
 <p>Note: run <code>cp ~/.vim/plugged/vim-colors-solarized/colors -r ~/.vim/</code> after <code>:PlugInstall</code></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;: let g:solarized_termtrans = 1 &quot;</span> adapt the terminal transparency</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_visibility</span> = <span class="string">&quot;high&quot;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_termcolors</span>=<span class="number">256</span> <span class="comment">&quot;for terminal usage, must degrade 16bit gui color to 8bit terminal color</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> solarized</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&quot; a choice for gvim, BAD choice for tui vim</span></span><br><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_termtrans</span> = <span class="number">1</span> <span class="comment">&quot; let terminal render text background</span></span><br><span class="line"><span class="keyword">colorscheme</span> solarized</span><br></pre></td></tr></table></figure>
+<p>After this, vim’s colorscheme actually looks <em>weird</em>, even like a mess. This is because the colorscheme uses your terminal’s palette to render the tui in vim, while the gui version <code>gvim</code> looks fine. There’s two way to fix this:</p>
+<ol>
+<li>Set your terminal’s 16 color palette to ‘solariezed’ palette (availabe at <a target="_blank" rel="noopener" href="https://ethanschoonover.com/solarized/">solarized official website</a>). I don’t want my terminal to be solarized, and definitely won’t choose this.</li>
+<li>Add <code>let g:solarized_termcolors=256</code> to you <code>.vimrc</code>, this <code>solarized.vim</code> colorscheme will use the standard 256 colors (8-bit) to approxmate a ‘solarized’ theme. Really bad approxmation, won’t use either.</li>
+</ol>
+<p>So here comes the <code>set termguicolors</code> option (need <code>+termguicolors</code> compile support), which enables vim’s colorscheme directly (without consulting or considering the terminal palette ?) rendering 24-bit precise colors. All I need is just finding a colorsheme working this way, and the <code>base16-vim</code> colorscheme series fit really well. Now use this:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&quot; a good choice for tui vim</span></span><br><span class="line">Plug <span class="string">&#x27;chriskempson/base16-vim&#x27;</span></span><br><span class="line"><span class="keyword">colorscheme</span> base16-solarized-dark</span><br></pre></td></tr></table></figure>
 <h2 id="22-markdown-plugins"><a class="markdownIt-Anchor" href="#22-markdown-plugins"></a> 2.2 Markdown plugins</h2>
 <p>Add plugin via Vim-plug (which is called in <code>vimrc</code>)</p>
 <p>Use <code>:help vim-markdown</code> or <code>markdown-preview</code>.</p>
@@ -351,7 +358,7 @@
 <p><code>~/.vim/after/syntax/$&#123;language&#125;.vim</code></p>
 <p>new filetype</p>
 <p><code>:h filetype</code></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">augroup</span> filetypedetect</span><br><span class="line"><span class="keyword">autocmd</span> BufNewFile,BufRead *.my <span class="keyword">setfiletype</span> my</span><br><span class="line"><span class="keyword">augroup</span> END</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">augroup</span> filetypedetect</span><br><span class="line">	au!</span><br><span class="line">	<span class="keyword">autocmd</span> BufNewFile,BufRead *.my <span class="keyword">setfiletype</span> my</span><br><span class="line"><span class="keyword">augroup</span> END</span><br></pre></td></tr></table></figure>
 
     </div>
 

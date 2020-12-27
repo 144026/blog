@@ -1208,7 +1208,31 @@ mathjax: true —</li>
 <li>更新next theme，merge合并冲突：删除windows系统引入的<code>\r</code>(<code>^M</code>)，<code>awk 'BEGIN&#123;RS=EOF&#125; gsub(/\r/,&quot;&quot;) file'</code></li>
 <li>打包theme文件夹到xz tarball，配置<code>.gitignore</code>：<code>themes/*&lt;CR&gt;!themes/*.tar.xz</code>
 <ul>
-<li><strong>注意</strong>：使用<code>theme/</code>会ignore文件夹本身，再用<code>!themes/xxx</code>的reinclude文件夹内部的文件，<strong>不会生效</strong></li>
+<li><strong>注意</strong>：使用<code>theme/</code>会ignore文件夹本身，再用<code>!themes/xxx</code>reinclude文件夹内部的文件，<strong>不会生效</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>git merge</code>冲突
+<ul>
+<li>resolve: <code>git diff</code>, <code>git mergetool</code>，这时冲突的文件内容被修改为：</li>
+</ul>
+ <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;your changes below</span><br><span class="line">you your yours</span><br><span class="line">====== delimiter</span><br><span class="line">they their theirs</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;their changes above</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>git merge --continue</code>
+<ul>
+<li>完成后，上述过渡文件变为<code>xxxx.orig</code></li>
+</ul>
+</li>
+<li><code>git merge --abort</code></li>
+</ul>
+</li>
+<li>tips
+<ul>
+<li><code>curl -fsS</code>的隐患
+<ul>
+<li><code>-f</code>阻止显示HTTP错误码，<code>404</code>、<code>503</code>等错误发生时，<code>curl</code>不会给出任何提示</li>
+<li><code>-sS</code>虽然能显示错误码，但不会显示warning信息。例如下载二进制文件时，<code>curl</code>不会警告’binary files may mess up your terminal’就直接退出，给定位错误造成困难</li>
 </ul>
 </li>
 </ul>
@@ -2490,7 +2514,14 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
 <h2 id="21-visual-plugins"><a class="markdownIt-Anchor" href="#21-visual-plugins"></a> 2.1 Visual plugins</h2>
 <h3 id="211-colorscheme"><a class="markdownIt-Anchor" href="#211-colorscheme"></a> 2.1.1 colorscheme</h3>
 <p>Note: run <code>cp ~/.vim/plugged/vim-colors-solarized/colors -r ~/.vim/</code> after <code>:PlugInstall</code></p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;: let g:solarized_termtrans = 1 &quot;</span> adapt the terminal transparency</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_visibility</span> = <span class="string">&quot;high&quot;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_termcolors</span>=<span class="number">256</span> <span class="comment">&quot;for terminal usage, must degrade 16bit gui color to 8bit terminal color</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">colorscheme</span> solarized</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="comment">&quot; a choice for gvim, BAD choice for tui vim</span></span><br><span class="line">Plug <span class="string">&#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:solarized_termtrans</span> = <span class="number">1</span> <span class="comment">&quot; let terminal render text background</span></span><br><span class="line"><span class="keyword">colorscheme</span> solarized</span><br></pre></td></tr></table></figure>
+<p>After this, vim’s colorscheme actually looks <em>weird</em>, even like a mess. This is because the colorscheme uses your terminal’s palette to render the tui in vim, while the gui version <code>gvim</code> looks fine. There’s two way to fix this:</p>
+<ol>
+<li>Set your terminal’s 16 color palette to ‘solariezed’ palette (availabe at <a href="https://ethanschoonover.com/solarized/">solarized official website</a>). I don’t want my terminal to be solarized, and definitely won’t choose this.</li>
+<li>Add <code>let g:solarized_termcolors=256</code> to you <code>.vimrc</code>, this <code>solarized.vim</code> colorscheme will use the standard 256 colors (8-bit) to approxmate a ‘solarized’ theme. Really bad approxmation, won’t use either.</li>
+</ol>
+<p>So here comes the <code>set termguicolors</code> option (need <code>+termguicolors</code> compile support), which enables vim’s colorscheme directly (without consulting or considering the terminal palette ?) rendering 24-bit precise colors. All I need is just finding a colorsheme working this way, and the <code>base16-vim</code> colorscheme series fit really well. Now use this:</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="comment">&quot; a good choice for tui vim</span></span><br><span class="line">Plug <span class="string">&#x27;chriskempson/base16-vim&#x27;</span></span><br><span class="line"><span class="keyword">colorscheme</span> base16-solarized-dark</span><br></pre></td></tr></table></figure>
 <h2 id="22-markdown-plugins"><a class="markdownIt-Anchor" href="#22-markdown-plugins"></a> 2.2 Markdown plugins</h2>
 <p>Add plugin via Vim-plug (which is called in <code>vimrc</code>)</p>
 <p>Use <code>:help vim-markdown</code> or <code>markdown-preview</code>.</p>
@@ -2561,7 +2592,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
 <p><code>~/.vim/after/syntax/$&#123;language&#125;.vim</code></p>
 <p>new filetype</p>
 <p><code>:h filetype</code></p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">augroup</span> filetypedetect</span><br><span class="line"><span class="keyword">autocmd</span> BufNewFile,BufRead *.my <span class="keyword">setfiletype</span> my</span><br><span class="line"><span class="keyword">augroup</span> END</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">augroup</span> filetypedetect</span><br><span class="line">	au!</span><br><span class="line">	<span class="keyword">autocmd</span> BufNewFile,BufRead *.my <span class="keyword">setfiletype</span> my</span><br><span class="line"><span class="keyword">augroup</span> END</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>技能</category>

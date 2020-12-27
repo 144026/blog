@@ -83,14 +83,22 @@ call plug#end()
 
 Note: run `cp ~/.vim/plugged/vim-colors-solarized/colors -r ~/.vim/` after `:PlugInstall`
 ```vim
+" a choice for gvim, BAD choice for tui vim
 Plug 'altercation/vim-colors-solarized'
-
-": let g:solarized_termtrans = 1 " adapt the terminal transparency
-let g:solarized_visibility = "high"
-let g:solarized_termcolors=256 "for terminal usage, must degrade 16bit gui color to 8bit terminal color
-
+let g:solarized_termtrans = 1 " let terminal render text background
 colorscheme solarized
 ```
+After this, vim's colorscheme actually looks _weird_, even like a mess. This is because the colorscheme uses your terminal's palette to render the tui in vim, while the gui version `gvim` looks fine. There's two way to fix this:
+1. Set your terminal's 16 color palette to 'solariezed' palette (availabe at [solarized official website](https://ethanschoonover.com/solarized/)). I don't want my terminal to be solarized, and definitely won't choose this.
+2. Add `let g:solarized_termcolors=256` to you `.vimrc`, this `solarized.vim` colorscheme will use the standard 256 colors (8-bit) to approxmate a 'solarized' theme. Really bad approxmation, won't use either.
+
+So here comes the `set termguicolors` option (need `+termguicolors` compile support), which enables vim's colorscheme directly (without consulting or considering the terminal palette ?) rendering 24-bit precise colors. All I need is just finding a colorsheme working this way, and the `base16-vim` colorscheme series fit really well. Now use this:
+```vim
+" a good choice for tui vim
+Plug 'chriskempson/base16-vim'
+colorscheme base16-solarized-dark
+```
+
 
 ## 2.2 Markdown plugins
 Add plugin via Vim-plug (which is called in `vimrc`) 
@@ -275,6 +283,7 @@ new filetype
 
 ```vim
 augroup filetypedetect
-autocmd BufNewFile,BufRead *.my setfiletype my
+	au!
+	autocmd BufNewFile,BufRead *.my setfiletype my
 augroup END
 ```

@@ -79,7 +79,8 @@ call plug#end()
 ```
 
 ## 2.1 Visual plugins
-### colorscheme
+### 2.1.1 colorscheme
+
 Note: run `cp ~/.vim/plugged/vim-colors-solarized/colors -r ~/.vim/` after `:PlugInstall`
 ```vim
 Plug 'altercation/vim-colors-solarized'

@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/faviconpng">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="A blog learning both kali and general linux usage and skills.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kali">
+<meta property="og:url" content="http://yoursite.com/2020/09/28/Skills/%E7%BB%8F%E9%AA%8C/kali/index.html">
+<meta property="og:site_name" content="144026的博客">
+<meta property="og:description" content="A blog learning both kali and general linux usage and skills.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-28T07:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-25T12:57:39.141Z">
+<meta property="article:author" content="144026">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="kali">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/09/28/Skills/%E7%BB%8F%E9%AA%8C/kali/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>kali | 144026的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="144026的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">144026的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/28/Skills/%E7%BB%8F%E9%AA%8C/kali/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://144026.github.io/img/avatar.jpg">
+      <meta itemprop="name" content="144026">
+      <meta itemprop="description" content="一只蒟蒻">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="144026的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          kali
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-28T00:00:00-07:00">2020-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-25 04:57:39" itemprop="dateModified" datetime="2020-12-25T04:57:39-08:00">2020-12-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%83%BD/" itemprop="url" rel="index"><span itemprop="name">技能</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">经验</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>A blog learning both kali and general linux usage and skills.</p>
+<a id="more"></a>
+<h1 id="0-install"><a class="markdownIt-Anchor" href="#0-install"></a> 0 Install</h1>
+<ol>
+<li>Need network.</li>
+<li>Missing  wireless firmware. Better have a cable network, allowing post-installation firmware download and install, with <code>apt list|grep firmware</code>. If not, prepare a 2nd disk containing those firmware, and insert it after the warning pop up.</li>
+</ol>
+<h2 id="01-basic-system-config"><a class="markdownIt-Anchor" href="#01-basic-system-config"></a> 0.1 Basic System Config</h2>
+<h3 id="010-users-and-groups"><a class="markdownIt-Anchor" href="#010-users-and-groups"></a> 0.1.0 users and groups</h3>
+<h4 id="0101-change-username-groupname-manually"><a class="markdownIt-Anchor" href="#0101-change-username-groupname-manually"></a> 0.1.0.1 change username &amp; groupname (manually)</h4>
+<p>There should be and actually are some packages and utilities to achieve this, though.</p>
+<ol>
+<li>how about <code>useradd &lt;newname&gt; &amp;&amp; userdel &lt;oldname&gt;</code>/<code>groupadd &lt;newname&gt; &amp;&amp; group &lt;oldname&gt;</code> ?
+<ul>
+<li>the <code>newname</code> user/group will have a different <code>uid</code>/<code>gid</code>, and won’t bear its predecessor position or privileges. e.g. <code>A</code> is in <code>sudo</code> group, <code>sudo useradd B &amp;&amp; sudo su &amp;&amp; userdel A &amp;&amp; su B</code> won’t add B into <code>sudo</code> group.</li>
+</ul>
+</li>
+<li>change usr/grp files:
+<ul>
+<li>change group name: substitute all <code>oldname</code> into <code>newname</code>, in both <code>/etc/group</code> and <code>/etc/gshadow</code>, note this IS dangerous and can cause system-wide errors. e.g. <code>sed -i 's/^oldGroupName/^newGroupName/g' /etc/&#123;group,gshadow&#125;</code>.</li>
+<li>change user name: similarly, <code>sudo mv /home/OldUserName /home/NewUserName &amp;&amp; sudo sed -i 's/oldUserName/newUserName/g' /etc/&#123;passwd,shadow,group,gshadow&#125; &amp;&amp; sudo sed -i 's/^newUserName/^oldUserName/g' /etc/&#123;group,gshadow&#125;</code>. Note that password authentication will fail if <code>shadow</code> files not changed, and group privileges(like <code>sudo</code> group) won’t be granted if <code>/etc/group</code> not changed.</li>
+</ul>
+</li>
+</ol>
+<p><strong>NOTE:</strong> mistakenly deleting or changing <code>/etc/&#123;group,passwd,gshadow,shadow&#125;</code>: recover with the system-default auto-backup <code>/etc/&#123;group,passwd,gshadow,shadow&#125;-</code> AS SOON AS POSSIBLE!</p>
+<h3 id="0102-trusted-sudoers"><a class="markdownIt-Anchor" href="#0102-trusted-sudoers"></a> 0.1.0.2 trusted sudoers</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd trusted-sudoers</span><br><span class="line">sudo usermod -a -G trusted-sudoers &lt;user&gt;</span><br><span class="line"><span class="comment"># user/group privilege spec(&#x27;%&#x27; means group)</span></span><br><span class="line"><span class="comment"># user specification is &quot;who where = (as_whom) what&quot;, `man sudoers` to learn more</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;%trusted-sudoers ALL=(ALL:ALL) NOPASSWD: ALL&quot;</span> &gt;&gt; /etc/sudoers.d/trusted-grant-root</span><br><span class="line">sudo chmod 0440 /etc/sudoers.d/trusted-grant-root</span><br></pre></td></tr></table></figure>
+<p>On kali there is a group named <code>kali-trusted</code> and file <code>/etc/sudoers.d/kali-grant-root</code>, so <code>usermod</code> is enough. Note that in <code>/etc/sudoers.d/README</code> :</p>
+<blockquote>
+<p><code>#includedir /etc/sudoers.d</code></p>
+<p>This will cause sudo to read and parse any files in the /etc/sudoers.d<br />
+directory that do NOT <strong>end</strong> in ‘~’ or <strong>contain</strong> a ‘.’ character.</p>
+</blockquote>
+<p>After changing <code>/etc/sudoers</code> or <code>/etc/sudoers.d/*</code>, ALWAYS run <code>sudo visudo -c</code> to check syntax (both file name and content).</p>
+<h3 id="011-dns"><a class="markdownIt-Anchor" href="#011-dns"></a> 0.1.1 DNS</h3>
+<p>Networkmanager(and some applications) will overwrite <code>/etc/resolv.conf</code>, set immutable file attribute to prevent this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;nameserver 114.114.114.114&quot;</span> &gt; /etc/resolv.conf</span><br><span class="line">sudo chattr +i /etc/resolv.conf</span><br></pre></td></tr></table></figure>
+<h3 id="012-shortcuts"><a class="markdownIt-Anchor" href="#012-shortcuts"></a> 0.1.2 shortcuts</h3>
+<p>I’m using xfce4 desktop, there’s several sets of shortcuts to use:</p>
+<h5 id="1-xfce-seetings-hardwarekeyboard"><a class="markdownIt-Anchor" href="#1-xfce-seetings-hardwarekeyboard"></a> 1 xfce seetings: hardware.keyboard</h5>
+<p>Some core shortcuts in the application Shortcuts tab. Adding Custom ones allowed.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Purpose</th>
+<th style="text-align:center">Command</th>
+<th style="text-align:center">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">lock screen</td>
+<td style="text-align:center">xflock4</td>
+<td style="text-align:center">Ctrl+Alt+L</td>
+</tr>
+<tr>
+<td style="text-align:center">screenshot.clip</td>
+<td style="text-align:center">xfce4-screenshooter -r</td>
+<td style="text-align:center">Shift+PrtSc</td>
+</tr>
+<tr>
+<td style="text-align:center">screenshot.region.clip</td>
+<td style="text-align:center">xfce4-screenshooter -r -c</td>
+<td style="text-align:center">Shift+Ctrl+PrtSc</td>
+</tr>
+<tr>
+<td style="text-align:center">app finder/menu</td>
+<td style="text-align:center">xfce4-appfinder/xfce4-popup-whiskermenu</td>
+<td style="text-align:center">Super</td>
+</tr>
+<tr>
+<td style="text-align:center">browser</td>
+<td style="text-align:center">chrome</td>
+<td style="text-align:center">Alt+W</td>
+</tr>
+<tr>
+<td style="text-align:center">terminal emulator</td>
+<td style="text-align:center">qterminal(there’s problems)</td>
+<td style="text-align:center">Alt+T</td>
+</tr>
+<tr>
+<td style="text-align:center">dropdown terminal</td>
+<td style="text-align:center">qterminal -d</td>
+<td style="text-align:center">Alt+Shift+D</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-xfce-settings-personalwindow_manager"><a class="markdownIt-Anchor" href="#2-xfce-settings-personalwindow_manager"></a> 2 xfce settings: personal.window_manager</h5>
+<p>Custom ones not allowed.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Window Action</th>
+<th style="text-align:center">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cylce fwd/bck</td>
+<td style="text-align:center">Alt/(Shift+Alt)+Tab</td>
+</tr>
+<tr>
+<td style="text-align:center">close</td>
+<td style="text-align:center">Shift+Ctrl+W</td>
+</tr>
+<tr>
+<td style="text-align:center">Maximize</td>
+<td style="text-align:center">Ctrl+Super+Up</td>
+</tr>
+<tr>
+<td style="text-align:center">tile to t/b/l/r</td>
+<td style="text-align:center">Super+k/j/h/l</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Workspace Action</th>
+<th style="text-align:center">Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">add/del</td>
+<td style="text-align:center">Alt+Insert/Delete</td>
+</tr>
+<tr>
+<td style="text-align:center">goto l/r</td>
+<td style="text-align:center">Alt+Ctrl+Left/Right</td>
+</tr>
+</tbody>
+</table>
+<h5 id="3-common-terminal-shortcuts"><a class="markdownIt-Anchor" href="#3-common-terminal-shortcuts"></a> 3 common terminal shortcuts</h5>
+<ul>
+<li><code>tab</code>(auto-complete)</li>
+<li><code>ctrl+p/n</code>(history-nav), <code>^S/^R</code>(fwd/bck_i_search),</li>
+<li><code>ctrl+a/e/b/f</code>(move)</li>
+<li><code>^W/^H</code>(bck_dw/dl), <code>^D/^K</code>(fwd_dl/d$)</li>
+</ul>
+<h5 id="4-qterminal-shortcuts-and-configs"><a class="markdownIt-Anchor" href="#4-qterminal-shortcuts-and-configs"></a> 4 qterminal shortcuts and configs</h5>
+<p>QTerminal(0.14.1) stores configs in <code>~/.config/qterminal.org/qterminal.ini</code>, and its <code>-p,--profile</code> option can <strong>NOT</strong> designate a custom config file like <code>~/.myqterm.ini</code>(only custom options allowed)</p>
+<p>Even <strong>worse</strong>, QTerminal flushes its config file with its on-exit configs, which means you can <strong>NOT</strong> make effective changes to <code>qterminal.ini</code> using qterminal. ：/</p>
+<p>Still, with MATE terminal, <code>qterminal.ini</code> can be changed: (below is a backup)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[General]</span></span><br><span class="line"><span class="attr">AskOnExit</span>=<span class="literal">false</span>                 <span class="comment"># default true</span></span><br><span class="line">BookmarksFile=                  # not used</span><br><span class="line"><span class="attr">BookmarksVisible</span>=<span class="literal">false</span>		</span><br><span class="line"><span class="attr">Borderless</span>=<span class="literal">true</span>                 <span class="comment"># default false</span></span><br><span class="line"><span class="attr">ChangeWindowIcon</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">ChangeWindowTitle</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">ConfirmMultilinePaste</span>=<span class="literal">false</span>     <span class="comment"># used to avoid accidental execution</span></span><br><span class="line"><span class="attr">FixedTabWidth</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">FixedTabWidthValue</span>=<span class="number">250</span></span><br><span class="line"><span class="attr">HideTabBarWithOneTab</span>=<span class="literal">true</span>       <span class="comment"># cleaner look</span></span><br><span class="line"><span class="attr">HistoryLimited</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">HistoryLimitedTo</span>=<span class="number">1000</span></span><br><span class="line"><span class="attr">KeyboardCursorShape</span>=<span class="number">0</span>           <span class="comment"># block type cursor</span></span><br><span class="line"><span class="attr">LastWindowMaximized</span>=<span class="literal">false</span>       <span class="comment"># depend if next opening is maxed</span></span><br><span class="line"><span class="attr">MenuVisible</span>=<span class="literal">false</span>               <span class="comment"># CLOSE, avoid Alt shortcuts conflict</span></span><br><span class="line"><span class="attr">MotionAfterPaste</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">SavePosOnExit</span>=<span class="literal">true</span>              <span class="comment"># save on-exit pos/size</span></span><br><span class="line"><span class="attr">SaveSizeOnExit</span>=<span class="literal">true</span>             <span class="comment"># <span class="doctag">NOTE:</span> qterminal still flush other on-exit configs</span></span><br><span class="line"><span class="attr">ScrollbarPosition</span>=<span class="number">0</span>             <span class="comment"># none</span></span><br><span class="line"><span class="attr">ShowCloseTabButton</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">TabBarless</span>=<span class="literal">true</span>                 <span class="comment"># default false</span></span><br><span class="line"><span class="attr">TabsPosition</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">Term</span>=xterm-<span class="number">256</span>color</span><br><span class="line">TerminalBackgroundImage=</span><br><span class="line"><span class="attr">TerminalMargin</span>=<span class="number">10</span>               <span class="comment"># NOTE this would cause vim display margin. Vim itself shows margin when scaling, though.</span></span><br><span class="line"><span class="attr">TerminalTransparency</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">TerminalsPreset</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">TrimPastedTrailingNewlines</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">UseBookmarks</span>=<span class="literal">false</span>              <span class="comment"># no need</span></span><br><span class="line"><span class="attr">UseCWD</span>=<span class="literal">false</span>                    <span class="comment"># no need</span></span><br><span class="line"><span class="attr">colorScheme</span>=Kali-Dark</span><br><span class="line"><span class="attr">emulation</span>=linux</span><br><span class="line"><span class="attr">enabledBidiSupport</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">fontFamily</span>=Fira Code            <span class="comment"># quite good terminal font</span></span><br><span class="line"><span class="attr">fontSize</span>=<span class="number">14</span>                     <span class="comment"># choose your best</span></span><br><span class="line">guiStyle=</span><br><span class="line"><span class="attr">highlightCurrentTerminal</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">showTerminalSizeHint</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">version</span>=<span class="number">0.14</span>.<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="section">[DropMode]</span></span><br><span class="line"><span class="attr">Height</span>=<span class="number">45</span></span><br><span class="line"><span class="attr">KeepOpen</span>=<span class="literal">false</span>                  <span class="comment"># <span class="doctag">NOTE:</span> use false, since qterm is always on top in this mode</span></span><br><span class="line">ShortCut=</span><br><span class="line"><span class="attr">ShowOnStart</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">Width</span>=<span class="number">70</span></span><br><span class="line"></span><br><span class="line"><span class="section">[MainWindow]</span></span><br><span class="line"><span class="attr">ApplicationTransparency</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">isMaximized</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">pos</span>=@Point(<span class="number">960</span> <span class="number">29</span>)</span><br><span class="line"><span class="attr">size</span>=@Size(<span class="number">950</span> <span class="number">1018</span>)</span><br><span class="line"><span class="attr">state</span>=@ByteArray(\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\xff\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\xfd\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\x1\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\xfc\x2\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\x1\xfb\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>&amp;\<span class="number">0</span>\x42\<span class="number">0</span>o\<span class="number">0</span>o\<span class="number">0</span>k\<span class="number">0</span>m\<span class="number">0</span>\x61\<span class="number">0</span>r\<span class="number">0</span>k\<span class="number">0</span>s\<span class="number">0</span>\x44\<span class="number">0</span>o\<span class="number">0</span>\x63\<span class="number">0</span>k\<span class="number">0</span>W\<span class="number">0</span>i\<span class="number">0</span>\x64\<span class="number">0</span>g\<span class="number">0</span>\x65\<span class="number">0</span>t\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\xff\xff\xff\xff\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\x8c\<span class="number">0</span>\xff\xff\xff\<span class="number">0</span>\<span class="number">0</span>\x3\xb6\<span class="number">0</span>\<span class="number">0</span>\x3\xfa\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\x4\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\x4\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\b\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\b\xfc\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="section">[Sessions]</span></span><br><span class="line"><span class="attr">size</span>=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Shortcuts]</span></span><br><span class="line">Add%20Tab=Ctrl+Shift+T</span><br><span class="line">Bottom%20Subterminal=Alt+J                  # move sub</span><br><span class="line">Clear%20Active%20Terminal=Ctrl+Shift+X</span><br><span class="line">Close%20Tab=                                # no need</span><br><span class="line">Collapse%20Subterminal=Alt+X                # collapse sub</span><br><span class="line">Copy%20Selection=Ctrl+Shift+C</span><br><span class="line"><span class="attr">Find</span>=Ctrl+Shift+F</span><br><span class="line"><span class="attr">Fullscreen</span>=F11</span><br><span class="line">Hide%20Window%20Borders=Alt+Shift+H</span><br><span class="line">Left%20Subterminal=Alt+H                    # move sub</span><br><span class="line">Move%20Tab%20Left=Alt+Shift+Left</span><br><span class="line">Move%20Tab%20Right=Alt+Shift+Right</span><br><span class="line">New%20Window=Ctrl+Shift+N</span><br><span class="line">Next%20Tab=Ctrl+PgDown</span><br><span class="line">Next%20Tab%20in%20History=Ctrl+Shift+Tab</span><br><span class="line">Paste%20Clipboard=Ctrl+Shift+V</span><br><span class="line">Paste%20Selection=Shift+Ins</span><br><span class="line">Preferences...=Alt+Shift+P                  # ctrl+shift+p is used by picgo</span><br><span class="line">Previous%20Tab=Ctrl+PgUp</span><br><span class="line">Previous%20Tab%20in%20History=Ctrl+Tab</span><br><span class="line">Quit=</span><br><span class="line">Rename%20Session=Alt+Shift+S</span><br><span class="line">Right%20Subterminal=Alt+L                   # move sub</span><br><span class="line">Show%20Tab%20Bar=</span><br><span class="line">Split%20Terminal%20Horizontally=Alt+Shift+J # split sub</span><br><span class="line">Split%20Terminal%20Vertically=Alt+Shift+L   # split sub</span><br><span class="line">Toggle%20Bookmarks=Ctrl+Shift+B</span><br><span class="line">Toggle%20Menu=Ctrl+Shift+M</span><br><span class="line">Top%20Subterminal=Alt+K                     # move sub</span><br><span class="line">Zoom%20in=Ctrl++</span><br><span class="line">Zoom%20out=Ctrl+-</span><br><span class="line">Zoom%20reset=Ctrl+0</span><br></pre></td></tr></table></figure>
+<p>core needs:</p>
+<ul>
+<li>clean look</li>
+<li>fast subterminal operations</li>
+<li>no conflict with existing shortcuts</li>
+</ul>
+<h5 id="5-yakuake-tilda"><a class="markdownIt-Anchor" href="#5-yakuake-tilda"></a> 5 Yakuake &amp; Tilda</h5>
+<p>Yakuake comes with lots of kde dependencies, while Tilda fits better into xfce4. Tilda config in <code>~/.config/tilda/config_$n</code>, <code>config_$n</code> for the n-th session simultaneously opened.</p>
+<p>Add tilda to xfce settings::session and startup::application autostart, and change the default config: (below is a backup)</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tilda_config_version</span>=<span class="string">&quot;1.5.2&quot;</span></span><br><span class="line"><span class="attr">command</span>=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">font</span>=<span class="string">&quot;Fira Code weight=453 11&quot;</span></span><br><span class="line"><span class="attr">key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Alt&gt;d&quot;</span></span><br><span class="line"><span class="attr">addtab_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;t&quot;</span></span><br><span class="line"><span class="attr">fullscreen_key</span>=<span class="string">&quot;F11&quot;</span></span><br><span class="line"><span class="attr">toggle_transparency_key</span>=<span class="string">&quot;F12&quot;</span></span><br><span class="line"><span class="attr">toggle_searchbar_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;f&quot;</span></span><br><span class="line"><span class="attr">closetab_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;w&quot;</span></span><br><span class="line"><span class="attr">nexttab_key</span>=<span class="string">&quot;&lt;Control&gt;Page_Down&quot;</span></span><br><span class="line"><span class="attr">prevtab_key</span>=<span class="string">&quot;&lt;Control&gt;Page_Up&quot;</span></span><br><span class="line"><span class="attr">movetableft_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;Page_Up&quot;</span></span><br><span class="line"><span class="attr">movetabright_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;Page_Down&quot;</span></span><br><span class="line"><span class="attr">gototab_1_key</span>=<span class="string">&quot;&lt;Alt&gt;1&quot;</span></span><br><span class="line"><span class="attr">gototab_2_key</span>=<span class="string">&quot;&lt;Alt&gt;2&quot;</span></span><br><span class="line"><span class="attr">gototab_3_key</span>=<span class="string">&quot;&lt;Alt&gt;3&quot;</span></span><br><span class="line"><span class="attr">gototab_4_key</span>=<span class="string">&quot;&lt;Alt&gt;4&quot;</span></span><br><span class="line"><span class="attr">gototab_5_key</span>=<span class="string">&quot;&lt;Alt&gt;5&quot;</span></span><br><span class="line"><span class="attr">gototab_6_key</span>=<span class="string">&quot;&lt;Alt&gt;6&quot;</span></span><br><span class="line"><span class="attr">gototab_7_key</span>=<span class="string">&quot;&lt;Alt&gt;7&quot;</span></span><br><span class="line"><span class="attr">gototab_8_key</span>=<span class="string">&quot;&lt;Alt&gt;8&quot;</span></span><br><span class="line"><span class="attr">gototab_9_key</span>=<span class="string">&quot;&lt;Alt&gt;9&quot;</span></span><br><span class="line"><span class="attr">gototab_10_key</span>=<span class="string">&quot;&lt;Alt&gt;0&quot;</span></span><br><span class="line"><span class="attr">copy_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;c&quot;</span></span><br><span class="line"><span class="attr">paste_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;v&quot;</span></span><br><span class="line"><span class="attr">quit_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;q&quot;</span></span><br><span class="line"><span class="attr">title</span>=<span class="string">&quot;Tilda&quot;</span></span><br><span class="line"><span class="attr">background_color</span>=<span class="string">&quot;white&quot;</span></span><br><span class="line"><span class="comment"># working_dir=&quot;&quot;</span></span><br><span class="line"><span class="attr">web_browser</span>=<span class="string">&quot;xdg-open&quot;</span></span><br><span class="line"><span class="attr">increase_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;equal&quot;</span></span><br><span class="line"><span class="attr">decrease_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;minus&quot;</span></span><br><span class="line"><span class="attr">normalize_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;0&quot;</span></span><br><span class="line"><span class="attr">show_on_monitor</span>=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">word_chars</span>=<span class="string">&quot;-A-Za-z0-9,./?%&amp;#:_&quot;</span></span><br><span class="line"><span class="attr">lines</span>=<span class="number">5000</span></span><br><span class="line"><span class="attr">x_pos</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">y_pos</span>=<span class="number">29</span></span><br><span class="line"><span class="attr">tab_pos</span>=<span class="number">4</span></span><br><span class="line"><span class="attr">expand_tabs</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">show_single_tab</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">backspace_key</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">delete_key</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">d_set_title</span>=<span class="number">3</span></span><br><span class="line"><span class="attr">command_exit</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">command_timeout_ms</span>=<span class="number">3000</span></span><br><span class="line"><span class="attr">scheme</span>=<span class="number">7</span></span><br><span class="line"><span class="attr">slide_sleep_usec</span>=<span class="number">10000</span></span><br><span class="line"><span class="attr">animation_orientation</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">timer_resolution</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">auto_hide_time</span>=<span class="number">2000</span></span><br><span class="line"><span class="attr">on_last_terminal_exit</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">prompt_on_exit</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">palette_scheme</span>=<span class="number">8</span></span><br><span class="line"><span class="attr">non_focus_pull_up_behaviour</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">cursor_shape</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">title_max_length</span>=<span class="number">25</span></span><br><span class="line"><span class="attr">palette</span> = &#123;<span class="number">10280</span>, <span class="number">10794</span>, <span class="number">13878</span>, <span class="number">65535</span>, <span class="number">23644</span>, <span class="number">22359</span>, <span class="number">23130</span>, <span class="number">63479</span>, <span class="number">36494</span>, <span class="number">62451</span>, <span class="number">63993</span>, <span class="number">40349</span>, <span class="number">22359</span>, <span class="number">51143</span>, <span class="number">65535</span>, <span class="number">65535</span>, <span class="number">27242</span>, <span class="number">49601</span>, <span class="number">39578</span>, <span class="number">60909</span>, <span class="number">65278</span>, <span class="number">61937</span>, <span class="number">61937</span>, <span class="number">61680</span>, <span class="number">26728</span>, <span class="number">26728</span>, <span class="number">26728</span>, <span class="number">65535</span>, <span class="number">23644</span>, <span class="number">22359</span>, <span class="number">23130</span>, <span class="number">63479</span>, <span class="number">36494</span>, <span class="number">62451</span>, <span class="number">63993</span>, <span class="number">40349</span>, <span class="number">22359</span>, <span class="number">51143</span>, <span class="number">65535</span>, <span class="number">65535</span>, <span class="number">27242</span>, <span class="number">49601</span>, <span class="number">39578</span>, <span class="number">60909</span>, <span class="number">65278</span>, <span class="number">61937</span>, <span class="number">61937</span>, <span class="number">61680</span>&#125;</span><br><span class="line"><span class="attr">scrollbar_pos</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">back_red</span>=<span class="number">10486</span></span><br><span class="line"><span class="attr">back_green</span>=<span class="number">10486</span></span><br><span class="line"><span class="attr">back_blue</span>=<span class="number">13762</span></span><br><span class="line"><span class="attr">text_red</span>=<span class="number">61603</span></span><br><span class="line"><span class="attr">text_green</span>=<span class="number">61603</span></span><br><span class="line"><span class="attr">text_blue</span>=<span class="number">60292</span></span><br><span class="line"><span class="attr">cursor_red</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">cursor_green</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">cursor_blue</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">width_percentage</span>=<span class="number">2147483647</span></span><br><span class="line"><span class="attr">height_percentage</span>=<span class="number">2147483647</span></span><br><span class="line"><span class="attr">scroll_history_infinite</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">scroll_on_output</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">notebook_border</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">scrollbar</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">grab_focus</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">above</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">notaskbar</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">blinks</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">scroll_on_key</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">bell</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">run_command</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">pinned</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">animation</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">hidden</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">set_as_desktop</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">centered_horizontally</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">centered_vertically</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">enable_transparency</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">auto_hide_on_focus_lost</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">auto_hide_on_mouse_leave</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">title_behaviour</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">inherit_working_dir</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">command_login_shell</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">start_fullscreen</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">confirm_close_tab</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">back_alpha</span>=<span class="number">62258</span></span><br><span class="line"><span class="attr">show_title_tooltip</span>=<span class="literal">true</span></span><br><span class="line"><span class="comment"># max_width=0</span></span><br><span class="line"><span class="comment"># max_height=0</span></span><br><span class="line"><span class="comment"># image=&quot;&quot;</span></span><br><span class="line"><span class="comment"># show_on_monitor_number=0</span></span><br><span class="line"><span class="comment"># transparency=0</span></span><br><span class="line"><span class="comment"># bold=false</span></span><br><span class="line"><span class="comment"># title_max_length_flag=false</span></span><br><span class="line"><span class="comment"># antialias=false</span></span><br><span class="line"><span class="comment"># double_buffer=false</span></span><br><span class="line"><span class="comment"># scroll_background=false</span></span><br><span class="line"><span class="comment"># use_image=false</span></span><br><span class="line"><span class="comment"># min_width=0</span></span><br><span class="line"><span class="comment"># min_height=0</span></span><br></pre></td></tr></table></figure>
+<h3 id="013-desktop-theme"><a class="markdownIt-Anchor" href="#013-desktop-theme"></a> 0.1.3 desktop-theme</h3>
+<p><code>sudo update-alternatives --config desktop-theme &amp;&amp; sudo update-grub2</code> will ONLY update “post-grub” images. To actually modify the theme:</p>
+<ul>
+<li>
+<p>change desktop wallpaper in xfce4-settings.desktop</p>
+</li>
+<li>
+<p>change login background in xfce4-settings.lightdm-gtk±greeter</p>
+</li>
+<li>
+<p>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></p>
+</li>
+</ul>
+<h3 id="014-network-config"><a class="markdownIt-Anchor" href="#014-network-config"></a> 0.1.4 network config</h3>
+<p>When a userspace app, like<code>ssh</code>, needs to access a <code>ip</code>, it usaully passes the <code>ip</code> to kernel and let the kernel decide which <code>interface</code> and <code>route</code> will be used according to the <em>route table</em>. (This means <code>ssh [ -B &lt;interface&gt;] [ -b &lt;ipaddr&gt; ]</code> won’t change route, thus can’t solve ‘unreachable’ problem on a dual-interface machine)</p>
+<p>use <code>route -n</code> or <code>ip route &#123; list | show &#125;</code> to display the route table.</p>
+<p>use <code>ip route del $route</code> and <code>ip route add $route</code> to change existing routes.</p>
+<p><strong>NOTE</strong>: <code>ip route &#123; change | replace &#125;</code> is documented capable to change routes atomically, <strong>BUT</strong> <code>metrics</code> can NOT be changed in this way (get ENOENT, Error NO such ENTry), since the <code>rtnetlink</code> protocol uses <code>metrics</code> as separate fieleds to select routes and does not support this operation. When used, <code>ip route change $route</code> requires <code>$route</code> existing, and one or more fields (except <code>metrics</code>) may be specified differently to cause a change, the first matched record (match <code>metrics</code>?) will be changed.</p>
+<p><strong>SYNOPSIS:</strong> DO NOT use <code>ip route change</code>, use <code>del</code>&amp;<code>add</code> instead.</p>
+<h3 id="015-sound-config"><a class="markdownIt-Anchor" href="#015-sound-config"></a> 0.1.5 sound config</h3>
+<h4 id="0151-default-sound-card"><a class="markdownIt-Anchor" href="#0151-default-sound-card"></a> 0.1.5.1 default sound card</h4>
+<p>List sound devices: <code>cat /proc/asound/cards</code>, or <code>aplay -l</code> with <code>alsa-utils</code> installed.</p>
+<p>NOTE that (alsa or pulseaudio ?) always point <code>default</code> sound device to the one that has smallest card-device number.</p>
+<p>Change by point <code>default</code> to some other <code>card.device</code>: <code>vim /etc/asound</code> or <code>vim ~/.asoundrc</code> (system-wide or user-specific)</p>
+<p>Change by assign a different <code>card.device</code> to actual hardwares: change modprobe configs, <strong>todo</strong>.</p>
+<h1 id="1-software-config"><a class="markdownIt-Anchor" href="#1-software-config"></a> 1 Software Config</h1>
+<h2 id="11-debian-software-general-management"><a class="markdownIt-Anchor" href="#11-debian-software-general-management"></a> 1.1 Debian Software General Management</h2>
+<h3 id="111-apt-tools"><a class="markdownIt-Anchor" href="#111-apt-tools"></a> 1.1.1 apt tools</h3>
+<ol>
+<li>install</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get install <span class="variable">$&#123;PackageName&#125;</span> &amp;&amp; sudo apt clean</span><br></pre></td></tr></table></figure>
+<p>Use <code>sudo apt-get clean</code> to caches for install in <code>/var/cache/apt/archives/</code> and <code>/var/cache/apt/archives/partial/</code>.</p>
+<p>Add <code>--fix-missing</code> parameter and execute install again if interrupted by network failures. If a broken package error stops the installation, use <code>sudo apt-get install $broken_package_name --fix-missing</code> to solve it.</p>
+<p>Software will be installed into <code>/usr</code> dir (being left for apt tools’ management recommended).</p>
+<ol start="2">
+<li>uninstall</li>
+</ol>
+<p>to remove a package but retain the config files (in <code>/etc</code>, <code>~</code>, <code>$PATH</code> or somewhere else), use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
+<p>to remove a package and the config files, use</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge $&#123;PackageName&#125;</span><br></pre></td></tr></table></figure>
+<p>to remove the dependencies, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+<p>to sum up, to completely remove a software, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge <span class="variable">$&#123;PackageName&#125;</span> &amp;&amp; sudo apt auto remove</span><br></pre></td></tr></table></figure>
+<h3 id="112-dpkg"><a class="markdownIt-Anchor" href="#112-dpkg"></a> 1.1.2 dpkg</h3>
+<ol>
+<li>install</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i <span class="variable">$&#123;PackageName&#125;</span>.deb</span><br></pre></td></tr></table></figure>
+<p>Normally the package is installed in <code>/usr/local</code> (<code>--relocate</code> may be used to specify a different folder).</p>
+<p>to list installed packages, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -l</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>uninstall</li>
+</ol>
+<p>to remove a package but retain the config files, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
+<p>to remove a package and the config files, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --purge <span class="variable">$&#123;PackageName&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="113-make-install"><a class="markdownIt-Anchor" href="#113-make-install"></a> 1.1.3 make install</h3>
+<p>Software installed in this way is hard to remove. Better setting a <code>PREFIX=&quot;/path/to/install</code> and deleting the whole <code>$PREFIX</code> folder to uninstall.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tar -tvf $&#123;PackageName&#125;.tar.gz</span></span><br><span class="line">tar -xzf <span class="variable">$&#123;PackageName&#125;</span>.tar.gz</span><br><span class="line"><span class="comment"># tar -xJf $&#123;PackageName&#125;.tar.xz</span></span><br><span class="line"><span class="built_in">cd</span> <span class="variable">$&#123;PackageName&#125;</span></span><br><span class="line">less README</span><br><span class="line">./configure --prefix /path/to/install </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h2 id="12-documentation-software"><a class="markdownIt-Anchor" href="#12-documentation-software"></a> 1.2 Documentation software</h2>
+<h3 id="121-input-method"><a class="markdownIt-Anchor" href="#121-input-method"></a> 1.2.1 Input Method</h3>
+<h4 id="im-framework"><a class="markdownIt-Anchor" href="#im-framework"></a> im framework</h4>
+<ul>
+<li>fcitx(4.0) (apt)</li>
+<li>fcitx5(5.0) (apt)</li>
+</ul>
+<h4 id="pinyin-support"><a class="markdownIt-Anchor" href="#pinyin-support"></a> pinyin support</h4>
+<ul>
+<li>fcitx-googlepinyin (apt)</li>
+<li>fcitx-libpinyin (apt) (recommended)</li>
+<li>fcitx-sunpinyin (apt)</li>
+</ul>
+<h4 id="config"><a class="markdownIt-Anchor" href="#config"></a> config</h4>
+<ul>
+<li>
+<p>fcitx configure</p>
+</li>
+<li>
+<p>local config dir: <code>~/.config/fcitx</code> <strong>(remove it if there’s a config corruption)</strong></p>
+</li>
+</ul>
+<p><strong>Appearence</strong></p>
+<p>fcitx configure, or <code>usr/share/fcitx/skin/$&#123;skin&#125;/fcitx_$&#123;Pskin&#125;.conf</code></p>
+<ul>
+<li>input/menu fontszie</li>
+<li>add a skin</li>
+<li>…</li>
+</ul>
+<h3 id="122-the-fonts"><a class="markdownIt-Anchor" href="#122-the-fonts"></a> 1.2.2 the Fonts</h3>
+<p>Copy fonts to a dir, and change font in Appearance.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir <span class="variable">$&#123;FontDir&#125;</span>; sudo cp <span class="variable">$&#123;FontName&#125;</span>.[ttf|TTF] /usr/share/fonts/<span class="variable">$&#123;FontDir&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Manually install fonts for all apps.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su &amp;&amp; <span class="built_in">cd</span> /usr/share/fonts/<span class="variable">$&#123;FontDir&#125;</span></span><br><span class="line">mkfontscale &amp;&amp; mkfontdir &amp;&amp; <span class="built_in">fc</span>-cache -fv</span><br><span class="line"><span class="built_in">source</span> /etc/profile &amp;&amp; <span class="built_in">fc</span>-list |wc -l</span><br></pre></td></tr></table></figure>
+<p>or use apt tools, e.g. wenquanyi fonts (fira code fonts)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-wqy-microhei ttf-wqy-zenhei xfonts-wqy</span><br></pre></td></tr></table></figure>
+<h3 id="123-office"><a class="markdownIt-Anchor" href="#123-office"></a> 1.2.3 Office</h3>
+<p>wps office: Download linux version and use dpkg to install. Remember to copy and install fonts from  windows.</p>
+<p>libreoffice:bad performance, ver 7.1</p>
+<h3 id="124-markdown-and-tex"><a class="markdownIt-Anchor" href="#124-markdown-and-tex"></a> 1.2.4 markdown and tex</h3>
+<p><strong>install</strong>: texlive, download dvd-image from mirror sites and run <code>install-pl</code>(need to add to <code>$PATH</code>).</p>
+<p>From here, editing a document is more similiar to coding, which is why vim comes in (see <a target="_blank" rel="noopener" href="https://leoharry.com/2020/10/03/%E6%8A%80%E8%83%BD/%E5%B7%A5%E5%85%B7/learn-Vim/">learn-Vim</a>).</p>
+<p>Generally, filetype-recongnition, syntax-highlight, autocompletion, tags, snippets, compile-preview, etc. will be needed.</p>
+<h3 id="125-hexo-blog"><a class="markdownIt-Anchor" href="#125-hexo-blog"></a> 1.2.5 hexo blog</h3>
+<p>(see <a target="_blank" rel="noopener" href="https://leoharry.com/2020/08/26/%E6%8A%80%E8%83%BD/%E7%BB%8F%E9%AA%8C/learn-blog/">learn-blog</a>)</p>
+<p><strong>install</strong>:</p>
+<ul>
+<li>apt: nodejs, npm, git</li>
+<li>npm: hexo-cli, and other plugins</li>
+<li>manual: picgo.appimg</li>
+</ul>
+<p><strong>config</strong></p>
+<ul>
+<li>hexo: <code>_config.yaml</code></li>
+<li>theme: <code>_config.yaml</code></li>
+</ul>
+<h2 id="13-aux-software"><a class="markdownIt-Anchor" href="#13-aux-software"></a> 1.3 Aux Software</h2>
+<h3 id="131-social"><a class="markdownIt-Anchor" href="#131-social"></a> 1.3.1 Social</h3>
+<p>linuxqq: dpkg install.</p>
+<h3 id="132-xfce-touchpad-config"><a class="markdownIt-Anchor" href="#132-xfce-touchpad-config"></a> 1.3.2 xfce touchpad config</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xserver-xorg-input-synaptics &amp;&amp; cp -r /usr/share/X11/xorg.conf.d/ /etc/X11/ &amp;&amp; sudo vim /etc/X11/xorg.conf.d/70-synaptics.conf</span><br></pre></td></tr></table></figure>
+<p>now add the following options to the first inputclass</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Option &quot;TapButton1&quot; &quot;1&quot; # left mouse</span></span><br><span class="line">Option <span class="string">&quot;TapButton2&quot;</span> <span class="string">&quot;3&quot;</span> <span class="comment"># middle mouse</span></span><br><span class="line">Option <span class="string">&quot;TapButton3&quot;</span> <span class="string">&quot;2&quot;</span> <span class="comment"># right mouse</span></span><br><span class="line">Option <span class="string">&quot;VertEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizEdgeScroll&quot;</span> <span class="string">&quot;off&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizTwoFingerScroll&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CornerCoasting&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircularScrolling&quot;</span> <span class="string">&quot;on&quot;</span></span><br><span class="line">Option <span class="string">&quot;CircScrollTrigger&quot;</span> <span class="string">&quot;2&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinZ&quot;</span> <span class="string">&quot;40&quot;</span></span><br><span class="line">Option <span class="string">&quot;EmulateTwoFingerMinW&quot;</span> <span class="string">&quot;8&quot;</span></span><br><span class="line">Option <span class="string">&quot;CoastingSpeed&quot;</span> <span class="string">&quot;0&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerLow&quot;</span> <span class="string">&quot;30&quot;</span></span><br><span class="line">Option <span class="string">&quot;FingerHigh&quot;</span> <span class="string">&quot;70&quot;</span></span><br><span class="line">Option <span class="string">&quot;MaxTapTime&quot;</span> <span class="string">&quot;125&quot;</span></span><br><span class="line">Option <span class="string">&quot;VertScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br><span class="line">Option <span class="string">&quot;HorizScrollDelta&quot;</span> <span class="string">&quot;-111&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="133-web-browser"><a class="markdownIt-Anchor" href="#133-web-browser"></a> 1.3.3 Web Browser</h3>
+<ol>
+<li>chrome: just download the official package.</li>
+<li>firefox esr, kali original.</li>
+</ol>
+<h3 id="134-socks-proxy-client"><a class="markdownIt-Anchor" href="#134-socks-proxy-client"></a> 1.3.4 socks proxy client</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install shadowsocks-libev simple-obfs </span><br></pre></td></tr></table></figure>
+<p>Server config template in  <code>/etc/shadowsocks-libev/</code>.</p>
+<p>Client config with obfs-local (no space between <code>plugin_opts</code> recommended):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="string">&quot;server&quot;</span>:<span class="string">&quot;&lt;ip&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;server_port&quot;</span>:&lt;<span class="string">&quot;port&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_address&quot;</span>:<span class="string">&quot;&lt;localhost&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;local_port&quot;</span>:<span class="string">&quot;&lt;port2&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;password&quot;</span>:<span class="string">&quot;&lt;pass&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;timeout&quot;</span>:<span class="string">&quot;&lt;sec&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;method&quot;</span>:<span class="string">&quot;&lt;encry&gt;&quot;</span>,</span><br><span class="line"><span class="string">&quot;fast_open&quot;</span>:<span class="literal">true</span>,</span><br><span class="line"><span class="string">&quot;plugin&quot;</span>:<span class="string">&quot;obfs-local&quot;</span>,</span><br><span class="line"><span class="string">&quot;plugin_opts&quot;</span>:<span class="string">&quot;obfs=http;obfs-host=www.baidu.com;fast-open=true&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Auto-start with <code>systemd</code></strong></p>
+<p>Create the config file below, then <code>sudo systemctl enable ss-locald.service</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; /&#123;lib,usr/lib&#125;/systemd/system/ss-locald.service</span></span><br><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Shadowsocks client service</span><br><span class="line"><span class="comment">; Documentation=http://xxx</span></span><br><span class="line"><span class="comment">; After=xxx.target</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">User</span>=username</span><br><span class="line"><span class="attr">Group</span>=groupname</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/ss-local -c /etc/shadowsocks-libev/config.json</span><br><span class="line"><span class="comment">; ExecStop=xxx</span></span><br><span class="line"><span class="comment">; ExecReload=xxx</span></span><br><span class="line"><span class="attr">KillMode</span>=process</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">50</span>s</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>Use proxy <code>socks5h://$&#123;ip&#125;:$&#123;port&#125;</code> to hide DNS. (<code>socks5://</code> DOES NOT proxy DNS traffic)</p>
+<p>In firefox, set the SOCKS Host v5 proxy in preferences -&gt; general -&gt; network settings. ALWAYS check “Proxy DNS when using Socks v5”.</p>
+<h2 id="14-virtualize"><a class="markdownIt-Anchor" href="#14-virtualize"></a> 1.4 Virtualize</h2>
+<h3 id="140-architecture"><a class="markdownIt-Anchor" href="#140-architecture"></a> 1.4.0 Architecture</h3>
+<ol>
+<li>
+<p>Bare-metal<br />
+Userspace Management tool <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Management API <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hypervisor software <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hardware resource(CPU/Memory/NIC/Disk)</p>
+</li>
+<li>
+<p>Host OS<br />
+Userspace Management tool <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> API <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hypervisor <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Host OS <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Hardware (CPU/Memory/NIC/Disk)</p>
+</li>
+</ol>
+<h3 id="141-vmware-vmdk"><a class="markdownIt-Anchor" href="#141-vmware-vmdk"></a> 1.4.1 VMware .vmdk</h3>
+<h3 id="142-virtualbox-vdi"><a class="markdownIt-Anchor" href="#142-virtualbox-vdi"></a> 1.4.2  VirtualBox .vdi</h3>
+<h3 id="143-qemu-qcowqcow2"><a class="markdownIt-Anchor" href="#143-qemu-qcowqcow2"></a> 1.4.3 Qemu .qcow,.qcow2</h3>
+<p>Detailed qemu usage guide on <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/QEMU">archlinux-wiki/qemu</a>.</p>
+<h4 id="1430-install-check-suppport"><a class="markdownIt-Anchor" href="#1430-install-check-suppport"></a> 1.4.3.0 install &amp; check suppport</h4>
+<p>Install qemu and qemu-system</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt list|grep qemu &amp;&amp; sudo apt-get install qemu [qemu-system qemu-utils]</span><br></pre></td></tr></table></figure>
+<p>Check host hardware support for KVM</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E <span class="string">&#x27;vmx|svm&#x27;</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<p>Check if kvm module is loaded on host</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep kvm</span><br></pre></td></tr></table></figure>
+<h4 id="1431-basic-usage"><a class="markdownIt-Anchor" href="#1431-basic-usage"></a> 1.4.3.1 Basic Usage</h4>
+<p>Create vitual disk by <code>qemu-img [-f FMT] &lt;filename&gt; [SIZE]</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-img -f qcow2 ubuntu-1804-server-x86_64.qcow2 4G</span><br></pre></td></tr></table></figure>
+<p>OS install from <code>.iso</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_86 -<span class="built_in">enable</span>-kvm \ <span class="comment">#  use `-enable-kvm` to accelerate.</span></span><br><span class="line">-m 512 \</span><br><span class="line">-cdrom ./your-boot-img.iso \</span><br><span class="line">./your-virtual-disk.qcow2 </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips on downloading iso images:</p>
+<blockquote>
+<p><code>thunder://&#123;$link&#125;==</code>: use <code>echo &quot;$link&quot; | base64 -d</code> to decode</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><code>ed2k</code> links: amule</p>
+</blockquote>
+</blockquote>
+<p>Start from <code>qcow2</code> disk image:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_64 -<span class="built_in">enable</span>-kvm \</span><br><span class="line">-m 1024 \</span><br><span class="line">-hda <span class="built_in">test</span>-img.qcow2</span><br></pre></td></tr></table></figure>
+<h4 id="1432-network-config"><a class="markdownIt-Anchor" href="#1432-network-config"></a> 1.4.3.2  Network Config</h4>
+<p>Config first a host-only virtual network, then change into NAT mode using iptables. See Network options in <code>man qemu-system-x86_64</code>.</p>
+<p><strong>Host Config</strong></p>
+<p>NOTE: DO check kernel support for tap/tun: <code>modprobe tun &amp;&amp; lsmod|grep tun</code>. Kernel module recompile needed if unsupported.</p>
+<p>Use <code>-netdev tap,id=&lt;id&gt;,ifname=&lt;name&gt;,script=&lt;file&gt;[,downscript=&lt;dfile&gt;]</code> to config a host TAP network backend (bring up an interface <strong>virtually connected to the Guest NIC</strong>).</p>
+<p>Or just use <code>-nic tap</code> to bring up the default tap0 interface, and manually config it using <code>ifconfig</code>.</p>
+<p><strong>Guest Config</strong></p>
+<p>Set guest interface(check with <code>ifconfig -a</code>) to fit in the Host TAP network. Host-only finished.</p>
+<p><strong>NAT Config</strong><br />
+Set the guest gateway to host tap-interface ip. Now switch to host, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -F <span class="comment"># this brings risks</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</span><br><span class="line">iptables -t nat -A POSTROUTING -s <span class="variable">$&#123;Host_Tap_Ip&#125;</span>/<span class="variable">$&#123;Mask_Width&#125;</span> -j SNAT --to-source <span class="variable">$&#123;Host_eth0_ip&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1433-9p-filesystem-passthrough"><a class="markdownIt-Anchor" href="#1433-9p-filesystem-passthrough"></a> 1.4.3.3 9P Filesystem Passthrough</h4>
+<p>Check guest/host kernel support:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">modprobe -l | grep 9p</span><br><span class="line">lsmod | grep 9p</span><br><span class="line">grep 9P /boot/config-$(uname -r)</span><br><span class="line">grep CONFIG_9P_FS /boot/config-$(uname -r)</span><br></pre></td></tr></table></figure>
+<p>setup guide on <a target="_blank" rel="noopener" href="http://www.linux-kvm.org/page/9p_virtio">linux-kvm.org/page/9p_virtio</a>.</p>
+<h4 id="145-gui-managementvirt-manager-series"><a class="markdownIt-Anchor" href="#145-gui-managementvirt-manager-series"></a> 1.4.5 GUI Management(Virt-Manager Series)</h4>
+<p>install the <strong>virt-manager</strong> tool series (virsh, virt-viewer, virt-install, …)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install virt-manager</span><br></pre></td></tr></table></figure>
+<p>Now with command <code>virt-manager</code>, geust OS devices can be easily configured, including the NAT virtual network manaully set up above.</p>
+<p>Host support for tap/tun still needed, though. Run <code>modprobe tun &amp;&amp; lsmod|grep tun</code> again if the network option in vir-manager turns grey.</p>
+<h4 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h4>
+<p>Xen,…</p>
+<h2 id="15-wine"><a class="markdownIt-Anchor" href="#15-wine"></a> 1.5 wine</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install winetricks</span><br></pre></td></tr></table></figure>
+<h2 id="16-process-management"><a class="markdownIt-Anchor" href="#16-process-management"></a> 1.6 Process Management</h2>
+<h3 id="161-supervisor"><a class="markdownIt-Anchor" href="#161-supervisor"></a> 1.6.1 supervisor</h3>
+<p>install: <code>sudo apt-get install supervisor &amp;&amp; sudo systemctl enable supervisor.service</code></p>
+<p>config:</p>
+<ol>
+<li>systemd config: <code>locate supervisor.service</code>, <code>vim /lib/systemd/system/supervisor.service</code></li>
+<li>supervisor config: <code>vim /etc/supervisor/supervisord.conf</code>. Use <code>echo_supervisord_conf</code> to generate a template.</li>
+</ol>
+<h3 id="162-systemd"><a class="markdownIt-Anchor" href="#162-systemd"></a> 1.6.2 systemd</h3>
+<p><code>man systemd</code></p>
+<p><code>man systemd.unit</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=aaa</span><br><span class="line"><span class="attr">After</span>=xxx.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">User</span>=user</span><br><span class="line"><span class="attr">Group</span>=group</span><br><span class="line"><span class="attr">ExecStart</span>=/absolute/path</span><br><span class="line"><span class="attr">ExecRestart</span>=bbb</span><br><span class="line"><span class="attr">ExecStop</span>=ccc</span><br><span class="line"><span class="attr">KillMode</span>=process</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">30</span>s</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+<h2 id="17-profiling"><a class="markdownIt-Anchor" href="#17-profiling"></a> 1.7 Profiling</h2>
+<ul>
+<li>cProfile/yappi -&gt; <code>.pstats</code>file -&gt; flameplot/flameplot.pl</li>
+</ul>
+<h1 id="2-shells"><a class="markdownIt-Anchor" href="#2-shells"></a> 2 Shells</h1>
+<h2 id="20-shell-basic"><a class="markdownIt-Anchor" href="#20-shell-basic"></a> 2.0 shell basic</h2>
+<p>what is a shell ?</p>
+<ul>
+<li>program parsing user input, and do corresponding things: run binary as usr:group, etc.</li>
+</ul>
+<p>install a shell</p>
+<ul>
+<li>apt tools</li>
+</ul>
+<p>choose a shell</p>
+<ul>
+<li>current shell: <code>echo $SHELL</code></li>
+<li>supported shell: <code>cat /etc/shells</code></li>
+<li>run a shell: <code>$shell_name</code></li>
+<li>change login shell: <code>chsh</code> or <code>chsh -s $shell_path</code></li>
+</ul>
+<p>config a shell</p>
+<ul>
+<li><code>~/.$&#123;shell_name&#125;rc</code></li>
+<li><code>man $&#123;shell_name&#125;</code></li>
+</ul>
+<h2 id="21-command-line-cli"><a class="markdownIt-Anchor" href="#21-command-line-cli"></a> 2.1 Command line (CLI)</h2>
+<h3 id="211-general-commands"><a class="markdownIt-Anchor" href="#211-general-commands"></a> 2.1.1 general commands</h3>
+<p>(need a big picture)</p>
+<p><code>sort</code></p>
+<ul>
+<li><code>-t</code> field seperator</li>
+<li><code>-k</code> key to sort</li>
+<li><code>-n</code> numerical sort</li>
+</ul>
+<p>e.g. scan a subnet and sort output: <code>nmap x.x.x.0/24 |&amp; grep 'scan report' | awk '&#123;print $5&#125;' | sort -t'.' -k4n</code></p>
+<p><code>ssh</code>: note that its options must be specified in a certain</p>
+<ul>
+<li>Port forwarding
+<ul>
+<li>Local forwarded to remote: <code>ssh -L local_addr:remote_addr</code></li>
+<li>Remote forwarded to local: <code>ssh -R remote_addr:local_addr</code></li>
+<li>global port access: <code>-g</code>, same as <code>0.0.0.0:&lt;port&gt;</code></li>
+<li>background and detach: <code>-f</code>, implies <code>-n</code>, so a command must be specified
+<ul>
+<li><code>-n</code>: redirect stdin from <code>/dev/null</code></li>
+<li><code>-N</code>: no commands, use for forwarding only, override <code>-f</code>'s compulsory command specifying.</li>
+</ul>
+</li>
+<li>e.g. <code>ssh -gfNL 3000:localhost:3000 &lt;usr&gt;@&lt;host&gt; [ -p &lt;port&gt; ]</code>(can be used with <code>systemd</code>)</li>
+</ul>
+</li>
+</ul>
+<p><code>grep</code>: note different Regex standards support different syntaxes</p>
+<ul>
+<li><code>-e</code> basic regex, <code>|</code>,<code>()</code>,<code>+</code>,<code>etc</code> not supported</li>
+<li><code>-E</code> extended regex, note that the GNU <code>grep</code> BRE has all features of its ERE, except that metacharacters like <code>|</code> should be escaped to <code>\|</code></li>
+<li><code>-P</code> Perl regex, the only <code>grep</code> regex type that sopport <strong>non-greedy</strong> match like <code>grep -P '&lt;start_pattern&gt;.*?&lt;end_pattern&gt;'</code></li>
+</ul>
+<h3 id="212-specs"><a class="markdownIt-Anchor" href="#212-specs"></a> 2.1.2 specs</h3>
+<p>pipe, redirection, etc…</p>
+<h4 id="2121-piplines"><a class="markdownIt-Anchor" href="#2121-piplines"></a> 2.1.2.1 piplines</h4>
+<p><code>&lt;command&gt; |</code> and <code>&lt;command&gt; |&amp;</code>(short for <code>2&gt;&amp;1 |</code>) are performed after any redirections specified by <code>&lt;command&gt;</code>.</p>
+<h4 id="2122-expansion"><a class="markdownIt-Anchor" href="#2122-expansion"></a> 2.1.2.2 EXPANSION</h4>
+<p>man-pages description:</p>
+<blockquote>
+<p><strong>EXPANSION</strong></p>
+<p>Expansion is performed on the command line after it has been  split  into  words. There are seven  kinds  of expansion performed: <strong>brace expansion, tilde expansion, parameter and variable expansion, command substitution, arithmetic expansion, word splitting, and pathname expansion.</strong></p>
+<p>The <em>order of expansions</em> is: <em><strong>brace expansion; tilde expansion, parameter  and  variable  expansion,  arithmetic  expansion, and command substitution (done in a left-to-right fashion); word splitting; and pathname expansion.</strong></em></p>
+<p>On systems that can support it, there is an additional expansion available: process  substitution.  This is performed at the same time as tilde, parameter, variable, and arithmetic expansion and command substitution.</p>
+<p><strong>After</strong> these expansions are performed, quote characters present in the original  word are removed unless they have been quoted themselves (<strong>quote removal</strong>).</p>
+<p>Only brace expansion, word splitting, and pathname expansion can increase the number of words of the expansion; other expansions expand a single word to a single word. The only exceptions to this are the expansions of <code>$@</code> and <code>$&#123;name[@]&#125;</code>, and, in most cases, <code>$*</code> and <code>$&#123;name[*]&#125;</code> as explained above (see <strong>PARAMETERS</strong>).</p>
+</blockquote>
+<p>According to the expansion order:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">└─$ <span class="built_in">echo</span> $((<span class="number">1</span>+<span class="number">2</span>)) <span class="comment"># arithmic expansion</span></span><br><span class="line">3</span><br><span class="line"></span><br><span class="line">└─$ cat file</span><br><span class="line">$((<span class="number">1</span>+<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> $(cat file) <span class="comment"># command expansion (after arithmic)</span></span><br><span class="line">$((<span class="number">1</span>+<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">└─$ var=1</span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> <span class="variable">$var</span> <span class="comment"># variable expansion</span></span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">└─$ cat file</span><br><span class="line"><span class="variable">$var</span></span><br><span class="line"></span><br><span class="line">└─$ <span class="built_in">echo</span> $(cat file) <span class="comment"># command expansion (after variable)</span></span><br><span class="line"><span class="variable">$var</span></span><br></pre></td></tr></table></figure>
+<h4 id="2123-qouting"><a class="markdownIt-Anchor" href="#2123-qouting"></a> 2.1.2.3 Qouting</h4>
+<p>man-pages description:</p>
+<blockquote>
+<p><strong>Qouting</strong> is used to remove the special meaning of certain characters or words to the shell. Qouting can be used to disable special treatment for special characters, to prevent reserved words from being recognized as such, and to prevent parameter expansion.</p>
+</blockquote>
+<blockquote>
+<p>Each of the <strong>metacharacters</strong> listed under <strong>DEFINITIONS</strong>, Manual page bash(1) has special meaning to the shell and must be quoted if it is to represent itself.</p>
+</blockquote>
+<blockquote>
+<p>When the command history expansion facilities are being used (see <strong>HISTORY EXPANSION</strong>), the <strong>history expansion</strong> character, usually <code>!</code>, must be quoted to prevent history expansion.</p>
+</blockquote>
+<blockquote>
+<p>There are three quoting machanisms: escaped character, single quotes, double quotes.</p>
+</blockquote>
+<blockquote>
+<h5 id="escape-character"><a class="markdownIt-Anchor" href="#escape-character"></a> escape character</h5>
+</blockquote>
+<blockquote>
+<p>A <strong>non-quoted</strong> backslash <code>\</code> is the escape character. It preserves the literal value of the next character that follows, with the exception of <code>&lt;newline&gt;</code>. (which is treated as line continuation)</p>
+</blockquote>
+<blockquote>
+<h5 id="single-quotes"><a class="markdownIt-Anchor" href="#single-quotes"></a> single quotes</h5>
+</blockquote>
+<blockquote>
+<p>Enclosing characters in single quotes <code>'</code> preserves the literal value of each character (even it’s <code>\</code>)within the quotes. <strong>A single quote may not occur between single quotes, even when proceeded by a backslash</strong>.</p>
+</blockquote>
+<blockquote>
+<h5 id="double-quotes"><a class="markdownIt-Anchor" href="#double-quotes"></a> double quotes</h5>
+</blockquote>
+<blockquote>
+<p>Enclosing characters in double quotes preserves the literal value of all characters with the quotes, with the exception of <code>$</code>, `, <code>\</code>, and, when history expansion is enabled, <code>!</code>. When the shell is in <strong>posix mode</strong>, the <code>!</code> has no special meaning within double quotes, even when history expansion is enabled. The characters <code>$</code> and ` retain their special meaning within double quotes. The backslash retains its special meaning only when followed by one of the following characters: <code>$</code>, `, <code>&quot;</code>, <code>\</code> or<code>&lt;newline&gt;</code>. A double quote may be quoted within double quotes by preceding it with a backslash. If enabled, history expansion will be performed unless an <code>!</code> apppearing in double quotes  is escaped using a backslash. The backslash preceding the ! is not removed.</p>
+<p>The special parameters <code>*</code> and <code>@</code> have special meaning when in double quotes.</p>
+<h5 id="string"><a class="markdownIt-Anchor" href="#string"></a> $‘<strong>string</strong>’</h5>
+<p>Words of the form <code>$'string'</code> are treated specially. The word expands to <code>string</code>, with backslash-escaped characters replaced as specified by the ANSI C standard. Backslash escape sequences, if present, are decoded.</p>
+<p>The expanded result is single-quoted, as if the dollar sign had not been present.</p>
+<p>A double-quoted string preceded by a dollar sign (<code>$&quot;string&quot;</code>) will cause the string to be translated according to the current locale. If the current locale is C or POSIX, the dollar sign is ignored. If the string is translated and replaced, the replacement is double-quoted.</p>
+</blockquote>
+<p>To sum up, without using histoty expansion, there’s four mechanisms:</p>
+<ol>
+<li><code>\</code>
+<ol>
+<li>plain: preserve the next char</li>
+<li>in s-quotes: just literal <code>\</code></li>
+<li>in d-quotes:
+<ul>
+<li>preserve next: <code>$</code>, `,<code>&quot;</code> , <code>\</code></li>
+<li>line-continuation: <code>&lt;newline&gt;</code></li>
+</ul>
+</li>
+<li>in <code>$'string'</code>: by ANSI C std</li>
+</ol>
+</li>
+<li>single quotes <code>'</code>
+<ol>
+<li>pairs: anything inside it, except itself</li>
+</ol>
+</li>
+<li>double quotes <code>&quot;</code>
+<ol>
+<li>pairs: <code>\</code> can still escape <code>$</code>, `, <code>&quot;</code> and <code>\</code>. (<code>'</code> doesn’t need to be quoted within double quotes)</li>
+</ol>
+</li>
+<li><code>$'string'</code>
+<ol>
+<li>used to expand characters like <code>\n</code> in bash strings. e.g. <code>'f\ile.txt'$'\n'</code>. <code>'\n'</code> will only be expanded to literal string <code>\</code> and <code>n</code>.</li>
+</ol>
+</li>
+</ol>
+<h5 id="the-ls-problem"><a class="markdownIt-Anchor" href="#the-ls-problem"></a> the <code>ls</code> problem</h5>
+<p>Use <code>mkdir test &amp;&amp; touch 'f\ile.txt'</code> to create a file containing <code>\</code>, now its <em>interesting</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">└─$ ls</span><br><span class="line"><span class="string">&#x27;f\ile.txt&#x27;</span></span><br><span class="line"></span><br><span class="line">└─$ ls | cat </span><br><span class="line">f\ile.txt</span><br><span class="line"></span><br><span class="line">└─$ strace ls</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;&#x27;f\\ile.txt&#x27;   log\n&quot;</span>, 18<span class="string">&#x27;f\ile.txt&#x27;</span>   <span class="built_in">log</span></span><br><span class="line">)    = 18</span><br><span class="line"></span><br><span class="line">└─$ strace ls 1&gt;/dev/null</span><br><span class="line">...</span><br><span class="line">write(1, <span class="string">&quot;f\\ile.txt\nlog\n&quot;</span>, 14)       = 14</span><br></pre></td></tr></table></figure>
+<p>Seems <code>ls</code> alters its output depending if the dst is a tty/console or not.</p>
+<h2 id="22-shell-script"><a class="markdownIt-Anchor" href="#22-shell-script"></a> 2.2 Shell Script</h2>
+<p>pros:</p>
+<ul>
+<li>batch commands</li>
+<li>string processing</li>
+</ul>
+<p>cons</p>
+<ul>
+<li>arithmetic</li>
+</ul>
+<h3 id="221-variable"><a class="markdownIt-Anchor" href="#221-variable"></a> 2.2.1 variable</h3>
+<p>strings ?</p>
+<h3 id="222-operaters"><a class="markdownIt-Anchor" href="#222-operaters"></a> 2.2.2 operaters</h3>
+<p>()<br />
+(())<br />
+[]<br />
+[[]]<br />
+{}<br />
+’<br />
+&quot;<br />
+$<br />
+&lt;<br />
+&gt;<br />
+…</p>
+<h3 id="223-keywords"><a class="markdownIt-Anchor" href="#223-keywords"></a> 2.2.3 keywords</h3>
+<p>if, case, for, while, repeat</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/kali/" rel="tag"><i class="fa fa-tag"></i> kali</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/22/Knowledge/Mathematics/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" rel="prev" title="数字信号处理">
+      <i class="fa fa-chevron-left"></i> 数字信号处理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/03/Skills/%E5%B7%A5%E5%85%B7/learn-Vim/" rel="next" title="learn-Vim">
+      learn-Vim <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-install"><span class="nav-text"> 0 Install</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01-basic-system-config"><span class="nav-text"> 0.1 Basic System Config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#010-users-and-groups"><span class="nav-text"> 0.1.0 users and groups</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0101-change-username-groupname-manually"><span class="nav-text"> 0.1.0.1 change username &amp; groupname (manually)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0102-trusted-sudoers"><span class="nav-text"> 0.1.0.2 trusted sudoers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#011-dns"><span class="nav-text"> 0.1.1 DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#012-shortcuts"><span class="nav-text"> 0.1.2 shortcuts</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-xfce-seetings-hardwarekeyboard"><span class="nav-text"> 1 xfce seetings: hardware.keyboard</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-xfce-settings-personalwindow_manager"><span class="nav-text"> 2 xfce settings: personal.window_manager</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-common-terminal-shortcuts"><span class="nav-text"> 3 common terminal shortcuts</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-qterminal-shortcuts-and-configs"><span class="nav-text"> 4 qterminal shortcuts and configs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-yakuake-tilda"><span class="nav-text"> 5 Yakuake &amp; Tilda</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#013-desktop-theme"><span class="nav-text"> 0.1.3 desktop-theme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#014-network-config"><span class="nav-text"> 0.1.4 network config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#015-sound-config"><span class="nav-text"> 0.1.5 sound config</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0151-default-sound-card"><span class="nav-text"> 0.1.5.1 default sound card</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-software-config"><span class="nav-text"> 1 Software Config</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-debian-software-general-management"><span class="nav-text"> 1.1 Debian Software General Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#111-apt-tools"><span class="nav-text"> 1.1.1 apt tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-dpkg"><span class="nav-text"> 1.1.2 dpkg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-make-install"><span class="nav-text"> 1.1.3 make install</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-documentation-software"><span class="nav-text"> 1.2 Documentation software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#121-input-method"><span class="nav-text"> 1.2.1 Input Method</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#im-framework"><span class="nav-text"> im framework</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pinyin-support"><span class="nav-text"> pinyin support</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#config"><span class="nav-text"> config</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122-the-fonts"><span class="nav-text"> 1.2.2 the Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123-office"><span class="nav-text"> 1.2.3 Office</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#124-markdown-and-tex"><span class="nav-text"> 1.2.4 markdown and tex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125-hexo-blog"><span class="nav-text"> 1.2.5 hexo blog</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-aux-software"><span class="nav-text"> 1.3 Aux Software</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#131-social"><span class="nav-text"> 1.3.1 Social</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132-xfce-touchpad-config"><span class="nav-text"> 1.3.2 xfce touchpad config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#133-web-browser"><span class="nav-text"> 1.3.3 Web Browser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134-socks-proxy-client"><span class="nav-text"> 1.3.4 socks proxy client</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-virtualize"><span class="nav-text"> 1.4 Virtualize</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#140-architecture"><span class="nav-text"> 1.4.0 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#141-vmware-vmdk"><span class="nav-text"> 1.4.1 VMware .vmdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#142-virtualbox-vdi"><span class="nav-text"> 1.4.2  VirtualBox .vdi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#143-qemu-qcowqcow2"><span class="nav-text"> 1.4.3 Qemu .qcow,.qcow2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1430-install-check-suppport"><span class="nav-text"> 1.4.3.0 install &amp; check suppport</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1431-basic-usage"><span class="nav-text"> 1.4.3.1 Basic Usage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1432-network-config"><span class="nav-text"> 1.4.3.2  Network Config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1433-9p-filesystem-passthrough"><span class="nav-text"> 1.4.3.3 9P Filesystem Passthrough</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#145-gui-managementvirt-manager-series"><span class="nav-text"> 1.4.5 GUI Management(Virt-Manager Series)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#others"><span class="nav-text"> Others</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-wine"><span class="nav-text"> 1.5 wine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-process-management"><span class="nav-text"> 1.6 Process Management</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#161-supervisor"><span class="nav-text"> 1.6.1 supervisor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#162-systemd"><span class="nav-text"> 1.6.2 systemd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-profiling"><span class="nav-text"> 1.7 Profiling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-shells"><span class="nav-text"> 2 Shells</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#20-shell-basic"><span class="nav-text"> 2.0 shell basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-command-line-cli"><span class="nav-text"> 2.1 Command line (CLI)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#211-general-commands"><span class="nav-text"> 2.1.1 general commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#212-specs"><span class="nav-text"> 2.1.2 specs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2121-piplines"><span class="nav-text"> 2.1.2.1 piplines</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2122-expansion"><span class="nav-text"> 2.1.2.2 EXPANSION</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2123-qouting"><span class="nav-text"> 2.1.2.3 Qouting</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#escape-character"><span class="nav-text"> escape character</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#single-quotes"><span class="nav-text"> single quotes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#double-quotes"><span class="nav-text"> double quotes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string"><span class="nav-text"> $‘string’</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-ls-problem"><span class="nav-text"> the ls problem</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-shell-script"><span class="nav-text"> 2.2 Shell Script</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#221-variable"><span class="nav-text"> 2.2.1 variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#222-operaters"><span class="nav-text"> 2.2.2 operaters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#223-keywords"><span class="nav-text"> 2.2.3 keywords</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="144026"
+      src="https://144026.github.io/img/avatar.jpg">
+  <p class="site-author-name" itemprop="name">144026</p>
+  <div class="site-description" itemprop="description">一只蒟蒻</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/144026" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;144026" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mi1131717378@gmail.com" title="E-Mail → mailto:mi1131717378@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://liuyi12138.github.io/" title="https:&#x2F;&#x2F;liuyi12138.github.io" rel="noopener" target="_blank">知君</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://saying-yan.github.io/" title="https:&#x2F;&#x2F;saying-yan.github.io" rel="noopener" target="_blank">saying-yan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://alex-lu-hub.github.io/" title="https:&#x2F;&#x2F;alex-lu-hub.github.io" rel="noopener" target="_blank">lw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://ninecr.tk/" title="http:&#x2F;&#x2F;ninecr.tk" rel="noopener" target="_blank">Ninecr</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-virus-slash"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">144026</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+
+
+  
+
+</body>
+</html>

@@ -345,13 +345,21 @@ show_title_tooltip=true
 
 ### 0.1.3 desktop-theme
 
-`sudo update-alternatives --config desktop-theme && sudo update-grub2` will ONLY update "post-grub" images. To actually modify the theme:
+**grub**
+- change grub image:
+	- backup current background: `cd /boot/grub/theme/kali/ && cp background.png bak.png`
+	- override it with a new background: `cp /usr/share/desktop-base/moonlight-theme/grub/grub-16x9.png ./background.png`
+- change post-grub background: override `/boot/grub/theme/kali/{grub-4x3,grub-9x16}`
+	- persistent: `sudo update-alternatives --config desktop-grub && sudo update-grub2`.
 
-- change desktop wallpaper in xfce4-settings.desktop
-
+**login**
 - change login background in xfce4-settings.lightdm-gtk+-greeter
+- change login icon in xfce4-settings.lightdm-gtk+-greeter
 
-- change grub background: override `/boot/grub/theme/kali/{backround,grub-4x3,grub-9x16}`
+**desktop**
+- change desktop wallpaper in xfce4-settings.desktop
+- chage left-upper icon: change xfce4-settings->panel->Whisker-menu->panel-button->image files
+- change start menu icon(left-lower corner): `cp /usr/share/icons/desktop-base/scalable/emblems/emblem-debian-symbolic.svg ~/.face`
 
 
 ### 0.1.4 network config

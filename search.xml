@@ -1440,6 +1440,69 @@
 </ul>
 </li>
 </ol>
+<h3 id="2020-1-14"><a class="markdownIt-Anchor" href="#2020-1-14"></a> 2020-1-14</h3>
+<ol>
+<li>win7安装office2016
+<ul>
+<li>只支持SP1及以上</li>
+<li>Windows Update 80072efe错误，尝试多种方案，解决失败</li>
+<li>从<code>uptodown</code>下载<code>Service Pack 1</code>直接离线安装</li>
+</ul>
+</li>
+<li>相机RAW格式<code>ARW</code>转<code>jpg</code>
+<ul>
+<li><code>sudo apt-get install exiftool</code></li>
+<li><code>exiftool -b -PreviewImage -w .jpg -ext arw &lt;directory&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2020-1-16"><a class="markdownIt-Anchor" href="#2020-1-16"></a> 2020-1-16</h3>
+<ol>
+<li>装机-硬件组装(视频教程<a href="https://www.bilibili.com/video/BV1jE411e7hw">BV1jE411e7hw</a>)
+<ol>
+<li>装主板
+<ul>
+<li>CPU</li>
+<li>内存条</li>
+<li>SSD：带散热片/不带散热片</li>
+<li>装IO挡板，固定主板到机箱</li>
+</ul>
+</li>
+<li>装电源</li>
+<li>HDD、显卡、机箱前面板接线</li>
+</ol>
+</li>
+<li>装机-软件
+<ol>
+<li><strong>BIOS放电重置</strong>：断电，取下主板电池，短接CLRTC(设错了内存频率过不去自检)</li>
+<li>BIOS设置内存超频
+<ul>
+<li>X.M.P., Intel Extreme Memory Profile，存入内存条EEPROM中的额外两组<code>CL-tRCD-tRP-tRAS-CMD</code>等数据</li>
+<li>D.O.C.P., DRAM Over-Clock Profile(华硕主板B450M)，根据频率设定自动(？)选择参数</li>
+</ul>
+</li>
+<li>启动盘装windows</li>
+</ol>
+</li>
+<li>问题：<strong><code>dd</code>制作windows启动盘失败</strong>
+<ul>
+<li><code>dd if=xxx.iso of=/dev/sdx</code>失败</li>
+<li><em>先分一个<code>sdx1</code>分区，再<code>dd</code>进<code>sdx1</code>，失败</em>(?)</li>
+<li>U盘最后留一个30M分区<code>sdx2</code>放uefi驱动？失败</li>
+</ul>
+</li>
+</ol>
+<h3 id="2020-1-18"><a class="markdownIt-Anchor" href="#2020-1-18"></a> 2020-1-18</h3>
+<ol>
+<li>美赛流程理解
+<ol>
+<li>实际问题 分析抽象(查阅文献)</li>
+<li>简化的问题 算法选择(经验)</li>
+<li>编程实现+数据处理(语言和软件)</li>
+<li>结果展示(文档和绘图)</li>
+</ol>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -3200,17 +3263,30 @@ directory that do NOT <strong>end</strong> in ‘~’ or <strong>contain</strong
 <p>Add tilda to xfce settings::session and startup::application autostart, and change the default config: (below is a backup)</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">tilda_config_version</span>=<span class="string">&quot;1.5.2&quot;</span></span><br><span class="line"><span class="attr">command</span>=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">font</span>=<span class="string">&quot;Fira Code weight=453 11&quot;</span></span><br><span class="line"><span class="attr">key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Alt&gt;d&quot;</span></span><br><span class="line"><span class="attr">addtab_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;t&quot;</span></span><br><span class="line"><span class="attr">fullscreen_key</span>=<span class="string">&quot;F11&quot;</span></span><br><span class="line"><span class="attr">toggle_transparency_key</span>=<span class="string">&quot;F12&quot;</span></span><br><span class="line"><span class="attr">toggle_searchbar_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;f&quot;</span></span><br><span class="line"><span class="attr">closetab_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;w&quot;</span></span><br><span class="line"><span class="attr">nexttab_key</span>=<span class="string">&quot;&lt;Control&gt;Page_Down&quot;</span></span><br><span class="line"><span class="attr">prevtab_key</span>=<span class="string">&quot;&lt;Control&gt;Page_Up&quot;</span></span><br><span class="line"><span class="attr">movetableft_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;Page_Up&quot;</span></span><br><span class="line"><span class="attr">movetabright_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;Page_Down&quot;</span></span><br><span class="line"><span class="attr">gototab_1_key</span>=<span class="string">&quot;&lt;Alt&gt;1&quot;</span></span><br><span class="line"><span class="attr">gototab_2_key</span>=<span class="string">&quot;&lt;Alt&gt;2&quot;</span></span><br><span class="line"><span class="attr">gototab_3_key</span>=<span class="string">&quot;&lt;Alt&gt;3&quot;</span></span><br><span class="line"><span class="attr">gototab_4_key</span>=<span class="string">&quot;&lt;Alt&gt;4&quot;</span></span><br><span class="line"><span class="attr">gototab_5_key</span>=<span class="string">&quot;&lt;Alt&gt;5&quot;</span></span><br><span class="line"><span class="attr">gototab_6_key</span>=<span class="string">&quot;&lt;Alt&gt;6&quot;</span></span><br><span class="line"><span class="attr">gototab_7_key</span>=<span class="string">&quot;&lt;Alt&gt;7&quot;</span></span><br><span class="line"><span class="attr">gototab_8_key</span>=<span class="string">&quot;&lt;Alt&gt;8&quot;</span></span><br><span class="line"><span class="attr">gototab_9_key</span>=<span class="string">&quot;&lt;Alt&gt;9&quot;</span></span><br><span class="line"><span class="attr">gototab_10_key</span>=<span class="string">&quot;&lt;Alt&gt;0&quot;</span></span><br><span class="line"><span class="attr">copy_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;c&quot;</span></span><br><span class="line"><span class="attr">paste_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;v&quot;</span></span><br><span class="line"><span class="attr">quit_key</span>=<span class="string">&quot;&lt;Shift&gt;&lt;Control&gt;q&quot;</span></span><br><span class="line"><span class="attr">title</span>=<span class="string">&quot;Tilda&quot;</span></span><br><span class="line"><span class="attr">background_color</span>=<span class="string">&quot;white&quot;</span></span><br><span class="line"><span class="comment"># working_dir=&quot;&quot;</span></span><br><span class="line"><span class="attr">web_browser</span>=<span class="string">&quot;xdg-open&quot;</span></span><br><span class="line"><span class="attr">increase_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;equal&quot;</span></span><br><span class="line"><span class="attr">decrease_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;minus&quot;</span></span><br><span class="line"><span class="attr">normalize_font_size_key</span>=<span class="string">&quot;&lt;Control&gt;0&quot;</span></span><br><span class="line"><span class="attr">show_on_monitor</span>=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">word_chars</span>=<span class="string">&quot;-A-Za-z0-9,./?%&amp;#:_&quot;</span></span><br><span class="line"><span class="attr">lines</span>=<span class="number">5000</span></span><br><span class="line"><span class="attr">x_pos</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">y_pos</span>=<span class="number">29</span></span><br><span class="line"><span class="attr">tab_pos</span>=<span class="number">4</span></span><br><span class="line"><span class="attr">expand_tabs</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">show_single_tab</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">backspace_key</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">delete_key</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">d_set_title</span>=<span class="number">3</span></span><br><span class="line"><span class="attr">command_exit</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">command_timeout_ms</span>=<span class="number">3000</span></span><br><span class="line"><span class="attr">scheme</span>=<span class="number">7</span></span><br><span class="line"><span class="attr">slide_sleep_usec</span>=<span class="number">10000</span></span><br><span class="line"><span class="attr">animation_orientation</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">timer_resolution</span>=<span class="number">200</span></span><br><span class="line"><span class="attr">auto_hide_time</span>=<span class="number">2000</span></span><br><span class="line"><span class="attr">on_last_terminal_exit</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">prompt_on_exit</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">palette_scheme</span>=<span class="number">8</span></span><br><span class="line"><span class="attr">non_focus_pull_up_behaviour</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">cursor_shape</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">title_max_length</span>=<span class="number">25</span></span><br><span class="line"><span class="attr">palette</span> = &#123;<span class="number">10280</span>, <span class="number">10794</span>, <span class="number">13878</span>, <span class="number">65535</span>, <span class="number">23644</span>, <span class="number">22359</span>, <span class="number">23130</span>, <span class="number">63479</span>, <span class="number">36494</span>, <span class="number">62451</span>, <span class="number">63993</span>, <span class="number">40349</span>, <span class="number">22359</span>, <span class="number">51143</span>, <span class="number">65535</span>, <span class="number">65535</span>, <span class="number">27242</span>, <span class="number">49601</span>, <span class="number">39578</span>, <span class="number">60909</span>, <span class="number">65278</span>, <span class="number">61937</span>, <span class="number">61937</span>, <span class="number">61680</span>, <span class="number">26728</span>, <span class="number">26728</span>, <span class="number">26728</span>, <span class="number">65535</span>, <span class="number">23644</span>, <span class="number">22359</span>, <span class="number">23130</span>, <span class="number">63479</span>, <span class="number">36494</span>, <span class="number">62451</span>, <span class="number">63993</span>, <span class="number">40349</span>, <span class="number">22359</span>, <span class="number">51143</span>, <span class="number">65535</span>, <span class="number">65535</span>, <span class="number">27242</span>, <span class="number">49601</span>, <span class="number">39578</span>, <span class="number">60909</span>, <span class="number">65278</span>, <span class="number">61937</span>, <span class="number">61937</span>, <span class="number">61680</span>&#125;</span><br><span class="line"><span class="attr">scrollbar_pos</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">back_red</span>=<span class="number">10486</span></span><br><span class="line"><span class="attr">back_green</span>=<span class="number">10486</span></span><br><span class="line"><span class="attr">back_blue</span>=<span class="number">13762</span></span><br><span class="line"><span class="attr">text_red</span>=<span class="number">61603</span></span><br><span class="line"><span class="attr">text_green</span>=<span class="number">61603</span></span><br><span class="line"><span class="attr">text_blue</span>=<span class="number">60292</span></span><br><span class="line"><span class="attr">cursor_red</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">cursor_green</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">cursor_blue</span>=<span class="number">65535</span></span><br><span class="line"><span class="attr">width_percentage</span>=<span class="number">2147483647</span></span><br><span class="line"><span class="attr">height_percentage</span>=<span class="number">2147483647</span></span><br><span class="line"><span class="attr">scroll_history_infinite</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">scroll_on_output</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">notebook_border</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">scrollbar</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">grab_focus</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">above</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">notaskbar</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">blinks</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">scroll_on_key</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">bell</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">run_command</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">pinned</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">animation</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">hidden</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">set_as_desktop</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">centered_horizontally</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">centered_vertically</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">enable_transparency</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">auto_hide_on_focus_lost</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">auto_hide_on_mouse_leave</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">title_behaviour</span>=<span class="number">2</span></span><br><span class="line"><span class="attr">inherit_working_dir</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">command_login_shell</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">start_fullscreen</span>=<span class="literal">false</span></span><br><span class="line"><span class="attr">confirm_close_tab</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">back_alpha</span>=<span class="number">62258</span></span><br><span class="line"><span class="attr">show_title_tooltip</span>=<span class="literal">true</span></span><br><span class="line"><span class="comment"># max_width=0</span></span><br><span class="line"><span class="comment"># max_height=0</span></span><br><span class="line"><span class="comment"># image=&quot;&quot;</span></span><br><span class="line"><span class="comment"># show_on_monitor_number=0</span></span><br><span class="line"><span class="comment"># transparency=0</span></span><br><span class="line"><span class="comment"># bold=false</span></span><br><span class="line"><span class="comment"># title_max_length_flag=false</span></span><br><span class="line"><span class="comment"># antialias=false</span></span><br><span class="line"><span class="comment"># double_buffer=false</span></span><br><span class="line"><span class="comment"># scroll_background=false</span></span><br><span class="line"><span class="comment"># use_image=false</span></span><br><span class="line"><span class="comment"># min_width=0</span></span><br><span class="line"><span class="comment"># min_height=0</span></span><br></pre></td></tr></table></figure>
 <h3 id="013-desktop-theme"><a class="markdownIt-Anchor" href="#013-desktop-theme"></a> 0.1.3 desktop-theme</h3>
-<p><code>sudo update-alternatives --config desktop-theme &amp;&amp; sudo update-grub2</code> will ONLY update “post-grub” images. To actually modify the theme:</p>
+<p><strong>grub</strong></p>
 <ul>
-<li>
-<p>change desktop wallpaper in xfce4-settings.desktop</p>
+<li>change grub image:
+<ul>
+<li>backup current background: <code>cd /boot/grub/theme/kali/ &amp;&amp; cp background.png bak.png</code></li>
+<li>override it with a new background: <code>cp /usr/share/desktop-base/moonlight-theme/grub/grub-16x9.png ./background.png</code></li>
+</ul>
 </li>
-<li>
-<p>change login background in xfce4-settings.lightdm-gtk±greeter</p>
+<li>change post-grub background: override <code>/boot/grub/theme/kali/&#123;grub-4x3,grub-9x16&#125;</code>
+<ul>
+<li>persistent: <code>sudo update-alternatives --config desktop-grub &amp;&amp; sudo update-grub2</code>.</li>
+</ul>
 </li>
-<li>
-<p>change grub background: override <code>/boot/grub/theme/kali/&#123;backround,grub-4x3,grub-9x16&#125;</code></p>
-</li>
+</ul>
+<p><strong>login</strong></p>
+<ul>
+<li>change login background in xfce4-settings.lightdm-gtk±greeter</li>
+<li>change login icon in xfce4-settings.lightdm-gtk±greeter</li>
+</ul>
+<p><strong>desktop</strong></p>
+<ul>
+<li>change desktop wallpaper in xfce4-settings.desktop</li>
+<li>chage left-upper icon: change xfce4-settings-&gt;panel-&gt;Whisker-menu-&gt;panel-button-&gt;image files</li>
+<li>change start menu icon(left-lower corner): <code>cp /usr/share/icons/desktop-base/scalable/emblems/emblem-debian-symbolic.svg ~/.face</code></li>
 </ul>
 <h3 id="014-network-config"><a class="markdownIt-Anchor" href="#014-network-config"></a> 0.1.4 network config</h3>
 <p>When a userspace app, like<code>ssh</code>, needs to access a <code>ip</code>, it usaully passes the <code>ip</code> to kernel and let the kernel decide which <code>interface</code> and <code>route</code> will be used according to the <em>route table</em>. (This means <code>ssh [ -B &lt;interface&gt;] [ -b &lt;ipaddr&gt; ]</code> won’t change route, thus can’t solve ‘unreachable’ problem on a dual-interface machine)</p>

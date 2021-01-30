@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20201105002213.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/144026/rsrc/master/img/20201110014653.png">
 <meta property="article:published_time" content="2020-09-20T15:30:37.000Z">
-<meta property="article:modified_time" content="2021-01-18T16:59:46.589Z">
+<meta property="article:modified_time" content="2021-01-30T23:19:34.654Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="时间管理">
 <meta property="article:tag" content="计划">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-19 00:59:46" itemprop="dateModified" datetime="2021-01-19T00:59:46+08:00">2021-01-19</time>
+                <time title="修改时间：2021-01-31 07:19:34" itemprop="dateModified" datetime="2021-01-31T07:19:34+08:00">2021-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1725,7 +1725,7 @@
 <li>启动盘装windows</li>
 </ol>
 </li>
-<li>问题：<strong><code>dd</code>制作windows启动盘失败</strong>
+<li>问题：<strong><code>dd</code>制作windows启动盘失败</strong>，安装时提示缺少驱动
 <ul>
 <li><code>dd if=xxx.iso of=/dev/sdx</code>失败</li>
 <li><em>先分一个<code>sdx1</code>分区，再<code>dd</code>进<code>sdx1</code>，失败</em>(?)</li>
@@ -1741,6 +1741,98 @@
 <li>简化的问题 算法选择(经验)</li>
 <li>编程实现+数据处理(语言和软件)</li>
 <li>结果展示(文档和绘图)</li>
+</ol>
+</li>
+</ol>
+<h3 id="2021-1-28"><a class="markdownIt-Anchor" href="#2021-1-28"></a> 2021-1-28</h3>
+<ol>
+<li>mtdps虚拟机环境搭建
+<ol>
+<li>安装虚拟机，配置ip，<code>apt</code>换源</li>
+<li>运行<code>basics.sh -g -t</code>自动配置
+<ul>
+<li>zsh，vim，无密码sudo</li>
+<li>安装python2.7并修改python软链接，安装supervisor</li>
+<li>mysql-5.7</li>
+</ul>
+</li>
+<li>配置git
+<ul>
+<li>修改config：<code>user.name/email</code>, <code>push.default</code>, <code>alias.br/lg/co</code></li>
+<li>生成ssh key并添加到远程仓库，配置ssh-agent</li>
+</ul>
+</li>
+<li>配置python venv虚拟环境
+<ul>
+<li>新的虚拟环境先更新<code>pip</code>, <code>wheel</code>, <code>setuptools</code>，否则可能会有玄学问题</li>
+<li>安装mysql相关的模组时报错缺少<code>mysql_config</code>，需要装3个<code>apt</code>包：<code>python3-dev</code>, <code>default-libmysqlclient-dev</code>, <code>build-essential</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>搭建完毕后<code>flask run</code>报错: <em>connection refused</em></li>
+</ol>
+<h3 id="2021-1-29"><a class="markdownIt-Anchor" href="#2021-1-29"></a> 2021-1-29</h3>
+<ol>
+<li>mtdps环境调试
+<ol>
+<li>猜测是找不到elasticsearch和sql，准备验证</li>
+<li>使用tarball直接部署elg，复用12月1日的supervisor配置文件进行自启动管理</li>
+<li>同样复用12月1日的<code>sqldump.sql</code>文件，导入数据库内容
+<ul>
+<li>导出：<code>sqldump -u &lt;user&gt; -p --all-databases &gt; sqldump.sql</code></li>
+<li>导入：<code>sql -u debian-sys-maint -p&lt;password&gt; &lt; sqldump.sql</code></li>
+<li><strong>问题</strong>：导入数据之后，无法使用导入的用户/密码登录</li>
+<li><strong>解决</strong>：重新启动mysqld，可能它只在启动时load库里的用户/密码</li>
+</ul>
+</li>
+<li>_connection refused_仍然没有解决</li>
+</ol>
+</li>
+<li>bibtex
+<ol>
+<li>基本结构<code>@entry_type&#123; citetag, tag1=&#123;xxx&#125;, tag2=&#123;xxx&#125;&#125;</code></li>
+<li><code>entry</code>的类别，有些类被有必要的<code>tag</code>
+<ul>
+<li>string, comment, …</li>
+<li>article, inproceedings, techreport, …</li>
+</ul>
+</li>
+<li>使用方式
+<ul>
+<li>保存<code>xxxx.bib</code>文件，tex正文中<code>\bibliography&#123;xxxx&#125;</code>可在语句处生成参考文献目录，<code>\cite&#123;citetag&#125;</code>生成引用标号</li>
+<li><code>\bibliographystyle&#123;xxxx&#125;</code>控制参考文献样式</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2021-1-30"><a class="markdownIt-Anchor" href="#2021-1-30"></a> 2021-1-30</h3>
+<ol>
+<li>审稿子</li>
+<li>mtdps环境搭建调试
+<ol>
+<li>elasticsearch报错illegal index name(不影响es的服务)
+<ul>
+<li>indice目录下有人为创建的冗余内容，删除即可</li>
+</ul>
+</li>
+<li>flask报错 _connection refused_解决
+<ul>
+<li>部署完es后，<strong>将<code>settings.py</code>中的IP和路径本地化</strong></li>
+</ul>
+</li>
+<li>flask写sql时，报错主键重复
+<ul>
+<li><code>LogExtract.py</code>生成<code>seq</code>(sql主键)的逻辑有问题，修复为<code>seq=sql_db.query.count()+i+1</code>(待测试)</li>
+</ul>
+</li>
+<li>filebeat crash问题
+<ul>
+<li>原因: filebeat设置<code>json.overwrite_keys: true</code>，且输入日志含有非空<code>@metadata</code>字段</li>
+<li>解决: 输入日志避免使用<code>@metadata</code>字段</li>
+</ul>
+</li>
 </ol>
 </li>
 </ol>
@@ -1830,7 +1922,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2020"><span class="nav-text"> 2020</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-9"><span class="nav-text"> 2020-9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-20"><span class="nav-text"> 2020-9-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-21"><span class="nav-text"> 2020-9-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-22"><span class="nav-text"> 2020-9-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-23"><span class="nav-text"> 2020-9-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-25"><span class="nav-text"> 2020-9-25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-27"><span class="nav-text"> 2020-9-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-30"><span class="nav-text"> 2020-9-30</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-10"><span class="nav-text"> 2020-10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-02"><span class="nav-text"> 2020-10-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-3"><span class="nav-text"> 2020-10-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-7"><span class="nav-text"> 2020-10-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-10"><span class="nav-text"> 2020-10-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-14"><span class="nav-text"> 2020-10-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-15"><span class="nav-text"> 2020-10-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-16"><span class="nav-text"> 2020-10-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-29"><span class="nav-text"> 2020-10-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-20"><span class="nav-text"> 2020-10-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-22"><span class="nav-text"> 2020-10-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-23"><span class="nav-text"> 2020-10-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-24"><span class="nav-text"> 2020-10-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-25"><span class="nav-text"> 2020-10-25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-26"><span class="nav-text"> 2020-10-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-27"><span class="nav-text"> 2020-10-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-29-2"><span class="nav-text"> 2020-10-29</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-11"><span class="nav-text"> 2020-11</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-1"><span class="nav-text"> 2020-11-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-2"><span class="nav-text"> 2020-11-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-3"><span class="nav-text"> 2020-11-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-4"><span class="nav-text"> 2020-11-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-7"><span class="nav-text"> 2020-11-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-9"><span class="nav-text"> 2020-11-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-10"><span class="nav-text"> 2020-11-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-11"><span class="nav-text"> 2020-11-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-15"><span class="nav-text"> 2020-11-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-16"><span class="nav-text"> 2020-11-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-20"><span class="nav-text"> 2020-11-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-22"><span class="nav-text"> 2020-11-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-23"><span class="nav-text"> 2020-11-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-24"><span class="nav-text"> 2020-11-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-26"><span class="nav-text"> 2020-11-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-27"><span class="nav-text"> 2020-11-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-28"><span class="nav-text"> 2020-11-28</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-12"><span class="nav-text"> 2020-12</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-6"><span class="nav-text"> 2020-12-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-7"><span class="nav-text"> 2020-12-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-8"><span class="nav-text"> 2020-12-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-9"><span class="nav-text"> 2020-12-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-10"><span class="nav-text"> 2020-12-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-15"><span class="nav-text"> 2020-12-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-20"><span class="nav-text"> 2020-12-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-21"><span class="nav-text"> 2020-12-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-22"><span class="nav-text"> 2020-12-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-24"><span class="nav-text"> 2020-12-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-27"><span class="nav-text"> 2020-12-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-28"><span class="nav-text"> 2020-12-28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-29"><span class="nav-text"> 2020-12-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-30"><span class="nav-text"> 2020-12-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-31"><span class="nav-text"> 2020-12-31</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2021"><span class="nav-text"> 2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-1"><span class="nav-text"> 2021-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-1"><span class="nav-text"> 2021-1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-4"><span class="nav-text"> 2021-1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-14"><span class="nav-text"> 2021-1-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-16"><span class="nav-text"> 2021-1-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-18"><span class="nav-text"> 2021-1-18</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2020"><span class="nav-text"> 2020</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-9"><span class="nav-text"> 2020-9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-20"><span class="nav-text"> 2020-9-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-21"><span class="nav-text"> 2020-9-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-22"><span class="nav-text"> 2020-9-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-23"><span class="nav-text"> 2020-9-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-25"><span class="nav-text"> 2020-9-25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-27"><span class="nav-text"> 2020-9-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-9-30"><span class="nav-text"> 2020-9-30</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-10"><span class="nav-text"> 2020-10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-02"><span class="nav-text"> 2020-10-02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-3"><span class="nav-text"> 2020-10-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-7"><span class="nav-text"> 2020-10-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-10"><span class="nav-text"> 2020-10-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-14"><span class="nav-text"> 2020-10-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-15"><span class="nav-text"> 2020-10-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-16"><span class="nav-text"> 2020-10-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-29"><span class="nav-text"> 2020-10-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-20"><span class="nav-text"> 2020-10-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-22"><span class="nav-text"> 2020-10-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-23"><span class="nav-text"> 2020-10-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-24"><span class="nav-text"> 2020-10-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-25"><span class="nav-text"> 2020-10-25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-26"><span class="nav-text"> 2020-10-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-27"><span class="nav-text"> 2020-10-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-10-29-2"><span class="nav-text"> 2020-10-29</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-11"><span class="nav-text"> 2020-11</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-1"><span class="nav-text"> 2020-11-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-2"><span class="nav-text"> 2020-11-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-3"><span class="nav-text"> 2020-11-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-4"><span class="nav-text"> 2020-11-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-7"><span class="nav-text"> 2020-11-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-9"><span class="nav-text"> 2020-11-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-10"><span class="nav-text"> 2020-11-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-11"><span class="nav-text"> 2020-11-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-15"><span class="nav-text"> 2020-11-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-16"><span class="nav-text"> 2020-11-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-20"><span class="nav-text"> 2020-11-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-22"><span class="nav-text"> 2020-11-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-23"><span class="nav-text"> 2020-11-23</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-24"><span class="nav-text"> 2020-11-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-26"><span class="nav-text"> 2020-11-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-27"><span class="nav-text"> 2020-11-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-11-28"><span class="nav-text"> 2020-11-28</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020-12"><span class="nav-text"> 2020-12</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-6"><span class="nav-text"> 2020-12-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-7"><span class="nav-text"> 2020-12-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-8"><span class="nav-text"> 2020-12-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-9"><span class="nav-text"> 2020-12-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-10"><span class="nav-text"> 2020-12-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-15"><span class="nav-text"> 2020-12-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-20"><span class="nav-text"> 2020-12-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-21"><span class="nav-text"> 2020-12-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-22"><span class="nav-text"> 2020-12-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-24"><span class="nav-text"> 2020-12-24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-27"><span class="nav-text"> 2020-12-27</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-28"><span class="nav-text"> 2020-12-28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-29"><span class="nav-text"> 2020-12-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-30"><span class="nav-text"> 2020-12-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-12-31"><span class="nav-text"> 2020-12-31</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2021"><span class="nav-text"> 2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-1"><span class="nav-text"> 2021-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-1"><span class="nav-text"> 2021-1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-4"><span class="nav-text"> 2021-1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-14"><span class="nav-text"> 2021-1-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-16"><span class="nav-text"> 2021-1-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-18"><span class="nav-text"> 2021-1-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-28"><span class="nav-text"> 2021-1-28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-29"><span class="nav-text"> 2021-1-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-30"><span class="nav-text"> 2021-1-30</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

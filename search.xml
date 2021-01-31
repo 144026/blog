@@ -1595,6 +1595,23 @@
 </ol>
 </li>
 </ol>
+<h3 id="2021-1-31"><a class="markdownIt-Anchor" href="#2021-1-31"></a> 2021-1-31</h3>
+<ol>
+<li>mtdps环境搭建调试
+<ul>
+<li>测试<code>LogExtract.py</code>: 修复后问题已解决</li>
+<li>写<code>elg</code>+<code>supervisor</code>+<code>mysql</code>(+<code>filebeat</code>部署文档)</li>
+<li>更新部署tarball</li>
+</ul>
+</li>
+<li>faq补了点总述</li>
+<li><code>jounalctl</code>
+<ul>
+<li><code>-f, --follow</code></li>
+<li><code>-u, --unit=UNIT|PATTERN</code></li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

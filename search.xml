@@ -1612,6 +1612,54 @@
 </ul>
 </li>
 </ol>
+<h3 id="2021-2-1"><a class="markdownIt-Anchor" href="#2021-2-1"></a> 2021-2-1</h3>
+<ol>
+<li>mtdps
+<ul>
+<li><code>elasticsearch</code>的<code>index</code>名中不接受大写字母
+<ul>
+<li>命名规则见<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html">相关官方文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-2-2"><a class="markdownIt-Anchor" href="#2021-2-2"></a> 2021-2-2</h3>
+<ol>
+<li>makefile
+<ol>
+<li>基本格式: 由多条构造规则组成，每条都有如下格式</li>
+</ol>
+ <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">target: prerequisites</span><br><span class="line">	commands</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>用法
+<ul>
+<li><code>make</code>: 自动查找<code>Makefile</code>中第一个非通配符的<code>target</code>，进行构建</li>
+<li><code>make &lt;target&gt;</code>: 指定<code>target</code>进行构建</li>
+</ul>
+</li>
+<li>变量
+<ul>
+<li>赋值与使用: <code>cc = gcc</code>, <code>$(cc)</code></li>
+<li><code>$@</code>: 特殊变量，展开为本条构造规则的<code>target</code></li>
+<li><code>$&lt;</code>: 特殊变量，展开为本条构造规则的第一个<code>prerequisite</code></li>
+</ul>
+</li>
+<li><strong>命令</strong>
+<ul>
+<li><code>subst &lt;this&gt;,&lt;that&gt;,&lt;string&gt;</code>: substitude <code>this</code> into <code>that</code> in <code>string</code>(<strong>NOTE</strong> <code>,</code> is field separator)</li>
+<li><code>wildcard &lt;pattern&gt;</code>: output files matching <code>pattern</code>, separated by <code>&lt;whitespace&gt;</code>. e.g., <code>wildcard *.c</code></li>
+<li>将命令展开为执行结果: <code>$(command arg1,arg2,$(command2 arg1))</code></li>
+</ul>
+</li>
+<li><strong>通配符</strong>
+<ul>
+<li><code>%</code>: 任意通配符。用在<code>target</code>中，当<code>make</code>查找某个<code>object</code>的构建法则时，一但匹配到该<code>target</code>，该条构造规则中的<code>%</code>都被展开为相应的匹配部分，e.g. <code>%.o: %.c some_headers.h</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

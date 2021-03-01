@@ -1612,6 +1612,7 @@
 </ul>
 </li>
 </ol>
+<h2 id="2021-2"><a class="markdownIt-Anchor" href="#2021-2"></a> 2021-2</h2>
 <h3 id="2021-2-1"><a class="markdownIt-Anchor" href="#2021-2-1"></a> 2021-2-1</h3>
 <ol>
 <li>mtdps
@@ -1658,6 +1659,97 @@
 </ul>
 </li>
 </ol>
+</li>
+</ol>
+<h3 id="2021-2-6"><a class="markdownIt-Anchor" href="#2021-2-6"></a> 2021-2-6</h3>
+<ol>
+<li>latex macros
+<ul>
+<li>plain tex: <code>\def\macroname #1&lt;sep&gt;#2&#123;expanded str, possibly containing #1,#2&#125;</code>
+<ul>
+<li>不检查该macro是否已经定义，直接覆盖</li>
+</ul>
+</li>
+<li>latex: <code>\newcommad</code>, <code>\renewcommand</code></li>
+</ul>
+</li>
+<li>bib reference
+<ul>
+<li>count into toc: <code>\usepackage[nottoc]&#123;tocbibind&#125;</code></li>
+<li>add numbering like a chapter: <code>\usepackage[numbib]&#123;tocbibind&#125;</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-2-7"><a class="markdownIt-Anchor" href="#2021-2-7"></a> 2021-2-7</h3>
+<p>latex:</p>
+<ol>
+<li><code>\usepackage&#123;indentfirst&#125;</code></li>
+<li>counter, label:
+<ul>
+<li><code>table</code>/<code>figure</code>/<code>section</code>… <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟷</mo></mrow><annotation encoding="application/x-tex">\longleftrightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.522em;vertical-align:-0.011em;"></span><span class="mrel">⟷</span></span></span></span> <code>\thetable</code>/<code>\thefigure</code>/<code>\thesection</code></li>
+<li><code>\setcounter&#123;table&#125;&#123;0&#125;</code></li>
+<li><code>\renewcommand&#123;\thetable&#125;&#123;\alpha&#123;table&#125;&#125;</code></li>
+</ul>
+</li>
+<li>caption specifying:<code>caption</code>, <code>subcaption</code> package
+<ul>
+<li>overall: <code>font=small</code></li>
+<li><code>labelfont=bf, textfont=normalfont</code></li>
+<li><code>labelformat=simple, labelsep=period</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-2-8"><a class="markdownIt-Anchor" href="#2021-2-8"></a> 2021-2-8</h3>
+<p>latex:</p>
+<ol>
+<li>toc depth:
+<ul>
+<li>globally, invariable: <code>\setcounter&#123;tocdepth&#125;&#123;2&#125;</code></li>
+<li>variable at place: <code>\usepackage&#123;tocvsec2&#125;</code>, <code>\settocdepth&#123;subsection&#125;</code></li>
+</ul>
+</li>
+<li>toc spacing:
+<ul>
+<li><code>\usepackage&#123;setspace&#125;</code>, <code>\begin&#123;spacing&#125;&#123;0.1&#125;</code></li>
+</ul>
+</li>
+<li><code>\autoref</code> in <code>hyperref</code> package
+<ul>
+<li>red brackets: <code>hidelinks</code></li>
+<li>rename: <code>\def\&lt;type&gt;autorefname&#123;&lt;newname&gt;&#125;</code></li>
+</ul>
+</li>
+<li>align numbering: <code>\notag</code>/<code>\nonumber</code>, <code>\tag&#123;blablabla&#125;</code></li>
+</ol>
+<p>overleaf:</p>
+<ol>
+<li>user mapping/marcro like vimrc: using tampermonkey script</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ==UserScript==</span></span><br><span class="line"><span class="comment">// @name         Overleaf Editor Custom VIM Keybindings</span></span><br><span class="line"><span class="comment">// @namespace    http://tampermonkey.net/</span></span><br><span class="line"><span class="comment">// @version      0.1</span></span><br><span class="line"><span class="comment">// @match        https://www.overleaf.com/project/*</span></span><br><span class="line"><span class="comment">// @grant        none</span></span><br><span class="line"><span class="comment">// ==/UserScript==</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">    &#x27;use strict&#x27;</span>;</span><br><span class="line">    <span class="comment">// poll until editor is loaded</span></span><br><span class="line">    <span class="keyword">const</span> retry = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">window</span>._debug_editors === <span class="literal">undefined</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="built_in">clearInterval</span>(retry)</span><br><span class="line">        <span class="comment">// get current editor instance</span></span><br><span class="line">        <span class="keyword">const</span> editor = <span class="built_in">window</span>._debug_editors[<span class="built_in">window</span>._debug_editors.length <span class="number">-1</span>]</span><br><span class="line">        <span class="comment">// vim keyboard plugin</span></span><br><span class="line">        <span class="keyword">const</span> vimKeyboard = <span class="built_in">window</span>.ace.require(<span class="string">&quot;ace/keyboard/vim&quot;</span>)</span><br><span class="line">        <span class="comment">// add custom keybindings - insert mode applies on insert</span></span><br><span class="line">        <span class="comment">// normal mode applies while escaped</span></span><br><span class="line">        vimKeyboard.Vim.map(<span class="string">&quot;j&quot;</span>, <span class="string">&quot;gj&quot;</span>, <span class="string">&quot;normal&quot;</span>)</span><br><span class="line">        vimKeyboard.Vim.map(<span class="string">&quot;k&quot;</span>, <span class="string">&quot;gk&quot;</span>, <span class="string">&quot;normal&quot;</span>)</span><br><span class="line">        <span class="comment">// set the modified keyboard handler for editor</span></span><br><span class="line">        editor.setKeyboardHandler(vimKeyboard.handler)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;Custom key bindings applied&quot;</span>)</span><br><span class="line">    &#125;, <span class="number">100</span>)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h1 id="2021-2-9"><a class="markdownIt-Anchor" href="#2021-2-9"></a> 2021-2-9</h1>
+<ol>
+<li>newcommand: <code>\newcommand&#123;\red&#125;[1]&#123;\textcolor&#123;red&#125;&#123;#1&#125;&#125;</code>
+<ul>
+<li><code>\renewcommand&#123;\ref&#125;[1]&#123;Fig.\ref&#123;#1&#125;&#125;</code> <strong>failed</strong> ?</li>
+</ul>
+</li>
+<li>appendix: <code>\usepackage[page,toc,titletoc,title]&#123;appendix&#125;</code>
+<ul>
+<li>page: Appendices start from a new page?</li>
+<li>toc: Appendices start page added to toc</li>
+<li>title: sections inside Appendices add <code>Appendix</code> before label</li>
+<li>titletoc: similar to title, used in toc</li>
+</ul>
+</li>
+</ol>
+<h2 id="2021-3"><a class="markdownIt-Anchor" href="#2021-3"></a> 2021-3</h2>
+<h3 id="2021-3-1"><a class="markdownIt-Anchor" href="#2021-3-1"></a> 2021-3-1</h3>
+<ol>
+<li>C
+<ul>
+<li><code>return &amp;local_var</code>返回栈上的地址，程序可能直接crash</li>
+<li>a better malloc: <code>int * aaa = malloc(sizeof *aaa * length);</code></li>
+</ul>
 </li>
 </ol>
 ]]></content>

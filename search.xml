@@ -1752,6 +1752,41 @@
 </ul>
 </li>
 </ol>
+<h3 id="2021-3-2"><a class="markdownIt-Anchor" href="#2021-3-2"></a> 2021-3-2</h3>
+<ol>
+<li>讨论回忆纪要</li>
+</ol>
+<h3 id="2021-3-3"><a class="markdownIt-Anchor" href="#2021-3-3"></a> 2021-3-3</h3>
+<ol>
+<li>删除GNU <code>gettext</code> <code>read-mo.c</code>的sorted验证，安装后仍然无法反编译中文<code>mo</code>文件
+<ul>
+<li><code>gettext</code>的<code>read-mo.c</code>不支持宽字符，但是含宽字符的<code>po</code>文件可以正常编译</li>
+</ul>
+</li>
+<li>准备简历初稿+投递</li>
+<li>clone了一下ATT&amp;CK的开源网站
+<ul>
+<li>python <code>venv</code>的激活脚本<code>activate</code>必须用bash执行(用zsh直接source不会出错，但是source写进zsh脚本就报错)</li>
+</ul>
+</li>
+<li>leetcode 338, counting bits：任意<code>k</code>进制数，第<code>n</code>个数含有的1的个数<code>#n</code>？
+<ul>
+<li><code>n = m * k</code>，则<code>#n = #m</code></li>
+<li><code>n = m * k + 1</code>，则<code>#n = #m + 1</code></li>
+<li>其他情况下，<code>#n = #(n/k) = #m</code></li>
+</ul>
+</li>
+<li>Windows下，git安装目录单独挂载为根目录<code>/</code>
+<ul>
+<li>如果git安装到D盘，则C盘被挂载到<code>/c</code>，安装到C盘则不挂载</li>
+<li>挂到<code>/c</code>后，<code>C:\xxx\xxx</code>路径对git目录下的binary失效
+<ul>
+<li><strong>那么从cmd/powershell里继承的环境变量，例如<code>$HOME</code>也会失效！</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

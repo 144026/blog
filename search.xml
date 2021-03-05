@@ -1832,6 +1832,50 @@
 <li>300, longest increasing subsequence (TODO)</li>
 <li>354, Russian doll envelopes (TODO)</li>
 </ol>
+<h3 id="2020-3-5"><a class="markdownIt-Anchor" href="#2020-3-5"></a> 2020-3-5</h3>
+<p>鸽爆的一天(</p>
+<p>上午</p>
+<ol>
+<li>通信原理课程
+<ul>
+<li>确知信号 + 随机过程 快速回顾</li>
+</ul>
+</li>
+</ol>
+<p>中午</p>
+<ol>
+<li>ATT&amp;CK网站clone+部署，说明文档撰写(鸽了</li>
+<li>C++多态的实现: <code>vitual</code>关键字、隐藏的<code>__vptr</code>(for object)，及其指向的函数指针数组<code>vtable</code>(for type)
+<ul>
+<li>保证子类的方法可以覆盖父类</li>
+<li><code>(*(p-&gt;__vptr[n]))(p)</code>: if <code>p-&gt;__vptr</code> is <code>void **</code>, what is the type of <code>p-&gt;__vptr[n]</code>? <code>void *</code>?</li>
+<li><code>(*p-&gt;vptr-&gt;fn)(p)</code> ?</li>
+</ul>
+</li>
+<li>阿里云面试
+<ul>
+<li>基本问题：不要老是推迟、及时反馈、注意信号和设备状态、说话音量</li>
+<li>表述问题：
+<ul>
+<li>**提前准备文稿：**自我介绍、项目介绍、项目关键技术/workflow、项目经典实例</li>
+</ul>
+</li>
+<li>技术问题：二进制分析相关、操作系统(至少：装载、库、进/线程、内存池)相关、C语言相关(对齐，offsetof宏:对编译的理解)</li>
+</ul>
+</li>
+</ol>
+<p>晚上</p>
+<ol>
+<li>点石创校宣讲志愿者：步场、接待、递话筒、改卷、收场</li>
+</ol>
+<p><strong>TODO</strong></p>
+<ol>
+<li>att&amp;ck网站简介文档</li>
+<li>CVSS(仿)评分数值化</li>
+<li>面试复盘、总结</li>
+<li>mtdps默认线程测试</li>
+<li>leetcode 300</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

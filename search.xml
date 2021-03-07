@@ -1857,7 +1857,7 @@
 <li>基本问题：不要老是推迟、及时反馈、注意信号和设备状态、说话音量</li>
 <li>表述问题：
 <ul>
-<li>**提前准备文稿：**自我介绍、项目介绍、项目关键技术/workflow、项目经典实例</li>
+<li><strong>提前准备文稿</strong>: 自我介绍、项目介绍、项目关键技术/workflow、项目经典实例</li>
 </ul>
 </li>
 <li>技术问题：二进制分析相关、操作系统(至少：装载、库、进/线程、内存池)相关、C语言相关(对齐，offsetof宏:对编译的理解)</li>
@@ -1875,6 +1875,45 @@
 <li>面试复盘、总结</li>
 <li>mtdps默认线程测试</li>
 <li>leetcode 300</li>
+</ol>
+<h3 id="2020-3-6"><a class="markdownIt-Anchor" href="#2020-3-6"></a> 2020-3-6</h3>
+<ol>
+<li>
+<p>leetcode单调栈: 503.next greater element</p>
+<ul>
+<li>等效：柱状图能接住的最多水</li>
+<li>柱状图中的最大矩形：某个柱子左右，第一个小于它的</li>
+</ul>
+</li>
+<li>
+<p>latex实验报告模板更新</p>
+<ul>
+<li>添加页眉页脚<code>fancyhdr</code></li>
+<li>修改目录标题名<code>tocloft</code>(<code>\begin&#123;center&#125;</code>居中标题)
+<ul>
+<li><strong>这个宏包会覆盖toc页面的pagestyle</strong></li>
+</ul>
+</li>
+<li>添加附录
+<ul>
+<li><code>\begin&#123;appendices&#125;</code>而不是<code>\begin&#123;appendix&#125;</code></li>
+<li><code>\appendix&lt;type&gt;name</code>,<code>type='', page, toc</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>数字图像处理课程</p>
+<ul>
+<li><strong>matlab递归函数，进去一层，变量就undefined?</strong></li>
+</ul>
+</li>
+<li>
+<p>bash重定向</p>
+<ul>
+<li><code>2&gt;&amp;1</code> -&gt; <code>int dup2(int oldfd, int newfd); dup2(1,2);</code></li>
+</ul>
+</li>
 </ol>
 ]]></content>
       <categories>

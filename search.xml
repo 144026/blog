@@ -1903,6 +1903,28 @@
 </ul>
 </li>
 </ol>
+<h3 id="2020-3-7"><a class="markdownIt-Anchor" href="#2020-3-7"></a> 2020-3-7</h3>
+<ol>
+<li>att&amp;ck网站简介文档</li>
+<li>bash/zsh commandline editor mode: emacs/vi
+<ul>
+<li>bash: <code>set -o &lt;emacs|vi&gt;</code> (<code>bind -P</code>)</li>
+<li>zsh: <code>bindkey &lt;-e|-v&gt;</code> (<code>bindkey -L</code>)</li>
+<li>zsh vi模式的问题：从normal返回insert后<code>&lt;backspace&gt;</code>不起效
+<ul>
+<li><code>bindkey &quot;^?&quot; backward-delete-char</code></li>
+</ul>
+</li>
+<li>zsh vi模式优化
+<ul>
+<li>保留emacs模式常用键位：<code>bindkey -L</code>后，选取<code>^W</code>, <code>^P</code>, <code>^N</code>等等</li>
+<li><code>zshrc</code>上传到<a href="https://github.com:144026/my-vim-config">my-vim-config</a>的<code>zsh-config</code>分支</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bash重定向帖子 50%</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

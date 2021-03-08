@@ -1925,6 +1925,32 @@
 </li>
 <li>bash重定向帖子 50%</li>
 </ol>
+<h3 id="2020-3-8"><a class="markdownIt-Anchor" href="#2020-3-8"></a> 2020-3-8</h3>
+<ol>
+<li>通信原理课程：信道</li>
+<li>elg调试
+<ul>
+<li>elasticsearch不通，重置虚拟机</li>
+<li>调试flask框架，记录三个error(bug待修)
+<ul>
+<li>TODO: 调试一键清空脚本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ATT&amp;CK讨论
+<ul>
+<li>拓展mtdps</li>
+</ul>
+</li>
+<li>阿里云2面</li>
+<li>NetTopo模块(grafana dependency graph)
+<ul>
+<li>修改sql root用户密码</li>
+<li>mysql创建用户bug: <code>drop</code>+<code>flush privileges</code></li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>其他</category>

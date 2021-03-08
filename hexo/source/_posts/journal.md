@@ -1206,13 +1206,16 @@ leetcode
 
 ### 2020-3-8
 1. 通信原理课程：信道
-2. elg调试
+
+2. ATT&CK讨论
+	- 拓展mtdps
+3. NetTopo模块(grafana dependency graph)
+	- 修改sql root用户密码
+	- mysql创建用户bug: `drop`+`flush privileges`
+4. elg调试
 	- elasticsearch不通，重置虚拟机
 	- 调试flask框架，记录三个error(bug待修)
 		- TODO: 调试一键清空脚本
-3. ATT&CK讨论
-	- 拓展mtdps
+	- gitlab远程空间不够，报错`Failed xxxx`很像本地错误，push才看得出来错误在远程
 4. 阿里云2面
-5. NetTopo模块(grafana dependency graph)
-	- 修改sql root用户密码
-	- mysql创建用户bug: `drop`+`flush privileges`
+

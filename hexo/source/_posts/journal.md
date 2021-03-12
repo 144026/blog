@@ -1131,7 +1131,7 @@ overleaf:
 		- **那么从cmd/powershell里继承的环境变量，例如`$HOME`也会失效！**
 
 
-### 2020-3-4
+### 2021-3-4
 [`MkDocs`](https://www.mkdocs.org) & [`mkdocs-material`](https://squidfunk.github.io/mkdocs-material/)(theme)
 1. **安装：**
 	- `MkDocs`作为python package安装到`dist-packages`中的`mkdocs`
@@ -1154,7 +1154,7 @@ leetcode
 1. 300, longest increasing subsequence (TODO)
 2. 354, Russian doll envelopes (TODO)
 
-### 2020-3-5
+### 2021-3-5
 1. 通信原理课程
 	- 确知信号 + 随机过程 快速回顾
 
@@ -1173,7 +1173,7 @@ leetcode
 
 
 
-### 2020-3-6
+### 2021-3-6
 1. leetcode单调栈: 503.next greater element
 	- 等效：柱状图能接住的最多水
 	- 柱状图中的最大矩形：某个柱子左右，第一个小于它的
@@ -1191,7 +1191,7 @@ leetcode
 	- `2>&1` -> `int dup2(int oldfd, int newfd); dup2(1,2);`
 
 
-### 2020-3-7
+### 2021-3-7
 1. att&ck网站简介文档
 2. bash/zsh commandline editor mode: emacs/vi
 	- bash: `set -o <emacs|vi>` (`bind -P`)
@@ -1204,7 +1204,7 @@ leetcode
 4. bash重定向帖子 50%
 
 
-### 2020-3-8
+### 2021-3-8
 1. 通信原理课程：信道
 
 2. ATT&CK讨论
@@ -1219,3 +1219,28 @@ leetcode
 	- gitlab远程空间不够，报错`Failed xxxx`很像本地错误，push才看得出来错误在远程
 4. 阿里云2面
 
+
+### 2020-3-9
+1. leetcode 1047,1209：消除重复字串，recursively
+	- 递归/栈
+
+
+### 2020-3-11
+word标题格式调节
+1. 标题构成: `缩进`+`编号`+`间隔`+`标题内容`
+2. `编号`格式: 搜索功能`多级列表`->重新定义多级列表->更多->**链接到标题**
+3. `编号`格式: 搜索功能`多级列表`->重新定义多级列表->更多->**链接到标题**
+4. `间隔`格式: 搜索功能`多级列表`->重新定义多级列表->更多->**选择空格，而不是制表符**
+5. `标题内容`格式: 样式库选中样式->修改->字体->中文、西文字体
+
+
+### 2020-3-12
+1. deepin chroot
+	- mount失败,bad [superblock](https://en.wikipedia.org/wiki/Unix_File_System): `fdisk`找到start sector和sector size，`mount -o offset=<bytes>`
+	- `cp`默认并不保留文件属性，拷贝后权限树混乱：`cp --preserve=all`, `cp -a/--archive`, `rsync -a`
+	- `/proc`和`/sys`不起效：`mount -o bind /proc /newroot/proc`
+		- `sys`和`proc`被重复mount?: **TODO**
+	- `add-apt-repository`安装失败: **TODO**
+2. 阿里在线笔试 **TODO**
+	- 有向图单原最短路径
+	- codeforces 1411

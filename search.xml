@@ -4153,12 +4153,30 @@ $<br />
 </ul>
 </li>
 <li><code>add-apt-repository</code>安装失败: <strong>TODO</strong></li>
+<li>deepin普通用户sudo会从pam唤起弹窗，弹不出来sudo会失败</li>
 </ul>
 </li>
 <li>阿里在线笔试 <strong>TODO</strong>
 <ul>
 <li>有向图单原最短路径</li>
 <li>codeforces 1411</li>
+</ul>
+</li>
+</ol>
+<h3 id="2020-3-13"><a class="markdownIt-Anchor" href="#2020-3-13"></a> 2020-3-13</h3>
+<ol>
+<li>点石创校
+<ul>
+<li>公司(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)</li>
+<li>基金、合伙制(GP,LP,LLP)、投资(PE,VC)</li>
+<li>商业计划：公司、行业、市场、用户、产品服务</li>
+</ul>
+</li>
+<li>deepin chroot
+<ul>
+<li>sudo失败，<code>hostname</code>仍然是主机，解析不出<code>127.0.1.1</code>，修改<code>/etc/hosts</code></li>
+<li>dns解析问题：修改<code>resolv.conf</code>(Network Manager自动设置)</li>
+<li><strong>参考<a href="https://wiki.archlinux.org/index.php/chroot">Arch Linux chroot Docs</a></strong></li>
 </ul>
 </li>
 </ol>

@@ -1241,6 +1241,18 @@ word标题格式调节
 	- `/proc`和`/sys`不起效：`mount -o bind /proc /newroot/proc`
 		- `sys`和`proc`被重复mount?: **TODO**
 	- `add-apt-repository`安装失败: **TODO**
+	- deepin普通用户sudo会从pam唤起弹窗，弹不出来sudo会失败
 2. 阿里在线笔试 **TODO**
 	- 有向图单原最短路径
 	- codeforces 1411
+
+
+### 2020-3-13
+1. 点石创校
+	- 公司(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)
+	- 基金、合伙制(GP,LP,LLP)、投资(PE,VC)
+	- 商业计划：公司、行业、市场、用户、产品服务
+2. deepin chroot
+	- sudo失败，`hostname`仍然是主机，解析不出`127.0.1.1`，修改`/etc/hosts`
+	- dns解析问题：修改`resolv.conf`(Network Manager自动设置)
+	- **参考[Arch Linux chroot Docs](https://wiki.archlinux.org/index.php/chroot)**

@@ -4179,6 +4179,32 @@ $<br />
 <li><strong>参考<a href="https://wiki.archlinux.org/index.php/chroot">Arch Linux chroot Docs</a></strong></li>
 </ul>
 </li>
+<li>deepin chroot配置
+<ul>
+<li>mount sys，proc，run，dev等等</li>
+<li>应用程序位置<code>/opt/apps/com.qq.im.deepin/files/run.sh</code></li>
+<li><strong>GUI 应用</strong>:<code>xhost +local:</code>, <code>export DISPLAY=xxxx</code></li>
+<li><strong>fcitx输入法</strong>: 在<code>run.sh</code>里export环境变量(正常环境<code>export | grep fcitx</code>)
+<ul>
+<li>fcitx的工作原理？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-3-14"><a class="markdownIt-Anchor" href="#2021-3-14"></a> 2021-3-14</h3>
+<ol>
+<li>deepin chroot
+<ul>
+<li>qq
+<ul>
+<li>撤回、回复无效，很多小bug</li>
+<li>气泡模式中文字体变成方框(是缺字体还是qq没能找到字体？缺是哪个字体？该装到哪里？)</li>
+</ul>
+</li>
+<li>休眠之后死机，重新打开后，chroot权限树混乱，大量目录ower:group变成1000:1000</li>
+</ul>
+</li>
 </ol>
 ]]></content>
       <categories>

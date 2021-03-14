@@ -1256,3 +1256,17 @@ word标题格式调节
 	- sudo失败，`hostname`仍然是主机，解析不出`127.0.1.1`，修改`/etc/hosts`
 	- dns解析问题：修改`resolv.conf`(Network Manager自动设置)
 	- **参考[Arch Linux chroot Docs](https://wiki.archlinux.org/index.php/chroot)**
+3. deepin chroot配置
+	- mount sys，proc，run，dev等等
+	- 应用程序位置`/opt/apps/com.qq.im.deepin/files/run.sh`
+	- **GUI 应用**:`xhost +local:`, `export DISPLAY=xxxx`
+	- **fcitx输入法**: 在`run.sh`里export环境变量(正常环境`export | grep fcitx`)
+		- fcitx的工作原理？
+
+
+### 2021-3-14
+1. deepin chroot
+	- qq
+		- 撤回、回复无效，很多小bug
+		- 气泡模式中文字体变成方框(是缺字体还是qq没能找到字体？缺是哪个字体？该装到哪里？)
+	- 休眠之后死机，重新打开后，chroot权限树混乱，大量目录ower:group变成1000:1000

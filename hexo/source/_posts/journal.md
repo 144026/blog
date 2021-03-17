@@ -1272,7 +1272,7 @@ word标题格式调节
     - 休眠之后死机，重新打开后，chroot权限树混乱，大量目录ower:group变成1000:1000
 
 
-### 2021-3-14
+### 2021-3-15
 1. C string cat `puts("hello" "world");` (a core language feature)
     > The C99 standard §5.1.1.2 defines translation phases for C code. Subsection 6 states:
     >> Adjacent string literal tokens are concatenated.
@@ -1290,3 +1290,20 @@ configure.ac------>+--->|autoconf|------>configure
 Makefile.am------->+--->|automake|------>Makefile.in
                         +--------+
 ```
+
+
+### 2021-3-17
+1. cmake verbose: `make VERBOSE=1`
+2. **link order matters**!
+	- static lib: `-lmost_dependent -lxxx -lyyy -lleast_dependent`
+		- OK: `-lgtest -lgtest_main -lpthread`
+		- bad: `-lpthread -lgtest -lgtest_main`
+	- dynamic: they resolve smartly?
+3. autoconf
+	- `AC_CHECK_LIB(lib,func)`
+	- `AC_TYPE_UINT32_T`
+4. automake
+	- `noinst_`, `bin_`, `lib_`, `_include`, `canocalized_names_`
+	- `_PROGRAMS`, `_LIBRARIES`, `_SOURCES`, `_HEADERS`, 
+		- `_LDADD`, `_LDFLAGS`, `_LIBADD`
+	- `AM_CPPFLAGS`, `AM_CFLAGS`

@@ -3574,7 +3574,7 @@ $<br />
 <ul>
 <li>持久化: <code>~/.ssh/config</code>/<code>/etc/ssh/ssh_config.d/*.conf</code></li>
 </ul>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host $host</span><br><span class="line">	ForwardAgent yes</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Host $host</span><br><span class="line">    ForwardAgent yes</span><br></pre></td></tr></table></figure>
 </li>
 <li>启动: <code>ssh-agent &lt;x-session&gt;</code>(linux图形界面自动启动)/<code>eval $(ssh-agent -s)</code></li>
 <li>添加密钥: <em>The agent initially does not have any private keys.</em>
@@ -3796,7 +3796,7 @@ $<br />
 <ol>
 <li>基本格式: 由多条构造规则组成，每条都有如下格式</li>
 </ol>
- <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">target: prerequisites</span><br><span class="line">	commands</span><br></pre></td></tr></table></figure>
+ <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">target: prerequisites</span><br><span class="line">    commands</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>用法
 <ul>
@@ -4203,6 +4203,57 @@ $<br />
 </ul>
 </li>
 <li>休眠之后死机，重新打开后，chroot权限树混乱，大量目录ower:group变成1000:1000</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-3-15"><a class="markdownIt-Anchor" href="#2021-3-15"></a> 2021-3-15</h3>
+<ol>
+<li>C string cat <code>puts(&quot;hello&quot; &quot;world&quot;);</code> (a core language feature)
+<blockquote>
+<p>The C99 standard §5.1.1.2 defines translation phases for C code. Subsection 6 states:</p>
+<blockquote>
+<p>Adjacent string literal tokens are concatenated.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>GNU <a href="https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html">autotools intro</a>
+<ul>
+<li><strong><code>autoreconf --install</code></strong>: <code>configure.ac</code>, <code>Makefile.am</code></li>
+<li><strong><code>./configure</code></strong>: <code>configure</code>, <code>config.h.in</code>, <code>Makefile.in</code></li>
+<li><code>make</code>, <code>make distcheck</code></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">                        +--------+</span><br><span class="line">configure.ac------&gt;+---&gt;|autoconf|------&gt;configure</span><br><span class="line">                   |    +--------+</span><br><span class="line">                   |</span><br><span class="line">                   v    +--------+</span><br><span class="line">Makefile.am-------&gt;+---&gt;|automake|------&gt;Makefile.in</span><br><span class="line">                        +--------+</span><br></pre></td></tr></table></figure>
+<h3 id="2021-3-17"><a class="markdownIt-Anchor" href="#2021-3-17"></a> 2021-3-17</h3>
+<ol>
+<li>cmake verbose: <code>make VERBOSE=1</code></li>
+<li><strong>link order matters</strong>!
+<ul>
+<li>static lib: <code>-lmost_dependent -lxxx -lyyy -lleast_dependent</code>
+<ul>
+<li>OK: <code>-lgtest -lgtest_main -lpthread</code></li>
+<li>bad: <code>-lpthread -lgtest -lgtest_main</code></li>
+</ul>
+</li>
+<li>dynamic: they resolve smartly?</li>
+</ul>
+</li>
+<li>autoconf
+<ul>
+<li><code>AC_CHECK_LIB(lib,func)</code></li>
+<li><code>AC_TYPE_UINT32_T</code></li>
+</ul>
+</li>
+<li>automake
+<ul>
+<li><code>noinst_</code>, <code>bin_</code>, <code>lib_</code>, <code>_include</code>, <code>canocalized_names_</code></li>
+<li><code>_PROGRAMS</code>, <code>_LIBRARIES</code>, <code>_SOURCES</code>, <code>_HEADERS</code>,
+<ul>
+<li><code>_LDADD</code>, <code>_LDFLAGS</code>, <code>_LIBADD</code></li>
+</ul>
+</li>
+<li><code>AM_CPPFLAGS</code>, <code>AM_CFLAGS</code></li>
 </ul>
 </li>
 </ol>

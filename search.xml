@@ -4241,19 +4241,44 @@ $<br />
 </li>
 <li>autoconf
 <ul>
-<li><code>AC_CHECK_LIB(lib,func)</code></li>
-<li><code>AC_TYPE_UINT32_T</code></li>
+<li>探测toolchain完整性
+<ul>
+<li><code>AC_PROG_CC</code>, <code>AC_PROG_CXX</code>, <code>AC_PROG_RANLIB</code></li>
+<li><code>AM_PROG_AR</code></li>
+</ul>
+</li>
+<li>检查库和数据类型
+<ul>
+<li><code>AC_CHECK_LIB(lib,func)</code>, <code>AC_TYPE_UINT32_T</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>automake
 <ul>
-<li><code>noinst_</code>, <code>bin_</code>, <code>lib_</code>, <code>_include</code>, <code>canocalized_names_</code></li>
-<li><code>_PROGRAMS</code>, <code>_LIBRARIES</code>, <code>_SOURCES</code>, <code>_HEADERS</code>,
+<li>安装路径：<code>noinst_</code>, <code>bin_</code>, <code>lib_</code>, <code>_include</code>, <code>canocalized_names_</code></li>
+<li>macro类型：<code>_PROGRAMS</code>, <code>_LIBRARIES</code>, <code>_SOURCES</code>, <code>_HEADERS</code>
 <ul>
 <li><code>_LDADD</code>, <code>_LDFLAGS</code>, <code>_LIBADD</code></li>
 </ul>
 </li>
-<li><code>AM_CPPFLAGS</code>, <code>AM_CFLAGS</code></li>
+<li>预编译和编译选项：<code>AM_CPPFLAGS</code>, <code>AM_CFLAGS</code>
+<ul>
+<li><code>AM_CPPFLAGS = $(top_srcdir)/inlude</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>libtools(<code>apt-get install libtools</code>)
+<ul>
+<li>加入<code>configure.ac</code>工具链：<code>LT_INIT[(&lt;enable|disable&gt;-&lt;shared|static&gt;)]</code>(override <code>AC_PROG_RANLIB</code>)</li>
+<li>定义macro: <code>_LTLIBRARIES</code>, <code>_LDFLAGS = -version-info 0:0:0</code></li>
+<li>添加m4宏
+<ul>
+<li><a href="http://configurea.ac">configurea.ac</a>: <code>AC_CONFIG_MACRO_DIRS[m4]</code></li>
+<li><a href="http://Makefile.am">Makefile.am</a>: <code>ACLOCAL_AMFLAGS = -I m4</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>

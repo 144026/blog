@@ -1292,6 +1292,9 @@ Makefile.am------->+--->|automake|------>Makefile.in
 ```
 
 
+### 2021-3-16
+1. `git rebase <dst_ref> [branch]`
+
 ### 2021-3-17
 1. cmake verbose: `make VERBOSE=1`
 2. **link order matters**!
@@ -1300,10 +1303,26 @@ Makefile.am------->+--->|automake|------>Makefile.in
 		- bad: `-lpthread -lgtest -lgtest_main`
 	- dynamic: they resolve smartly?
 3. autoconf
-	- `AC_CHECK_LIB(lib,func)`
-	- `AC_TYPE_UINT32_T`
+	- 探测toolchain完整性
+		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB`
+		- `AM_PROG_AR`
+	- 检查库和数据类型
+		- `AC_CHECK_LIB(lib,func)`, `AC_TYPE_UINT32_T`
 4. automake
-	- `noinst_`, `bin_`, `lib_`, `_include`, `canocalized_names_`
-	- `_PROGRAMS`, `_LIBRARIES`, `_SOURCES`, `_HEADERS`, 
+	- 安装路径：`noinst_`, `bin_`, `lib_`, `_include`, `canocalized_names_`
+	- macro类型：`_PROGRAMS`, `_LIBRARIES`, `_SOURCES`, `_HEADERS`
 		- `_LDADD`, `_LDFLAGS`, `_LIBADD`
-	- `AM_CPPFLAGS`, `AM_CFLAGS`
+	- 预编译和编译选项：`AM_CPPFLAGS`, `AM_CFLAGS`
+		- `AM_CPPFLAGS = $(top_srcdir)/inlude`
+5. libtools(`apt-get install libtools`)
+	- 加入`configure.ac`工具链：`LT_INIT[(<enable|disable>-<shared|static>)]`(override `AC_PROG_RANLIB`)
+	- 定义macro: `_LTLIBRARIES`, `_LDFLAGS = -version-info 0:0:0`
+	- 添加m4宏
+		- configurea.ac: `AC_CONFIG_MACRO_DIRS[m4]`
+		- Makefile.am: `ACLOCAL_AMFLAGS = -I m4`
+
+### 2021-3-18
+1. matlab/octave function call: var 'xxxx' undefined：检查一下参数是不是合法，有没有漏掉
+2. move a python virtualenv?(`venv` is a subset of `virtualenv`)
+	- nop, `--relocatable` deprecated, no clean way to do it
+

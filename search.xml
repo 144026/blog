@@ -4225,15 +4225,26 @@ $<br />
 </li>
 </ol>
 <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">                        +--------+</span><br><span class="line">configure.ac------&gt;+---&gt;|autoconf|------&gt;configure</span><br><span class="line">                   |    +--------+</span><br><span class="line">                   |</span><br><span class="line">                   v    +--------+</span><br><span class="line">Makefile.am-------&gt;+---&gt;|automake|------&gt;Makefile.in</span><br><span class="line">                        +--------+</span><br></pre></td></tr></table></figure>
+<h3 id="2021-3-16"><a class="markdownIt-Anchor" href="#2021-3-16"></a> 2021-3-16</h3>
+<ol>
+<li><code>git rebase &lt;dst_ref&gt; [branch]</code></li>
+</ol>
 <h3 id="2021-3-17"><a class="markdownIt-Anchor" href="#2021-3-17"></a> 2021-3-17</h3>
 <ol>
 <li>cmake verbose: <code>make VERBOSE=1</code></li>
-<li><strong>link order matters</strong>!
+<li><strong>link order matters</strong>!逐个打开库文件，查找带解析的符号，一个库打开之后，连接器就会忘记它
 <ul>
 <li>static lib: <code>-lmost_dependent -lxxx -lyyy -lleast_dependent</code>
 <ul>
-<li>OK: <code>-lgtest -lgtest_main -lpthread</code></li>
+<li><strong>OK</strong>: <code>-lgtest -lgtest_main -lpthread</code></li>
+<li>循环依赖: <code>-( -laaa -lbbb -)</code>(qoute <code>(</code>/<code>)</code> if needed)</li>
 <li>bad: <code>-lpthread -lgtest -lgtest_main</code></li>
+</ul>
+</li>
+<li>objects and libs:
+<ul>
+<li><strong>OK</strong>: <code>gcc a.o -lbenchmark -lpthread</code></li>
+<li>BAD: <code>gcc -lbenchmark -lpthread a.o</code></li>
 </ul>
 </li>
 <li>dynamic: they resolve smartly?</li>
@@ -4243,12 +4254,7 @@ $<br />
 <ul>
 <li>探测toolchain完整性
 <ul>
-<li><code>AC_PROG_CC</code>, <code>AC_PROG_CXX</code>, <code>AC_PROG_RANLIB</code></li>
-<li><code>AM_PROG_AR</code></li>
-</ul>
-</li>
-<li>检查库和数据类型
-<ul>
+<li><code>AC_PROG_CC</code>, <code>AC_PROG_CXX</code>, <code>AC_PROG_RANLIB</code> - <code>AM_PROG_AR</code> - 检查库和数据类型</li>
 <li><code>AC_CHECK_LIB(lib,func)</code>, <code>AC_TYPE_UINT32_T</code></li>
 </ul>
 </li>
@@ -4279,6 +4285,34 @@ $<br />
 <li><a href="http://Makefile.am">Makefile.am</a>: <code>ACLOCAL_AMFLAGS = -I m4</code></li>
 </ul>
 </li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-3-18"><a class="markdownIt-Anchor" href="#2021-3-18"></a> 2021-3-18</h3>
+<ol>
+<li>matlab/octave function call: var ‘xxxx’ undefined：检查一下参数是不是合法，有没有漏掉</li>
+<li>move a python virtualenv?(<code>venv</code> is a subset of <code>virtualenv</code>)
+<ul>
+<li>nop, <code>--relocatable</code> deprecated, no clean way to do it</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-3-19"><a class="markdownIt-Anchor" href="#2021-3-19"></a> 2021-3-19</h3>
+<ol>
+<li><code>ls</code>使用<code>isatty(int fd)</code>，向tty和其他文件输出的Field separator不同(full manual: <code>info ls</code>)
+<ul>
+<li>tty: 空格；文件: <code>\n</code>(<code>-C</code>来强制指定空格)</li>
+</ul>
+</li>
+<li>makefile
+<ul>
+<li>空格前导行，由make解析；<code>&lt;tab&gt;</code>前导行有shell解析(默认<code>/bin/sh</code>)
+<ul>
+<li>recursive make: <code>&lt;tab&gt;cd dir &amp;&amp; $(MAKE)</code></li>
+</ul>
+</li>
+<li>subsitutiton: <code>$(var:from_a=to_b)</code></li>
+<li>simple assgin: <code>var := value</code>(gnu make), <code>var ::= value</code>(POSIX)</li>
 </ul>
 </li>
 </ol>

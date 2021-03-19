@@ -1297,16 +1297,18 @@ Makefile.am------->+--->|automake|------>Makefile.in
 
 ### 2021-3-17
 1. cmake verbose: `make VERBOSE=1`
-2. **link order matters**!
+2. **link order matters**!逐个打开库文件，查找带解析的符号，一个库打开之后，连接器就会忘记它
 	- static lib: `-lmost_dependent -lxxx -lyyy -lleast_dependent`
-		- OK: `-lgtest -lgtest_main -lpthread`
+		- **OK**: `-lgtest -lgtest_main -lpthread`
+		- 循环依赖: `-( -laaa -lbbb -)`(qoute `(`/`)` if needed)
 		- bad: `-lpthread -lgtest -lgtest_main`
+	- objects and libs:
+		- **OK**: `gcc a.o -lbenchmark -lpthread`
+		- BAD: `gcc -lbenchmark -lpthread a.o`
 	- dynamic: they resolve smartly?
 3. autoconf
 	- 探测toolchain完整性
-		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB`
-		- `AM_PROG_AR`
-	- 检查库和数据类型
+		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB` - `AM_PROG_AR` - 检查库和数据类型
 		- `AC_CHECK_LIB(lib,func)`, `AC_TYPE_UINT32_T`
 4. automake
 	- 安装路径：`noinst_`, `bin_`, `lib_`, `_include`, `canocalized_names_`
@@ -1326,3 +1328,12 @@ Makefile.am------->+--->|automake|------>Makefile.in
 2. move a python virtualenv?(`venv` is a subset of `virtualenv`)
 	- nop, `--relocatable` deprecated, no clean way to do it
 
+
+### 2021-3-19
+1. `ls`使用`isatty(int fd)`，向tty和其他文件输出的Field separator不同(full manual: `info ls`)
+	- tty: 空格；文件: `\n`(`-C`来强制指定空格)
+2. makefile
+	- 空格前导行，由make解析；`<tab>`前导行有shell解析(默认`/bin/sh`)
+		- recursive make: `<tab>cd dir && $(MAKE)`
+	- subsitutiton: `$(var:from_a=to_b)`
+	- simple assgin: `var := value`(gnu make), `var ::= value`(POSIX)

@@ -1333,7 +1333,21 @@ Makefile.am------->+--->|automake|------>Makefile.in
 1. `ls`使用`isatty(int fd)`，向tty和其他文件输出的Field separator不同(full manual: `info ls`)
 	- tty: 空格；文件: `\n`(`-C`来强制指定空格)
 2. makefile
-	- 空格前导行，由make解析；`<tab>`前导行有shell解析(默认`/bin/sh`)
+	- 空格前导行，由make解析；`<tab>`前导行由shell解析(默认`/bin/sh`)
 		- recursive make: `<tab>cd dir && $(MAKE)`
 	- subsitutiton: `$(var:from_a=to_b)`
 	- simple assgin: `var := value`(gnu make), `var ::= value`(POSIX)
+		- make是**Marco language**，变量全是纯字符串(例如`$(subst .o,.c,$(wildcard *.c))`)，实际引用时现场defer(delayed expansion)。simple assign在复制时即展开，随后始终保持不变。
+
+
+### 2021-3-21
+1. 什么是flask？就是跑了几个`.py`脚本，还能让他们之间通过http请求互相通信
+2. C language
+	- `sizeof`: unary operator(单目运算符), 返回operand所占的存储空间
+		- usage: `sizeof <expression|data_type_cast>`, **`cast` is a data type enclosed in parenthesis**.
+		- exceptions: in `sizeof arr_name`, `arr_name` will not be converted into a pointer to the first element
+		- note: typically, `sizof` exps are replaced with constants in complilation (**before link?**), 所以`extern int arr[]`+`sizeof arr`时，编译器无法确定`arr`的大小
+			- C99引入的VLA，sizeof只能在运行时确定大小
+	- `void *`, `void **`
+		- `void *`: 通用指针，赋值和被赋值时，编译器会自动做impplicit cast。不允许de-reference和指针运算
+		- `void **`: 不是通用指针，反而和`int *`类似。函数接受`void **`参数，一般是需要修改一个`void *`指针的值，才只好把它的地址传进来。

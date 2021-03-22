@@ -1352,3 +1352,10 @@ Makefile.am------->+--->|automake|------>Makefile.in
 	- `void *`, `void **`
 		- `void *`: 通用指针，赋值和被赋值时，编译器会自动做impplicit cast。不允许de-reference和指针运算
 		- `void **`: 不是通用指针，反而和`int *`类似。函数接受`void **`参数，一般是需要修改一个`void *`指针的值，才只好把它的地址传进来。
+
+
+### 2021-3-22
+1. Vim语法高亮错误debug
+	- 首先找到上下文，使用`:echo synIDAttr(synID(line('.'), col('.'), 1), 'name')`查看syntax type，然后去源码(vim script)里找匹配规则
+	- 如果没用插件，一般是`/usr/share/vim/vim<version>/syntax`；用了插件，可能是`<plugin_dir>/{syntax,autoload}`
+	- 遇到不认识的匹配符号、函数，直接在vim里`:h <topic>`，比如`:h /\_`, `:h map()`, `:h \%(\)`

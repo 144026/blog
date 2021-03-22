@@ -155,7 +155,7 @@ misc:
             - 奇偶校验：1维/2维/2维plus（hamming code）
             - **CRC校验**
             - checksum
-                - 反码加法    
+                - 反码加法
         - 接入控制：冲突检测，随机调度？
 3. 选频网络知识地图
 4. 逛博客（看热闹）
@@ -234,7 +234,7 @@ misc:
     - 模型、参数（A、B、Q）
     - 单级、多级
 2. DSP
-    - 几种离散Fourier    
+    - 几种离散Fourier
         - DTFT: $X(e^{j\omega})= \sum x(n)\cdot e^{-j\omega n}$
         - DFS: $\tilde{X}(k)= \sum x((n))_{_N}\cdot e^{-j\frac{2\pi}{N} kn}$
         - DFT: $X(k) =\tilde X(k) \cdot R_{_N}(k)$
@@ -242,7 +242,7 @@ misc:
         - z平面单位圆取样：$X(k) = X(z)|_{ z= exp\{j\frac{2k\pi}{N}\} } \Longleftrightarrow x((n))_{_N} = \sum_r x(n+rN)$
         - 数字频域在$[0,2\pi)$内等间隔抽样：$X(k)= X(e^{j\omega})|_{\omega = \frac{2k\pi}{N}}$
     - 线性卷积/循环卷积？
-    
+
 
 ### 2020-10-26
 1. DSP
@@ -449,11 +449,11 @@ ToDo:
             - 需要用数字依次选中
         - 单字的更新权重比词汇低
         - 出现在首页的5个词汇不更新
-            
+
 2. vivaldi
     - `apt update`报错，发现添加了vivaldi源
         - `sudo rm /etc/apt/source.list.d/vivaldi*`
-            
+
 3. gitee
     - C语言拆分大文件，分批推送
         - gitee告警，仓库最大为1G
@@ -1300,7 +1300,7 @@ Makefile.am------->+--->|automake|------>Makefile.in
 2. **link order matters**!逐个打开库文件，查找带解析的符号，一个库打开之后，连接器就会忘记它
 	- static lib: `-lmost_dependent -lxxx -lyyy -lleast_dependent`
 		- **OK**: `-lgtest -lgtest_main -lpthread`
-		- 循环依赖: `-( -laaa -lbbb -)`(qoute `(`/`)` if needed)
+		- **循环依赖**: `-( -laaa -lbbb -)`(qoute `(` and `)` if needed)
 		- bad: `-lpthread -lgtest -lgtest_main`
 	- objects and libs:
 		- **OK**: `gcc a.o -lbenchmark -lpthread`
@@ -1308,15 +1308,16 @@ Makefile.am------->+--->|automake|------>Makefile.in
 	- dynamic: they resolve smartly?
 3. autoconf
 	- 探测toolchain完整性
-		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB` - `AM_PROG_AR` - 检查库和数据类型
+		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB`, `AM_PROG_AR`
+	- 检查库和数据类型
 		- `AC_CHECK_LIB(lib,func)`, `AC_TYPE_UINT32_T`
 4. automake
-	- 安装路径：`noinst_`, `bin_`, `lib_`, `_include`, `canocalized_names_`
-	- macro类型：`_PROGRAMS`, `_LIBRARIES`, `_SOURCES`, `_HEADERS`
+	- 安装路径：`noinst_`, `bin_`, `lib_`, `include_`, `canocalized_names_`
+	- macro类型：`_PROGRAMS`, `_LIBRARIES`, `_HEADERS`, `_SOURCES`
 		- `_LDADD`, `_LDFLAGS`, `_LIBADD`
 	- 预编译和编译选项：`AM_CPPFLAGS`, `AM_CFLAGS`
-		- `AM_CPPFLAGS = $(top_srcdir)/inlude`
-5. libtools(`apt-get install libtools`)
+		- `AM_CPPFLAGS = -I$(top_srcdir)/inlude`
+5. **libtools**(`apt-get install libtools`)
 	- 加入`configure.ac`工具链：`LT_INIT[(<enable|disable>-<shared|static>)]`(override `AC_PROG_RANLIB`)
 	- 定义macro: `_LTLIBRARIES`, `_LDFLAGS = -version-info 0:0:0`
 	- 添加m4宏
@@ -1334,7 +1335,7 @@ Makefile.am------->+--->|automake|------>Makefile.in
 	- tty: 空格；文件: `\n`(`-C`来强制指定空格)
 2. makefile
 	- 空格前导行，由make解析；`<tab>`前导行由shell解析(默认`/bin/sh`)
-		- recursive make: `<tab>cd dir && $(MAKE)`
+		- recursive make: `<tab>cd $@ && $(MAKE)`, 或者`$(MAKE) -C $@`
 	- subsitutiton: `$(var:from_a=to_b)`
 	- simple assgin: `var := value`(gnu make), `var ::= value`(POSIX)
 		- make是**Marco language**，变量全是纯字符串(例如`$(subst .o,.c,$(wildcard *.c))`)，实际引用时现场defer(delayed expansion)。simple assign在复制时即展开，随后始终保持不变。

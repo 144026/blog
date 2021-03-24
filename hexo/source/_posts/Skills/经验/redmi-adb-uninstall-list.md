@@ -15,6 +15,8 @@ Package list for uninstall/disable on Redmi5 K30 Pro.
 
 ### Packages List
 
+#### Safe to delete
+
 ```txt
 com.miui.analytics
 com.xiaomi.mipicks
@@ -26,7 +28,7 @@ com.xiaomi.glgm
 com.xiaomi.payment
 com.tencent.soter.soterserver
 cn.wps.xiaomi.abroad.lite
-com.miui.videoplayer
+com.miui.video
 com.miui.player
 com.mi.globalbrowser
 com.xiaomi.midrop
@@ -35,10 +37,13 @@ com.miui.gallery
 com.miui.android.fashiongallery
 com.miui.bugreport
 com.miui.weather2
+com.miui.voiceassist
+com.miui.huanji
 com.miui.hybrid
 com.miui.global.packageinstaller
 com.xiaomi.joyose
 
+com.google.android.ncadapters.contacts
 com.google.android.gms.location.history
 com.google.android.videos
 com.google.android.music
@@ -66,6 +71,28 @@ com.alibaba.aliexpresshd
 sg.bigo.live
 ru.auto.ara
 
+com.xunmeng.pinduoduo
+com.duokan.phone.remotecontroller
+com.xiaomi.jr
+com.sina.weibo
+cn.wps.moffice_eng
+com.baidu.searchbox
+com.ss.android.article.news
+com.ss.android.ugc.aweme
+com.qiyi.video
+com.tencent.qqlive
+com.dragon.read
+com.UCMobile
+com.xiaomi.shop
+com.achievo.vipshop
+com.zhihu.android
+com.xiaomi.youpin
+com.xiaomi.vipaccount
+com.xiaomi.smarthome
+com.mi.health
+com.miui.virtualsim
+com.tencent.mtt
+
 com.android.stk
 com.android.stk2
 
@@ -91,17 +118,42 @@ com.mi.liveassistant
 com.xiaomi.mibrain.speech
 com.baidu.input_mi
 com.iflytek.inputmethod.miui
+com.android.thememanager
 ```
 
-### `adb` commands
+#### Untested (by me), probably unsafe
 
-single line command for adb's `/bin/sh`:
+```txt
+com.xiaomi.account
+```
+
+
+#### Do NOT delete
+
+```txt
+# stuck into boot loop, can't be fixed even if you install them back
+# good luck with a hard reset
+com.miui.securitycore
+com.miui.securitycenter
+com.miui.securityadd
+com.xiaomi.finddevice
+
+# lose your phone icon forever, even you have com.google.android.contacts, etc.
+com.android.contacts
+```
+
+
+### `adb` Commands
+
+#### Single line version
+
+Easy for copy-paste in a `adb`'s `/bin/sh`
 
 ```bash
 for pkg in $pkgs; do echo $pkg; echo ------------; pm uninstall $pkg || pm uninstall -k $pkg; pm uninstall --user 0 $pkg || pm uninstall -k --user 0 $pkg; pm disable-user $pkg; pm disable-user --user 0 $pkg; echo; done
 ```
 
-more readable:
+#### More readable
 
 ```bash
 for pkg in $pkgs; do 

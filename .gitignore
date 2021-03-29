@@ -5,5 +5,4 @@ hexo/*.log
 hexo/node_modules/
 hexo/public/
 hexo/.deploy*/
-hexo/themes/*
-!hexo/themes/*.tar.xz
+hexo/themes/next/

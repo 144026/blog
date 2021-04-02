@@ -4363,6 +4363,64 @@ $<br />
 <ol>
 <li>忙各种杂七杂八的事情</li>
 <li><code>.gitlab-ci.yml</code> + <code>mkdocs-material</code></li>
+<li>本机<code>npm</code>版本太低，升级<code>npm</code>和<code>node</code>报错: 用官网下载最新<code>npm</code>的binary来装
+<ul>
+<li>但是不能用它来更新本地的<code>node</code>？使用本地升级后的<code>npm</code>倒是很OK？</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-3-31"><a class="markdownIt-Anchor" href="#2021-3-31"></a> 2021-3-31</h3>
+<ol>
+<li>python常见基类操作
+<ul>
+<li>list <code>[]</code>: <code>l.append(a)</code>, <code>if a in l</code></li>
+<li>dict <code>&#123;&#125;</code>: <code>d[key]=value</code>(追加/更新), <code>if a in d.keys()</code>/<code>d.items()</code></li>
+<li>string <code>str(var)</code>: <code>&quot;a&quot; + &quot;b&quot;</code>, <code>&quot;a&quot;.join(&quot;b&quot;)</code>, <code>&quot;a&quot;.split(&quot;b&quot;)</code></li>
+<li><code>isinstance(var, keyword)</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="2020-4"><a class="markdownIt-Anchor" href="#2020-4"></a> 2020-4</h2>
+<h3 id="2021-4-1"><a class="markdownIt-Anchor" href="#2021-4-1"></a> 2021-4-1</h3>
+<ol>
+<li>flask run忽略<code>app.run</code>以及lazy loading(遇到错误不会停止)+web debugger</li>
+<li>python import
+<ul>
+<li>目录scope: <code>form &lt;mod&gt; import *</code>，在<code>sys.path</code>下查找，找到则以模块导入
+<ul>
+<li>但是<code>&lt;mod&gt;</code>里的文件不能import <code>mod</code>目录之外的内容</li>
+</ul>
+</li>
+<li>模块scope: <code>from .&lt;mod&gt; import *</code>，根据当前模块名称(<code>__package__</code>+<code>__name__</code>)解析出子模块名，当前模块名里<code>.</code>的个数不少于import里的<code>.</code>才能解析成功
+<ul>
+<li>直接执行这样import的文件，会被解析成<code>__main__.&lt;mod&gt;</code>而报错</li>
+</ul>
+</li>
+<li>一种解决方案？</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	<span class="keyword">from</span> . <span class="keyword">import</span> *</span><br><span class="line">	<span class="comment"># from &lt;mod&gt; import *</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">from</span> .&lt;mod&gt; <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<h3 id="2021-4-2"><a class="markdownIt-Anchor" href="#2021-4-2"></a> 2021-4-2</h3>
+<ol>
+<li>CVE-2018-1111(dynoRoot)重新分析+复现
+<ul>
+<li>看<code>dhclient.c</code>+<code>11-dhclient</code>源码做分析：不一定是252字段
+<ul>
+<li>但是<code>dhclient</code>和<code>11-dhclient</code>之间到底是怎么样的调用关系?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">1. dhclient -&gt; nm-dhcp-helper -&gt; 11-dhclient ?</span><br><span class="line">但是如果不设置NetworkManager `managed=true`,实际修改11-dhclient发现它并没有被调用</span><br><span class="line">2. dhclient -&gt; nm-dhcp-helper -&gt; NetworkManager -&gt; 11-dhclient ?</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>filetype <code>htmldjango</code>
+<ul>
+<li><code>div</code>, <code>form</code>, <code>label</code>, <code>input</code>, <code>button</code></li>
+<li><code>name</code>, <code>id</code>, <code>style</code>, <code>class</code></li>
+</ul>
+</li>
 </ol>
 ]]></content>
       <categories>

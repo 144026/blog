@@ -1275,7 +1275,8 @@ word标题格式调节
 ### 2021-3-15
 1. C string cat `puts("hello" "world");` (a core language feature)
     > The C99 standard §5.1.1.2 defines translation phases for C code. Subsection 6 states:
-    >> Adjacent string literal tokens are concatenated.
+    >
+    > > Adjacent string literal tokens are concatenated.
 2. GNU [autotools intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
     - **`autoreconf --install`**: `configure.ac`, `Makefile.am`
     - **`./configure`**: `configure`, `config.h.in`, `Makefile.in`
@@ -1359,3 +1360,52 @@ Makefile.am------->+--->|automake|------>Makefile.in
 	- 首先找到上下文，使用`:echo synIDAttr(synID(line('.'), col('.'), 1), 'name')`查看syntax type，然后去源码(vim script)里找匹配规则
 	- 如果没用插件，一般是`/usr/share/vim/vim<version>/syntax`；用了插件，可能是`<plugin_dir>/{syntax,autoload}`
 	- 遇到不认识的匹配符号、函数，直接在vim里`:h <topic>`，比如`:h /\_`, `:h map()`, `:h \%(\)`
+
+
+### 2021-3-30
+1. 忙各种杂七杂八的事情
+2. `.gitlab-ci.yml` + `mkdocs-material`
+3. 本机`npm`版本太低，升级`npm`和`node`报错: 用官网下载最新`npm`的binary来装
+	- 但是不能用它来更新本地的`node`？使用本地升级后的`npm`倒是很OK？
+
+
+### 2021-3-31
+1. python常见基类操作
+	- list `[]`: `l.append(a)`, `if a in l`
+	- dict `{}`: `d[key]=value`(追加/更新), `if a in d.keys()`/`d.items()`
+	- string `str(var)`: `"a" + "b"`, `"a".join("b")`, `"a".split("b")`
+	- `isinstance(var, keyword)`
+
+## 2020-4
+
+### 2021-4-1
+1. flask run忽略`app.run`以及lazy loading(遇到错误不会停止)+web debugger
+2. python import
+	- 目录scope: `form <mod> import *`，在`sys.path`下查找，找到则以模块导入
+		- 但是`<mod>`里的文件不能import `mod`目录之外的内容
+	- 模块scope: `from .<mod> import *`，根据当前模块名称(`__package__`+`__name__`)解析出子模块名，当前模块名里`.`的个数不少于import里的`.`才能解析成功
+		- 直接执行这样import的文件，会被解析成`__main__.<mod>`而报错
+	- 一种解决方案？
+```python
+if __name__ == '__main__':
+	from . import *
+	# from <mod> import *
+else:
+	from .<mod> import *
+```
+
+
+### 2021-4-2
+1. CVE-2018-1111(dynoRoot)重新分析+复现
+	- 看`dhclient.c`+`11-dhclient`源码做分析：不一定是252字段
+		- 但是`dhclient`和`11-dhclient`之间到底是怎么样的调用关系?
+
+```txt
+1. dhclient -> nm-dhcp-helper -> 11-dhclient ?
+但是如果不设置NetworkManager `managed=true`,实际修改11-dhclient发现它并没有被调用
+2. dhclient -> nm-dhcp-helper -> NetworkManager -> 11-dhclient ?
+```
+
+2. filetype `htmldjango`
+	- `div`, `form`, `label`, `input`, `button`
+	- `name`, `id`, `style`, `class`

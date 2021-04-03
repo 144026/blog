@@ -41,7 +41,7 @@ There should be and actually are some packages and utilities to achieve this, th
 **NOTE:** mistakenly deleting or changing `/etc/{group,passwd,gshadow,shadow}`: recover with the system-default auto-backup `/etc/{group,passwd,gshadow,shadow}-` AS SOON AS POSSIBLE!
 
 
-### 0.1.0.2 trusted sudoers
+#### 0.1.0.2 trusted sudoers
 
 ```bash
 sudo groupadd trusted-sudoers
@@ -74,7 +74,7 @@ sudo chattr +i /etc/resolv.conf
 
 I'm using xfce4 desktop, there's several sets of shortcuts to use:
 
-##### 1 xfce seetings: hardware.keyboard
+#### 0.1.2.1 xfce seetings: hardware.keyboard
 
 Some core shortcuts in the application Shortcuts tab. Adding Custom ones allowed.
 
@@ -89,7 +89,7 @@ Some core shortcuts in the application Shortcuts tab. Adding Custom ones allowed
 |dropdown terminal|qterminal -d|Alt+Shift+D|
 
 
-##### 2 xfce settings: personal.window_manager
+#### 0.1.2.2 xfce settings: personal.window_manager
 
 Custom ones not allowed.
 
@@ -107,7 +107,7 @@ Custom ones not allowed.
 
 
 
-##### 3 common terminal shortcuts
+#### 0.1.2.3 common terminal shortcuts
 
 - `tab`(auto-complete)
 - `ctrl+p/n`(history-nav), `^S/^R`(fwd/bck_i_search),
@@ -115,7 +115,7 @@ Custom ones not allowed.
 - `^W/^H`(bck_dw/dl), `^D/^K`(fwd_dl/d\$)
 
 
-##### 4 qterminal shortcuts and configs
+#### 0.1.2.4 qterminal shortcuts and configs
 
 QTerminal(0.14.1) stores configs in `~/.config/qterminal.org/qterminal.ini`, and its `-p,--profile` option can **NOT** designate a custom config file like `~/.myqterm.ini`(only custom options allowed)
 
@@ -224,7 +224,7 @@ core needs:
 - no conflict with existing shortcuts
 
 
-##### 5 Yakuake & Tilda
+#### 0.1.2.5 Yakuake & Tilda
 
 Yakuake comes with lots of kde dependencies, while Tilda fits better into xfce4. Tilda config in `~/.config/tilda/config_$n`, `config_$n` for the n-th session simultaneously opened.
 
@@ -345,6 +345,7 @@ show_title_tooltip=true
 
 ### 0.1.3 desktop-theme
 
+#### 0.1.3.1 logo & icons
 **grub**
 - change grub image:
 	- backup current background: `cd /boot/grub/theme/kali/ && cp background.png bak.png`
@@ -361,6 +362,17 @@ show_title_tooltip=true
 - chage left-upper icon: change xfce4-settings->panel->Whisker-menu->panel-button->image files
 - change start menu icon(left-lower corner): `cp /usr/share/icons/desktop-base/scalable/emblems/emblem-debian-symbolic.svg ~/.face`
 
+#### 0.1.3.2 the `qt5ct` problem
+
+Kali `xfce4-settings` provides a "Appearance" application to **somehow**(still not clear) change the system's qt program theme, but the default Qt config program `qt5ct` is not invoked during this process. So even if the "Appearance" config is changed and kali's xfce window manager works well, normal qt programs which **defaults to read the standard Qt config files in `$HOME/.config/qt5ct/`(or `/etc/xdg/qt5ct/qt5ct.conf`) won't adapt to that change.** To change `qt5ct`'s settings(most qt programs use this), simply run `qt5ct` in shell:
+
+```txt
+Configuration path: "/home/kali/.config/qt5ct"
+Shared QSS paths: ("/home/kali/.local/share/qt5ct/qss", "/usr/share/xfce4/qt5ct/qss", "/usr/local/share/qt5ct/qss", "/usr/share/qt5ct/qss")
+Shared color scheme paths: ("/home/kali/.local/share/qt5ct/colors", "/usr/share/xfce4/qt5ct/colors", "/usr/local/share/qt5ct/colors", "/usr/share/qt5ct/colors")
+```
+
+NOTE: You should never uninstall `qt5ct`: the `kali-desktop-xfce` will be uninstalled as well !
 
 ### 0.1.4 network config
 
@@ -477,18 +489,18 @@ make && make install
 
 ### 1.2.1 Input Method
 
-#### im framework
+#### 1.2.1.1 im framework
 
 - fcitx(4.0) (apt)
 - fcitx5(5.0) (apt)
 
-#### pinyin support
+#### 1.2.1.2 pinyin support
 
 - fcitx-googlepinyin (apt)
 - fcitx-libpinyin (apt) (recommended)
 - fcitx-sunpinyin (apt)
 
-#### config
+#### 1.2.1.3 config
 
 - fcitx configure
 
@@ -698,7 +710,8 @@ qemu-system-x86_86 -enable-kvm \ #  use `-enable-kvm` to accelerate.
 ```
 
 > Tips on downloading iso images:
->> `thunder://{$link}==`: use `echo "$link" | base64 -d` to decode
+>
+> > `thunder://{$link}==`: use `echo "$link" | base64 -d` to decode
 
 >> `ed2k` links: amule
 
@@ -748,7 +761,7 @@ grep CONFIG_9P_FS /boot/config-$(uname -r)
 setup guide on [linux-kvm.org/page/9p_virtio](http://www.linux-kvm.org/page/9p_virtio).
 
 
-#### 1.4.5 GUI Management(Virt-Manager Series)
+### 1.4.5 GUI Management(Virt-Manager Series)
 install the **virt-manager** tool series (virsh, virt-viewer, virt-install, ...)
 ```bash
 sudo apt-get install virt-manager
@@ -758,7 +771,7 @@ Now with command `virt-manager`, geust OS devices can be easily configured, incl
 
 Host support for tap/tun still needed, though. Run `modprobe tun && lsmod|grep tun` again if the network option in vir-manager turns grey.
 
-#### Others
+### 1.4.6 Others
 Xen,...
 
 
@@ -981,8 +994,9 @@ write(1, "'f\\ile.txt'   log\n", 18'f\ile.txt'   log
 write(1, "f\\ile.txt\nlog\n", 14)       = 14
 ```
 
-Seems `ls` alters its output depending if the dst is a tty/console or not.
+Although this seems to be a qouting problem, the actual situation is `ls` altering its output depending on if the destination **is a tty or not**, using the `isatty()` syscall. (`man 3 isatty`)
 
+#### 2.1.2.4 Redirection
 
 ## 2.2 Shell Script
 pros:

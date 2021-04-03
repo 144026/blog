@@ -1409,3 +1409,10 @@ else:
 2. filetype `htmldjango`
 	- `div`, `form`, `label`, `input`, `button`
 	- `name`, `id`, `style`, `class`
+
+
+### 2021-4-3
+
+1. 解决kali的qt程序theme错误问题：直接运行`qt5ct`修改主题
+	- Kali xfce提供的Appearance配置出的主题只对xfce系列软件有效
+	- 而普通Qt程序读取的是`qt5ct`的标准配置文件`{/etc/xdg, $HOME/.config}/qt5ct/qt5ct.conf`

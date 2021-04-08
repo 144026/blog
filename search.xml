@@ -4064,7 +4064,11 @@ $<br />
 <li>
 <p>数字图像处理课程</p>
 <ul>
-<li><strong>matlab递归函数，进去一层，变量就undefined?</strong></li>
+<li><strong>matlab递归函数，进去一层，变量就undefined?</strong>
+<ul>
+<li>注意函数名与文件名一致，检查变量个数是否一致</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -4173,7 +4177,7 @@ $<br />
 <ol>
 <li>点石创校
 <ul>
-<li>公司(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)</li>
+<li>公司与企业(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)</li>
 <li>基金、合伙制(GP,LP,LLP)、投资(PE,VC)</li>
 <li>商业计划：公司、行业、市场、用户、产品服务</li>
 </ul>
@@ -4436,6 +4440,18 @@ $<br />
 <li>而普通Qt程序读取的是<code>qt5ct</code>的标准配置文件<code>&#123;/etc/xdg, $HOME/.config&#125;/qt5ct/qt5ct.conf</code></li>
 </ul>
 </li>
+</ol>
+<h3 id="2021-4-8"><a class="markdownIt-Anchor" href="#2021-4-8"></a> 2021-4-8</h3>
+<ol>
+<li>Ubuntu1804的<code>Unix/_git</code>版本过低，导致<code>&lt;tab&gt;</code>无法自动补全git分支
+<ul>
+<li>zsh会检查同名<code>.zwc</code>文件，如果时间戳比对应脚本新，就不读取脚本，直接使用<code>.zwc</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-4-9"><a class="markdownIt-Anchor" href="#2021-4-9"></a> 2021-4-9</h3>
+<ol>
+<li>getopt(1,3), getopt_long(3), argp(glibc)</li>
 </ol>
 ]]></content>
       <categories>

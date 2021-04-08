@@ -1187,6 +1187,7 @@ leetcode
 
 3. 数字图像处理课程
     - **matlab递归函数，进去一层，变量就undefined?**
+		- 注意函数名与文件名一致，检查变量个数是否一致
 4. bash重定向
     - `2>&1` -> `int dup2(int oldfd, int newfd); dup2(1,2);`
 
@@ -1249,7 +1250,7 @@ word标题格式调节
 
 ### 2020-3-13
 1. 点石创校
-    - 公司(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)
+    - 公司与企业(定义、种类)、公司治理框架(股东与董事)、公司运营(资金)
     - 基金、合伙制(GP,LP,LLP)、投资(PE,VC)
     - 商业计划：公司、行业、市场、用户、产品服务
 2. deepin chroot
@@ -1412,7 +1413,15 @@ else:
 
 
 ### 2021-4-3
-
 1. 解决kali的qt程序theme错误问题：直接运行`qt5ct`修改主题
 	- Kali xfce提供的Appearance配置出的主题只对xfce系列软件有效
 	- 而普通Qt程序读取的是`qt5ct`的标准配置文件`{/etc/xdg, $HOME/.config}/qt5ct/qt5ct.conf`
+
+
+### 2021-4-8
+1. Ubuntu1804的`Unix/_git`版本过低，导致`<tab>`无法自动补全git分支
+	- zsh会检查同名`.zwc`文件，如果时间戳比对应脚本新，就不读取脚本，直接使用`.zwc`
+
+
+### 2021-4-9
+1. getopt(1,3), getopt_long(3), argp(glibc)

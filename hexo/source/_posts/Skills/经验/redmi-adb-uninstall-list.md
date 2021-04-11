@@ -113,7 +113,6 @@ com.miui.tsmclient
 com.xiaomi.drivemode
 com.duokan.reader
 com.mfashiongallery.emag
-com.xiaomi.market
 com.mi.liveassistant
 com.xiaomi.mibrain.speech
 com.baidu.input_mi
@@ -137,6 +136,7 @@ com.miui.securitycore
 com.miui.securitycenter
 com.miui.securityadd
 com.xiaomi.finddevice
+com.xiaomi.market
 
 # lose your phone icon forever, even you have com.google.android.contacts, etc.
 com.android.contacts

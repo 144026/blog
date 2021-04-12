@@ -1425,3 +1425,14 @@ else:
 
 ### 2021-4-9
 1. getopt(1,3), getopt_long(3), argp(glibc)
+2. C traps & pitfalls:
+	- 差一问题：上界出点-下界入点
+	- 数组越界覆盖栈：`int i; int a[10]; a[10]=0`
+
+### 2021-4-12
+1. 修复`Unix/_git` zsh脚本找不到`Unix/_ssh_hosts`问题
+2. `CR2` raw格式转换
+	- 使用imageMagick自带的`convert`命令，然而它调用的`ufraw-batch`已经停止维护，无法直接下载
+	- 使用替代品`dcraw`解码Raw图片，然后让convert从标准输入读取：`dcraw -c -w <raw image> | convert - out.jpg`
+		- `-c`: **c**at decoded raw image to stdout
+		- `-w`: use **w**hite balance specified by camera

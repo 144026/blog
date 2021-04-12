@@ -4452,6 +4452,27 @@ $<br />
 <h3 id="2021-4-9"><a class="markdownIt-Anchor" href="#2021-4-9"></a> 2021-4-9</h3>
 <ol>
 <li>getopt(1,3), getopt_long(3), argp(glibc)</li>
+<li>C traps &amp; pitfalls:
+<ul>
+<li>差一问题：上界出点-下界入点</li>
+<li>数组越界覆盖栈：<code>int i; int a[10]; a[10]=0</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-4-12"><a class="markdownIt-Anchor" href="#2021-4-12"></a> 2021-4-12</h3>
+<ol>
+<li>修复<code>Unix/_git</code> zsh脚本找不到<code>Unix/_ssh_hosts</code>问题</li>
+<li><code>CR2</code> raw格式转换
+<ul>
+<li>使用imageMagick自带的<code>convert</code>命令，然而它调用的<code>ufraw-batch</code>已经停止维护，无法直接下载</li>
+<li>使用替代品<code>dcraw</code>解码Raw图片，然后让convert从标准输入读取：<code>dcraw -c -w &lt;raw image&gt; | convert - out.jpg</code>
+<ul>
+<li><code>-c</code>: <strong>c</strong>at decoded raw image to stdout</li>
+<li><code>-w</code>: use <strong>w</strong>hite balance specified by camera</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 ]]></content>
       <categories>

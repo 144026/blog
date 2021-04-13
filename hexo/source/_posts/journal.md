@@ -1436,3 +1436,11 @@ else:
 	- 使用替代品`dcraw`解码Raw图片，然后让convert从标准输入读取：`dcraw -c -w <raw image> | convert - out.jpg`
 		- `-c`: **c**at decoded raw image to stdout
 		- `-w`: use **w**hite balance specified by camera
+
+
+### 2021-4-13
+1. latex & vim
+	- xelatex: `-output-directory=`, `-aux-directory=` (dir must exist)
+	- latexmk: `-outdir=`, `-auxdir=`, `-c`, `-C`
+	- `.latexmkrc`: `$out_dir`, `$aux_dir`, `$clean_ext`
+	- vimtex: `g:vimtex_compiler_latexmk = { 'build_dir' : 'build' }`

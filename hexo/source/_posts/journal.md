@@ -1443,4 +1443,9 @@ else:
 	- xelatex: `-output-directory=`, `-aux-directory=` (dir must exist)
 	- latexmk: `-outdir=`, `-auxdir=`, `-c`, `-C`
 	- `.latexmkrc`: `$out_dir`, `$aux_dir`, `$clean_ext`
+		- `$clean_ext`: clean file with **ext**ensions specified in it
 	- vimtex: `g:vimtex_compiler_latexmk = { 'build_dir' : 'build' }`
+
+
+### 2021-4-15
+1. xmind2020 latex公式：一旦使用`\def`覆盖了宏，本次运行时的宏就会被污染

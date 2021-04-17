@@ -24,6 +24,7 @@ My temporary software list on debian.
 1. vim + vim-plug 
 2. texlive `latex`, `xelatex`, etc. (perl install-pl. how to remove: official website)
 3. textlive (apt list | grep texlive |xargs apt install -y)
+4. typora(dpkg)
 
 ## 1.2 office
 1. zathura(apt install) (atril)
@@ -38,6 +39,7 @@ My temporary software list on debian.
 ## 2.1 version control
 1. subversion `svn` (apt)
 2. git
+3. sublime merge(dpkg)
 
 # blog
 1. nodjs, npm (apt)
@@ -45,7 +47,7 @@ My temporary software list on debian.
 3. picgo (appimg)
 
 # social
-1. wine(wine32, wine64, wine, winetricks)
+1. deepin raw disk (`dd offset=`, `cp -a`, `chroot`)
 
 # aux
 1. ?????-synaptics(apt) for xfce touchpad
@@ -53,7 +55,11 @@ My temporary software list on debian.
 2. wenquanyi font (apt)
 	- `sudo apt install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy`
 
-3. time correction: ntpdate(manaully), ntpd(auto), `sudo ntpdate-debian`
+3. time correction: `ntpdate -buv`(manaully), ntpd(auto), `sudo ntpdate-debian`
+
+4. baidu netdisk(dpkg)
+
+5. filezilla(dpkg)
 
 # web
 1. google chrome(dpkg)

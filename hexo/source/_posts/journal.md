@@ -1449,3 +1449,96 @@ else:
 
 ### 2021-4-15
 1. xmind2020 latex公式：一旦使用`\def`覆盖了宏，本次运行时的宏就会被污染
+
+### 2021-4-16
+1. 图像运动模糊 频域滤波：维纳逆滤波零点导致图像全是黑白条纹：自己猜一个高斯噪声/求一个自相关，再维纳滤波
+2. LaTeX：
+	- pgffor：`\foreach \i in {1...5}{code}`
+	- `\includepdf`/`\includegraphics`: `[page=1-4]`
+	- `\equationautorefname`
+3. 修改文件/目录名encoding：`convmv`失败
+	- `cat dirname`失败：Linux不允许`read()`目录二进制内容
+4. bash直接执行systemcall: `ctypes.sh`
+    - 不支持`zsh`，必须根据`zmodload`重新开发
+	- 编译安装了动态库`ctypes.so`，bash使用`enable -f <SHARED_OBJ> BUILTINS`从动态库加载dlcall等命令，调用外部动态库内容
+    - `struct`功能，字段和value不匹配，乱序了，未找到原因
+5. `sash`与POSIX
+
+
+### 2021-4-17
+git internals:
+1. objects
+	- hash-file/cat-file
+	- update-index/read-tree/write-tree/commit-tree
+2. ref
+3. packfile
+    - verify-pack
+4. refspec
+5. protocol
+
+
+### 2021-4-19
+zeek scripts:
+- variable: count, enum, str, record, set, table...
+- `var$field=value`
+- operator, conditional and loops
+- function, callback, hook, event
+- scope: module, global, local
+
+### 2021-4-20
+makefile traps:
+1. 空变量导致危险操作
+2. 依赖链：每次都重新构建
+	- `_FORCE` target: no pre, no recipe
+	- `.PHONY` target: no pre, has recipe
+
+
+### 2021-4-22
+1. git 'local' remote: `git remote add path/to/repo`
+2. zsh history expansion: !, !! and the special ^foo^bar(!!:s^foo^bar)
+3. flask/django project layout: project excuted as a package
+	- only `top dir` in the sys.path: even if `flask run` directly executed inside dir `aaa/`
+```txt
+top
+├── aaa
+│   └── app.py
+└── bbb
+    └── app.py
+```
+4. python relative import a billionth times
+5. bash `>&` duplicate: no overwrite, but append
+
+
+### 2021-4-26
+Plain tex
+1. tex primitive: `\left`, `\right`, `\catcode`, `\sfcode`
+2. use primitives to define macro: `\def`, `\let`
+3. tex/latex core: plain.tex/latex.ltx, a set of essential macros
+5. math typesetting: box, mathlist, spacing atom
+
+Linux:
+1. `-staticgcc`, `nostdlib`
+2. ldd，strace
+3. brk()? how is execve() excuted?
+
+Git:
+1. the real git clean:
+```bash
+git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 \
+  -c gc.rerereresolved=0 -c gc.rerereunresolved=0 \
+  -c gc.pruneExpire=now gc
+```
+
+### 2021-4-28
+1. block -> inode -> dir as inode -> special dir `/`
+
+
+### 2021-5
+
+### 2021-5-3
+
+1. github CI actions
+	- `.github/workflows/<NAME>.yml`
+	- 在ci中使用token操作自己的github仓库
+		- 使用变量展开避免明文写入token: `{{ $secrets.VARNAME }}`(需在仓库设置界面配置)
+	- 可以引用大量别人写好的插件

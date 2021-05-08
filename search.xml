@@ -4418,7 +4418,7 @@ $<br />
 </ul>
 </li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">	<span class="keyword">from</span> . <span class="keyword">import</span> *</span><br><span class="line">	<span class="comment"># from &lt;mod&gt; import *</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">from</span> .&lt;mod&gt; <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">from</span> . <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># from &lt;mod&gt; import *</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">from</span> .&lt;mod&gt; <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
 <h3 id="2021-4-2"><a class="markdownIt-Anchor" href="#2021-4-2"></a> 2021-4-2</h3>
 <ol>
 <li>CVE-2018-1111(dynoRoot)重新分析+复现
@@ -4616,6 +4616,43 @@ $<br />
 </ul>
 </li>
 </ol>
+<h3 id="2021-5-5"><a class="markdownIt-Anchor" href="#2021-5-5"></a> 2021-5-5</h3>
+<ol>
+<li>grpc添加时间参数</li>
+</ol>
+<h3 id="2021-5-7"><a class="markdownIt-Anchor" href="#2021-5-7"></a> 2021-5-7</h3>
+<ol>
+<li>ramsay复现
+<ul>
+<li>exe感染: <code>bindsvc.exe</code>在64位系统<code>sysWOW64</code>目录找到<code>bindsvc.exe</code>和<code>wideshut.exe</code>后，才能正常感染exe</li>
+<li>word感染：将<code>rundll32.exe</code>复制为<code>BON.exe</code>，运行<code>BON.exe msfte.dll,DllEntryPoint()</code>
+<ul>
+<li>只能收集信息并打包rar，不能将信息附加到其他word文件里</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-5-8"><a class="markdownIt-Anchor" href="#2021-5-8"></a> 2021-5-8</h3>
+<ol>
+<li><code>man signal(1) signal(7)</code>, <code>sighandler_t</code></li>
+<li>C: VLA(variable length array)
+<ul>
+<li>since C99</li>
+<li>gcc extension (even before C99)</li>
+</ul>
+</li>
+<li>QA steps
+<ul>
+<li>build test</li>
+<li>lint test: cppcheck, scan-build</li>
+<li>runtime test: valgrind, DrMemory, ASan(AddressSanitizer), LSan(LeakSanitizer)</li>
+<li>regression test: test past bugs</li>
+</ul>
+</li>
+<li>suricata/zeek debug (reload/start)</li>
+</ol>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">suricata</span><br><span class="line">--------</span><br><span class="line">data structure</span><br><span class="line">├── DetectEngineMasterCtx g_master_de_ctx</span><br><span class="line">├── DetectEngineCtx * de_ctx</span><br><span class="line">└── DetectEngineThreadCtx * det_ctx</span><br><span class="line"></span><br><span class="line">routines</span><br><span class="line">└── DetectEngineReload()</span><br><span class="line">    ├── ConfYamlLoadFileWithPrefix()</span><br><span class="line">    ├── ConfGetNode()</span><br><span class="line">    ├── DatasetReload()</span><br><span class="line">    ├── DetectEngineCtxInitWithPrefix()</span><br><span class="line">    ├── SigLoadSignatures()</span><br><span class="line">    ├── DetectEngineAddToMaster()</span><br><span class="line">    └── DetectEngineReloadThreads()</span><br><span class="line">        ├── TmThreadCountThreadsByTmmFlags()</span><br><span class="line">        └── FlowWorkerReplaceDetectCtx()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">zeek</span><br><span class="line">----</span><br><span class="line">zeekctl.in</span><br><span class="line">└─ zeekctl.start()</span><br><span class="line">   └─ controller.start()</span><br><span class="line">      └─ controller._start_nodes()</span><br><span class="line">         ├─ cmds = [(node, &quot;start&quot;, [])]</span><br><span class="line">         └─ executor.run_helper(cmds, shell=True)</span><br><span class="line">            └─ run_cmds(shell=True, helper=True)</span><br><span class="line">               ├─ cmdargs = helperdir+ &quot;/start&quot;</span><br><span class="line">               ├─ nodecmdlist = (&quot;localhost&quot;, cmdargs)</span><br><span class="line">               └─ sshrunner.exec_multihost_commands(shell=True)</span><br><span class="line">                  └─ helpers/start</span><br><span class="line">                     ├─ source zeekctl-config.sh</span><br><span class="line">                     └─ $scriptdir/run-zeek</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>其他</category>

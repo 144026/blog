@@ -1092,7 +1092,7 @@ overleaf:
 ```
 
 
-# 2021-2-9
+### 2021-2-9
 1. newcommand: `\newcommand{\red}[1]{\textcolor{red}{#1}}`
     - `\renewcommand{\ref}[1]{Fig.\ref{#1}}` **failed** ?
 2. appendix: `\usepackage[page,toc,titletoc,title]{appendix}`

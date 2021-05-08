@@ -1187,7 +1187,7 @@ leetcode
 
 3. 数字图像处理课程
     - **matlab递归函数，进去一层，变量就undefined?**
-		- 注意函数名与文件名一致，检查变量个数是否一致
+        - 注意函数名与文件名一致，检查变量个数是否一致
 4. bash重定向
     - `2>&1` -> `int dup2(int oldfd, int newfd); dup2(1,2);`
 
@@ -1300,106 +1300,106 @@ Makefile.am------->+--->|automake|------>Makefile.in
 ### 2021-3-17
 1. cmake verbose: `make VERBOSE=1`
 2. **link order matters**!逐个打开库文件，查找带解析的符号，一个库打开之后，连接器就会忘记它
-	- static lib: `-lmost_dependent -lxxx -lyyy -lleast_dependent`
-		- **OK**: `-lgtest -lgtest_main -lpthread`
-		- **循环依赖**: `-( -laaa -lbbb -)`(qoute `(` and `)` if needed)
-		- bad: `-lpthread -lgtest -lgtest_main`
-	- objects and libs:
-		- **OK**: `gcc a.o -lbenchmark -lpthread`
-		- BAD: `gcc -lbenchmark -lpthread a.o`
-	- dynamic: they resolve smartly?
+    - static lib: `-lmost_dependent -lxxx -lyyy -lleast_dependent`
+        - **OK**: `-lgtest -lgtest_main -lpthread`
+        - **循环依赖**: `-( -laaa -lbbb -)`(qoute `(` and `)` if needed)
+        - bad: `-lpthread -lgtest -lgtest_main`
+    - objects and libs:
+        - **OK**: `gcc a.o -lbenchmark -lpthread`
+        - BAD: `gcc -lbenchmark -lpthread a.o`
+    - dynamic: they resolve smartly?
 3. autoconf
-	- 探测toolchain完整性
-		- `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB`, `AM_PROG_AR`
-	- 检查库和数据类型
-		- `AC_CHECK_LIB(lib,func)`, `AC_TYPE_UINT32_T`
+    - 探测toolchain完整性
+        - `AC_PROG_CC`, `AC_PROG_CXX`, `AC_PROG_RANLIB`, `AM_PROG_AR`
+    - 检查库和数据类型
+        - `AC_CHECK_LIB(lib,func)`, `AC_TYPE_UINT32_T`
 4. automake
-	- 安装路径：`noinst_`, `bin_`, `lib_`, `include_`, `canocalized_names_`
-	- macro类型：`_PROGRAMS`, `_LIBRARIES`, `_HEADERS`, `_SOURCES`
-		- `_LDADD`, `_LDFLAGS`, `_LIBADD`
-	- 预编译和编译选项：`AM_CPPFLAGS`, `AM_CFLAGS`
-		- `AM_CPPFLAGS = -I$(top_srcdir)/inlude`
+    - 安装路径：`noinst_`, `bin_`, `lib_`, `include_`, `canocalized_names_`
+    - macro类型：`_PROGRAMS`, `_LIBRARIES`, `_HEADERS`, `_SOURCES`
+        - `_LDADD`, `_LDFLAGS`, `_LIBADD`
+    - 预编译和编译选项：`AM_CPPFLAGS`, `AM_CFLAGS`
+        - `AM_CPPFLAGS = -I$(top_srcdir)/inlude`
 5. **libtools**(`apt-get install libtools`)
-	- 加入`configure.ac`工具链：`LT_INIT[(<enable|disable>-<shared|static>)]`(override `AC_PROG_RANLIB`)
-	- 定义macro: `_LTLIBRARIES`, `_LDFLAGS = -version-info 0:0:0`
-	- 添加m4宏
-		- configurea.ac: `AC_CONFIG_MACRO_DIRS[m4]`
-		- Makefile.am: `ACLOCAL_AMFLAGS = -I m4`
+    - 加入`configure.ac`工具链：`LT_INIT[(<enable|disable>-<shared|static>)]`(override `AC_PROG_RANLIB`)
+    - 定义macro: `_LTLIBRARIES`, `_LDFLAGS = -version-info 0:0:0`
+    - 添加m4宏
+        - configurea.ac: `AC_CONFIG_MACRO_DIRS[m4]`
+        - Makefile.am: `ACLOCAL_AMFLAGS = -I m4`
 
 ### 2021-3-18
 1. matlab/octave function call: var 'xxxx' undefined：检查一下参数是不是合法，有没有漏掉
 2. move a python virtualenv?(`venv` is a subset of `virtualenv`)
-	- nop, `--relocatable` deprecated, no clean way to do it
+    - nop, `--relocatable` deprecated, no clean way to do it
 
 
 ### 2021-3-19
 1. `ls`使用`isatty(int fd)`，向tty和其他文件输出的Field separator不同(full manual: `info ls`)
-	- tty: 空格；文件: `\n`(`-C`来强制指定空格)
+    - tty: 空格；文件: `\n`(`-C`来强制指定空格)
 2. makefile
-	- 空格前导行，由make解析；`<tab>`前导行由shell解析(默认`/bin/sh`)
-		- recursive make: `<tab>cd $@ && $(MAKE)`, 或者`$(MAKE) -C $@`
-	- subsitutiton: `$(var:from_a=to_b)`
-	- simple assgin: `var := value`(gnu make), `var ::= value`(POSIX)
-		- make是**Marco language**，变量全是纯字符串(例如`$(subst .o,.c,$(wildcard *.c))`)，实际引用时现场defer(delayed expansion)。simple assign在复制时即展开，随后始终保持不变。
+    - 空格前导行，由make解析；`<tab>`前导行由shell解析(默认`/bin/sh`)
+        - recursive make: `<tab>cd $@ && $(MAKE)`, 或者`$(MAKE) -C $@`
+    - subsitutiton: `$(var:from_a=to_b)`
+    - simple assgin: `var := value`(gnu make), `var ::= value`(POSIX)
+        - make是**Marco language**，变量全是纯字符串(例如`$(subst .o,.c,$(wildcard *.c))`)，实际引用时现场defer(delayed expansion)。simple assign在复制时即展开，随后始终保持不变。
 
 
 ### 2021-3-21
 1. 什么是flask？就是跑了几个`.py`脚本，还能让他们之间通过http请求互相通信
 2. C language
-	- `sizeof`: unary operator(单目运算符), 返回operand所占的存储空间
-		- usage: `sizeof <expression|data_type_cast>`, **`cast` is a data type enclosed in parenthesis**.
-		- exceptions: in `sizeof arr_name`, `arr_name` will not be converted into a pointer to the first element
-		- note: typically, `sizof` exps are replaced with constants in complilation (**before link?**), 所以`extern int arr[]`+`sizeof arr`时，编译器无法确定`arr`的大小
-			- C99引入的VLA，sizeof只能在运行时确定大小
-	- `void *`, `void **`
-		- `void *`: 通用指针，赋值和被赋值时，编译器会自动做impplicit cast。不允许de-reference和指针运算
-		- `void **`: 不是通用指针，反而和`int *`类似。函数接受`void **`参数，一般是需要修改一个`void *`指针的值，才只好把它的地址传进来。
+    - `sizeof`: unary operator(单目运算符), 返回operand所占的存储空间
+        - usage: `sizeof <expression|data_type_cast>`, **`cast` is a data type enclosed in parenthesis**.
+        - exceptions: in `sizeof arr_name`, `arr_name` will not be converted into a pointer to the first element
+        - note: typically, `sizof` exps are replaced with constants in complilation (**before link?**), 所以`extern int arr[]`+`sizeof arr`时，编译器无法确定`arr`的大小
+            - C99引入的VLA，sizeof只能在运行时确定大小
+    - `void *`, `void **`
+        - `void *`: 通用指针，赋值和被赋值时，编译器会自动做impplicit cast。不允许de-reference和指针运算
+        - `void **`: 不是通用指针，反而和`int *`类似。函数接受`void **`参数，一般是需要修改一个`void *`指针的值，才只好把它的地址传进来。
 
 
 ### 2021-3-22
 1. Vim语法高亮错误debug
-	- 首先找到上下文，使用`:echo synIDAttr(synID(line('.'), col('.'), 1), 'name')`查看syntax type，然后去源码(vim script)里找匹配规则
-	- 如果没用插件，一般是`/usr/share/vim/vim<version>/syntax`；用了插件，可能是`<plugin_dir>/{syntax,autoload}`
-	- 遇到不认识的匹配符号、函数，直接在vim里`:h <topic>`，比如`:h /\_`, `:h map()`, `:h \%(\)`
+    - 首先找到上下文，使用`:echo synIDAttr(synID(line('.'), col('.'), 1), 'name')`查看syntax type，然后去源码(vim script)里找匹配规则
+    - 如果没用插件，一般是`/usr/share/vim/vim<version>/syntax`；用了插件，可能是`<plugin_dir>/{syntax,autoload}`
+    - 遇到不认识的匹配符号、函数，直接在vim里`:h <topic>`，比如`:h /\_`, `:h map()`, `:h \%(\)`
 
 
 ### 2021-3-30
 1. 忙各种杂七杂八的事情
 2. `.gitlab-ci.yml` + `mkdocs-material`
 3. 本机`npm`版本太低，升级`npm`和`node`报错: 用官网下载最新`npm`的binary来装
-	- 但是不能用它来更新本地的`node`？使用本地升级后的`npm`倒是很OK？
+    - 但是不能用它来更新本地的`node`？使用本地升级后的`npm`倒是很OK？
 
 
 ### 2021-3-31
 1. python常见基类操作
-	- list `[]`: `l.append(a)`, `if a in l`
-	- dict `{}`: `d[key]=value`(追加/更新), `if a in d.keys()`/`d.items()`
-	- string `str(var)`: `"a" + "b"`, `"a".join("b")`, `"a".split("b")`
-	- `isinstance(var, keyword)`
+    - list `[]`: `l.append(a)`, `if a in l`
+    - dict `{}`: `d[key]=value`(追加/更新), `if a in d.keys()`/`d.items()`
+    - string `str(var)`: `"a" + "b"`, `"a".join("b")`, `"a".split("b")`
+    - `isinstance(var, keyword)`
 
 ## 2021-4
 
 ### 2021-4-1
 1. flask run忽略`app.run`以及lazy loading(遇到错误不会停止)+web debugger
 2. python import
-	- 目录scope: `form <mod> import *`，在`sys.path`下查找，找到则以模块导入
-		- 但是`<mod>`里的文件不能import `mod`目录之外的内容
-	- 模块scope: `from .<mod> import *`，根据当前模块名称(`__package__`+`__name__`)解析出子模块名，当前模块名里`.`的个数不少于import里的`.`才能解析成功
-		- 直接执行这样import的文件，会被解析成`__main__.<mod>`而报错
-	- 一种解决方案？
+    - 目录scope: `form <mod> import *`，在`sys.path`下查找，找到则以模块导入
+        - 但是`<mod>`里的文件不能import `mod`目录之外的内容
+    - 模块scope: `from .<mod> import *`，根据当前模块名称(`__package__`+`__name__`)解析出子模块名，当前模块名里`.`的个数不少于import里的`.`才能解析成功
+        - 直接执行这样import的文件，会被解析成`__main__.<mod>`而报错
+    - 一种解决方案？
 ```python
 if __name__ == '__main__':
-	from . import *
-	# from <mod> import *
+    from . import *
+    # from <mod> import *
 else:
-	from .<mod> import *
+    from .<mod> import *
 ```
 
 
 ### 2021-4-2
 1. CVE-2018-1111(dynoRoot)重新分析+复现
-	- 看`dhclient.c`+`11-dhclient`源码做分析：不一定是252字段
-		- 但是`dhclient`和`11-dhclient`之间到底是怎么样的调用关系?
+    - 看`dhclient.c`+`11-dhclient`源码做分析：不一定是252字段
+        - 但是`dhclient`和`11-dhclient`之间到底是怎么样的调用关系?
 
 ```txt
 1. dhclient -> nm-dhcp-helper -> 11-dhclient ?
@@ -1408,43 +1408,43 @@ else:
 ```
 
 2. filetype `htmldjango`
-	- `div`, `form`, `label`, `input`, `button`
-	- `name`, `id`, `style`, `class`
+    - `div`, `form`, `label`, `input`, `button`
+    - `name`, `id`, `style`, `class`
 
 
 ### 2021-4-3
 1. 解决kali的qt程序theme错误问题：直接运行`qt5ct`修改主题
-	- Kali xfce提供的Appearance配置出的主题只对xfce系列软件有效
-	- 而普通Qt程序读取的是`qt5ct`的标准配置文件`{/etc/xdg, $HOME/.config}/qt5ct/qt5ct.conf`
+    - Kali xfce提供的Appearance配置出的主题只对xfce系列软件有效
+    - 而普通Qt程序读取的是`qt5ct`的标准配置文件`{/etc/xdg, $HOME/.config}/qt5ct/qt5ct.conf`
 
 
 ### 2021-4-8
 1. Ubuntu1804的`Unix/_git`版本过低，导致`<tab>`无法自动补全git分支
-	- zsh会检查同名`.zwc`文件，如果时间戳比对应脚本新，就不读取脚本，直接使用`.zwc`
+    - zsh会检查同名`.zwc`文件，如果时间戳比对应脚本新，就不读取脚本，直接使用`.zwc`
 
 
 ### 2021-4-9
 1. getopt(1,3), getopt_long(3), argp(glibc)
 2. C traps & pitfalls:
-	- 差一问题：上界出点-下界入点
-	- 数组越界覆盖栈：`int i; int a[10]; a[10]=0`
+    - 差一问题：上界出点-下界入点
+    - 数组越界覆盖栈：`int i; int a[10]; a[10]=0`
 
 ### 2021-4-12
 1. 修复`Unix/_git` zsh脚本找不到`Unix/_ssh_hosts`问题
 2. `CR2` raw格式转换
-	- 使用imageMagick自带的`convert`命令，然而它调用的`ufraw-batch`已经停止维护，无法直接下载
-	- 使用替代品`dcraw`解码Raw图片，然后让convert从标准输入读取：`dcraw -c -w <raw image> | convert - out.jpg`
-		- `-c`: **c**at decoded raw image to stdout
-		- `-w`: use **w**hite balance specified by camera
+    - 使用imageMagick自带的`convert`命令，然而它调用的`ufraw-batch`已经停止维护，无法直接下载
+    - 使用替代品`dcraw`解码Raw图片，然后让convert从标准输入读取：`dcraw -c -w <raw image> | convert - out.jpg`
+        - `-c`: **c**at decoded raw image to stdout
+        - `-w`: use **w**hite balance specified by camera
 
 
 ### 2021-4-13
 1. latex & vim
-	- xelatex: `-output-directory=`, `-aux-directory=` (dir must exist)
-	- latexmk: `-outdir=`, `-auxdir=`, `-c`, `-C`
-	- `.latexmkrc`: `$out_dir`, `$aux_dir`, `$clean_ext`
-		- `$clean_ext`: clean file with **ext**ensions specified in it
-	- vimtex: `g:vimtex_compiler_latexmk = { 'build_dir' : 'build' }`
+    - xelatex: `-output-directory=`, `-aux-directory=` (dir must exist)
+    - latexmk: `-outdir=`, `-auxdir=`, `-c`, `-C`
+    - `.latexmkrc`: `$out_dir`, `$aux_dir`, `$clean_ext`
+        - `$clean_ext`: clean file with **ext**ensions specified in it
+    - vimtex: `g:vimtex_compiler_latexmk = { 'build_dir' : 'build' }`
 
 
 ### 2021-4-15
@@ -1453,14 +1453,14 @@ else:
 ### 2021-4-16
 1. 图像运动模糊 频域滤波：维纳逆滤波零点导致图像全是黑白条纹：自己猜一个高斯噪声/求一个自相关，再维纳滤波
 2. LaTeX：
-	- pgffor：`\foreach \i in {1...5}{code}`
-	- `\includepdf`/`\includegraphics`: `[page=1-4]`
-	- `\equationautorefname`
+    - pgffor：`\foreach \i in {1...5}{code}`
+    - `\includepdf`/`\includegraphics`: `[page=1-4]`
+    - `\equationautorefname`
 3. 修改文件/目录名encoding：`convmv`失败
-	- `cat dirname`失败：Linux不允许`read()`目录二进制内容
+    - `cat dirname`失败：Linux不允许`read()`目录二进制内容
 4. bash直接执行systemcall: `ctypes.sh`
     - 不支持`zsh`，必须根据`zmodload`重新开发
-	- 编译安装了动态库`ctypes.so`，bash使用`enable -f <SHARED_OBJ> BUILTINS`从动态库加载dlcall等命令，调用外部动态库内容
+    - 编译安装了动态库`ctypes.so`，bash使用`enable -f <SHARED_OBJ> BUILTINS`从动态库加载dlcall等命令，调用外部动态库内容
     - `struct`功能，字段和value不匹配，乱序了，未找到原因
 5. `sash`与POSIX
 
@@ -1468,8 +1468,8 @@ else:
 ### 2021-4-17
 git internals:
 1. objects
-	- hash-file/cat-file
-	- update-index/read-tree/write-tree/commit-tree
+    - hash-file/cat-file
+    - update-index/read-tree/write-tree/commit-tree
 2. ref
 3. packfile
     - verify-pack
@@ -1489,15 +1489,15 @@ zeek scripts:
 makefile traps:
 1. 空变量导致危险操作
 2. 依赖链：每次都重新构建
-	- `_FORCE` target: no pre, no recipe
-	- `.PHONY` target: no pre, has recipe
+    - `_FORCE` target: no pre, no recipe
+    - `.PHONY` target: no pre, has recipe
 
 
 ### 2021-4-22
 1. git 'local' remote: `git remote add path/to/repo`
 2. zsh history expansion: !, !! and the special ^foo^bar(!!:s^foo^bar)
 3. flask/django project layout: project excuted as a package
-	- only `top dir` in the sys.path: even if `flask run` directly executed inside dir `aaa/`
+    - only `top dir` in the sys.path: even if `flask run` directly executed inside dir `aaa/`
 ```txt
 top
 ├── aaa
@@ -1538,7 +1538,68 @@ git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 \
 ### 2021-5-3
 
 1. github CI actions
-	- `.github/workflows/<NAME>.yml`
-	- 在ci中使用token操作自己的github仓库
-		- 使用变量展开避免明文写入token: `{{ $secrets.VARNAME }}`(需在仓库设置界面配置)
-	- 可以引用大量别人写好的插件
+    - `.github/workflows/<NAME>.yml`
+    - 在ci中使用token操作自己的github仓库
+        - 使用变量展开避免明文写入token: `{{ $secrets.VARNAME }}`(需在仓库设置界面配置)
+    - 可以引用大量别人写好的插件
+
+
+### 2021-5-5
+1. grpc添加时间参数
+
+### 2021-5-7
+1. ramsay复现
+    - exe感染: `bindsvc.exe`在64位系统`sysWOW64`目录找到`bindsvc.exe`和`wideshut.exe`后，才能正常感染exe
+    - word感染：将`rundll32.exe`复制为`BON.exe`，运行`BON.exe msfte.dll,DllEntryPoint()`
+        - 只能收集信息并打包rar，不能将信息附加到其他word文件里
+
+
+### 2021-5-8
+1. `man signal(1) signal(7)`, `sighandler_t`
+2. C: VLA(variable length array)
+    - since C99
+    - gcc extension (even before C99)
+3. QA steps
+    - build test
+    - lint test: cppcheck, scan-build
+    - runtime test: valgrind, DrMemory, ASan(AddressSanitizer), LSan(LeakSanitizer)
+    - regression test: test past bugs
+4. suricata/zeek debug (reload/start)
+
+```txt
+suricata
+--------
+data structure
+├── DetectEngineMasterCtx g_master_de_ctx
+├── DetectEngineCtx * de_ctx
+└── DetectEngineThreadCtx * det_ctx
+
+routines
+└── DetectEngineReload()
+    ├── ConfYamlLoadFileWithPrefix()
+    ├── ConfGetNode()
+    ├── DatasetReload()
+    ├── DetectEngineCtxInitWithPrefix()
+    ├── SigLoadSignatures()
+    ├── DetectEngineAddToMaster()
+    └── DetectEngineReloadThreads()
+        ├── TmThreadCountThreadsByTmmFlags()
+        └── FlowWorkerReplaceDetectCtx()
+
+
+zeek
+----
+zeekctl.in
+└─ zeekctl.start()
+   └─ controller.start()
+      └─ controller._start_nodes()
+         ├─ cmds = [(node, "start", [])]
+         └─ executor.run_helper(cmds, shell=True)
+            └─ run_cmds(shell=True, helper=True)
+               ├─ cmdargs = helperdir+ "/start"
+               ├─ nodecmdlist = ("localhost", cmdargs)
+               └─ sshrunner.exec_multihost_commands(shell=True)
+                  └─ helpers/start
+                     ├─ source zeekctl-config.sh
+                     └─ $scriptdir/run-zeek
+```

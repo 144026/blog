@@ -1533,7 +1533,7 @@ git -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 \
 1. block -> inode -> dir as inode -> special dir `/`
 
 
-### 2021-5
+## 2021-5
 
 ### 2021-5-3
 
@@ -1603,3 +1603,62 @@ zeekctl.in
                      ├─ source zeekctl-config.sh
                      └─ $scriptdir/run-zeek
 ```
+
+
+### 2021-5-9
+1. latex: `\lstset{numbers=none}`
+2. html header meta: generator: GravCMS
+    - CMS
+    - RTFM: initialism/internet slang
+    - Grav
+        - PHP markdown extra
+        - antimatter theme
+
+
+### 2021-5-10
+1. 信息论习题
+    - 信息量与概率：$I(a_i) = -\log p(a_i)$
+    - 信源概率分布与信源熵
+        - 单符号、无记忆
+            - $H(X) = E(I(X)) = \sum\limits_i p(x_i)I(x_i)$
+            - $H_c(X) \ne \int p(x)\log [ p(x)dx]\ dx$, $H_c(X) = \int p(x)\log p(x)\ dx$
+        - 单符号扩展: $H_N(X) = N\cdot H(X)$
+        - 有记忆：马尔可夫信源
+            - 极限分布、极限熵: $H_\infty = ?$
+    - 信道容量$C$, $C_t$
+        - 信道特性$p(b_i | a_i)$固定，改变信源$p(a_i)$求$\max\{I(Y; X)\}$
+    - 信息率失真
+        - 失真函数$D = d(a_i, b_j)$，平均失真度$\overline D = \sum\limits_{i, j} p(a_i b_j) d(a_i, b_j)$
+        - 失真约束条件$\overline D \le D$
+        - 信源特性$p(a_i)$固定，改变信道$p(b_i | a_i)$求$\min\{I(Y; X)\}$
+2. 团队文档学习
+    - 团队文件2011
+        - 总则
+            - 师生联席会、核心层？
+        - 质量部
+            - 组长相关
+        - 人力资源部
+            - 新人培训：大一/其他年级
+            - 预备队：与团队正规招新并不相同
+        - 教学管理
+            - 外出毕设、实习管理办法
+    - ftp: 团庆总结ppt
+        - 8、15周年团庆总结ppt
+    - ftp上的简报组文件亟需整理
+3. 系统启动与linux
+    - BIOS
+        - legacy: 直接启动grub？
+        - efi: 执行`xxx.efi`二进制文件，由该`.efi`程序接管(因为BIOS能做的事情很有限)
+    - EFI
+        - 需要单独磁盘分区，类型为`EFI system`，内容为`EFI/xxxxx/xxx.efi`
+        - `grubx64.efi`: 仅仅用来启动`grub`
+        - `systemd-boot.efi`: ???
+        - `bootctl`, `/sys/firmware/efi/efivars/`
+    - grub
+        - `/etc/default/grub` ->`grub-mkconfig` -> `/boot/grub/grub.cfg`
+        - grub shell
+            - `set root=`
+            - `linux /boot/vmlinuz-xxx root=xxx`
+            - `initrd /boot/initrd-xxx`
+            - `boot`
+        - grub rescue shell?

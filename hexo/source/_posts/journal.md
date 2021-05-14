@@ -1744,3 +1744,16 @@ zeekctl.in
         - The Paging Game
     - MMU(memory management unit)
         - CPU <-> MMU <-> TLB
+
+
+### 2021-5-14
+
+1. latex: `lstlisting` env fail in `beamer`? see CTAN `beameruserguide` (offical doc)
+    - **3.13 Verbatim Text, 12.9 Verbatim and Fragile Text**
+        - > If you wish to use a `{verbatim}` environment in a frame, you have to add the option `[fragile]` to the `{frame}` environment. (or use `\defverbatim[colored]`)
+        - > **You must also use the `[fragile]` option for frames that include any “fragile” text, which is any text that is not “interpreted the way text is usually interpreted by TEX.”**
+    - **2.6 Compatibility with Oher Pckages and Classes**
+        - > Note that you must treat `lstlisting` environments exactly the same way as you would treat `verbatim` environments.
+2. latex: `beamer` usage: `<(action specification)>`
+    - `\onslide<1, 3-4, 6->`, `\uncover`, `\only`
+    - `\begin{uncoverenv}`, `\being{onlyenv}`

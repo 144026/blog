@@ -1662,3 +1662,85 @@ zeekctl.in
             - `initrd /boot/initrd-xxx`
             - `boot`
         - grub rescue shell?
+
+
+### 2021-5-11
+1. github
+    - TexText: `textext/textext`
+    - lervag/wiki.vim: just another text template engine(similar to markdown, or vim help files)
+        - vimwiki, vimwaikiki
+    - lervag/wiki-ft.vim: ftplugin
+        - `syntax/<type>.vim`: highlite
+        - `ftplugin/<type>.vim`: custom settings
+        - `ftdetect/<type>.vim`: autocmds to set filetype
+        - `autoload/wiki_ft/text_obj.vim`: custom text ojects
+            - **vim text objects**
+                - not available in `vi`
+                - editing cmd structure: `[number][cmd][text_obj|motion]`
+                - for plain text
+                    - word:
+                        - `aw`: a word (include surrounding whitespaces)
+                        - `iw`: inner word (not include)
+                    - sentence: `as`, `is`
+                    - paragraph: `ap`, `ip`
+                - for programming languages
+                    - strings
+                    ```txt
+                    a", i", a', i', a`, i`
+                    ```
+                    - parentheses, brakets, braces
+                    ```txt
+                    a), i), a], i], a}, i}
+                    ```
+                    - for markup language
+                        - tag blocks: `at`, `it`
+                        - tag itself: `a>`, `i>`
+    - lervag/apy:
+        - `click`, `CliRunner()`
+        - zsh completion handler: `_apy`
+2. 编程培训
+    - 链接task
+        - `ar -rcs ARCHIVE MEMBER`
+            - `-r`: **r**eplacement
+            - `-c`: **c**reate
+            - `-s`: generate index for every **s**ymbol in archive members
+                - equivalent to `ranlib`
+                - `ARCHIVE`链接起来会更快
+        - `gcc -shared -fpic` ?
+            - 动态库最初就应该支持基址随机：`-fpic`, `-fPIC`  -> `-shared`
+                - **PLT**(procedure linkage table), **GOT**(global offset table)
+            - ASLR出现后，才支持单个ELF装载基址随机：`-fpie`, `fPIE` -> `-static-pie`, `-pie`
+                - PIE, position independent executable
+                    - ASLR, address space layout randomization
+                    - gdb: `set disable-randomization off` (on by default, for better dbg experience)
+
+
+### 2021-5-12
+1. gcc: a strange loop, self-referential backdoor insertion
+2. latex: `\documentclass{beamer}`
+3. socket programming
+    - **basics**:
+        - `getaddrinfo(host, port, hints, res_list)`: set type (in `hints`), get `sockaddr`
+        - `int fd = socket(type)`
+    - client
+        - `connect(fd, sockaddr)`, `read()`, `write()`
+    - UDP server
+        - `bind()`
+        - `recvfrom(&peer_addr, &addrlen)`
+            - `getnameinfo(&peer_addr, host_bf, port_bf)`
+        - `sendto(&peer_addr, addrlen)`
+    - TCP server
+        - `bind()`, `listen()`
+        - `accept(fd, &peer_addr, &addrlen)`
+            - `getnameinfo(&peer_addr, host_bf, port_bf)`
+            - **`recvfrom()`, `sendto()`在connection-oriented协议下不处理`peer_addr`, 必须使用`accept()`获取**
+        - `recv()`, `send()`
+
+
+### 2021-5-13
+1. the `glibc`'s `memcpy()`: set Copy-on-Write page with `__vm_copy()`
+    - `COW`: implicit sharing, shadowing: defer copy until modification
+    - paging
+        - The Paging Game
+    - MMU(memory management unit)
+        - CPU <-> MMU <-> TLB

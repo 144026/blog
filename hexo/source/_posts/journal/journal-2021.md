@@ -927,3 +927,50 @@ zeekctl.in
 2. latex: `beamer` usage: `<(action specification)>`
     - `\onslide<1, 3-4, 6->`, `\uncover`, `\only`
     - `\begin{uncoverenv}`, `\being{onlyenv}`
+
+
+### 2021-5-16
+1. kfifo
+	- simple version: kernel 2.6.26.4
+	- general version 1: kernel 2.6.33-rc2/rc3
+	- general version 2: kernel 2.6.39.3
+2. C99 standard
+	- address constant
+
+
+### 2021-5-18
+1. `echo 0 | sudo tee /sys/devices/system/cpu/cpu0/online`: ENOENT
+    - but what is `sysfs`? `man 5 sysfs`
+        - kernel提供的修改内核态数据结构的接口
+            - 文件可读写，不能删除也不能新增
+            - 写入的内容必须严格符合内核对数据结构的定义，否则为`write error: invalid argument`
+    - 所以一定是内核没有提供`cpu0/online`文件
+        - `CONFIG_HOTPLUG_CPU=y` (by default)
+        - `CONFIG_BOOTPARAM_HOTPLUG_CPU0` is not set! (by default)
+            - 为什么不将CPU0设置为热插拔？(允许CPU0下线)
+                - **Resume from hibernate or suspend always starts from CPU0. So hibernate and suspend are prevented if CPU0 is offline.**
+                - **PIC interrupts always go to CPU0. CPU0 can not offline if any interrupt can not migrate out of CPU0.**
+                - 可能还有其他的内核机制依赖于CPU0
+    - 如果一定要配置CPU0热插拔？
+        - 重新编译内核：`CONFIG_BOOTPARAM_HOTPLUG_CPU0=y`
+        - 修改内核启动参数，增加`cpu0_hotplug`
+            - 单次启动增加：安全起见
+                - 强制进入grub界面: 反复按下`ESC`(UEFI)或`SHIFT`(BIOS)
+                - press `e` when cusor is on a boot entry
+                - `ctlr + x`  or  `F10` to boot
+            - 永久增加
+                - `vim /etc/default/grub`
+                - 在`GRUB_CMDLINE_LINUX_DEFAULT`中增加参数
+                - `update-grub` or `update-grub2`
+2. latex
+    - TeX book: boxes, treated as single character, tex won't break it
+    - ctex docs: [Spaces  and Boxes](http://www.ctex.org/documents/latex/latex2e-html/ltx-143.html)
+        - `\makebox[width][position]{text}`, `\framebox[width][position]{text}`
+            - position
+                - `l`: flushleft
+                - `r`: flush right
+                - `s`: interword space adjusted so `text` fills box exactly
+                - default(omit this argument): center
+        - `\mbox`: robust and simple `\makebox`
+
+

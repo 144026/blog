@@ -29,7 +29,7 @@
 <meta property="og:description" content="journal 2021">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-02T15:30:37.000Z">
-<meta property="article:modified_time" content="2021-05-18T15:33:11.539Z">
+<meta property="article:modified_time" content="2021-05-22T17:23:15.417Z">
 <meta property="article:author" content="144026">
 <meta property="article:tag" content="journal">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-18 23:33:11" itemprop="dateModified" datetime="2021-05-18T23:33:11+08:00">2021-05-18</time>
+                <time title="修改时间：2021-05-23 01:23:15" itemprop="dateModified" datetime="2021-05-23T01:23:15+08:00">2021-05-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1742,6 +1742,271 @@
 </ul>
 </li>
 </ol>
+<h3 id="2021-5-19"><a class="markdownIt-Anchor" href="#2021-5-19"></a> 2021-5-19</h3>
+<ol>
+<li>linux
+<ul>
+<li>bash &amp; zsh difference: parameter expansion
+<ul>
+<li>bash: <code>&quot;$var&quot;</code></li>
+<li>zsh: <code>$var</code> is already similar?</li>
+</ul>
+</li>
+<li>kali <code>manpages</code>, <code>manpages-dev</code>(5.10-1)缺少<code>man 3 list</code>
+<ul>
+<li>从<a target="_blank" rel="noopener" href="https://www.kernel.org/doc/man-pages/">The Linux <em>man-pages</em> project</a>下载最新tar包安装</li>
+</ul>
+</li>
+<li>linux kernel <code>list</code>
+<ul>
+<li><code>LIST_ENTRY()</code>: <code>container_of()</code>
+<ul>
+<li>链表ENTRY才是外部结构，相当于绑定了数据和一个简单列表，<code>list</code> api只处理简单列表部分。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ramsay感染doc文件
+<ul>
+<li><code>LoadLibrary(&quot;msfte.dll&quot;)</code>的猜想
+<ul>
+<li><code>kernel32.dll</code>以COW模式，装载到<code>BON.exe</code>进程空间</li>
+<li>操作系统执行<code>DllEntryPoint()</code>，该函数hook进程空间中的<code>kernel32.dll</code>，但是必须调用被hook的函数才能执行相关代码</li>
+<li><code>BON.exe</code>调用被hook的函数，doc文件被感染</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>windows patching tech</strong>
+<ul>
+<li>modify the behavior of an executable
+<ul>
+<li>source modification
+<ul>
+<li>re, patching</li>
+<li>executable signing</li>
+</ul>
+</li>
+<li>runtime modification
+<ul>
+<li>implemented by OS APIs
+<ul>
+<li>API hooks
+<ul>
+<li>local hooks: influence only specific apps</li>
+<li>global hooks: affect all processes</li>
+</ul>
+</li>
+<li><strong>DLL injector</strong>
+<ul>
+<li>get process handle, write <code>dllname</code> into its virtual memory
+<ul>
+<li>run target process, or just <strong>search it in process lists</strong> for its id</li>
+</ul>
+</li>
+<li>create a thread inside it to run <code>LoadLibrary(dllname)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>process system calls
+<ul>
+<li><code>CreateProcess()</code>
+<ul>
+<li><code>CREATE_SUSPENDED</code>, <code>ResumeThread()</code></li>
+<li><code>CloseHandle()</code></li>
+</ul>
+</li>
+<li><code>VirtualAllocEx()</code>, <code>WriteProcessMemory()</code>, <code>VirtualFreeEx()</code></li>
+<li><code>CreateRemoteThread()</code>
+<ul>
+<li><code>GetProcAddress()</code>: get <code>LoadLibrary()</code> procedure address
+<ul>
+<li><code>GetModuleHandleA()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hook Engine
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/research/project/detours/">Microsoft Detour</a></li>
+<li><a target="_blank" rel="noopener" href="https://ntcore.com/files/nthookengine.htm">NtHookEngine </a>(Recommended)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-5-20"><a class="markdownIt-Anchor" href="#2021-5-20"></a> 2021-5-20</h3>
+<ol>
+<li>密码含特殊字符的7z文件解压
+<ul>
+<li>文件内容如何重定向到<code>7z</code>, <code>ssh</code>？
+<ul>
+<li><code>strace 7z</code>: 读入密码前直接打开<code>/dev/tty</code></li>
+<li><code>strace 7z x -p$'\x12\x34\x56' file.7z</code>
+<ul>
+<li>strace: <code>$'\x12\xf2\x00\x56'</code> translated to ’<code>\22\362'</code>
+<ul>
+<li>hex to <strong>octal</strong>: octal better?</li>
+<li><code>tr</code> only supports octal</li>
+</ul>
+</li>
+<li>ANSI C translation: <code>\x00</code> terminates a string</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>tcl</code>, <code>expect</code></strong>
+<ul>
+<li>Tool Command Language (pronounced “tickle”): automate interactive command line task</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>deepin安装腾讯会议<code>apt-get install com.tencent.meeting.deepin</code>
+<ul>
+<li>Errors were encountered while processing: <code>linux-image-5.4.70-amd64-desktop</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2020-5-21"><a class="markdownIt-Anchor" href="#2020-5-21"></a> 2020-5-21</h3>
+<ol>
+<li>zip包编码混乱问题
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Garbled_problem">Arch wiki: <strong>garbled problem</strong></a>
+<ul>
+<li><code>man zip</code>, <code>/Unicode&lt;cr&gt;</code>: fuck the <code>zip</code> implementation</li>
+<li>
+<blockquote>
+<p>Unicode.  <strong>Though the zip standard requires storing paths in an archive using a specific character set, in practice zips have stored  paths  in  archives in whatever the local character set is.</strong>  This creates problems when an archive is created or updated on a system using one character set and then extracted on another system using a different character set.</p>
+</blockquote>
+</li>
+<li><strong>非unicode环境下，避免使用<code>zip</code>进行压缩</strong></li>
+</ul>
+</li>
+<li><strong>保留zip原编码</strong>解压: <code>LANG=C 7z x file.zip</code>
+<ul>
+<li>默认<code>LANG=en_US.UTF-8</code>解压：non-UTF8的二进制内容被强制解释为UTF8，然后写入为UTF8编码
+<ul>
+<li>编码彻底损坏，不可恢复</li>
+</ul>
+</li>
+<li><code>LANG=C unzip file.zip</code>并不能保持原编码: fuck unzip</li>
+</ul>
+</li>
+<li>确定zip原编码格式: <code>chardet</code>, <code>encguess</code>
+<ul>
+<li>解压目录下<code>ls | chardet</code></li>
+<li>不解压：<code>cat file.zip | grep -a 'filename_ascii_part' &gt; out.bin</code>， vim删除多余内容再<code>chardet out.bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>latex: RASIZE the BOX with <code>xeCJK</code> !
+<ul>
+<li>右下角评分表
+<ul>
+<li>右下：<code>\hfill</code>, <code>\vfill</code>, <code>\begin&#123;flushright&#125;</code></li>
+<li>表格宽高：<code>\raisebox[distance][extend-above][extend-below]&#123;text&#125;</code></li>
+<li>字体：<code>\textxx</code> -&gt; <code>\xxfamily</code>, <code>\xxshape</code>, <code>\xxseries</code></li>
+</ul>
+</li>
+<li><strong>修复CJK字体baseline</strong>
+<ul>
+<li>Wrapping every character in a <code>raisebox</code>，<strong>并且在切换字体时使用<code>xpatch</code>重置</strong></li>
+</ul>
+  <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xeCJK&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;xpatch&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% Raise the baseline of CJK characters by 0.1em</span></span><br><span class="line"><span class="comment">% This is done by wrapping every CJK character in a raisebox</span></span><br><span class="line"><span class="tag">\<span class="name">makeatletter</span></span></span><br><span class="line"><span class="tag">\<span class="name">let</span></span><span class="tag">\<span class="name">original</span></span>@CJKsymbol<span class="tag">\<span class="name">CJKsymbol</span></span></span><br><span class="line"><span class="tag">\<span class="name">let</span></span><span class="tag">\<span class="name">original</span></span>@CJKpunctsymbol<span class="tag">\<span class="name">CJKpunctsymbol</span></span></span><br><span class="line"><span class="tag">\<span class="name">edef</span></span><span class="tag">\<span class="name">CJKmovesymbol</span></span>#1&#123;<span class="tag">\<span class="name">raise</span></span>.1em<span class="tag">\<span class="name">hbox</span><span class="string">&#123;\original@CJKsymbol&#123;#1&#125;</span></span>&#125;&#125;</span><br><span class="line"><span class="tag">\<span class="name">edef</span></span><span class="tag">\<span class="name">CJKmovepunctsymbol</span></span>#1&#123;<span class="tag">\<span class="name">raise</span></span>.1em<span class="tag">\<span class="name">hbox</span><span class="string">&#123;\original@CJKpunctsymbol&#123;#1&#125;</span></span>&#125;&#125;</span><br><span class="line"><span class="comment">% Only shift non-puncts because puncts seems in their place</span></span><br><span class="line"><span class="tag">\<span class="name">def</span></span><span class="tag">\<span class="name">CJKraisebaseline</span><span class="string">&#123;%</span></span></span><br><span class="line"><span class="tag"><span class="string">    \let\CJKsymbol\CJKmovesymbol</span></span></span><br><span class="line"><span class="tag"><span class="string">&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">def</span></span><span class="tag">\<span class="name">CJKresetbaseline</span><span class="string">&#123;%</span></span></span><br><span class="line"><span class="tag"><span class="string">    \let\CJKsymbol\original@CJKsymbol</span></span></span><br><span class="line"><span class="tag"><span class="string">&#125;</span></span></span><br><span class="line"><span class="comment">% When switching to Heiti and FangSong, revert settings</span></span><br><span class="line"><span class="tag">\<span class="name">xpretocmd</span></span><span class="tag">\<span class="name">heiti</span><span class="string">&#123;\CJKresetbaseline&#125;</span><span class="string">&#123;&#125;</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">xpretocmd</span></span><span class="tag">\<span class="name">fangsong</span><span class="string">&#123;\CJKresetbaseline&#125;</span><span class="string">&#123;&#125;</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">xpretocmd</span></span><span class="tag">\<span class="name">texttt</span><span class="string">&#123;\CJKresetbaseline&#125;</span><span class="string">&#123;&#125;</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">makeatother</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% Activate!</span></span><br><span class="line"><span class="tag">\<span class="name">CJKraisebaseline</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% fix possible fontsize problem</span></span><br><span class="line"><span class="tag">\<span class="name">setmainfont</span><span class="string">[Scale=1.18]</span><span class="string">&#123;Cambria&#125;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>linux: 把文件<code>file</code>的内容作为命令行参数
+<ul>
+<li>作为直接参数：<code>echo PARAMETER</code>
+<ul>
+<li><code>echo “$(cat file)”</code>
+<ul>
+<li>
+<blockquote>
+<p>Word Splitting<br />
+The  shell  scans the results of parameter expansion, command substitution, and arithmetic expansion <strong>that did not occur within double quotes</strong> for word splitting.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Quote Removal<br />
+After  the  preceding  expansions, all unquoted occurrences of the characters <code>\</code>, <code>'</code>, and <code>&quot;</code> <strong>that did not result from one of the above expansions</strong> are removed.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><code>cat file| xargs echo</code>
+<ul>
+<li>guess it’s <code>read(0, buf, count); execve(/bin/echo, buf.split('\n'));</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更复杂的情况: <code>echo &quot;&#123;\&quot;This\&quot;: \&quot;is\&quot;, \&quot;a\&quot;: [\&quot;json\&quot;, \&quot;PARAMETER\&quot;]&#125;&quot;</code>
+<ul>
+<li><code>echo &quot;&#123;\&quot;This\&quot;: \&quot;is\&quot;, \&quot;a\&quot;: [\&quot;json\&quot;, \&quot;$(cat file)\&quot;]&#125;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>json常见操作
+<ul>
+<li>压缩：去除换行<code>\r</code>, <code>\n</code>，去除空白<code>\s</code></li>
+<li><strong>转义</strong>：<code>&quot;</code>替换为<code>\&quot;</code>，<code>\</code>替换为<code>\\</code>，之后再用<code>&quot;</code>括起来即等效于一个字符串？
+<ul>
+<li>json standard, <code>string</code> specification
+<ul>
+<li>可以包含任何Unicode字符</li>
+<li><code>\</code>和<code>&quot;</code>必须转义</li>
+<li><code>U+0000</code>到<code>U+001F</code>之间的控制字符必须转义</li>
+</ul>
+</li>
+<li>更好的转义方式：gzip + base64</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-5-22"><a class="markdownIt-Anchor" href="#2021-5-22"></a> 2021-5-22</h3>
+<ol>
+<li>bash urlencode: <code>printf &quot;%x&quot; &quot;'c&quot;</code>，语法太过细节，google不到，需要查手册
+<ul>
+<li><code>man printf</code>内容太少，<code>info printf</code></li>
+<li>
+<blockquote>
+<p>If the leading character of a numeric argument is <code>&quot;</code> or <code>'</code> then its value is the numeric value of the immediately following character.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>《活出生命的意义》书评
+<ul>
+<li>存在主义、弗洛伊德、马洛斯、弗兰克尔
+<ul>
+<li>意义疗法与精神分析：创伤者与观察者</li>
+</ul>
+</li>
+<li>意义是否应该刻意追求？弗兰克尔的三种意义
+<ul>
+<li>创造、体验、挑战(斗争)</li>
+</ul>
+</li>
+<li>马洛斯的困境：意义的超越：狂信徒与抑郁症</li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -1826,7 +2091,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2021"><span class="nav-text"> 2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-1"><span class="nav-text"> 2021-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-1"><span class="nav-text"> 2021-1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-4"><span class="nav-text"> 2021-1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-14"><span class="nav-text"> 2021-1-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-16"><span class="nav-text"> 2021-1-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-18"><span class="nav-text"> 2021-1-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-28"><span class="nav-text"> 2021-1-28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-29"><span class="nav-text"> 2021-1-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-30"><span class="nav-text"> 2021-1-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-31"><span class="nav-text"> 2021-1-31</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-2"><span class="nav-text"> 2021-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-1"><span class="nav-text"> 2021-2-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-2"><span class="nav-text"> 2021-2-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-6"><span class="nav-text"> 2021-2-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-7"><span class="nav-text"> 2021-2-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-8"><span class="nav-text"> 2021-2-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-9"><span class="nav-text"> 2021-2-9</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-3"><span class="nav-text"> 2021-3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-1"><span class="nav-text"> 2021-3-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-2"><span class="nav-text"> 2021-3-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-3"><span class="nav-text"> 2021-3-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-4"><span class="nav-text"> 2021-3-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-5"><span class="nav-text"> 2021-3-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-6"><span class="nav-text"> 2021-3-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-7"><span class="nav-text"> 2021-3-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-8"><span class="nav-text"> 2021-3-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-9"><span class="nav-text"> 2020-3-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-11"><span class="nav-text"> 2020-3-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-12"><span class="nav-text"> 2020-3-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-13"><span class="nav-text"> 2020-3-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-14"><span class="nav-text"> 2021-3-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-15"><span class="nav-text"> 2021-3-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-16"><span class="nav-text"> 2021-3-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-17"><span class="nav-text"> 2021-3-17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-18"><span class="nav-text"> 2021-3-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-19"><span class="nav-text"> 2021-3-19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-21"><span class="nav-text"> 2021-3-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-22"><span class="nav-text"> 2021-3-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-30"><span class="nav-text"> 2021-3-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-31"><span class="nav-text"> 2021-3-31</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-4"><span class="nav-text"> 2021-4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-1"><span class="nav-text"> 2021-4-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-2"><span class="nav-text"> 2021-4-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-3"><span class="nav-text"> 2021-4-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-8"><span class="nav-text"> 2021-4-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-9"><span class="nav-text"> 2021-4-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-12"><span class="nav-text"> 2021-4-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-13"><span class="nav-text"> 2021-4-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-15"><span class="nav-text"> 2021-4-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-16"><span class="nav-text"> 2021-4-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-17"><span class="nav-text"> 2021-4-17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-19"><span class="nav-text"> 2021-4-19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-20"><span class="nav-text"> 2021-4-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-22"><span class="nav-text"> 2021-4-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-26"><span class="nav-text"> 2021-4-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-28"><span class="nav-text"> 2021-4-28</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-5"><span class="nav-text"> 2021-5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-3"><span class="nav-text"> 2021-5-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-5"><span class="nav-text"> 2021-5-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-7"><span class="nav-text"> 2021-5-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-8"><span class="nav-text"> 2021-5-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-9"><span class="nav-text"> 2021-5-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-10"><span class="nav-text"> 2021-5-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-11"><span class="nav-text"> 2021-5-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-12"><span class="nav-text"> 2021-5-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-13"><span class="nav-text"> 2021-5-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-14"><span class="nav-text"> 2021-5-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-16"><span class="nav-text"> 2021-5-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-18"><span class="nav-text"> 2021-5-18</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2021"><span class="nav-text"> 2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-1"><span class="nav-text"> 2021-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-1"><span class="nav-text"> 2021-1-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-4"><span class="nav-text"> 2021-1-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-14"><span class="nav-text"> 2021-1-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-16"><span class="nav-text"> 2021-1-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-18"><span class="nav-text"> 2021-1-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-28"><span class="nav-text"> 2021-1-28</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-29"><span class="nav-text"> 2021-1-29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-30"><span class="nav-text"> 2021-1-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-1-31"><span class="nav-text"> 2021-1-31</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-2"><span class="nav-text"> 2021-2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-1"><span class="nav-text"> 2021-2-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-2"><span class="nav-text"> 2021-2-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-6"><span class="nav-text"> 2021-2-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-7"><span class="nav-text"> 2021-2-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-8"><span class="nav-text"> 2021-2-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-2-9"><span class="nav-text"> 2021-2-9</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-3"><span class="nav-text"> 2021-3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-1"><span class="nav-text"> 2021-3-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-2"><span class="nav-text"> 2021-3-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-3"><span class="nav-text"> 2021-3-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-4"><span class="nav-text"> 2021-3-4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-5"><span class="nav-text"> 2021-3-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-6"><span class="nav-text"> 2021-3-6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-7"><span class="nav-text"> 2021-3-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-8"><span class="nav-text"> 2021-3-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-9"><span class="nav-text"> 2020-3-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-11"><span class="nav-text"> 2020-3-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-12"><span class="nav-text"> 2020-3-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-3-13"><span class="nav-text"> 2020-3-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-14"><span class="nav-text"> 2021-3-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-15"><span class="nav-text"> 2021-3-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-16"><span class="nav-text"> 2021-3-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-17"><span class="nav-text"> 2021-3-17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-18"><span class="nav-text"> 2021-3-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-19"><span class="nav-text"> 2021-3-19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-21"><span class="nav-text"> 2021-3-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-22"><span class="nav-text"> 2021-3-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-30"><span class="nav-text"> 2021-3-30</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-3-31"><span class="nav-text"> 2021-3-31</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-4"><span class="nav-text"> 2021-4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-1"><span class="nav-text"> 2021-4-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-2"><span class="nav-text"> 2021-4-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-3"><span class="nav-text"> 2021-4-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-8"><span class="nav-text"> 2021-4-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-9"><span class="nav-text"> 2021-4-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-12"><span class="nav-text"> 2021-4-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-13"><span class="nav-text"> 2021-4-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-15"><span class="nav-text"> 2021-4-15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-16"><span class="nav-text"> 2021-4-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-17"><span class="nav-text"> 2021-4-17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-19"><span class="nav-text"> 2021-4-19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-20"><span class="nav-text"> 2021-4-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-22"><span class="nav-text"> 2021-4-22</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-26"><span class="nav-text"> 2021-4-26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-4-28"><span class="nav-text"> 2021-4-28</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2021-5"><span class="nav-text"> 2021-5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-3"><span class="nav-text"> 2021-5-3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-5"><span class="nav-text"> 2021-5-5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-7"><span class="nav-text"> 2021-5-7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-8"><span class="nav-text"> 2021-5-8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-9"><span class="nav-text"> 2021-5-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-10"><span class="nav-text"> 2021-5-10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-11"><span class="nav-text"> 2021-5-11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-12"><span class="nav-text"> 2021-5-12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-13"><span class="nav-text"> 2021-5-13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-14"><span class="nav-text"> 2021-5-14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-16"><span class="nav-text"> 2021-5-16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-18"><span class="nav-text"> 2021-5-18</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-19"><span class="nav-text"> 2021-5-19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-20"><span class="nav-text"> 2021-5-20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-5-21"><span class="nav-text"> 2020-5-21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021-5-22"><span class="nav-text"> 2021-5-22</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

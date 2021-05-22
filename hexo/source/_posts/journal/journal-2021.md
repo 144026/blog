@@ -931,11 +931,11 @@ zeekctl.in
 
 ### 2021-5-16
 1. kfifo
-	- simple version: kernel 2.6.26.4
-	- general version 1: kernel 2.6.33-rc2/rc3
-	- general version 2: kernel 2.6.39.3
+    - simple version: kernel 2.6.26.4
+    - general version 1: kernel 2.6.33-rc2/rc3
+    - general version 2: kernel 2.6.39.3
 2. C99 standard
-	- address constant
+    - address constant
 
 
 ### 2021-5-18
@@ -974,3 +974,141 @@ zeekctl.in
         - `\mbox`: robust and simple `\makebox`
 
 
+### 2021-5-19
+1. linux
+    - bash & zsh difference: parameter expansion
+        - bash: `"$var"`
+        - zsh: `$var` is already similar?
+    - kali `manpages`, `manpages-dev`(5.10-1)缺少`man 3 list`
+        - 从[The Linux *man-pages* project](https://www.kernel.org/doc/man-pages/)下载最新tar包安装
+    - linux kernel `list`
+        - `LIST_ENTRY()`: `container_of()`
+            - 链表ENTRY才是外部结构，相当于绑定了数据和一个简单列表，`list` api只处理简单列表部分。
+2. Ramsay感染doc文件
+    - `LoadLibrary("msfte.dll")`的猜想
+        - `kernel32.dll`以COW模式，装载到`BON.exe`进程空间
+        - 操作系统执行`DllEntryPoint()`，该函数hook进程空间中的`kernel32.dll`，但是必须调用被hook的函数才能执行相关代码
+        - `BON.exe`调用被hook的函数，doc文件被感染
+3. **windows patching tech**
+    - modify the behavior of an executable
+        - source modification
+            - re, patching
+            - executable signing
+        - runtime modification
+            - implemented by OS APIs
+                - API hooks
+                    - local hooks: influence only specific apps
+                    - global hooks: affect all processes
+                - **DLL injector**
+                    - get process handle, write `dllname` into its virtual memory
+                        - run target process, or just **search it in process lists** for its id
+                    - create a thread inside it to run `LoadLibrary(dllname)`
+    - process system calls
+        - `CreateProcess()`
+            - `CREATE_SUSPENDED`, `ResumeThread()`
+            - `CloseHandle()`
+        - `VirtualAllocEx()`, `WriteProcessMemory()`, `VirtualFreeEx()`
+        - `CreateRemoteThread()`
+            - `GetProcAddress()`: get `LoadLibrary()` procedure address
+                - `GetModuleHandleA()`
+    - Hook Engine
+        - [Microsoft Detour](https://www.microsoft.com/en-us/research/project/detours/)
+        - [NtHookEngine ](https://ntcore.com/files/nthookengine.htm)(Recommended)
+
+
+### 2021-5-20
+1. 密码含特殊字符的7z文件解压
+    - 文件内容如何重定向到`7z`, `ssh`？
+        - `strace 7z`: 读入密码前直接打开`/dev/tty`
+        - `strace 7z x -p$'\x12\x34\x56' file.7z`
+            - strace: `$'\x12\xf2\x00\x56'` translated to '`\22\362'`
+                - hex to **octal**: octal better?
+                - `tr` only supports octal
+            - ANSI C translation: `\x00` terminates a string
+    - **`tcl`, `expect`**
+        - Tool Command Language (pronounced "tickle"): automate interactive command line task
+2. deepin安装腾讯会议`apt-get install com.tencent.meeting.deepin`
+    - Errors were encountered while processing: `linux-image-5.4.70-amd64-desktop`
+
+
+### 2020-5-21
+1. zip包编码混乱问题
+    - [Arch wiki: **garbled problem**](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#Garbled_problem)
+        - `man zip`, `/Unicode<cr>`: fuck the `zip` implementation
+        - > Unicode.  **Though the zip standard requires storing paths in an archive using a specific character set, in practice zips have stored  paths  in  archives in whatever the local character set is.**  This creates problems when an archive is created or updated on a system using one character set and then extracted on another system using a different character set.
+        - **非unicode环境下，避免使用`zip`进行压缩**
+    - **保留zip原编码**解压: `LANG=C 7z x file.zip`
+        - 默认`LANG=en_US.UTF-8`解压：non-UTF8的二进制内容被强制解释为UTF8，然后写入为UTF8编码
+            - 编码彻底损坏，不可恢复
+        - `LANG=C unzip file.zip`并不能保持原编码: fuck unzip
+    - 确定zip原编码格式: `chardet`, `encguess`
+        - 解压目录下`ls | chardet`
+        - 不解压：`cat file.zip | grep -a 'filename_ascii_part' > out.bin`， vim删除多余内容再`chardet out.bin`
+2. latex: RASIZE the BOX with `xeCJK` !
+    - 右下角评分表
+        - 右下：`\hfill`, `\vfill`, `\begin{flushright}`
+        - 表格宽高：`\raisebox[distance][extend-above][extend-below]{text}`
+        - 字体：`\textxx` -> `\xxfamily`, `\xxshape`, `\xxseries`
+    - **修复CJK字体baseline**
+        - Wrapping every character in a `raisebox`，**并且在切换字体时使用`xpatch`重置**
+        ```latex
+        \usepackage{xeCJK}
+        \usepackage{xpatch}
+
+        % Raise the baseline of CJK characters by 0.1em
+        % This is done by wrapping every CJK character in a raisebox
+        \makeatletter
+        \let\original@CJKsymbol\CJKsymbol
+        \let\original@CJKpunctsymbol\CJKpunctsymbol
+        \edef\CJKmovesymbol#1{\raise.1em\hbox{\original@CJKsymbol{#1}}}
+        \edef\CJKmovepunctsymbol#1{\raise.1em\hbox{\original@CJKpunctsymbol{#1}}}
+        % Only shift non-puncts because puncts seems in their place
+        \def\CJKraisebaseline{%
+            \let\CJKsymbol\CJKmovesymbol
+        }
+        \def\CJKresetbaseline{%
+            \let\CJKsymbol\original@CJKsymbol
+        }
+        % When switching to Heiti and FangSong, revert settings
+        \xpretocmd\heiti{\CJKresetbaseline}{}{}
+        \xpretocmd\fangsong{\CJKresetbaseline}{}{}
+        \xpretocmd\texttt{\CJKresetbaseline}{}{}
+        \makeatother
+
+        % Activate!
+        \CJKraisebaseline
+
+        % fix possible fontsize problem
+        \setmainfont[Scale=1.18]{Cambria}
+        ```
+3. linux: 把文件`file`的内容作为命令行参数
+    - 作为直接参数：`echo PARAMETER`
+        - `echo “$(cat file)”`
+            - > Word Splitting
+                > The  shell  scans the results of parameter expansion, command substitution, and arithmetic expansion **that did not occur within double quotes** for word splitting.
+            - > Quote Removal
+              > After  the  preceding  expansions, all unquoted occurrences of the characters `\`, `'`, and `"` **that did not result from one of the above expansions** are removed.
+        - `cat file| xargs echo`
+            -  guess it's `read(0, buf, count); execve(/bin/echo, buf.split('\n'));`
+    - 更复杂的情况: `echo "{\"This\": \"is\", \"a\": [\"json\", \"PARAMETER\"]}"`
+        - `echo "{\"This\": \"is\", \"a\": [\"json\", \"$(cat file)\"]}"`
+4. json常见操作
+    - 压缩：去除换行`\r`, `\n`，去除空白`\s`
+    - **转义**：`"`替换为`\"`，`\`替换为`\\`，之后再用`"`括起来即等效于一个字符串？
+        - json standard, `string` specification
+            - 可以包含任何Unicode字符
+            - `\`和`"`必须转义
+            - `U+0000`到`U+001F`之间的控制字符必须转义
+        - 更好的转义方式：gzip + base64
+
+
+### 2021-5-22
+1. bash urlencode: `printf "%x" "'c"`，语法太过细节，google不到，需要查手册
+    - `man printf`内容太少，`info printf`
+    - > If the leading character of a numeric argument is `"` or `'` then its value is the numeric value of the immediately following character.
+2. 《活出生命的意义》书评
+    - 存在主义、弗洛伊德、马洛斯、弗兰克尔
+        - 意义疗法与精神分析：创伤者与观察者
+    - 意义是否应该刻意追求？弗兰克尔的三种意义
+        - 创造、体验、挑战(斗争)
+    - 马洛斯的困境：意义的超越：狂信徒与抑郁症

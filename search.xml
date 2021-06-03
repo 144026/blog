@@ -5372,6 +5372,170 @@ After  the  preceding  expansions, all unquoted occurrences of the characters <c
 </ul>
 </li>
 </ol>
+<h3 id="2021-5-23"><a class="markdownIt-Anchor" href="#2021-5-23"></a> 2021-5-23</h3>
+<ol>
+<li>filesystem and file management system
+<ul>
+<li>process fd -&gt; open file table -&gt; inode table</li>
+<li><code>lsof</code>: list open files</li>
+<li><code>ll /proc/$$/fd</code>, <code>cat /proc/$$/fdinfo/1</code></li>
+</ul>
+</li>
+<li><code>tty</code> drivers ?</li>
+</ol>
+<h3 id="2021-5-27"><a class="markdownIt-Anchor" href="#2021-5-27"></a> 2021-5-27</h3>
+<ol>
+<li>C
+<ul>
+<li><code>x86_64</code> LP64: long and point 64bit
+<ul>
+<li>栈对齐大小8字节</li>
+</ul>
+</li>
+<li><code>__builtin_offsetof()</code>：编译器防止C++运算符重载导致经典C定义<code>&amp;( (type *) 0)-&gt;member</code>失效</li>
+<li><code>#define multiline_macro()</code>
+<ul>
+<li>使用<code>&#123; &#125;</code>包括宏内容：保证<code>if(cond) multiline_macro()</code>不出错，但是宏后面不能带上<code>;</code></li>
+<li>使用<code>do &#123; &#125; while (0)</code>包括宏内容：允许<code>if(cond) multiline_macro();</code>用法
+<ul>
+<li>或用<code>if(1) &#123; &#125; else</code>包括宏内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-5-29"><a class="markdownIt-Anchor" href="#2021-5-29"></a> 2021-5-29</h3>
+<ol>
+<li>linux: <code>dpkg</code>
+<ul>
+<li><code>.deb</code> files:  <code>ar</code> archive  <figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">xxx.deb</span><br><span class="line">├── debian-binary</span><br><span class="line">├── control.tar.gz</span><br><span class="line">│   ├── control</span><br><span class="line">│   ├── md5sums</span><br><span class="line">│   ├── postinst</span><br><span class="line">│   └── postrm</span><br><span class="line">└── data.tar.gz</span><br><span class="line">    ├── etc</span><br><span class="line">    └── usr</span><br></pre></td></tr></table></figure>
+</li>
+<li><code>man dpkg-deb</code>
+<ul>
+<li><code>-R, --raw-extract ARCHIVE DIR</code></li>
+<li><code>-b, --build DIR ARCHIVE</code>, the <code>DEBIAN</code> sub-directory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-6"><a class="markdownIt-Anchor" href="#2021-6"></a> 2021-6</h3>
+<h3 id="2021-6-1"><a class="markdownIt-Anchor" href="#2021-6-1"></a> 2021-6-1</h3>
+<ol>
+<li>python: everything is object
+<ul>
+<li><code>import</code>时模块代码被执行
+<ul>
+<li><code>def main()</code>, <code>if __name__ == 'main': main()</code></li>
+</ul>
+</li>
+<li>跨module变量：<code>config.py</code>
+<ul>
+<li>修改必须在同一个进程内</li>
+</ul>
+</li>
+<li><a href="https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces">python namespaces</a>
+<ul>
+<li>builtin, global, enclosing, local
+<ul>
+<li><code>__builtins__</code> module</li>
+<li><code>globals()</code>, <code>locals()</code> dict: <code>name -&gt; object</code></li>
+<li><code>dir([object]) -&gt; list of str</code></li>
+</ul>
+</li>
+<li><code>global</code>, <code>nonlocal</code> declaration</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-6-2"><a class="markdownIt-Anchor" href="#2021-6-2"></a> 2021-6-2</h3>
+<ol>
+<li>linux
+<ul>
+<li>zsh &amp; bash: <code>/etc/profile</code>, <code>/etc/zsh/zprofile</code></li>
+<li><code>sudo -H pip install</code></li>
+<li>supervisorctl: <code>reread</code>只读，<code>update</code>才会更新</li>
+<li>apt &amp; dpkg
+<ul>
+<li><code>apt download package=version</code>, version: <code>apt search package</code>
+<ul>
+<li>下载完整依赖：apt</li>
+</ul>
+</li>
+<li><code>apt --fix-missing|--fix-broken install</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="2021-6-3"><a class="markdownIt-Anchor" href="#2021-6-3"></a> 2021-6-3</h3>
+<ol>
+<li>linux system administration
+<ul>
+<li><code>/etc/sysctl.conf</code>, <code>/etc/sysctl.d/&#123;10,30,60,90&#125;-*.conf</code>
+<ul>
+<li><code>sysctl -p, --load</code></li>
+</ul>
+</li>
+<li><code>pam_limits.so</code>
+<ul>
+<li><code>/etc/security/limits.conf</code>, <code>limits.d/*.conf</code>
+<ul>
+<li>需要重启session</li>
+</ul>
+</li>
+<li><code>/etc/pam.d/&#123;common-session,common-session-noninteractive&#125;</code>
+<ul>
+<li>需要reboot？</li>
+</ul>
+</li>
+<li><code>cat /proc/$proc_num/limits</code>
+<ul>
+<li><strong>子进程会继承<code>limits</code></strong></li>
+</ul>
+</li>
+<li><code>setrlimits()</code>: 进程的limits可以被管理软件轻易修改！
+<ul>
+<li><code>[supervisord]</code> section: <code>minfds=4096</code> (必须使用<code>systemd</code>重启，<code>reload</code>不改变pid)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>shell: bash &amp; tcl
+<ul>
+<li><code>pushd DIR</code>, <code>popd</code></li>
+<li><code>expect</code>: just a <code>tcl</code> extension
+<ul>
+<li><code>#!/usr/bin/env -S expect -f</code></li>
+<li><code>spawn</code>, <code>expect</code>, <code>send</code>, <code>interact</code>
+<ul>
+<li>how does <code>send</code> (or tty) work?</li>
+</ul>
+</li>
+<li><code>&#123;*&#125;$list_var</code>: expand list variable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>latex
+<ul>
+<li><code>\fancyhead[RE,RO,LE,LO]&#123;text&#125;</code>: right/left, even/odd</li>
+<li><code>\documentclass[twoside]&#123;article&#125;</code></li>
+</ul>
+</li>
+<li>zeek
+<ul>
+<li>zeekctl <code>logRotationInterval</code></li>
+<li><code>@load</code> syntax v.s. normal <code>statement;</code></li>
+<li><code>redef xxx=xxx;</code></li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>journal</category>

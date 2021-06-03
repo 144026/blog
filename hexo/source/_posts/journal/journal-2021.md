@@ -1112,3 +1112,100 @@ zeekctl.in
     - 意义是否应该刻意追求？弗兰克尔的三种意义
         - 创造、体验、挑战(斗争)
     - 马洛斯的困境：意义的超越：狂信徒与抑郁症
+
+
+### 2021-5-23
+1. filesystem and file management system
+    - process fd -> open file table -> inode table
+    - `lsof`: list open files
+    - `ll /proc/$$/fd`, `cat /proc/$$/fdinfo/1`
+2. `tty` drivers ?
+
+
+### 2021-5-27
+1. C
+    - `x86_64` LP64: long and point 64bit
+        - 栈对齐大小8字节
+    - `__builtin_offsetof()`：编译器防止C++运算符重载导致经典C定义`&( (type *) 0)->member`失效
+    - `#define multiline_macro()`
+        - 使用`{ }`包括宏内容：保证`if(cond) multiline_macro()`不出错，但是宏后面不能带上`;`
+        - 使用`do { } while (0)`包括宏内容：允许`if(cond) multiline_macro();`用法
+            - 或用`if(1) { } else`包括宏内容
+
+
+### 2021-5-29
+1. linux: `dpkg`
+    - `.deb` files:  `ar` archive
+        ```txt
+        xxx.deb
+        ├── debian-binary
+        ├── control.tar.gz
+        │   ├── control
+        │   ├── md5sums
+        │   ├── postinst
+        │   └── postrm
+        └── data.tar.gz
+            ├── etc
+            └── usr
+        ```
+    - `man dpkg-deb`
+        - `-R, --raw-extract ARCHIVE DIR`
+        - `-b, --build DIR ARCHIVE`, the `DEBIAN` sub-directory
+
+
+
+### 2021-6
+
+### 2021-6-1
+1. python: everything is object
+    - `import`时模块代码被执行
+        - `def main()`, `if __name__ == 'main': main()`
+    - 跨module变量：`config.py`
+        - 修改必须在同一个进程内
+    - [python namespaces](https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces)
+        - builtin, global, enclosing, local
+            - `__builtins__` module
+            - `globals()`, `locals()` dict: `name -> object`
+            - `dir([object]) -> list of str`
+        - `global`, `nonlocal` declaration
+
+
+### 2021-6-2
+1. linux
+    - zsh & bash: `/etc/profile`, `/etc/zsh/zprofile`
+    - `sudo -H pip install`
+    - supervisorctl: `reread`只读，`update`才会更新
+    - apt & dpkg
+        - `apt download package=version`, version: `apt search package`
+            - 下载完整依赖：apt
+        - `apt --fix-missing|--fix-broken install`
+
+
+### 2021-6-3
+1. linux system administration
+    - `/etc/sysctl.conf`, `/etc/sysctl.d/{10,30,60,90}-*.conf`
+        - `sysctl -p, --load`
+    - `pam_limits.so`
+        - `/etc/security/limits.conf`, `limits.d/*.conf`
+            - 需要重启session
+        - `/etc/pam.d/{common-session,common-session-noninteractive}`
+            - 需要reboot？
+        - `cat /proc/$proc_num/limits`
+            - **子进程会继承`limits`**
+        - `setrlimits()`: 进程的limits可以被管理软件轻易修改！
+            - `[supervisord]` section: `minfds=4096` (必须使用`systemd`重启，`reload`不改变pid)
+2. shell: bash & tcl
+    - `pushd DIR`, `popd`
+    - `expect`: just a `tcl` extension
+        - `#!/usr/bin/env -S expect -f`
+        - `spawn`, `expect`, `send`, `interact`
+            - how does `send` (or tty) work?
+        - `{*}$list_var`: expand list variable
+3. latex
+    - `\fancyhead[RE,RO,LE,LO]{text}`: right/left, even/odd
+    - `\documentclass[twoside]{article}`
+4. zeek
+    - zeekctl `logRotationInterval`
+    - `@load` syntax v.s. normal `statement;`
+    - `redef xxx=xxx;`
+

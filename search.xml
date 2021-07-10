@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>博客GET</title>
-    <url>/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
+    <url>/blog/2020/08/01/%E5%8D%9A%E5%AE%A2get/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>新开的蒟蒻博客，可能会陆续上传些水文。</p>
 <p><img src="https://raw.githubusercontent.com/144026/rsrc/master/img/20200922111506.gif" alt="" /></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>测试:<br />
@@ -19,7 +19,7 @@
   </entry>
   <entry>
     <title>blasphemous</title>
-    <url>/2020/08/26/Entertainment/blasphemous/</url>
+    <url>/blog/2020/08/26/Entertainment/blasphemous/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>“I curse you forever in your name. I bless you forever in your death.”, Escribar.</p>
 </blockquote>
@@ -102,7 +102,7 @@
   </entry>
   <entry>
     <title>微机原理课程总结</title>
-    <url>/2020/08/19/Knowledge/ComputerScience/MCU-and-Embedded-System/</url>
+    <url>/blog/2020/08/19/Knowledge/ComputerScience/MCU-and-Embedded-System/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="0-前言"><a class="markdownIt-Anchor" href="#0-前言"></a> 0 前言</h1>
 <p>尽量系统地回顾课程内容，巩固相关知识，总结一些用到的方法，揣测这门课培养的思维模式。</p>
 <a id="more"></a>
@@ -192,7 +192,7 @@
   </entry>
   <entry>
     <title>一道Perl逆向入门题</title>
-    <url>/2020/08/01/Knowledge/ComputerScience/WMCTF2020-easy-re/</url>
+    <url>/blog/2020/08/01/Knowledge/ComputerScience/WMCTF2020-easy-re/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="1-perl与反编译"><a class="markdownIt-Anchor" href="#1-perl与反编译"></a> 1 Perl与反编译</h1>
 <p>Perl是解释型语言，要保护其源码，常用的方法有：</p>
 <ul>
@@ -232,7 +232,7 @@
   </entry>
   <entry>
     <title>linux初步</title>
-    <url>/2020/10/15/Knowledge/ComputerScience/linux/</url>
+    <url>/blog/2020/10/15/Knowledge/ComputerScience/linux/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>linux初步课程笔记（草稿）</p>
 <a id="more"></a>
 <h1 id="linux初步"><a class="markdownIt-Anchor" href="#linux初步"></a> linux初步</h1>
@@ -607,7 +607,7 @@ cat initrd/etc/issue xxx /r /m
   </entry>
   <entry>
     <title>计算机网络</title>
-    <url>/2020/09/20/Knowledge/ComputerScience/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <url>/blog/2020/09/20/Knowledge/ComputerScience/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>计算机网络课程学习笔记。</p>
 <a id="more"></a>
 <h1 id="0-课程概述"><a class="markdownIt-Anchor" href="#0-课程概述"></a> 0 课程概述</h1>
@@ -917,7 +917,7 @@ CDN</p>
   </entry>
   <entry>
     <title>软件工程 敏捷mini培训</title>
-    <url>/2020/10/10/Knowledge/ComputerScience/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%95%8F%E6%8D%B7mini%E5%9F%B9%E8%AE%AD/</url>
+    <url>/blog/2020/10/10/Knowledge/ComputerScience/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E6%95%8F%E6%8D%B7mini%E5%9F%B9%E8%AE%AD/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>国庆4+1天软件工程培训(简要)笔记。</p>
 <a id="more"></a>
 <h1 id="软件工程"><a class="markdownIt-Anchor" href="#软件工程"></a> 软件工程</h1>
@@ -1080,7 +1080,7 @@ CDN</p>
   </entry>
   <entry>
     <title>通信电子线路</title>
-    <url>/2020/10/22/Knowledge/Electronics/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</url>
+    <url>/blog/2020/10/22/Knowledge/Electronics/%E9%80%9A%E4%BF%A1%E7%94%B5%E5%AD%90%E7%BA%BF%E8%B7%AF/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>通信电子线路笔记</p>
 <a id="more"></a>
 <h3 id="ch2"><a class="markdownIt-Anchor" href="#ch2"></a> ch2</h3>
@@ -1098,7 +1098,7 @@ CDN</p>
   </entry>
   <entry>
     <title>数字信号处理</title>
-    <url>/2020/09/22/Knowledge/Mathematics/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
+    <url>/blog/2020/09/22/Knowledge/Mathematics/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>数字信号处理课程笔记。</p>
 <a id="more"></a>
 <h1 id="0-概述"><a class="markdownIt-Anchor" href="#0-概述"></a> 0 概述</h1>
@@ -1211,7 +1211,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>Quotes</title>
-    <url>/2020/10/30/Skills/Ideology/quotes/</url>
+    <url>/blog/2020/10/30/Skills/Ideology/quotes/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>just some quotes.</p>
 <a id="more"></a>
 <h4 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h4>
@@ -1247,7 +1247,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>IDA学习笔记</title>
-    <url>/2020/08/26/Skills/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
+    <url>/blog/2020/08/26/Skills/%E5%B7%A5%E5%85%B7/learn-IDA/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>有待补充。</p>
 <a id="more"></a>
 <h1 id="0-简介"><a class="markdownIt-Anchor" href="#0-简介"></a> 0 简介</h1>
@@ -1266,7 +1266,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>learn-Vim</title>
-    <url>/2020/10/03/Skills/%E5%B7%A5%E5%85%B7/learn-Vim/</url>
+    <url>/blog/2020/10/03/Skills/%E5%B7%A5%E5%85%B7/learn-Vim/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>some usage tips.</p>
 <a id="more"></a>
 <h1 id="1-install-and-basics"><a class="markdownIt-Anchor" href="#1-install-and-basics"></a> 1 Install and Basics</h1>
@@ -1382,7 +1382,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>learn-git</title>
-    <url>/2020/11/20/Skills/%E5%B7%A5%E5%85%B7/learn-git/</url>
+    <url>/blog/2020/11/20/Skills/%E5%B7%A5%E5%85%B7/learn-git/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>git notes.</p>
 <a id="more"></a>
 <h1 id="1-commands"><a class="markdownIt-Anchor" href="#1-commands"></a> 1 commands</h1>
@@ -1455,7 +1455,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>博客搭建笔记</title>
-    <url>/2020/08/26/Skills/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
+    <url>/blog/2020/08/26/Skills/%E7%BB%8F%E9%AA%8C/learn-blog/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>在写了，在写了（新建文件夹）</p>
 <a id="more"></a>
 <h1 id="0-build-the-enviroment"><a class="markdownIt-Anchor" href="#0-build-the-enviroment"></a> 0 Build the Enviroment</h1>
@@ -1518,7 +1518,7 @@ x_a(t) &amp; = \mathscr{F}^{-1}\big[\hat X_a(j\Omega)\cdot H_a(j\Omega)\big]\\
   </entry>
   <entry>
     <title>my software list</title>
-    <url>/2020/12/01/Skills/%E7%BB%8F%E9%AA%8C/usr-software-list/</url>
+    <url>/blog/2020/12/01/Skills/%E7%BB%8F%E9%AA%8C/usr-software-list/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>My temporary software list.</p>
 <a id="more"></a>
 <h1 id="linux-kali-rolling"><a class="markdownIt-Anchor" href="#linux-kali-rolling"></a> Linux (kali-rolling)</h1>
@@ -1714,7 +1714,7 @@ OneNote</p>
   </entry>
   <entry>
     <title>kali</title>
-    <url>/2020/09/28/Skills/%E7%BB%8F%E9%AA%8C/kali/</url>
+    <url>/blog/2020/09/28/Skills/%E7%BB%8F%E9%AA%8C/kali/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>A blog learning both kali and general linux usage and skills.</p>
 <a id="more"></a>
 <h1 id="0-install"><a class="markdownIt-Anchor" href="#0-install"></a> 0 Install</h1>
@@ -2294,7 +2294,7 @@ $<br />
   </entry>
   <entry>
     <title>Redmi ADB Uninstall List</title>
-    <url>/2021/03/23/Skills/%E7%BB%8F%E9%AA%8C/redmi-adb-uninstall-list/</url>
+    <url>/blog/2021/03/23/Skills/%E7%BB%8F%E9%AA%8C/redmi-adb-uninstall-list/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>Package list for uninstall/disable on Redmi5 K30 Pro.</p>
 <a id="more"></a>
 <h3 id="packages-list"><a class="markdownIt-Anchor" href="#packages-list"></a> Packages List</h3>
@@ -2321,7 +2321,7 @@ $<br />
   </entry>
   <entry>
     <title>日志 2020</title>
-    <url>/2020/09/20/journal/journal-2020/</url>
+    <url>/blog/2020/09/20/journal/journal-2020/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>journal 2020</p>
 <a id="more"></a>
 <h1 id="2020"><a class="markdownIt-Anchor" href="#2020"></a> 2020</h1>
@@ -3711,7 +3711,7 @@ $<br />
   </entry>
   <entry>
     <title>日志 2021</title>
-    <url>/2021/01/02/journal/journal-2021/</url>
+    <url>/blog/2021/01/02/journal/journal-2021/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>journal 2021</p>
 <a id="more"></a>
 <h1 id="2021"><a class="markdownIt-Anchor" href="#2021"></a> 2021</h1>
@@ -5642,12 +5642,12 @@ After  the  preceding  expansions, all unquoted occurrences of the characters <c
   </entry>
   <entry>
     <title>categories</title>
-    <url>/categories/index.html</url>
+    <url>/blog/categories/index.html</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
   </entry>
   <entry>
     <title>tags</title>
-    <url>/tags/index.html</url>
+    <url>/blog/tags/index.html</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
   </entry>
 </search>
